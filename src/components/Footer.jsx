@@ -1,5 +1,7 @@
 import NewsletterForm from "./Newsletter/NewsletterForm";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   return (
@@ -10,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <div className="flex items-center justify-center w-10 h-10 mr-3 text-white rounded-lg bg-primary">
-                <i className="fas fa-paw" />
+                <FontAwesomeIcon icon={faPaw} />
               </div>
               <h3 className="text-xl font-bold">Tribuna do Pet</h3>
             </div>

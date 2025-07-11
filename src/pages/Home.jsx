@@ -1,24 +1,40 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "@slorber/react-helmet-async";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
+import PageTransition from "../components/PageTransition";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-    {/* top bar (desktop only) */}
+    <PageTransition>
+      <Helmet>
+        <title>Tribuna do Pet – Portal de Dicas para Cães e Gatos</title>
+        <meta
+          name="description"
+          content="Guias de alimentação, saúde e utilidade pública para quem ama animais."
+        />
+        <link rel="canonical" href="https://www.tribunadopet.com.br/" />
+        <meta property="og:image" content="/images/og-image.jpg" />
+      </Helmet>
+
+      {/* Top bar (desktop only) */}
       <div className="hidden py-2 text-white bg-gray-800 sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
           <span>Seu portal de informações para seu pet!</span>
-          {/* relógio simplificado */}
-          <span>{new Date().toLocaleTimeString("pt-BR", { timeZone: "America/Sao_Paulo" })}</span>
+          <span>
+            {new Date().toLocaleTimeString("pt-BR", {
+              timeZone: "America/Sao_Paulo",
+            })}
+          </span>
         </div>
       </div>
-      {/* overlay + menu */}
+
+      {/* Overlay + mobile menu */}
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       {menuOpen && (
         <div
@@ -27,12 +43,10 @@ export default function Home() {
         />
       )}
 
-      {/* header */}
+      {/* Header */}
       <Header onToggleMenu={() => setMenuOpen(true)} />
 
-      
-
-      {/* main */}
+      {/* Main content */}
       <main className="container px-4 py-8 mx-auto">
         {/* Featured */}
         <Link
@@ -49,14 +63,12 @@ export default function Home() {
           <span className="absolute px-3 py-1 text-sm font-medium text-white rounded-full top-4 left-4 bg-secondary">
             Destaque
           </span>
-
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
             <h2 className="max-w-3xl mb-4 text-3xl font-bold md:text-4xl">
               Guia Completo para uma Alimentação Saudável para seu Pet
             </h2>
             <p className="max-w-2xl mb-4 text-lg">
-              Descubra como escolher a melhor ração, preparar alimentos naturais e evitar
-              os erros mais comuns na nutrição do seu animal de estimação.
+              Descubra como escolher a melhor ração, preparar alimentos naturais e evitar os erros mais comuns na nutrição do seu animal de estimação.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span>
@@ -69,7 +81,7 @@ export default function Home() {
           </div>
         </Link>
 
-        {/* Categorias destaque (cards) */}
+        {/* Categorias em destaque */}
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Categorias em Destaque</h2>
@@ -114,17 +126,12 @@ export default function Home() {
                   style={{ backgroundImage: `url('${cat.img}')` }}
                 />
                 <div className="p-6">
-                  <span
-                    className={`${cat.color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}
-                  >
+                  <span className={`${cat.color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}>
                     {cat.tag}
                   </span>
                   <h3 className="mb-3 text-xl font-bold">{cat.title}</h3>
                   <p className="mb-4 text-gray-600">{cat.desc}</p>
-                  <Link
-                    to={`/${cat.slug}`}
-                    className="font-medium text-primary hover:underline"
-                  >
+                  <Link to={`/${cat.slug}`} className="font-medium text-primary hover:underline">
                     Ver artigos
                   </Link>
                 </div>
@@ -133,27 +140,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Newsletter (banner) */}
+        {/* Newsletter */}
         <section className="mb-16">
           <div className="p-8 text-center text-white bg-gradient-to-r from-primary to-secondary rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
-              Receba dicas exclusivas para seu pet
-            </h2>
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl">Receba dicas exclusivas para seu pet</h2>
             <p className="mb-6">
-              Inscreva-se em nossa newsletter e receba conteúdos especiais sobre cuidados,
-              alimentação e saúde animal.
+              Inscreva-se em nossa newsletter e receba conteúdos especiais sobre cuidados, alimentação e saúde animal.
             </p>
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
             </div>
-            <p className="mt-4 text-sm text-blue-100">
-              Respeitamos sua privacidade. Você pode cancelar a qualquer momento.
-            </p>
+            <p className="mt-4 text-sm text-blue-100">Respeitamos sua privacidade. Você pode cancelar a qualquer momento.</p>
           </div>
         </section>
       </main>
 
       <Footer />
-    </>
+    </PageTransition>
   );
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaw, faBars } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header({ onToggleMenu }) {
   return (
@@ -8,7 +10,7 @@ export default function Header({ onToggleMenu }) {
           {/* logo */}
           <a href="/" className="flex items-center">
             <div className="flex items-center justify-center w-12 h-12 mr-3 text-white rounded-lg bg-primary">
-              <i className="text-2xl fas fa-paw" />
+              <FontAwesomeIcon icon={faPaw} className="text-2xl"/>
             </div>
             <div>
               <h1 className="text-3xl font-bold text-primary">
@@ -25,7 +27,7 @@ export default function Header({ onToggleMenu }) {
             onClick={onToggleMenu}
             className="flex flex-col items-center text-2xl text-gray-600 hover:text-primary"
           >
-            <i className="fas fa-bars" />
+            <FontAwesomeIcon icon={faBars} />
             <span className="text-sm">Menu</span>
           </button>
         </div>

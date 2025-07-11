@@ -30,7 +30,7 @@ export default function NewsletterForm() {
       />
       <button
         disabled={status === 'sending'}
-        className="px-4 py-2 text-white rounded bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50"
+        className="px-3 py-2 text-white rounded bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50"
       >
         {status === 'sending' ? 'Enviando…' : 'Quero receber'}
       </button>

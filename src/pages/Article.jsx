@@ -1,32 +1,42 @@
 import { useParams } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import NotFound from "../pages/NotFound";       // <- importe seu 404
+import PageTransition from "../components/PageTransition";
 
-// Vite carrega todos os arquivos .jsx da pasta articles em build
+// carrega todos os artigos em build
 const modules = import.meta.glob("./articles/*.jsx", { eager: true });
-
 const registry = Object.fromEntries(
-  Object.entries(modules).map(([path, mod]) => {
-    // path: "./articles/cuidados-com-pets-no-inverno.jsx"
-    const slug = path
-      .split("/")
-      .pop()            // nome do arquivo
-      .replace(".jsx", "");
-    return [slug, mod.default];
-  })
+  Object.entries(modules).map(([path, mod]) => [
+    path.split("/").pop().replace(".jsx", ""), // slug
+    mod.default,                              // componente
+  ])
 );
 
 export default function Article() {
   const { slug } = useParams();
   const Component = registry[slug];
 
+  /* slug inexistente → 404 animado */
   if (!Component) {
-    return <div className="p-8">Artigo não encontrado</div>;
+    return (
+      <PageTransition>
+        <NotFound />
+      </PageTransition>
+    );
   }
 
-  // Suspense é opcional, mas deixa pronto para lazy
+  /* slug existe → carrega artigo */
   return (
-    <Suspense fallback={<div className="p-8">Carregando…</div>}>
-      <Component />
+    <Suspense
+      fallback={
+        <PageTransition>
+          <div className="p-8">Carregando…</div>
+        </PageTransition>
+      }
+    >
+      <PageTransition>
+        <Component />
+      </PageTransition>
     </Suspense>
   );
 }
