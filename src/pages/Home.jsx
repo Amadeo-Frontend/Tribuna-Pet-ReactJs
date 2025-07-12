@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import Seo from "../components/Seo";
 import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
@@ -13,6 +13,12 @@ export default function Home() {
 
   return (
     <PageTransition>
+      <Seo
+        title="Tribuna do Pet • Dicas de Alimentação, Cuidados e Utilidade Pública"
+        description="Portal com as melhores dicas para tutores de cães e gatos: alimentação natural, saúde, cuidados diários e serviços gratuitos."
+        canonical="https://www.tribunadopet.com.br/"
+        image="/og-image-home.jpg" // use caminho absoluto se possível
+      />
       {/* Top bar (desktop only) */}
       <div className="hidden py-2 text-white bg-gray-800 sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
