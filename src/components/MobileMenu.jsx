@@ -44,7 +44,7 @@ function Accordion({ label, icon, links, onClose }) {
   return (
     <motion.li variants={itemV} className="border-t first:border-none">
       <button
-        className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-primary"
+        className="flex items-center justify-between w-full py-4 font-medium text-gray-800 hover:text-primary"
         onClick={() => setOpen(!open)}
       >
         <span className="flex items-center gap-3">
@@ -66,10 +66,10 @@ function Accordion({ label, icon, links, onClose }) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="ml-6 space-y-2 overflow-hidden text-sm list-disc"
+            className="ml-6 space-y-3 overflow-hidden text-sm list-disc"
           >
             {links.map(([href, text]) => (
-              <li key={href}>
+              <li key={href} className="rounded-md hover:bg-slate-100 hover:shadow-inner hover:text-primary hover:mx-1">
                 <Link to={href} onClick={onClose}>
                   {text}
                 </Link>
