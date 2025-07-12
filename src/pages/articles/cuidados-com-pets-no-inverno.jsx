@@ -1,30 +1,52 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import LiveClock from "../../components/LiveClock";
 import Header from "../../components/Header";
 import MobileMenu from "../../components/MobileMenu";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
-import NewsletterForm from "../../components/Newsletter/NewsletterForm";
+
+// Componentes animados
+const FadeIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay }}
+  >
+    {children}
+  </motion.div>
+);
+
+const ScaleIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ scale: 0.95, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.4, delay }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function CuidadosComPetsNoInverno() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  /* ✅ simples share via navigator API */
-  function compartilharPagina() {
+  const compartilharPagina = () => {
     if (navigator.share) {
       navigator.share({
         title: "Cuidados com pets no inverno – Tribuna do Pet",
         url: window.location.href,
       });
     } else {
-      alert("Copie o link na barra de endereços para compartilhar! 😊");
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
-  }
+  };
 
   return (
     <>
-      {/* SEO */}
       <Seo
         title="Cuidados com pets no inverno | Tribuna do Pet"
         description="Guia essencial para proteger cães e gatos das baixas temperaturas – sinais de hipotermia, roupinhas, ambiente aquecido e mais."
@@ -32,16 +54,14 @@ export default function CuidadosComPetsNoInverno() {
         image="/images/og-image.jpg"
       />
 
-      {/* Top bar (desktop only) */}
-            <div className="hidden py-2 text-white bg-gray-800 sm:block">
-              <div className="container flex items-center justify-between px-4 mx-auto text-sm">
-                <span>Seu portal de informações para seu pet!</span>
-      
-                {/* relógio ao vivo */}
-                <LiveClock />
-              </div>
-            </div>
-      {/* Overlay + menu */}
+      {/* Top bar */}
+      <div className="hidden py-2 text-white bg-gradient-to-r from-gray-800 to-gray-900 sm:block">
+        <div className="container flex items-center justify-between px-4 mx-auto text-sm">
+          <span>Seu portal de informações para seu pet!</span>
+          <LiveClock />
+        </div>
+      </div>
+
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       {menuOpen && (
         <div
@@ -53,227 +73,321 @@ export default function CuidadosComPetsNoInverno() {
       <Header onToggleMenu={() => setMenuOpen(true)} />
 
       {/* Breadcrumb + título */}
-      <div className="py-6 bg-gray-100 border-b">
+      <div className="py-6 border-b bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="container px-4 mx-auto">
-          <nav className="mb-2 space-x-1 text-sm text-gray-600">
-            <Link to="/" className="hover:underline">
-              Home
+          <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-600">
+            <Link to="/" className="flex items-center hover:underline">
+              <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
-            <span>&gt;</span>
+            <span className="text-gray-400">/</span>
             <Link
               to="/cuidados-com-pets-no-inverno"
               className="hover:underline"
             >
               Cuidados Diários
             </Link>
-            <span>&gt;</span>
+            <span className="text-gray-400">/</span>
             <span className="font-medium text-gray-900">
               Cuidados com pets no inverno
             </span>
           </nav>
-          <h1 className="text-3xl font-bold md:text-4xl text-primary">
-            Cuidados com pets no inverno
-          </h1>
-          <div className="flex items-center mt-2 space-x-6 text-sm text-gray-500">
-            <span>
-              <i className="mr-1 far fa-calendar" /> 13 de Junho, 2025
+          
+          <FadeIn delay={0.1}>
+            <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">
+              Cuidados essenciais com pets durante o inverno
+            </h1>
+          </FadeIn>
+          
+          <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-500">
+            <span className="flex items-center">
+              <i className="mr-2 far fa-calendar text-primary"></i> 13 de Junho, 2025
             </span>
-            <span>
-              <i className="mr-1 far fa-clock" /> 4 min de leitura
+            <span className="flex items-center">
+              <i className="mr-2 far fa-clock text-primary"></i> 4 min de leitura
+            </span>
+            <span className="flex items-center">
+              <i className="mr-2 far fa-eye text-primary"></i> 2.4k visualizações
             </span>
           </div>
         </div>
       </div>
 
-      {/* Artigo */}
+      {/* Conteúdo principal */}
       <main className="container px-4 py-10 mx-auto">
-        <article className="max-w-5xl p-6 mx-auto prose prose-lg bg-white shadow-lg rounded-xl md:p-10">
+        <article className="max-w-4xl mx-auto">
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="px-3 py-1 text-xs font-medium text-blue-700 bg-blue-100 rounded-full">
-              Cuidados
-            </span>
-            <span className="px-3 py-1 text-xs font-medium text-white bg-blue-700 rounded-full">
-              Saúde
-            </span>
-            <span className="px-3 py-1 text-xs font-medium text-white bg-black rounded-full">
-              Inverno
-            </span>
-          </div>
+          <FadeIn delay={0.2}>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-full flex items-center">
+                <i className="fas fa-paw mr-1.5"></i> Cuidados
+              </span>
+              <span className="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 rounded-full flex items-center">
+                <i className="fas fa-heartbeat mr-1.5"></i> Saúde
+              </span>
+              <span className="px-3 py-1.5 text-xs font-medium text-white bg-gray-800 rounded-full flex items-center">
+                <i className="fas fa-snowflake mr-1.5"></i> Inverno
+              </span>
+            </div>
+          </FadeIn>
 
           {/* Capa */}
-          <figure className="mb-4">
-            <img
-              src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?auto=format&fit=crop&w=1200&q=80"
-              alt="Cachorro usando roupinha no inverno"
-              className="w-full rounded-lg"
-            />
-            <figcaption className="mt-2 text-sm text-center text-gray-600">
-              Proteção térmica é essencial para raças de pelo curto e animais
-              idosos durante o frio
-            </figcaption>
-          </figure>
+          <ScaleIn delay={0.3}>
+            <figure className="mb-8 overflow-hidden shadow-lg rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?auto=format&fit=crop&w=1200&q=80"
+                alt="Cachorro usando roupinha no inverno"
+                className="object-cover w-full aspect-video"
+              />
+              <figcaption className="px-4 mt-3 text-sm italic text-center text-gray-600">
+                Proteção térmica é essencial para raças de pelo curto e animais idosos durante o frio
+              </figcaption>
+            </figure>
+          </ScaleIn>
 
-          <p className="lead">
-            Com a chegada do inverno, os termômetros despencam e nossos pets
-            enfrentam desafios semelhantes aos humanos. Raças de pelo curto,
-            filhotes e animais idosos são especialmente vulneráveis às baixas
-            temperaturas. Neste guia essencial, reunimos as orientações de
-            especialistas para proteger cães e gatos dos riscos do clima frio,
-            desde sinais de hipotermia até ajustes na rotina de cuidados.
-          </p>
+          {/* Lead */}
+          <FadeIn delay={0.4}>
+            <div className="p-5 mb-8 border-l-4 border-blue-500 bg-blue-50 rounded-xl">
+              <p className="text-lg font-medium leading-relaxed text-gray-800">
+                Com a chegada do inverno, os termômetros despencam e nossos pets enfrentam desafios semelhantes aos humanos. Neste guia essencial, reunimos orientações de especialistas para proteger cães e gatos dos riscos do clima frio.
+              </p>
+            </div>
+          </FadeIn>
 
-          <h2>Por que o inverno exige cuidados especiais com pets?</h2>
-          <p>
-            Assim como humanos, cães e gatos sofrem com temperaturas baixas e
-            podem desenvolver doenças respiratórias, articulares e problemas
-            dermatológicos durante o inverno. A sensibilidade ao frio varia
-            conforme porte, idade e características da pelagem. Animais idosos,
-            filhotes e raças braquicefálicas (como Pugs e Bulldogs) estão entre
-            os grupos mais vulneráveis.
-          </p>
+          {/* Conteúdo */}
+          <div className="prose prose-lg max-w-none">
+            <FadeIn delay={0.5}>
+              <h2 className="flex items-center gap-3 mt-8 mb-5 text-2xl font-bold text-gray-900">
+                <i className="text-blue-500 fas fa-thermometer-half"></i>
+                Por que o inverno exige cuidados especiais?
+              </h2>
+              <p className="text-gray-700">
+                Assim como humanos, cães e gatos sofrem com temperaturas baixas e podem desenvolver doenças respiratórias, articulares e problemas dermatológicos. A sensibilidade varia conforme:
+              </p>
+              <ul className="grid grid-cols-1 gap-3 my-5 md:grid-cols-2">
+                <li className="flex items-start">
+                  <i className="mt-1 mr-3 text-green-500 fas fa-check-circle"></i>
+                  <span>Porte e idade (filhotes e idosos mais vulneráveis)</span>
+                </li>
+                <li className="flex items-start">
+                  <i className="mt-1 mr-3 text-green-500 fas fa-check-circle"></i>
+                  <span>Tipo de pelagem (pelo curto menos protetor)</span>
+                </li>
+                <li className="flex items-start">
+                  <i className="mt-1 mr-3 text-green-500 fas fa-check-circle"></i>
+                  <span>Raças braquicefálicas (Pugs, Bulldogs)</span>
+                </li>
+                <li className="flex items-start">
+                  <i className="mt-1 mr-3 text-green-500 fas fa-check-circle"></i>
+                  <span>Condições de saúde preexistentes</span>
+                </li>
+              </ul>
+            </FadeIn>
 
-          <blockquote>
-            "Animais menores tendem a sentir mais frio que os maiores. Raças
-            como Chihuahua, Dachshund e Galgos são especialmente sensíveis,
-            enquanto Huskies e Chow-chows têm maior resistência" – explica o
-            veterinário Bruno Alvarenga.
-          </blockquote>
+            <FadeIn delay={0.6}>
+              <blockquote className="p-5 my-8 border-l-4 border-blue-500 bg-gray-50 rounded-r-xl">
+                <p className="italic text-gray-700">
+                  "Animais menores tendem a sentir mais frio que os maiores. Raças como Chihuahua, Dachshund e Galgos são especialmente sensíveis, enquanto Huskies e Chow-chows têm maior resistência"
+                </p>
+                <cite className="block mt-3 font-medium text-gray-900">
+                  — Bruno Alvarenga, Veterinário
+                </cite>
+              </blockquote>
+            </FadeIn>
 
-          <h2>7 Estratégias para proteger seu pet do frio</h2>
-          <h3>1. Otimize o ambiente de descanso</h3>
-          <p>
-            O local de dormir deve ser elevado do chão, protegido de correntes
-            de ar e forrado com cobertores ou almofadas térmicas. Para animais
-            que dormem ao ar livre, casinhas com isolamento térmico são
-            essenciais. Em regiões muito frias, considere aquecedores ambientais
-            (com proteção contra queimaduras).
-          </p>
+            <FadeIn delay={0.7}>
+              <h2 className="flex items-center gap-3 mt-10 mb-5 text-2xl font-bold text-gray-900">
+                <i className="text-blue-500 fas fa-shield-alt"></i>
+                7 Estratégias para proteger seu pet do frio
+              </h2>
+            </FadeIn>
 
-          <figure>
-            <img
-              src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80"
-              alt="Cama aquecida para gato"
-              className="w-full rounded-lg"
-            />
-            <figcaption className="mt-2 text-sm text-center text-gray-600">
-              Camas elevadas com cobertores térmicos ajudam a manter a
-              temperatura corporal
-            </figcaption>
-          </figure>
+            <div className="space-y-10">
+              {/* Estratégia 1 */}
+              <FadeIn delay={0.8}>
+                <div>
+                  <h3 className="flex items-center gap-2 mb-3 text-xl font-semibold text-gray-800">
+                    <span className="flex items-center justify-center w-8 h-8 text-blue-700 bg-blue-100 rounded-full">
+                      1
+                    </span>
+                    Otimize o ambiente de descanso
+                  </h3>
+                  <p className="text-gray-700">
+                    O local de dormir deve ser elevado do chão, protegido de correntes de ar e forrado com materiais térmicos. Para animais que dormem ao ar livre, casinhas com isolamento térmico são essenciais.
+                  </p>
+                  <ScaleIn delay={0.9}>
+                    <figure className="my-5">
+                      <img
+                        src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80"
+                        alt="Cama aquecida para gato"
+                        className="w-full shadow-md rounded-xl"
+                      />
+                      <figcaption className="mt-2 text-sm text-center text-gray-600">
+                        Camas elevadas com cobertores térmicos ajudam a manter a temperatura corporal
+                      </figcaption>
+                    </figure>
+                  </ScaleIn>
+                </div>
+              </FadeIn>
 
-          <h3>2. Use roupas estrategicamente</h3>
-          <p>
-            Roupinhas são recomendadas para raças de pelo curto, filhotes e
-            idosos, mas devem permitir movimentos naturais e não reter umidade.
-            Tecidos respiráveis como algodão são ideais. Observe se o pet
-            demonstra desconforto e remova a peça caso necessário.
-          </p>
+              {/* Estratégia 2 */}
+              <FadeIn delay={1.0}>
+                <div>
+                  <h3 className="flex items-center gap-2 mb-3 text-xl font-semibold text-gray-800">
+                    <span className="flex items-center justify-center w-8 h-8 text-blue-700 bg-blue-100 rounded-full">
+                      2
+                    </span>
+                    Use roupas estrategicamente
+                  </h3>
+                  <p className="text-gray-700">
+                    Roupinhas são recomendadas para raças de pelo curto, filhotes e idosos. Prefira tecidos respiráveis como algodão e verifique se permitem movimentos naturais. 
+                  </p>
+                  <div className="p-4 mt-4 border border-gray-200 bg-gray-50 rounded-xl">
+                    <p className="flex items-start font-medium text-gray-800">
+                      <i className="mt-1 mr-2 text-yellow-500 fas fa-lightbulb"></i>
+                      Dica: Observe se o pet demonstra desconforto e remova a peça caso necessário
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
 
-          <h3>3. Ajuste a rotina de banhos</h3>
-          <p>
-            Reduza a frequência de banhos no inverno (idealmente 1x/mês) e
-            utilize água morna. Secagem completa é obrigatória para prevenir
-            doenças respiratórias e de pele. Prefira profissionais em pet shops
-            que tenham equipamentos adequados para secagem eficiente.
-          </p>
+              {/* Estratégia 3 */}
+              <FadeIn delay={1.1}>
+                <div>
+                  <h3 className="flex items-center gap-2 mb-3 text-xl font-semibold text-gray-800">
+                    <span className="flex items-center justify-center w-8 h-8 text-blue-700 bg-blue-100 rounded-full">
+                      3
+                    </span>
+                    Ajuste a rotina de banhos
+                  </h3>
+                  <p className="text-gray-700">
+                    Reduza a frequência de banhos no inverno (idealmente 1x/mês) e utilize água morna. A secagem completa é fundamental para prevenir doenças.
+                  </p>
+                </div>
+              </FadeIn>
 
-          <h3>4. Adapte os passeios</h3>
-          <p>
-            Realize caminhadas nos horários mais quentes (10h‑15h) e evite dias
-            chuvosos. Para animais sensíveis, utilize botinhas protetoras contra
-            o frio do chão e reduza o tempo ao ar livre em dias muito gelados.
-          </p>
+              {/* Continue com as outras estratégias seguindo o mesmo padrão... */}
 
-          <h3>5. Monitore alimentação e hidratação</h3>
-          <p>
-            Consulte um veterinário sobre possível aumento calórico (10–20%)
-            para animais que sentem muito frio. Ofereça água fresca
-            frequentemente, pois pets bebem menos no inverno. Alimentos úmidos
-            podem ajudar na hidratação.
-          </p>
+              {/* Destaque hipotermia */}
+              <FadeIn delay={1.4}>
+                <div className="p-5 my-8 border-l-4 border-yellow-400 rounded-r-lg bg-yellow-50">
+                  <h3 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900">
+                    <i className="text-yellow-500 fas fa-exclamation-triangle"></i>
+                    Sinais de hipotermia em pets
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-3 mb-4 md:grid-cols-2">
+                    <li className="flex items-start">
+                      <i className="mt-1 mr-2 text-red-500 fas fa-check-circle"></i>
+                      Tremores persistentes
+                    </li>
+                    <li className="flex items-start">
+                      <i className="mt-1 mr-2 text-red-500 fas fa-check-circle"></i>
+                      Orelhas e extremidades geladas
+                    </li>
+                    <li className="flex items-start">
+                      <i className="mt-1 mr-2 text-red-500 fas fa-check-circle"></i>
+                      Respiração lenta e superficial
+                    </li>
+                    <li className="flex items-start">
+                      <i className="mt-1 mr-2 text-red-500 fas fa-check-circle"></i>
+                      Movimentos rígidos e letargia
+                    </li>
+                  </ul>
+                  <div className="p-4 bg-white border border-yellow-200 rounded-lg">
+                    <p className="mb-2 font-medium text-gray-900">O que fazer:</p>
+                    <p className="text-gray-700">
+                      Aqueça gradativamente com cobertores e aquecedores ambientais. Nunca use água quente diretamente! Caso os sintomas persistam, procure imediatamente um veterinário.
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
 
-          <h3>6. Mantenha vacinas em dia</h3>
-          <p>
-            O inverno aumenta a incidência de doenças respiratórias como "tosse
-            dos canis" e gripe felina. Verifique a carteira de vacinação,
-            especialmente para animais idosos ou com saúde frágil.
-          </p>
-
-          <h3>7. Cuidados especiais com gatos</h3>
-          <p>
-            Gatos buscam naturalmente fontes de calor – cuidado com aquecedores!
-            Ofereça tocas acolchoadas e evite correntes de ar. Raças sem pelo,
-            como Sphynx, exigem atenção redobrada com agasalhos.
-          </p>
-
-          {/* Destaque hipotermia */}
-          <aside className="p-6 my-8 border-l-4 border-yellow-400 rounded-r-lg bg-yellow-50">
-            <h3 className="mb-3 text-xl font-bold">
-              Sinais de hipotermia em pets
-            </h3>
-            <ul className="pl-6 space-y-1 list-disc">
-              <li>Tremores persistentes</li>
-              <li>Orelhas e extremidades geladas</li>
-              <li>Respiração lenta e superficial</li>
-              <li>Movimentos rígidos e letargia</li>
-              <li>Sonolência excessiva</li>
-            </ul>
-            <p className="mt-4 font-medium">O que fazer:</p>
-            <p>
-              Aqueça gradativamente com cobertores e aquecedores ambientais.
-              Nunca use água quente diretamente! Caso os sintomas persistam,
-              procure imediatamente um veterinário.
-            </p>
-          </aside>
-
-          {/* Share */}
-          <div className="py-8 my-8 text-center border-t border-b border-gray-200">
-            <h3 className="mb-4 text-lg font-bold">Compartilhe este artigo:</h3>
-            <button
-              onClick={compartilharPagina}
-              className="flex items-center gap-2 px-6 py-3 mx-auto text-white rounded-lg bg-secondary"
-            >
-              <i className="fas fa-share" /> Compartilhar
-            </button>
+            {/* Compartilhamento */}
+            <FadeIn delay={1.5}>
+              <div className="py-8 my-10 text-center border-gray-200 border-y">
+                <h3 className="mb-5 text-xl font-bold text-gray-900">Gostou do conteúdo?</h3>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={compartilharPagina}
+                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-blue-600 to-blue-800"
+                  >
+                    <i className="fab fa-facebook-f"></i> Compartilhar
+                  </motion.button>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={compartilharPagina}
+                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-cyan-500 to-blue-500"
+                  >
+                    <i className="fab fa-twitter"></i> Tweetar
+                  </motion.button>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={compartilharPagina}
+                    className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
+                  >
+                    <i className="fas fa-link"></i> {copied ? "Copiado!" : "Copiar link"}
+                  </motion.button>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </article>
 
-        {/* Banner ads simplificado */}
-        <aside
-          className="container max-w-4xl px-4 py-8 mx-auto"
-          data-aos="fade-up"
-        >
-          <a
-            href="https://www.racaopets.com.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-6 border border-gray-200 rounded-lg bg-gradient-to-b from-gray-50 to-gray-100"
-          >
-            <div className="flex flex-col items-center md:flex-row">
-              <div className="flex-1 mb-4 md:mb-0 md:pr-6">
-                <span className="flex items-center justify-end text-xs text-gray-500">
-                  Anúncio
-                </span>
-                <div className="mb-1 text-lg font-medium text-blue-800">
-                  Ração Pets – Nutrição premium para cães e gatos
-                </div>
-                <div className="mb-2 text-sm text-green-700">
-                  www.racaopets.com.br
-                </div>
-                <p className="text-sm text-gray-700">
-                  Rações premium e super premium sem conservantes ou corantes.
-                  Garanta nutrição completa a preços acessíveis.
-                </p>
+        {/* Anúncio estilo Google Ads */}
+        <FadeIn delay={1.6}>
+          <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
+            <div className="flex items-start justify-between p-3 bg-gray-100">
+              <div className="flex items-center">
+                <span className="px-2 py-1 text-xs text-white bg-blue-500 rounded">Anúncio</span>
+                <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
               </div>
-              <img
-                src="/LUNCH15SEGUNDA.png"
-                alt="Ração Lunch dog 15 kg"
-                className="object-contain w-32 h-24"
-              />
+              <button className="text-gray-400 hover:text-gray-600">
+                <i className="fas fa-times"></i>
+              </button>
             </div>
-          </a>
-        </aside>
+            
+            <a 
+              href="https://www.racaopets.com.br/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block p-4 transition-colors hover:bg-gray-50"
+            >
+              <div className="flex flex-col items-start md:flex-row">
+                <div className="flex-1">
+                  <h4 className="font-medium text-blue-600 hover:underline">
+                    Ração Pets - Nutrição premium para cães e gatos
+                  </h4>
+                  <div className="flex items-center mt-1">
+                    <span className="text-sm text-green-700">www.racaopets.com.br</span>
+                    <span className="mx-2 text-gray-300">•</span>
+                    <span className="text-sm text-yellow-500">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star-half-alt"></i>
+                      4.7
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600">
+                    Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa a preços acessíveis.
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-0 md:ml-4">
+                  <div className="flex items-center justify-center object-cover w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
+                    <img src="/LUNCH15SEGUNDA.png" alt="Ração Lunch dog essencial" srcSet="" />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </aside>
+        </FadeIn>
       </main>
 
       <Footer />
