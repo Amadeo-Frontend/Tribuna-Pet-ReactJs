@@ -6,7 +6,18 @@ import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import LiveClock from "../components/LiveClock";
-import { FaShieldAlt, FaCheckCircle } from "react-icons/fa";
+import {
+  FaUserShield,
+  FaLock,
+  FaRegClock,
+  FaExternalLinkAlt,
+  FaUserSlash,
+  FaUserCheck,
+  FaGavel,
+  FaBan,
+  FaBug,
+  FaQuestionCircle,
+} from "react-icons/fa";
 
 const FadeIn = ({ children, delay = 0 }) => (
   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -80,66 +91,131 @@ export default function PrivacyPolicy() {
       {/* Conteúdo principal */}
       <main className="container max-w-4xl px-4 py-10 mx-auto">
         <article className="overflow-hidden bg-white shadow-xl rounded-2xl">
-          {/*
-            As seções abaixo resumem a política.
-            Se quiser o texto completo, basta duplicar/estender conforme o HTML que enviei anteriormente.
-          */}
-          <FadeIn delay={0.2}>
-            <section className="p-6 md:p-8">
-              <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900">
-                <FaShieldAlt className="text-primary" /> 1. Introdução
-              </h2>
-              <p>
-                Esta Política descreve como o <strong>Tribuna do Pet</strong> (“nós”)
-                coleta, usa e protege suas informações pessoais, em conformidade com
-                a Lei Geral de Proteção de Dados (LGPD).
-              </p>
-            </section>
-          </FadeIn>
+  {/* 1. Política de Privacidade */}
+  <section className="p-8 md:p-10 bg-primary/5">
+    <h2 className="flex items-center gap-3 mb-4 text-2xl font-bold text-primary">
+      <FaUserShield /> Política de Privacidade
+    </h2>
+    <p className="mb-4 leading-relaxed text-gray-700">
+      A sua privacidade é importante para nós. É política do <strong>Tribuna do
+      Pet</strong> respeitar a sua privacidade em relação a qualquer informação que
+      possamos coletar no site&nbsp;
+      <a
+        href="https://www.tribunadopet.com.br"
+        className="underline hover:text-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tribuna do Pet
+      </a>
+      , e em qualquer outro site que operamos.
+    </p>
+    <p className="mb-4 text-gray-700">
+      Solicitamos informações pessoais somente quando realmente precisamos delas
+      para lhe fornecer um serviço. Fazemos isso por meios justos e legais, com
+      o seu conhecimento e consentimento, explicando sempre o motivo da coleta.
+    </p>
+    <p className="text-gray-700">
+      Mantemos os dados apenas pelo tempo necessário e adotamos medidas
+      comercialmente aceitáveis para protegê-los contra perda, roubo ou acesso
+      não autorizado.
+    </p>
+  </section>
 
-          <FadeIn delay={0.3}>
-            <section className="p-6 border-t border-gray-200 md:p-8">
-              <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900">
-                <FaCheckCircle className="text-primary" /> 2. Quais dados coletamos
-              </h2>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Nome e e-mail (newsletter ou contato).</li>
-                <li>Dados de navegação, IP e preferências anônimas.</li>
-                <li>Informações de cookies para estatísticas e anúncios.</li>
-              </ul>
-            </section>
-          </FadeIn>
+  {/* 2. Segurança & Retenção */}
+  <section className="grid gap-6 p-8 md:p-10 md:grid-cols-2">
+    <div className="flex items-start gap-4">
+      <div className="p-3 text-xl text-white rounded-full bg-primary">
+        <FaLock />
+      </div>
+      <div>
+        <h3 className="mb-2 text-lg font-semibold text-gray-900">
+          Proteção de Dados
+        </h3>
+        <p className="text-gray-700">
+          Suas informações são armazenadas e protegidas usando criptografia,
+          controle de acesso e monitoramento contínuo.
+        </p>
+      </div>
+    </div>
 
-          <FadeIn delay={0.35}>
-            <section className="p-6 border-t border-gray-200 md:p-8">
-              <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900">
-                <FaCheckCircle className="text-primary" /> 3. Como usamos os dados
-              </h2>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Enviar conteúdos e ofertas mediante seu consentimento.</li>
-                <li>Melhorar a experiência de navegação.</li>
-                <li>Analisar métricas e exibir anúncios relevantes.</li>
-              </ul>
-            </section>
-          </FadeIn>
+    <div className="flex items-start gap-4">
+      <div className="p-3 text-xl text-white rounded-full bg-secondary">
+        <FaRegClock />
+      </div>
+      <div>
+        <h3 className="mb-2 text-lg font-semibold text-gray-900">
+          Retenção Limitada
+        </h3>
+        <p className="text-gray-700">
+          Guardamos os dados apenas pelo tempo necessário para cumprir a
+          finalidade declarada ou exigências legais.
+        </p>
+      </div>
+    </div>
+  </section>
 
-          {/* …repita as demais seções 4–10 conforme necessidade… */}
+  {/* 3. Compartilhamento */}
+  <section className="p-8 border-t border-gray-200 md:p-10">
+    <h2 className="flex items-center gap-3 mb-4 text-xl font-bold text-gray-900">
+      <FaExternalLinkAlt /> Compartilhamento de Dados
+    </h2>
+    <p className="mb-4 text-gray-700">
+      Não compartilhamos informações de identificação pessoal publicamente ou
+      com terceiros, exceto quando exigido por lei. Nosso site pode conter links
+      para páginas externas; não somos responsáveis pelas práticas de
+      privacidade desses sites.
+    </p>
+    <p className="text-gray-700">
+      Você é livre para recusar nossa solicitação de dados pessoais, entendendo
+      que talvez não possamos fornecer alguns serviços.
+    </p>
+  </section>
 
-          <FadeIn delay={0.6}>
-            <section className="p-8 text-center bg-gradient-to-r from-primary to-secondary rounded-b-2xl">
-              <h2 className="mb-3 text-2xl font-bold text-white">
-                Ficou com dúvidas?
-              </h2>
-              <p className="mb-6 text-white">
-                Entre em contato pelo e-mail{" "}
-                <a href="mailto:privacidade@tribunadopet.com.br" className="underline">
-                  privacidade@tribunadopet.com.br
-                </a>
-                .
-              </p>
-            </section>
-          </FadeIn>
-        </article>
+  {/* 4. Compromisso do Usuário */}
+  <section className="p-8 border-t border-gray-200 md:p-10 bg-yellow-50/50">
+    <h2 className="flex items-center gap-3 mb-4 text-xl font-bold text-yellow-800">
+      <FaUserCheck /> Compromisso do Usuário
+    </h2>
+    <ul className="space-y-3 text-gray-700 list-disc list-inside">
+      <li className="flex items-start gap-2">
+        <FaGavel className="mt-1 text-yellow-600" />
+        Não se envolver em atividades ilegais ou contrárias à ordem pública.
+      </li>
+      <li className="flex items-start gap-2">
+        <FaBan className="mt-1 text-yellow-600" />
+        Não difundir conteúdo racista, xenofóbico, de apologia ao terrorismo ou
+        contra direitos humanos.
+      </li>
+      <li className="flex items-start gap-2">
+        <FaBug className="mt-1 text-yellow-600" />
+        Não introduzir vírus ou softwares que possam danificar sistemas do
+        Tribuna do Pet ou de terceiros.
+      </li>
+    </ul>
+  </section>
+
+  {/* 5. Mais Informações */}
+  <section className="p-8 border-t border-gray-200 md:p-10">
+    <h2 className="flex items-center gap-3 mb-4 text-xl font-bold text-gray-900">
+      <FaQuestionCircle /> Mais Informações
+    </h2>
+    <p className="mb-4 text-gray-700">
+      O uso continuado de nosso site será considerado aceitação desta Política.
+      Se permanecer com dúvidas, entre em contato:
+      <a
+        href="mailto:tribunadopet@gmail.com"
+        className="ml-1 font-medium text-primary hover:underline"
+      >
+        tribunadopet@gmail.com
+      </a>
+      .
+    </p>
+    <p className="text-sm text-gray-500">
+      Vigente desde 12 de julho de 2025 • Última atualização automática.
+    </p>
+  </section>
+</article>
       </main>
 
       <Footer />

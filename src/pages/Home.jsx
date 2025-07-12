@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Seo } from "../components/Seo";
+
 import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
@@ -13,13 +13,6 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <Seo
-        title="Guia Completo de Alimentação Natural para Cães | Tribuna do Pet"
-        description="Guias de alimentação, saúde e utilidade pública para quem ama animais."
-        canonical="https://www.tribunadopet.com.br/"
-        image="/og-image.jpg"
-      />
-
       {/* Top bar (desktop only) */}
       <div className="hidden py-2 text-white bg-gray-800 sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
@@ -77,9 +70,6 @@ export default function Home() {
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Categorias em Destaque</h2>
-            <Link to="/" className="font-medium text-primary hover:underline">
-              Ver todas
-            </Link>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -97,7 +87,7 @@ export default function Home() {
                 tag: "Cuidados",
                 color: "bg-blue-600",
                 title: "Cuidados Diários com Cães e Gatos",
-                desc: "Proteja cães e gatos dos riscos do clima frio.",
+                desc: "Com a chegada do inverno, os termômetros despencam e nossos pets enfrentam desafios semelhantes aos humanos...",
                 img: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
               },
               {
@@ -150,10 +140,6 @@ export default function Home() {
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
             </div>
-            <p className="mt-4 text-sm text-blue-100">
-              Respeitamos sua privacidade. Você pode cancelar a qualquer
-              momento.
-            </p>
           </div>
         </section>
       </main>
