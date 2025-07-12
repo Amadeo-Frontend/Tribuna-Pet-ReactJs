@@ -141,7 +141,7 @@ export default function MobileMenu({ open, onClose }) {
                 onClose={onClose}
                 links={[
                   ["/alimentacao-saudavel", "Guia Completo"],
-                  ["/alimentacao-inteligente", "Alimentação Inteligente"],
+                  ["/alimentacao-saudavel-e-inteligente", "Alimentação Inteligente"],
                   ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição"],
                 ]}
               />
