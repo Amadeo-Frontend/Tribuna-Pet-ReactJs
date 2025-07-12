@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { ToastContainer } from "react-toastify";
+import ScrollToTop from "./components/ScrollToTop";
 import "react-toastify/dist/ReactToastify.css";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import About from "./pages/About";
@@ -13,6 +14,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollToTop />
       {/* Toasts ficam visíveis em qualquer página */}
       <ToastContainer
         position="top-center"
