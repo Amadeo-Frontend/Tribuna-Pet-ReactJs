@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "@slorber/react-helmet-async";
+import { Seo } from "../components/Seo";
 import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
@@ -13,15 +13,12 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <Helmet>
-        <title>Tribuna do Pet – Portal de Dicas para Cães e Gatos</title>
-        <meta
-          name="description"
-          content="Guias de alimentação, saúde e utilidade pública para quem ama animais."
-        />
-        <link rel="canonical" href="https://www.tribunadopet.com.br/" />
-        <meta property="og:image" content="/images/og-image.jpg" />
-      </Helmet>
+      <Seo
+        title="Guia Completo de Alimentação Natural para Cães | Tribuna do Pet"
+        description="Guias de alimentação, saúde e utilidade pública para quem ama animais."
+        canonical="https://www.tribunadopet.com.br/"
+        image="/og-image.jpg"
+      />
 
       {/* Top bar (desktop only) */}
       <div className="hidden py-2 text-white bg-gray-800 sm:block">
