@@ -23,6 +23,8 @@ import {
 import { FaBowlFood } from "react-icons/fa6";
 import { HiBuildingStorefront } from "react-icons/hi2";
 import { SiShopee } from "react-icons/si";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -534,7 +536,7 @@ export default function AlimentacaoInteligente() {
         </article>
 
         {/* Anúncio estilo Google Ads */}
-        <FadeIn delay={2.0}>
+        <FadeIn delay={1.6}>
           <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
             <div className="flex items-start justify-between p-3 bg-gray-100">
               <div className="flex items-center">
@@ -543,10 +545,13 @@ export default function AlimentacaoInteligente() {
                 </span>
                 <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
               </div>
+              <button className="text-gray-400 hover:text-gray-600">
+                <i className="fas fa-times"></i>
+              </button>
             </div>
 
             <a
-              href="https://www.racaopets.com.br/"
+              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 transition-colors hover:bg-gray-50"
@@ -561,8 +566,13 @@ export default function AlimentacaoInteligente() {
                       www.racaopets.com.br
                     </span>
                     <span className="mx-2 text-gray-300">•</span>
-                    <span className="flex items-center text-sm text-yellow-500 ">
-                      <FaRegStar className="mx-1" /> 4.9
+                    <span className="text-sm text-yellow-500">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <FontAwesomeIcon icon={faStar} />
+                      4.9
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
@@ -573,9 +583,9 @@ export default function AlimentacaoInteligente() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="/LUNCH15SEGUNDA.png"
-                      alt="Ração Lunch Dog 15kg"
-                      className="object-contain w-full h-full"
+                      src="/racao-batata-doce.jpg"
+                      alt="Ração Lunch dog essencial"
+                      className="object-contain w-32 h-24"
                     />
                   </div>
                 </div>

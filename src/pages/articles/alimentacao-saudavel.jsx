@@ -22,6 +22,8 @@ import {
 } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { HiBuildingStorefront } from "react-icons/hi2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -51,7 +53,8 @@ export default function AlimentacaoNatural() {
   const compartilharPagina = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Guia Completo de Alimentação Natural para Cães - Tribuna do Pet",
+        title:
+          "Guia Completo de Alimentação Natural para Cães - Tribuna do Pet",
         url: window.location.href,
       });
     } else {
@@ -105,10 +108,7 @@ export default function AlimentacaoNatural() {
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
-            <Link
-              to="/alimentacao-saudavel"
-              className="hover:underline"
-            >
+            <Link to="/alimentacao-saudavel" className="hover:underline">
               Alimentação Saudável
             </Link>
             <span className="text-gray-400">/</span>
@@ -116,19 +116,22 @@ export default function AlimentacaoNatural() {
               Guia Completo de Alimentação Natural
             </span>
           </nav>
-          
+
           <FadeIn delay={0.1}>
             <h1 className="text-3xl font-bold text-gray-100 md:text-4xl">
-              Guia Completo de Alimentação Natural para Cães: Benefícios, Riscos e Receitas
+              Guia Completo de Alimentação Natural para Cães: Benefícios, Riscos
+              e Receitas
             </h1>
           </FadeIn>
-          
+
           <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-300">
             <span className="flex items-center">
-              <i className="mr-2 far fa-calendar text-primary"></i> 15 de Junho, 2023
+              <i className="mr-2 far fa-calendar text-primary"></i> 15 de Junho,
+              2023
             </span>
             <span className="flex items-center">
-              <i className="mr-2 far fa-clock text-primary"></i> 8 min de leitura
+              <i className="mr-2 far fa-clock text-primary"></i> 8 min de
+              leitura
             </span>
           </div>
         </div>
@@ -161,7 +164,8 @@ export default function AlimentacaoNatural() {
                 className="w-full h-auto shadow-lg rounded-xl"
               />
               <p className="mt-2 text-sm text-center text-gray-600">
-                Alimentação natural pode trazer muitos benefícios para a saúde do seu pet
+                Alimentação natural pode trazer muitos benefícios para a saúde
+                do seu pet
               </p>
             </div>
           </ScaleIn>
@@ -170,7 +174,12 @@ export default function AlimentacaoNatural() {
           <FadeIn delay={0.4}>
             <div className="p-5 mx-6 my-6 border-l-4 border-blue-500 md:mx-8 bg-blue-50 rounded-xl">
               <p className="text-lg font-medium leading-relaxed text-gray-800">
-                A alimentação natural vem ganhando cada vez mais espaço na nutrição canina, mas muitos tutores ainda têm dúvidas sobre como implementar essa dieta de forma segura e equilibrada. Neste guia completo, vamos desmistificar a alimentação natural para cães e mostrar como você pode oferecer uma dieta saudável para seu melhor amigo.
+                A alimentação natural vem ganhando cada vez mais espaço na
+                nutrição canina, mas muitos tutores ainda têm dúvidas sobre como
+                implementar essa dieta de forma segura e equilibrada. Neste guia
+                completo, vamos desmistificar a alimentação natural para cães e
+                mostrar como você pode oferecer uma dieta saudável para seu
+                melhor amigo.
               </p>
             </div>
           </FadeIn>
@@ -179,18 +188,25 @@ export default function AlimentacaoNatural() {
           <div className="p-6 md:p-8">
             <FadeIn delay={0.5}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <i className="text-blue-500 fas fa-question-circle"></i>
-                O que é alimentação natural para cães?
+                <i className="text-blue-500 fas fa-question-circle"></i>O que é
+                alimentação natural para cães?
               </h2>
               <p className="mb-6 text-gray-700">
-                A alimentação natural para cães (AN) consiste em oferecer alimentos frescos, cozidos ou crus, que seriam consumidos por humanos, mas formulados especialmente para atender às necessidades nutricionais caninas. Diferente das rações industrializadas, a AN utiliza ingredientes in natura, sem aditivos químicos ou processos de ultraprocessamento.
+                A alimentação natural para cães (AN) consiste em oferecer
+                alimentos frescos, cozidos ou crus, que seriam consumidos por
+                humanos, mas formulados especialmente para atender às
+                necessidades nutricionais caninas. Diferente das rações
+                industrializadas, a AN utiliza ingredientes in natura, sem
+                aditivos químicos ou processos de ultraprocessamento.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.6}>
               <div className="p-5 my-6 border-l-4 border-yellow-400 bg-yellow-50 rounded-xl">
                 <p className="italic text-gray-700">
-                  "A transição para alimentação natural deve ser feita com acompanhamento veterinário para garantir que todas as necessidades nutricionais do animal sejam atendidas"
+                  "A transição para alimentação natural deve ser feita com
+                  acompanhamento veterinário para garantir que todas as
+                  necessidades nutricionais do animal sejam atendidas"
                 </p>
               </div>
             </FadeIn>
@@ -201,7 +217,8 @@ export default function AlimentacaoNatural() {
                 Benefícios da alimentação natural
               </h2>
               <p className="mb-4 text-gray-700">
-                Os principais benefícios observados em cães que fazem a transição para alimentação natural incluem:
+                Os principais benefícios observados em cães que fazem a
+                transição para alimentação natural incluem:
               </p>
               <ul className="grid grid-cols-1 gap-3 mt-4 mb-6 md:grid-cols-2">
                 <li className="flex items-start">
@@ -239,7 +256,8 @@ export default function AlimentacaoNatural() {
                   className="w-full shadow-md rounded-xl"
                 />
                 <p className="mt-2 text-sm text-center text-gray-600">
-                  Ingredientes frescos são essenciais para uma alimentação natural de qualidade
+                  Ingredientes frescos são essenciais para uma alimentação
+                  natural de qualidade
                 </p>
               </div>
             </FadeIn>
@@ -250,7 +268,8 @@ export default function AlimentacaoNatural() {
                 Riscos e cuidados necessários
               </h2>
               <p className="mb-6 text-gray-700">
-                Apesar dos benefícios, a alimentação natural exige cuidados especiais para não comprometer a saúde do animal:
+                Apesar dos benefícios, a alimentação natural exige cuidados
+                especiais para não comprometer a saúde do animal:
               </p>
             </FadeIn>
 
@@ -264,7 +283,9 @@ export default function AlimentacaoNatural() {
                     Desequilíbrio nutricional
                   </h3>
                   <p className="text-gray-700">
-                    A falta de nutrientes essenciais pode levar a problemas de saúde sérios. É fundamental seguir uma fórmula balanceada desenvolvida por um veterinário nutricionista.
+                    A falta de nutrientes essenciais pode levar a problemas de
+                    saúde sérios. É fundamental seguir uma fórmula balanceada
+                    desenvolvida por um veterinário nutricionista.
                   </p>
                 </div>
               </FadeIn>
@@ -278,7 +299,9 @@ export default function AlimentacaoNatural() {
                     Contaminação bacteriana
                   </h3>
                   <p className="text-gray-700">
-                    Alimentos crus podem conter bactérias como Salmonella e E. coli. Higiene rigorosa é essencial no preparo e manipulação dos alimentos.
+                    Alimentos crus podem conter bactérias como Salmonella e E.
+                    coli. Higiene rigorosa é essencial no preparo e manipulação
+                    dos alimentos.
                   </p>
                 </div>
               </FadeIn>
@@ -292,7 +315,8 @@ export default function AlimentacaoNatural() {
                     Excesso de certos nutrientes
                   </h3>
                   <p className="text-gray-700">
-                    Suplementação excessiva de vitaminas e minerais pode ser tão prejudicial quanto a deficiência.
+                    Suplementação excessiva de vitaminas e minerais pode ser tão
+                    prejudicial quanto a deficiência.
                   </p>
                 </div>
               </FadeIn>
@@ -333,8 +357,8 @@ export default function AlimentacaoNatural() {
                     100g de carboidrato (batata doce, arroz integral)
                   </li>
                   <li className="flex items-start">
-                    <FaCheckCircle className="mt-1 mr-2 text-green-500" />
-                    1 colher de sopa de óleo de peixe
+                    <FaCheckCircle className="mt-1 mr-2 text-green-500" />1
+                    colher de sopa de óleo de peixe
                   </li>
                   <li className="flex items-start">
                     <FaCheckCircle className="mt-1 mr-2 text-green-500" />
@@ -343,7 +367,9 @@ export default function AlimentacaoNatural() {
                 </ul>
                 <p className="mb-2 font-medium text-gray-800">Preparo:</p>
                 <p className="text-gray-700">
-                  Cozinhe as carnes e os vegetais separadamente. Misture todos os ingredientes e adicione o óleo de peixe e o suplemento. Divida em porções adequadas para o tamanho do seu cão.
+                  Cozinhe as carnes e os vegetais separadamente. Misture todos
+                  os ingredientes e adicione o óleo de peixe e o suplemento.
+                  Divida em porções adequadas para o tamanho do seu cão.
                 </p>
               </div>
             </FadeIn>
@@ -351,16 +377,20 @@ export default function AlimentacaoNatural() {
             <FadeIn delay={1.5}>
               <div className="flex items-start p-6 mt-10 border border-gray-200 bg-gray-50 rounded-xl">
                 <div className="flex-shrink-0 w-16 h-16 mr-5 overflow-hidden bg-gray-300 rounded-full">
-                  <img 
-                    src="https://randomuser.me/api/portraits/women/43.jpg" 
-                    alt="Dra. Carla Mendes" 
+                  <img
+                    src="https://randomuser.me/api/portraits/women/43.jpg"
+                    alt="Dra. Carla Mendes"
                     className="object-cover w-full h-full"
                   />
                 </div>
                 <div>
-                  <h3 className="mb-1 text-xl font-bold text-gray-900">Dra. Carla Mendes</h3>
+                  <h3 className="mb-1 text-xl font-bold text-gray-900">
+                    Dra. Carla Mendes
+                  </h3>
                   <p className="mb-2 text-gray-700">
-                    Médica Veterinária especializada em Nutrição Animal com 10 anos de experiência. Formada pela USP e membro da Sociedade Brasileira de Nutrição Animal.
+                    Médica Veterinária especializada em Nutrição Animal com 10
+                    anos de experiência. Formada pela USP e membro da Sociedade
+                    Brasileira de Nutrição Animal.
                   </p>
                 </div>
               </div>
@@ -369,7 +399,9 @@ export default function AlimentacaoNatural() {
             {/* Compartilhamento */}
             <FadeIn delay={1.6}>
               <div className="py-8 my-10 text-center border-t border-b border-gray-200">
-                <h3 className="mb-6 text-xl font-bold text-gray-900">Compartilhe este artigo:</h3>
+                <h3 className="mb-6 text-xl font-bold text-gray-900">
+                  Compartilhe este artigo:
+                </h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -379,7 +411,7 @@ export default function AlimentacaoNatural() {
                   >
                     <i className="fab fa-facebook-f"></i> Compartilhar
                   </motion.button>
-                  
+
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -388,14 +420,15 @@ export default function AlimentacaoNatural() {
                   >
                     <i className="fab fa-twitter"></i> Tweetar
                   </motion.button>
-                  
+
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
                   >
-                    <i className="fas fa-link"></i> {copied ? "Copiado!" : "Copiar link"}
+                    <i className="fas fa-link"></i>{" "}
+                    {copied ? "Copiado!" : "Copiar link"}
                   </motion.button>
                 </div>
               </div>
@@ -404,7 +437,7 @@ export default function AlimentacaoNatural() {
         </article>
 
         {/* Anúncio estilo Google Ads */}
-        <FadeIn delay={1.7}>
+        <FadeIn delay={1.6}>
           <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
             <div className="flex items-start justify-between p-3 bg-gray-100">
               <div className="flex items-center">
@@ -413,6 +446,9 @@ export default function AlimentacaoNatural() {
                 </span>
                 <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
               </div>
+              <button className="text-gray-400 hover:text-gray-600">
+                <i className="fas fa-times"></i>
+              </button>
             </div>
 
             <a
@@ -431,8 +467,13 @@ export default function AlimentacaoNatural() {
                       www.racaopets.com.br
                     </span>
                     <span className="mx-2 text-gray-300">•</span>
-                    <span className="flex items-center text-sm text-yellow-500 ">
-                      <FaRegStar className="mx-1" /> 4.9
+                    <span className="text-sm text-yellow-500">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <FontAwesomeIcon icon={faStar} />
+                      4.9
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
@@ -444,8 +485,8 @@ export default function AlimentacaoNatural() {
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
                       src="/LUNCH15SEGUNDA.png"
-                      alt="Ração Lunch Dog 15kg"
-                      className="object-contain w-full h-full"
+                      alt="Ração Lunch dog essencial"
+                      className="object-contain w-32 h-24"
                     />
                   </div>
                 </div>

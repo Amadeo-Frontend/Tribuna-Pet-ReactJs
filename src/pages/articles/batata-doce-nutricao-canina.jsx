@@ -13,8 +13,10 @@ import {
   FaEye,
   FaWeight,
   FaExclamationTriangle,
-  FaBan
+  FaBan,
 } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -98,10 +100,7 @@ export default function BatataDoceNutricaoCanina() {
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
-            <Link
-              to="/alimentacao-saudavel"
-              className="hover:underline"
-            >
+            <Link to="/alimentacao-saudavel" className="hover:underline">
               Alimentação Saudável
             </Link>
             <span className="text-gray-400">/</span>
@@ -109,19 +108,21 @@ export default function BatataDoceNutricaoCanina() {
               Batata Doce e Vegetais na Nutrição Canina
             </span>
           </nav>
-          
+
           <FadeIn delay={0.1}>
             <h1 className="text-3xl font-bold text-gray-100 md:text-4xl">
               Batata Doce e Vegetais na Nutrição Canina
             </h1>
           </FadeIn>
-          
+
           <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-300">
             <span className="flex items-center">
-              <i className="mr-2 far fa-calendar text-primary"></i> 13 de Julho, 2025
+              <i className="mr-2 far fa-calendar text-primary"></i> 13 de Julho,
+              2025
             </span>
             <span className="flex items-center">
-              <i className="mr-2 far fa-clock text-primary"></i> 8 min de leitura
+              <i className="mr-2 far fa-clock text-primary"></i> 8 min de
+              leitura
             </span>
           </div>
         </div>
@@ -146,12 +147,22 @@ export default function BatataDoceNutricaoCanina() {
             <FadeIn delay={0.3}>
               <section className="mb-10">
                 <p className="mb-6 text-gray-700">
-                  Na busca por uma nutrição canina mais natural e eficiente, a batata-doce emergiu como um superalimento com benefícios extraordinários. Rica em fibras, vitaminas e com baixo índice glicêmico, ela se tornou a queridinha dos veterinários e nutricionistas animais.
+                  Na busca por uma nutrição canina mais natural e eficiente, a
+                  batata-doce emergiu como um superalimento com benefícios
+                  extraordinários. Rica em fibras, vitaminas e com baixo índice
+                  glicêmico, ela se tornou a queridinha dos veterinários e
+                  nutricionistas animais.
                 </p>
 
                 <div className="p-5 border-l-4 border-blue-500 bg-blue-50 rounded-xl">
                   <p className="italic text-gray-700">
-                    "A inclusão de batata-doce em dietas para cães promove menor índice glicêmico, aumenta a saciedade e melhora significativamente a saúde intestinal. É uma fonte naturalmente prebiótica que beneficia especialmente animais com diabetes ou sobrepeso" - <strong>Dra. Mariana Monti</strong>, Mestre em Nutrição de Cães e Gatos.
+                    "A inclusão de batata-doce em dietas para cães promove menor
+                    índice glicêmico, aumenta a saciedade e melhora
+                    significativamente a saúde intestinal. É uma fonte
+                    naturalmente prebiótica que beneficia especialmente animais
+                    com diabetes ou sobrepeso" -{" "}
+                    <strong>Dra. Mariana Monti</strong>, Mestre em Nutrição de
+                    Cães e Gatos.
                   </p>
                 </div>
               </section>
@@ -170,10 +181,13 @@ export default function BatataDoceNutricaoCanina() {
                       <div className="flex items-center justify-center w-12 h-12 mr-4 bg-green-100 rounded-full">
                         <FaHeartbeat className="text-xl text-green-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-800">Controle Glicêmico</h3>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        Controle Glicêmico
+                      </h3>
                     </div>
                     <p className="text-gray-600">
-                      Com baixo índice glicêmico, libera energia gradualmente, ideal para cães diabéticos ou com tendência à obesidade.
+                      Com baixo índice glicêmico, libera energia gradualmente,
+                      ideal para cães diabéticos ou com tendência à obesidade.
                     </p>
                   </div>
 
@@ -182,10 +196,13 @@ export default function BatataDoceNutricaoCanina() {
                       <div className="flex items-center justify-center w-12 h-12 mr-4 bg-green-100 rounded-full">
                         <FaSeedling className="text-xl text-green-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-800">Saúde Intestinal</h3>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        Saúde Intestinal
+                      </h3>
                     </div>
                     <p className="text-gray-600">
-                      Rica em fibras prebióticas, estimula bactérias benéficas no intestino e reduz o pH fecal, combatendo patógenos.
+                      Rica em fibras prebióticas, estimula bactérias benéficas
+                      no intestino e reduz o pH fecal, combatendo patógenos.
                     </p>
                   </div>
 
@@ -194,10 +211,14 @@ export default function BatataDoceNutricaoCanina() {
                       <div className="flex items-center justify-center w-12 h-12 mr-4 bg-green-100 rounded-full">
                         <FaEye className="text-xl text-green-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-800">Visão e Imunidade</h3>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        Visão e Imunidade
+                      </h3>
                     </div>
                     <p className="text-gray-600">
-                      Fonte de betacaroteno (precursor da vitamina A) e vitamina C, essenciais para visão saudável e sistema imunológico forte.
+                      Fonte de betacaroteno (precursor da vitamina A) e vitamina
+                      C, essenciais para visão saudável e sistema imunológico
+                      forte.
                     </p>
                   </div>
 
@@ -206,10 +227,13 @@ export default function BatataDoceNutricaoCanina() {
                       <div className="flex items-center justify-center w-12 h-12 mr-4 bg-green-100 rounded-full">
                         <FaWeight className="text-xl text-green-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-800">Controle de Peso</h3>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        Controle de Peso
+                      </h3>
                     </div>
                     <p className="text-gray-600">
-                      Promove maior saciedade com menos calorias, ajudando no controle de peso sem deixar o cão com fome.
+                      Promove maior saciedade com menos calorias, ajudando no
+                      controle de peso sem deixar o cão com fome.
                     </p>
                   </div>
                 </div>
@@ -229,9 +253,13 @@ export default function BatataDoceNutricaoCanina() {
                       1
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-bold">Seleção e Limpeza</h3>
+                      <h3 className="mb-2 text-xl font-bold">
+                        Seleção e Limpeza
+                      </h3>
                       <p className="text-gray-700">
-                        Escolha batatas-doces firmes, sem brotos ou áreas escuras. Lave cuidadosamente sob água corrente para remover resíduos.
+                        Escolha batatas-doces firmes, sem brotos ou áreas
+                        escuras. Lave cuidadosamente sob água corrente para
+                        remover resíduos.
                       </p>
                     </div>
                   </div>
@@ -241,9 +269,13 @@ export default function BatataDoceNutricaoCanina() {
                       2
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-bold">Cozimento Adequado</h3>
+                      <h3 className="mb-2 text-xl font-bold">
+                        Cozimento Adequado
+                      </h3>
                       <p className="text-gray-700">
-                        Cozinhe no vapor ou em água sem adição de óleo, sal ou temperos. O cozimento aumenta a biodisponibilidade dos nutrientes.
+                        Cozinhe no vapor ou em água sem adição de óleo, sal ou
+                        temperos. O cozimento aumenta a biodisponibilidade dos
+                        nutrientes.
                       </p>
                     </div>
                   </div>
@@ -255,7 +287,8 @@ export default function BatataDoceNutricaoCanina() {
                     <div>
                       <h3 className="mb-2 text-xl font-bold">Processamento</h3>
                       <p className="text-gray-700">
-                        Retire a casca e amasse ou corte em cubos pequenos para facilitar a digestão. Jamais ofereça crua.
+                        Retire a casca e amasse ou corte em cubos pequenos para
+                        facilitar a digestão. Jamais ofereça crua.
                       </p>
                     </div>
                   </div>
@@ -267,7 +300,8 @@ export default function BatataDoceNutricaoCanina() {
                     <div>
                       <h3 className="mb-2 text-xl font-bold">Resfriamento</h3>
                       <p className="text-gray-700">
-                        Deixe esfriar completamente antes de servir para evitar queimaduras na boca e estômago do seu cão.
+                        Deixe esfriar completamente antes de servir para evitar
+                        queimaduras na boca e estômago do seu cão.
                       </p>
                     </div>
                   </div>
@@ -279,7 +313,9 @@ export default function BatataDoceNutricaoCanina() {
                     Atenção!
                   </h3>
                   <p className="text-lg text-red-700">
-                    A batata-doce crua contém substâncias que podem causar desconforto digestivo. Jamais use temperos como alho ou cebola, que são tóxicos para cães.
+                    A batata-doce crua contém substâncias que podem causar
+                    desconforto digestivo. Jamais use temperos como alho ou
+                    cebola, que são tóxicos para cães.
                   </p>
                 </div>
               </section>
@@ -292,7 +328,8 @@ export default function BatataDoceNutricaoCanina() {
                   Alimentos Proibidos para Cães
                 </h2>
                 <p className="mb-6 text-gray-700">
-                  Enquanto a batata-doce é benéfica, muitos alimentos humanos são perigosos para cães. Mantenha longe do seu pet:
+                  Enquanto a batata-doce é benéfica, muitos alimentos humanos
+                  são perigosos para cães. Mantenha longe do seu pet:
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -301,8 +338,13 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Chocolate</h3>
-                      <p className="text-gray-700">Contém teobromina, substância tóxica que pode causar convulsões e morte</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Chocolate
+                      </h3>
+                      <p className="text-gray-700">
+                        Contém teobromina, substância tóxica que pode causar
+                        convulsões e morte
+                      </p>
                     </div>
                   </div>
 
@@ -311,8 +353,13 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Uvas e Passas</h3>
-                      <p className="text-gray-700">Podem causar insuficiência renal aguda mesmo em pequenas quantidades</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Uvas e Passas
+                      </h3>
+                      <p className="text-gray-700">
+                        Podem causar insuficiência renal aguda mesmo em pequenas
+                        quantidades
+                      </p>
                     </div>
                   </div>
 
@@ -321,8 +368,12 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Cebola e Alho</h3>
-                      <p className="text-gray-700">Causam anemia hemolítica, mesmo em pequenas quantidades</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Cebola e Alho
+                      </h3>
+                      <p className="text-gray-700">
+                        Causam anemia hemolítica, mesmo em pequenas quantidades
+                      </p>
                     </div>
                   </div>
 
@@ -331,8 +382,12 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Abacate</h3>
-                      <p className="text-gray-700">Contém persina, que pode causar vômitos e diarreia</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Abacate
+                      </h3>
+                      <p className="text-gray-700">
+                        Contém persina, que pode causar vômitos e diarreia
+                      </p>
                     </div>
                   </div>
 
@@ -341,8 +396,12 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Café e Chá</h3>
-                      <p className="text-gray-700">Contêm cafeína, que pode ser fatal para cães</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Café e Chá
+                      </h3>
+                      <p className="text-gray-700">
+                        Contêm cafeína, que pode ser fatal para cães
+                      </p>
                     </div>
                   </div>
 
@@ -351,8 +410,13 @@ export default function BatataDoceNutricaoCanina() {
                       <FaBan className="text-xl" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-800">Álcool</h3>
-                      <p className="text-gray-700">Pode causar intoxicação grave, depressão respiratória e coma</p>
+                      <h3 className="text-lg font-bold text-gray-800">
+                        Álcool
+                      </h3>
+                      <p className="text-gray-700">
+                        Pode causar intoxicação grave, depressão respiratória e
+                        coma
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -363,9 +427,13 @@ export default function BatataDoceNutricaoCanina() {
             <FadeIn delay={0.7}>
               <section className="mt-12">
                 <div className="p-8 text-center bg-green-100 rounded-2xl">
-                  <h3 className="mb-4 text-2xl font-bold text-green-800">Transforme a Nutrição do Seu Cão Hoje!</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-green-800">
+                    Transforme a Nutrição do Seu Cão Hoje!
+                  </h3>
                   <p className="max-w-3xl mx-auto mb-6 text-lg text-green-700">
-                    A inclusão estratégica de batata-doce pode revolucionar a saúde do seu cão. Lembre-se de introduzir novos alimentos gradualmente e sempre com supervisão veterinária.
+                    A inclusão estratégica de batata-doce pode revolucionar a
+                    saúde do seu cão. Lembre-se de introduzir novos alimentos
+                    gradualmente e sempre com supervisão veterinária.
                   </p>
                 </div>
               </section>
@@ -374,7 +442,9 @@ export default function BatataDoceNutricaoCanina() {
             {/* Compartilhamento */}
             <FadeIn delay={0.8}>
               <div className="py-8 my-10 text-center border-t border-b border-gray-200">
-                <h3 className="mb-6 text-xl font-bold text-gray-900">Compartilhe este artigo:</h3>
+                <h3 className="mb-6 text-xl font-bold text-gray-900">
+                  Compartilhe este artigo:
+                </h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -384,7 +454,7 @@ export default function BatataDoceNutricaoCanina() {
                   >
                     <i className="fab fa-facebook-f"></i> Compartilhar
                   </motion.button>
-                  
+
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -393,14 +463,15 @@ export default function BatataDoceNutricaoCanina() {
                   >
                     <i className="fab fa-twitter"></i> Tweetar
                   </motion.button>
-                  
+
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
                   >
-                    <i className="fas fa-link"></i> {copied ? "Copiado!" : "Copiar link"}
+                    <i className="fas fa-link"></i>{" "}
+                    {copied ? "Copiado!" : "Copiar link"}
                   </motion.button>
                 </div>
               </div>
@@ -409,7 +480,7 @@ export default function BatataDoceNutricaoCanina() {
         </article>
 
         {/* Anúncio estilo Google Ads */}
-        <FadeIn delay={0.9}>
+        <FadeIn delay={1.6}>
           <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
             <div className="flex items-start justify-between p-3 bg-gray-100">
               <div className="flex items-center">
@@ -418,32 +489,47 @@ export default function BatataDoceNutricaoCanina() {
                 </span>
                 <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
               </div>
+              <button className="text-gray-400 hover:text-gray-600">
+                <i className="fas fa-times"></i>
+              </button>
             </div>
-            
-            <a 
-              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg" 
-              target="_blank" 
+
+            <a
+              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
+              target="_blank"
               rel="noopener noreferrer"
               className="block p-4 transition-colors hover:bg-gray-50"
             >
               <div className="flex flex-col items-start md:flex-row">
                 <div className="flex-1">
                   <h4 className="font-medium text-blue-600 hover:underline">
-                    Ração Pets - A Melhor Alimentação e Nutrição para Cães e ...
+                    Ração Pets - Nutrição premium para cães e gatos
                   </h4>
                   <div className="flex items-center mt-1">
-                    <span className="text-sm text-green-700">www.racaopets.com.br/</span>
+                    <span className="text-sm text-green-700">
+                      www.racaopets.com.br
+                    </span>
+                    <span className="mx-2 text-gray-300">•</span>
+                    <span className="text-sm text-yellow-500">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <FontAwesomeIcon icon={faStar} />
+                      4.9
+                    </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
-                    Na Ração Pets, você encontra rações premium e super premium para cães e gatos, sem conservantes ou corantes. Garanta nutrição completa, preços acessíveis e ...
+                    Rações premium e super premium sem conservantes ou corantes.
+                    Garanta nutrição completa a preços acessíveis.
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
                       src="/racao-batata-doce.jpg"
-                      alt="Ração Snack Dog com batata doce"
-                      className="object-contain w-full h-full"
+                      alt="Ração Lunch dog essencial"
+                      className="object-contain w-32 h-24"
                     />
                   </div>
                 </div>

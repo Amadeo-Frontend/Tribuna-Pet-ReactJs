@@ -1,5 +1,7 @@
+// src/components/Newsletter/NewsletterForm.jsx
 import { useState } from "react";
 import { toast } from "react-toastify";
+import CircleLoader from "react-spinners/CircleLoader";
 import { sendNewsletter } from "../../services/email";
 
 export default function NewsletterForm() {
@@ -8,8 +10,7 @@ export default function NewsletterForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     const email = e.target.user_email.value.trim();
-
-    if (!email) return; // segurança extra
+    if (!email) return;
 
     setSending(true);
     try {
@@ -18,7 +19,6 @@ export default function NewsletterForm() {
       e.target.reset();
     } catch (err) {
       console.error(err);
-      // Mostra a mensagem detalhada, se vier da API
       toast.error(`Erro: ${err?.text || err.message || "tente novamente"}`);
     } finally {
       setSending(false);
@@ -32,18 +32,26 @@ export default function NewsletterForm() {
       aria-label="Formulário de assinatura"
     >
       <input
+        autoComplete="email"
         type="email"
         name="user_email"
         required
         placeholder="seu@email.com"
         className="flex-1 p-2 border rounded"
       />
+
       <button
         type="submit"
         disabled={sending}
-        className="px-3 py-2 text-white rounded bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50"
+        className="px-3 py-2 min-w-[110px] flex items-center justify-center
+                   text-white rounded bg-primary transition-opacity hover:bg-primary/60
+                   disabled:opacity-60"
       >
-        {sending ? "Enviando…" : "Inscrever"}
+        {sending ? (
+          <CircleLoader size={25} color="#0EA5E9" aria-label="carregando" />
+        ) : (
+          "Inscrever"
+        )}
       </button>
     </form>
   );
