@@ -140,9 +140,9 @@ export default function MobileMenu({ open, onClose }) {
                 icon={faBowlFood}
                 onClose={onClose}
                 links={[
-                  ["/alimentacao-saudavel", "Guia Completo"],
-                  ["/alimentacao-saudavel-e-inteligente", "Alimentação Inteligente"],
-                  ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição"],
+                  ["/alimentacao-saudavel", "Guia Completo: Alimentação Saudável"],
+                  ["/alimentacao-saudavel-e-inteligente", "Alimentação Saudável e Inteligente"],
+                  ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição Canina"],
                 ]}
               />
 
@@ -161,7 +161,7 @@ export default function MobileMenu({ open, onClose }) {
                 onClose={onClose}
                 links={[
                   ["/vagas-para-castracao-gratuita", "Castração Gratuita 2025"],
-                  ["/novo-hospital-veterinario-curitiba", "Hosp. Vet. Curitiba"],
+                  ["/novo-hospital-veterinario-curitiba", "Novo Hosp. Vet. Curitiba"],
                 ]}
               />
             </motion.nav>
