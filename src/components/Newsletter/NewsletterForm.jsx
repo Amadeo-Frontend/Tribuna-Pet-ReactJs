@@ -28,7 +28,7 @@ export default function NewsletterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex max-w-md gap-2"
+      className="flex flex-col gap-3 sm:flex-row"
       aria-label="Formulário de assinatura"
     >
       <input
@@ -37,15 +37,13 @@ export default function NewsletterForm() {
         name="user_email"
         required
         placeholder="seu@email.com"
-        className="flex-1 p-2 border rounded"
+        className="w-full px-4 py-2 rounded-lg sm:flex-1"
       />
 
       <button
         type="submit"
         disabled={sending}
-        className="px-3 py-2 min-w-[110px] flex items-center justify-center
-                   text-white rounded bg-primary transition-opacity hover:bg-primary/60
-                   disabled:opacity-60"
+        className="w-full px-6 py-2 text-white transition-opacity rounded-lg sm:w-auto bg-secondary hover:bg-primary/60 disabled:opacity-60"
       >
         {sending ? (
           <CircleLoader size={25} color="#0EA5E9" aria-label="carregando" />

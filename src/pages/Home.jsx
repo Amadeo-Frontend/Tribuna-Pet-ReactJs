@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Seo from "../components/Seo";
 import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
@@ -7,6 +8,8 @@ import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import PageTransition from "../components/PageTransition";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 /* ------------------------------------------------------------------
    1. LISTAS DE CARDS
@@ -70,6 +73,18 @@ const bottomCards = [
   // ➕ novos cards ficam aqui embaixo 👇
 ];
 
+// Componentes animados
+const FadeIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay }}
+  >
+    {children}
+  </motion.div>
+);
+
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -116,7 +131,8 @@ export default function Home() {
               Guia Completo para uma Alimentação Saudável para seu Pet
             </h2>
             <p className="max-w-2xl mb-4 text-lg">
-              Descubra como escolher a melhor ração, preparar alimentos naturais e evitar erros comuns na nutrição do seu animal de estimação.
+              Descubra como escolher a melhor ração, preparar alimentos naturais
+              e evitar erros comuns na nutrição do seu animal de estimação.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span>
@@ -142,8 +158,13 @@ export default function Home() {
         {/* Newsletter */}
         <section className="mb-16">
           <div className="p-8 text-center text-white bg-gradient-to-r from-primary to-secondary rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">Receba dicas exclusivas para seu pet</h2>
-            <p className="mb-6">Inscreva‑se em nossa newsletter e receba conteúdos especiais sobre cuidados, alimentação e saúde animal.</p>
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+              Receba dicas exclusivas para seu pet
+            </h2>
+            <p className="mb-6">
+              Inscreva‑se em nossa newsletter e receba conteúdos especiais sobre
+              cuidados, alimentação e saúde animal.
+            </p>
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
             </div>
@@ -159,6 +180,65 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Anúncio estilo Google Ads */}
+        <FadeIn delay={1.6}>
+          <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
+            <div className="flex items-start justify-between p-3 bg-gray-100">
+              <div className="flex items-center">
+                <span className="px-2 py-1 text-xs text-white bg-blue-500 rounded">
+                  Anúncio
+                </span>
+                <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
+              </div>
+              <button className="text-gray-400 hover:text-gray-600">
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+
+            <a
+              href="https://www.racaopets.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-4 transition-colors hover:bg-gray-50"
+            >
+              <div className="flex flex-col items-start md:flex-row">
+                <div className="flex-1">
+                  <h4 className="font-medium text-blue-600 hover:underline">
+                    Ração Pets - Nutrição premium para cães e gatos
+                  </h4>
+                  <div className="flex items-center mt-1">
+                    <span className="text-sm text-green-700">
+                      www.racaopets.com.br
+                    </span>
+                    <span className="mx-2 text-gray-300">•</span>
+                    <span className="text-sm text-yellow-500">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <FontAwesomeIcon icon={faStar} />
+                      4.9
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600">
+                    Rações premium e super premium sem conservantes ou corantes.
+                    Garanta nutrição completa a preços acessíveis.
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-0 md:ml-4">
+                  <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
+                    <img
+                      src="/LUNCH15SEGUNDA.png"
+                      alt="Ração Lunch dog essencial"
+                      className="object-contain w-32 h-24"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </aside>
+        </FadeIn>
       </main>
 
       <Footer />
@@ -172,12 +252,22 @@ export default function Home() {
 function Card({ slug, tag, color, title, desc, img }) {
   return (
     <article className="overflow-hidden transition-shadow bg-white shadow-md rounded-xl hover:shadow-lg">
-      <div className="h-48 bg-center bg-cover" style={{ backgroundImage: `url('${img}')` }} />
+      <div
+        className="h-48 bg-center bg-cover"
+        style={{ backgroundImage: `url('${img}')` }}
+      />
       <div className="p-6">
-        <span className={`${color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}>{tag}</span>
+        <span
+          className={`${color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}
+        >
+          {tag}
+        </span>
         <h3 className="mb-3 text-xl font-bold">{title}</h3>
         <p className="mb-4 text-gray-600">{desc}</p>
-        <Link to={`/${slug}`} className="font-medium text-primary hover:underline">
+        <Link
+          to={`/${slug}`}
+          className="font-medium text-primary hover:underline"
+        >
           Ver artigos
         </Link>
       </div>
