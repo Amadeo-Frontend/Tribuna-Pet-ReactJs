@@ -26,7 +26,7 @@ export default function NewsletterForm() {
         type="email"
         required
         placeholder="seu@email.com"
-        className="flex-1 p-2 border rounded"
+        className="flex-1 p-2 px-2 py-2 border rounded"
       />
       <button
         disabled={status === 'sending'}

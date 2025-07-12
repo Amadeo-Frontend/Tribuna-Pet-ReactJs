@@ -441,7 +441,7 @@ export default function BatataDoceNutricaoCanina() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="/snack-pe.png"
+                      src="/racao-batata-doce.jpg"
                       alt="Ração Snack Dog com batata doce"
                       className="object-contain w-full h-full"
                     />
