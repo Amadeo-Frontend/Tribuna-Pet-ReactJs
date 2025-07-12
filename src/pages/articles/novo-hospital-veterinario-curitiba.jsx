@@ -70,7 +70,7 @@ export default function HospitalVeterinarioCuritiba() {
         title="Hospital Veterinário Municipal de Curitiba | Tribuna do Pet"
         description="Mais de 10 mil atendimentos em 5 meses: conheça o Hospital Veterinário Municipal de Curitiba"
         canonical="https://www.tribunadopet.com.br/hospital-veterinario-curitiba"
-        image="/images/hospital-veterinario-municipal-de-curitiba.jpg"
+        image="/hospital-veterinario-municipal-de-curitiba.jpg"
       />
 
       {/* Top bar */}

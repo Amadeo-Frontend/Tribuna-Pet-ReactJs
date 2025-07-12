@@ -76,20 +76,8 @@ export default function AlimentacaoNatural() {
         title="Guia Completo de Alimentação Natural para Cães | Tribuna do Pet"
         description="Benefícios, riscos e receitas para implementar uma dieta natural segura para seu cão"
         canonical="https://www.tribunadopet.com.br/alimentacao-natural"
-        image="/images/og-image.jpg"
+        image="/cachorro-pode-comer-comida-1.jpg"
       />
-
-      {/* Loader */}
-      <div
-        id="global-loader"
-        className="fixed inset-0 z-[9999] flex items-center justify-center bg-blue-900"
-      >
-        <img
-          src="/images/catloader2.gif"
-          alt="Carregando..."
-          className="w-48 h-48"
-        />
-      </div>
 
       {/* Top bar */}
       <div className="hidden py-2 text-white bg-gradient-to-r from-gray-800 to-gray-900 sm:block">

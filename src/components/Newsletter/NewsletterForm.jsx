@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { sendNewsletter } from '../../services/email';
 
 export default function NewsletterForm() {
-  const [status, setStatus] = useState('idle');   // idle | sending | ok | error
+  const [status, setStatus] = useState('idle');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -12,7 +12,7 @@ export default function NewsletterForm() {
     try {
       await sendNewsletter(email);
       setStatus('ok');
-      e.target.reset();           // limpa o campo
+      e.target.reset();
     } catch (err) {
       setStatus('error');
       console.error(err);

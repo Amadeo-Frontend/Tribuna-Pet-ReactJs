@@ -69,7 +69,7 @@ export default function BatataDoceNutricaoCanina() {
         title="Batata Doce e Vegetais na Nutrição Canina | Tribuna do Pet"
         description="Descubra os benefícios da batata doce e outros vegetais na alimentação canina"
         canonical="https://www.tribunadopet.com.br/batata-doce-nutricao-canina"
-        image="/images/cachorro-pode-comer-verdura-fruta.jpg"
+        image="/cachorro-pode-comer-verdura-fruta.jpg"
       />
 
       {/* Top bar */}
