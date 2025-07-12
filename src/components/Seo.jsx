@@ -3,7 +3,7 @@ import { Helmet } from '@slorber/react-helmet-async';
 export default function Seo({
   title = "Tribuna do Pet | Informações para quem ama animais",
   description = "Tudo sobre alimentação saudável, cuidados diários e utilidade pública para Pets.",
-  image = "/images/og-image.jpg",
+  image = "/og-image.jpg",
   canonical = "https://www.tribunadopet.com.br/",
 }) {
   return (
