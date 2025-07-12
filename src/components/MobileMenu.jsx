@@ -1,146 +1,170 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+/* ícones regular */
+import {
+  faCircleXmark,
+  faCircleDown,
+} from "@fortawesome/free-regular-svg-icons";
+
+/* ícones solid (não existem em regular) */
+import {
+  faBowlFood,
+  faHomeAlt,
+  faKitMedical,
+  faTreeCity,
+} from "@fortawesome/free-solid-svg-icons";
+
+/* variantes */
+const overlayV = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
+const panelV = {
+  hidden: { x: "-100%" },
+  visible: { x: 0, transition: { type: "tween", duration: 0.4 } },
+  exit: { x: "-100%", transition: { type: "tween", duration: 0.3 } },
+};
+const listV = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.15 } },
+};
+const itemV = {
+  hidden: { x: -20, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 350, damping: 30 } },
+};
+
+/* Accordion item */
+function Accordion({ label, icon, links, onClose }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.li variants={itemV} className="border-t first:border-none">
+      <button
+        className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-primary"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="flex items-center gap-3">
+          <FontAwesomeIcon icon={icon} /> {label}
+        </span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <FontAwesomeIcon icon={faCircleDown} />
+        </motion.span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.ul
+            key="sub"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.04, 0.62, 0.23, 0.98] }}
+            className="ml-6 space-y-2 overflow-hidden text-sm list-disc"
+          >
+            {links.map(([href, text]) => (
+              <li key={href}>
+                <Link to={href} onClick={onClose}>
+                  {text}
+                </Link>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </motion.li>
+  );
+}
 
 export default function MobileMenu({ open, onClose }) {
-  /* trava o scroll quando o menu está visível */
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => (document.body.style.overflow = "");
   }, [open]);
 
-  /* animação de slide */
-  const panel = {
-    hidden: { x: "-100%" },
-    visible: { x: 0 },
-    exit: { x: "-100%" },
-  };
-
   return (
     <AnimatePresence>
       {open && (
         <>
-          {/* overlay */}
           <motion.div
-            key="overlay"
-            className="fixed inset-0 z-40 bg-black/50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            variants={overlayV}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
             onClick={onClose}
           />
 
-          {/* painel */}
           <motion.aside
-            key="panel"
-            variants={panel}
+            variants={panelV}
             initial="hidden"
             animate="visible"
             exit="exit"
-            transition={{ type: "tween", duration: 0.35 }}
             className="fixed top-0 left-0 z-50 flex flex-col w-4/5 h-full max-w-xs bg-white shadow-2xl rounded-tr-2xl rounded-br-2xl"
           >
-            {/* cabeçalho */}
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-bold tracking-wide">Menu</h2>
-              {/* X grandão e clicável */}
+            {/* Header do menu */}
+            <motion.div
+              variants={itemV}
+              className="flex items-center justify-between p-4 border-b"
+            >
+              <h2 className="text-lg font-bold">Menu</h2>
               <button
                 onClick={onClose}
                 aria-label="Fechar menu"
-                className="text-3xl leading-none text-gray-700 transition-colors hover:text-primary"
+                className="text-2xl text-gray-700 transition-colors hover:text-primary"
               >
-                &times;
+                <FontAwesomeIcon icon={faCircleXmark} />
               </button>
-            </div>
+            </motion.div>
 
-            {/* navegação */}
-            <nav className="flex-1 p-4 overflow-y-auto">
-              <ul className="space-y-4">
-                {/* link simples */}
-                <li>
-                  <Link
-                    to="/"
-                    onClick={onClose}
-                    className="flex items-center gap-3 font-medium text-gray-800 hover:text-primary"
-                  >
-                    <i className="fas fa-house" /> Home
-                  </Link>
-                </li>
+            {/* Links */}
+            <motion.nav
+              variants={listV}
+              initial="hidden"
+              animate="visible"
+              className="flex-1 p-4 overflow-y-auto"
+            >
+              <motion.li variants={itemV} className="mb-4 list-none">
+                <Link
+                  to="/"
+                  onClick={onClose}
+                  className="flex items-center gap-3 font-medium text-gray-800 hover:text-primary"
+                >
+                  <FontAwesomeIcon icon={faHomeAlt} /> Home
+                </Link>
+              </motion.li>
 
-                {/* grupo – acordeão */}
-                <li className="border-b last:border-none">
-                  <details className="group">
-                    <summary className="flex items-center justify-between py-2 font-medium text-gray-800 cursor-pointer hover:text-primary">
-                      <span className="flex items-center gap-3">
-                        <i className="fas fa-bowl-food" /> Alimentação Saudável
-                      </span>
-                      {/* chevron que gira */}
-                      <i className="transition-transform duration-300 fas fa-chevron-down group-open:rotate-180" />
-                    </summary>
-                    <ul className="mt-2 ml-6 space-y-2 text-sm list-disc">
-                      <li>
-                        <Link to="/alimentacao-saudavel" onClick={onClose}>
-                          Guia Completo
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/alimentacao-inteligente" onClick={onClose}>
-                          Alimentação Inteligente
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/batata-doce-nutricao-canina" onClick={onClose}>
-                          Batata-doce na Nutrição
-                        </Link>
-                      </li>
-                    </ul>
-                  </details>
-                </li>
+              <Accordion
+                label="Alimentação Saudável"
+                icon={faBowlFood}
+                onClose={onClose}
+                links={[
+                  ["/alimentacao-saudavel", "Guia Completo"],
+                  ["/alimentacao-inteligente", "Alimentação Inteligente"],
+                  ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição"],
+                ]}
+              />
 
-                {/* outro grupo */}
-                <li className="border-b">
-                  <details className="group">
-                    <summary className="flex items-center justify-between py-2 font-medium text-gray-800 cursor-pointer hover:text-primary">
-                      <span className="flex items-center gap-3">
-                        <i className="fas fa-kit-medical" /> Cuidados Diários
-                      </span>
-                      <i className="transition-transform duration-300 fas fa-chevron-down group-open:rotate-180" />
-                    </summary>
-                    <ul className="mt-2 ml-6 space-y-2 text-sm list-disc">
-                      <li>
-                        <Link to="/cuidados-com-pets-no-inverno" onClick={onClose}>
-                          Inverno: cuidados essenciais
-                        </Link>
-                      </li>
-                    </ul>
-                  </details>
-                </li>
+              <Accordion
+                label="Cuidados Diários"
+                icon={faKitMedical}
+                onClose={onClose}
+                links={[
+                  ["/cuidados-com-pets-no-inverno", "Inverno: cuidados essenciais"],
+                ]}
+              />
 
-                {/* Utilidade Pública */}
-                <li>
-                  <details className="group">
-                    <summary className="flex items-center justify-between py-2 font-medium text-gray-800 cursor-pointer hover:text-primary">
-                      <span className="flex items-center gap-3">
-                        <i className="fas fa-tree-city" /> Utilidade Pública
-                      </span>
-                      <i className="transition-transform duration-300 fas fa-chevron-down group-open:rotate-180" />
-                    </summary>
-                    <ul className="mt-2 ml-6 space-y-2 text-sm list-disc">
-                      <li>
-                        <Link to="/vagas-para-castracao-gratuita" onClick={onClose}>
-                          Castração Gratuita 2025
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/novo-hospital-veterinario-curitiba" onClick={onClose}>
-                          Hosp. Vet. Curitiba
-                        </Link>
-                      </li>
-                    </ul>
-                  </details>
-                </li>
-              </ul>
-            </nav>
+              <Accordion
+                label="Utilidade Pública"
+                icon={faTreeCity}
+                onClose={onClose}
+                links={[
+                  ["/vagas-para-castracao-gratuita", "Castração Gratuita 2025"],
+                  ["/novo-hospital-veterinario-curitiba", "Hosp. Vet. Curitiba"],
+                ]}
+              />
+            </motion.nav>
           </motion.aside>
         </>
       )}
