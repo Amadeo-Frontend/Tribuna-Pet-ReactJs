@@ -4,7 +4,7 @@ import { faPaw, faBars } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header({ onToggleMenu }) {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-20 bg-white shadow-md">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between py-4">
           {/* logo */}

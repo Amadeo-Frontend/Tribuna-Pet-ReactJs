@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "@slorber/react-helmet-async";
+import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
@@ -26,22 +27,14 @@ export default function Home() {
       <div className="hidden py-2 text-white bg-gray-800 sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
           <span>Seu portal de informações para seu pet!</span>
-          <span>
-            {new Date().toLocaleTimeString("pt-BR", {
-              timeZone: "America/Sao_Paulo",
-            })}
-          </span>
+
+          {/* relógio ao vivo */}
+          <LiveClock />
         </div>
       </div>
 
-      {/* Overlay + mobile menu */}
+      {/* menu lateral + overlay já estão dentro do componente */}
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-30 bg-black/50"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
 
       {/* Header */}
       <Header onToggleMenu={() => setMenuOpen(true)} />
@@ -68,7 +61,9 @@ export default function Home() {
               Guia Completo para uma Alimentação Saudável para seu Pet
             </h2>
             <p className="max-w-2xl mb-4 text-lg">
-              Descubra como escolher a melhor ração, preparar alimentos naturais e evitar os erros mais comuns na nutrição do seu animal de estimação.
+              Descubra como escolher a melhor ração, preparar alimentos naturais
+              e evitar os erros mais comuns na nutrição do seu animal de
+              estimação.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span>
@@ -126,12 +121,17 @@ export default function Home() {
                   style={{ backgroundImage: `url('${cat.img}')` }}
                 />
                 <div className="p-6">
-                  <span className={`${cat.color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}>
+                  <span
+                    className={`${cat.color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}
+                  >
                     {cat.tag}
                   </span>
                   <h3 className="mb-3 text-xl font-bold">{cat.title}</h3>
                   <p className="mb-4 text-gray-600">{cat.desc}</p>
-                  <Link to={`/${cat.slug}`} className="font-medium text-primary hover:underline">
+                  <Link
+                    to={`/${cat.slug}`}
+                    className="font-medium text-primary hover:underline"
+                  >
                     Ver artigos
                   </Link>
                 </div>
@@ -143,14 +143,20 @@ export default function Home() {
         {/* Newsletter */}
         <section className="mb-16">
           <div className="p-8 text-center text-white bg-gradient-to-r from-primary to-secondary rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">Receba dicas exclusivas para seu pet</h2>
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+              Receba dicas exclusivas para seu pet
+            </h2>
             <p className="mb-6">
-              Inscreva-se em nossa newsletter e receba conteúdos especiais sobre cuidados, alimentação e saúde animal.
+              Inscreva-se em nossa newsletter e receba conteúdos especiais sobre
+              cuidados, alimentação e saúde animal.
             </p>
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
             </div>
-            <p className="mt-4 text-sm text-blue-100">Respeitamos sua privacidade. Você pode cancelar a qualquer momento.</p>
+            <p className="mt-4 text-sm text-blue-100">
+              Respeitamos sua privacidade. Você pode cancelar a qualquer
+              momento.
+            </p>
           </div>
         </section>
       </main>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import LiveClock from "../../components/LiveClock";
 import Header from "../../components/Header";
 import MobileMenu from "../../components/MobileMenu";
 import Footer from "../../components/Footer";
@@ -30,18 +31,16 @@ export default function CuidadosComPetsNoInverno() {
         canonical="https://www.tribunadopet.com.br/cuidados-com-pets-no-inverno"
         image="/images/og-image.jpg"
       />
-      {/* Top bar */}
-      <div className="hidden py-2 text-white bg-gray-800 sm:block">
-        <div className="container flex justify-between px-4 mx-auto text-sm">
-          <span>Seu portal de informações para seu melhor amigo</span>
-          <span>
-            <i className="mr-1 far fa-clock" />
-            {new Date().toLocaleTimeString("pt-BR", {
-              timeZone: "America/Sao_Paulo",
-            })}
-          </span>
-        </div>
-      </div>
+
+      {/* Top bar (desktop only) */}
+            <div className="hidden py-2 text-white bg-gray-800 sm:block">
+              <div className="container flex items-center justify-between px-4 mx-auto text-sm">
+                <span>Seu portal de informações para seu pet!</span>
+      
+                {/* relógio ao vivo */}
+                <LiveClock />
+              </div>
+            </div>
       {/* Overlay + menu */}
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       {menuOpen && (
