@@ -14,8 +14,9 @@ import {
   faBowlFood,
   faHomeAlt,
   faKitMedical,
-  faTreeCity,
+  faTreeCity
 } from "@fortawesome/free-solid-svg-icons";
+import { MdPrivacyTip } from "react-icons/md";
 
 /* variantes */
 const overlayV = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
@@ -30,7 +31,11 @@ const listV = {
 };
 const itemV = {
   hidden: { x: -20, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 350, damping: 30 } },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 350, damping: 30 },
+  },
 };
 
 /* Accordion item */
@@ -140,9 +145,18 @@ export default function MobileMenu({ open, onClose }) {
                 icon={faBowlFood}
                 onClose={onClose}
                 links={[
-                  ["/alimentacao-saudavel", "Guia Completo: Alimentação Saudável"],
-                  ["/alimentacao-saudavel-e-inteligente", "Alimentação Saudável e Inteligente"],
-                  ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição Canina"],
+                  [
+                    "/alimentacao-saudavel",
+                    "Guia Completo: Alimentação Saudável",
+                  ],
+                  [
+                    "/alimentacao-saudavel-e-inteligente",
+                    "Alimentação Saudável e Inteligente",
+                  ],
+                  [
+                    "/batata-doce-nutricao-canina",
+                    "Batata-doce na Nutrição Canina",
+                  ],
                 ]}
               />
 
@@ -151,7 +165,10 @@ export default function MobileMenu({ open, onClose }) {
                 icon={faKitMedical}
                 onClose={onClose}
                 links={[
-                  ["/cuidados-com-pets-no-inverno", "Inverno: cuidados essenciais"],
+                  [
+                    "/cuidados-com-pets-no-inverno",
+                    "Inverno: cuidados essenciais",
+                  ],
                 ]}
               />
 
@@ -161,7 +178,10 @@ export default function MobileMenu({ open, onClose }) {
                 onClose={onClose}
                 links={[
                   ["/vagas-para-castracao-gratuita", "Castração Gratuita 2025"],
-                  ["/novo-hospital-veterinario-curitiba", "Novo Hosp. Vet. Curitiba"],
+                  [
+                    "/novo-hospital-veterinario-curitiba",
+                    "Novo Hosp. Vet. Curitiba",
+                  ],
                 ]}
               />
             </motion.nav>
