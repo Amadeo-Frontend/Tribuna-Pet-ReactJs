@@ -111,15 +111,15 @@ export default function MobileMenu({ open, onClose }) {
             {/* Header do menu */}
             <motion.div
               variants={itemV}
-              className="flex items-center justify-between p-4 border-b"
+              className="flex items-center justify-between p-4 border-b bg-primary"
             >
-              <h2 className="text-lg font-bold">Menu</h2>
+              <h2 className="text-lg font-bold text-gray-200">Menu</h2>
               <button
                 onClick={onClose}
                 aria-label="Fechar menu"
                 className="text-2xl text-gray-700 transition-colors hover:text-primary"
               >
-                <FontAwesomeIcon icon={faCircleXmark} />
+                <FontAwesomeIcon icon={faCircleXmark}  className="text-gray-400 hover:text-gray-500"/>
               </button>
             </motion.div>
 
