@@ -69,7 +69,7 @@ function Accordion({ label, icon, links, onClose }) {
             className="ml-6 space-y-3 overflow-hidden text-sm list-disc"
           >
             {links.map(([href, text]) => (
-              <li key={href} className="rounded-md hover:bg-slate-100 hover:shadow-inner hover:text-primary hover:mx-1">
+              <li key={href} className="py-1 rounded-md hover:bg-slate-100 hover:shadow-inner hover:text-primary hover:mx-1">
                 <Link to={href} onClick={onClose}>
                   {text}
                 </Link>
@@ -128,7 +128,7 @@ export default function MobileMenu({ open, onClose }) {
               variants={listV}
               initial="hidden"
               animate="visible"
-              className="flex-1 p-4 overflow-y-auto"
+              className="flex-1 p-4 mb-2 overflow-y-auto"
             >
               <motion.li variants={itemV} className="mb-4 list-none">
                 <Link
