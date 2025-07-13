@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Button = ({ children, className = "", ...props }) => (
   <button
     {...props}
-    className={`inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary text-white font-semibold shadow-md hover:bg-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 ${className}`}
+    className={`inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary text-white font-semibold shadow-md hover:bg-secondary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 ${className}`}
   >
     {children}
   </button>
