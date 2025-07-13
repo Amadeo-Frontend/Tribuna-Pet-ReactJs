@@ -98,7 +98,7 @@ export default function Home() {
       />
 
       {/* Top bar */}
-      <div className="hidden py-2 text-white bg-gray-800 sm:block">
+      <div className="hidden py-2 text-white bg-primary sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
           <span>Seu portal de informações para seu pet!</span>
           <LiveClock />

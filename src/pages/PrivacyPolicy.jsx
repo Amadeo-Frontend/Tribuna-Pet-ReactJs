@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
       />
 
       {/* Top bar */}
-      <div className="hidden py-2 text-white bg-gradient-to-r from-gray-800 to-gray-900 sm:block">
+      <div className="hidden py-2 text-white bg-gradient-to-r bg-primary sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
           <span>Seu portal de informações para seu melhor amigo</span>
           <LiveClock />
