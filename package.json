@@ -20,6 +20,7 @@
     "emailjs-com": "^3.2.0",
     "fontawesome": "^5.6.3",
     "framer-motion": "^12.23.3",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-gtm-module": "^2.0.11",
