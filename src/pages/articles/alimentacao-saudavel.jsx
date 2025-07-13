@@ -80,6 +80,7 @@ export default function AlimentacaoNatural() {
         description="Benefícios, riscos e receitas para implementar uma dieta natural segura para seu cão"
         canonical="https://www.tribunadopet.com.br/alimentacao-natural"
         image="/cachorro-pode-comer-comida-1.jpg"
+        published="2025-06-15"
       />
 
       {/* Top bar */}

@@ -54,6 +54,7 @@ export default function CuidadosComPetsNoInverno() {
         description="Guia essencial para proteger cães e gatos das baixas temperaturas – sinais de hipotermia, roupinhas, ambiente aquecido e mais."
         canonical="https://www.tribunadopet.com.br/cuidados-com-pets-no-inverno"
         image="/images/og-image.jpg"
+        published="2025-06-13"
       />
 
       {/* Top bar */}

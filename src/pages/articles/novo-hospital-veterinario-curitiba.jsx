@@ -73,6 +73,7 @@ export default function HospitalVeterinarioCuritiba() {
         description="Mais de 10 mil atendimentos em 5 meses: conheça o Hospital Veterinário Municipal de Curitiba"
         canonical="https://www.tribunadopet.com.br/hospital-veterinario-curitiba"
         image="/hospital-veterinario-municipal-de-curitiba.jpg"
+        published="2025-06-29"
       />
 
       {/* Top bar */}
