@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "@slorber/react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import App from "./App";
 import { LoaderProvider } from "./contexts/LoaderContext";
 import LoaderOverlay from "./components/LoaderOverlay";
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <BrowserRouter>
           <App />
           <LoaderOverlay />
+          <SpeedInsights /> 
         </BrowserRouter>
       </LoaderProvider>
     </HelmetProvider>
