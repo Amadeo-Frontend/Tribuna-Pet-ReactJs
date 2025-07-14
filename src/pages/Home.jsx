@@ -23,7 +23,7 @@ const topCards = [
     color: "bg-accent",
     title: "Guia Completo para uma Alimentação Saudável",
     desc: "Desmistifique a alimentação natural e ...",
-    img: "/cachorro-pode-comer-comida-1.jpg",
+    img: "https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.jpg",
   },
   {
     slug: "cuidados-com-pets-no-inverno",
@@ -31,7 +31,7 @@ const topCards = [
     color: "bg-blue-600",
     title: "Cuidados Diários com Cães e Gatos",
     desc: "Saiba como proteger seu pet em temperaturas baixas...",
-    img: "Roupa-de-frio-para-cachorro.jpg",
+    img: "https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.jpg",
   },
   {
     slug: "vagas-para-castracao-gratuita",
@@ -39,7 +39,7 @@ const topCards = [
     color: "bg-purple-600",
     title: "Utilidade Pública Pet",
     desc: "Prefeitura abriu vagas para castração gratuita...",
-    img: "/castracao-de-animais-2.jpg",
+    img: "https://www.tribunadopet.com.br/castracao-de-animais-2.jpg",
   },
 ];
 
@@ -52,7 +52,7 @@ const bottomCards = [
     color: "bg-rose-600",
     title: "Guia de Alimentação Responsável",
     desc: "Passo a passo para dar um alimento seguro e saboroso...",
-    img: "/cachorro-caramelo-olhando-para-camera.jpg",
+    img: "https://www.tribunadopet.com.br/cachorro-caramelo-olhando-para-camera.jpg",
   },
   {
     slug: "novo-hospital-veterinario-curitiba",
@@ -60,7 +60,7 @@ const bottomCards = [
     color: "bg-yellow-500",
     title: "Novo hospital veterinário em Curitiba.",
     desc: "Já realizou mais de 10 mil consultas gratuitas...",
-    img: "/main_agenda-cachorros.webp",
+    img: "https://www.tribunadopet.com.br/main_agenda-cachorros.webp",
   },
   {
     slug: "batata-doce-nutricao-canina",
@@ -68,7 +68,7 @@ const bottomCards = [
     color: "bg-green-600",
     title: "Batata Doce e Vegetais na Nutrição Canina",
     desc: "A batata-doce emergiu como um superalimento...",
-    img: "/fresh-vegetable.webp",
+    img: "https://www.tribunadopet.com.br/fresh-vegetable.webp",
   },
   // ➕ novos cards ficam aqui embaixo 👇
 ];
@@ -94,7 +94,7 @@ export default function Home() {
         title="Tribuna do Pet • Dicas de Alimentação, Cuidados e Utilidade Pública"
         description="Portal com as melhores dicas para tutores de cães e gatos: alimentação natural, saúde, cuidados diários e serviços gratuitos."
         canonical="https://www.tribunadopet.com.br/"
-        image="/og-image-home.jpg"
+        image="https://www.tribunadopet.com.br/og-image.jpg"
       />
 
       {/* Top bar */}
@@ -229,7 +229,7 @@ export default function Home() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="/LUNCH15SEGUNDA.png"
+                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />
