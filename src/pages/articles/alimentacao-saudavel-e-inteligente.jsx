@@ -6,6 +6,7 @@ import MobileMenu from "../../components/MobileMenu";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
 import LiveClock from "../../components/LiveClock";
+import { LinkPreview } from "../../components/ui/link-preview";
 import {
   FaRegStar,
   FaTimes,
@@ -551,7 +552,8 @@ export default function AlimentacaoInteligente() {
               </button>
             </div>
 
-            <a
+            <LinkPreview
+              url="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
               href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
               target="_blank"
               rel="noopener noreferrer"
@@ -591,7 +593,7 @@ export default function AlimentacaoInteligente() {
                   </div>
                 </div>
               </div>
-            </a>
+            </LinkPreview>
           </aside>
         </FadeIn>
       </main>
