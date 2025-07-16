@@ -79,7 +79,7 @@ export default function AlimentacaoInteligente() {
       <Seo
         title="Alimentação Saudável e Inteligente | Tribuna do Pet"
         description="Conheça as rações Lunch Dog e Lunch Cat que conquistaram o paladar dos pets curitibanos"
-        canonical="https://www.tribunadopet.com.br/alimentacao-inteligente"
+        canonical="https://www.tribunadopet.com.br/alimentacao-saudavel-e-inteligente"
         image="https://www.tribunadopet.com.br/cachorro-comendo.jpg"
         published="2025-06-16"
       />

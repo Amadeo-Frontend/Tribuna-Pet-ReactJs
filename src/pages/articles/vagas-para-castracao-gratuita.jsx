@@ -70,7 +70,7 @@ export default function VagasCastracao() {
       <Seo
         title="Vagas para Castração Gratuita | Tribuna do Pet"
         description="Junho 2025: 5.717 vagas para castração gratuita de cães e gatos em Curitiba"
-        canonical="https://www.tribunadopet.com.br/vagas-castracao-gratuita"
+        canonical="https://www.tribunadopet.com.br/vagas-para-castracao-gratuita"
         image="https://www.tribunadopet.com.br/Castracao-animais.jpeg"
         published="2025-06-15"
       />
