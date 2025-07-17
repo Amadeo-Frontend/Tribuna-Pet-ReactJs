@@ -1,4 +1,4 @@
-# Regras comuns a todos os bots
+# REGRAS PARA TODOS OS BOTS
 User-agent: *
 Disallow: /src/
 Disallow: /node_modules/
@@ -9,9 +9,9 @@ Disallow: /wp-admin/
 Disallow: /private/
 Disallow: /includes/
 Disallow: /config/
-Crawl-delay: 2   # só Bing/Yandex entendem
+Crawl-delay: 2
 
-# Regras específicas para o Google (copia as mesmas proibições)
+# REGRAS ESPECÍFICAS DO GOOGLE (OPCIONAL - JÁ COBERTO PELAS REGRAS GERAIS)
 User-agent: Googlebot
 Disallow: /src/
 Disallow: /node_modules/
@@ -22,8 +22,7 @@ Disallow: /wp-admin/
 Disallow: /private/
 Disallow: /includes/
 Disallow: /config/
-# Google ignora Crawl-delay → linha omitida
 
-# Sitemaps
+# SITEMAPS
 Sitemap: https://www.tribunadopet.com.br/sitemap.xml
 Sitemap: https://www.tribunadopet.com.br/sitemap-pt.xml
