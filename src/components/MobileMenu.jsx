@@ -169,6 +169,7 @@ export default function MobileMenu({ open, onClose }) {
                     "/cuidados-com-pets-no-inverno",
                     "Inverno: cuidados essenciais",
                   ],
+                  ["/primeiros-socorros-para-pets", "Primeiros socorros para pets"],
                 ]}
               />
 

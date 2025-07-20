@@ -7,7 +7,8 @@ import MobileMenu from "../../components/MobileMenu";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar, faCopy } from "@fortawesome/free-regular-svg-icons";
+import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -433,10 +434,10 @@ export default function CuidadosComPetsNoInverno() {
             </div>
 
             {/* Compartilhamento */}
-            <FadeIn delay={1.5}>
+            <FadeIn delay={1.8}>
               <div className="py-8 my-10 text-center border-gray-200 border-y">
                 <h3 className="mb-5 text-xl font-bold text-gray-900">
-                  Gostou do conteúdo?
+                  Este conteúdo pode salvar vidas! Compartilhe:
                 </h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   <motion.button
@@ -445,7 +446,7 @@ export default function CuidadosComPetsNoInverno() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-blue-600 to-blue-800"
                   >
-                    <i className="fab fa-facebook-f"></i> Compartilhar
+                    <FontAwesomeIcon icon={faFacebookF} /> Compartilhar
                   </motion.button>
 
                   <motion.button
@@ -454,7 +455,7 @@ export default function CuidadosComPetsNoInverno() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-cyan-500 to-blue-500"
                   >
-                    <i className="fab fa-twitter"></i> Tweetar
+                    <FontAwesomeIcon icon={faTwitter} /> Tweetar
                   </motion.button>
 
                   <motion.button
@@ -463,7 +464,7 @@ export default function CuidadosComPetsNoInverno() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
                   >
-                    <i className="fas fa-link"></i>{" "}
+                    <FontAwesomeIcon icon={faCopy} />{" "}
                     {copied ? "Copiado!" : "Copiar link"}
                   </motion.button>
                 </div>
