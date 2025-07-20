@@ -15,6 +15,9 @@ import {
   FaTimesCircle,
   FaCalendarCheck,
   FaShareAlt,
+  FaCity,
+  FaHeartbeat,
+  FaFirstAid,
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -121,14 +124,14 @@ export default function VagasCastracao() {
         <article className="overflow-hidden bg-white shadow-xl rounded-2xl">
           <div className="p-6 md:p-8">
             <div className="flex flex-wrap gap-2 mb-6">
-              <span className="px-4 py-1 text-sm font-bold text-blue-800 bg-blue-100 rounded-full">
-                Castração
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-blue-800 bg-blue-100 rounded-full">
+               <FaFirstAid  className="mr-1.5"/>{" "} Castração
               </span>
-              <span className="px-4 py-1 text-sm font-bold text-green-800 bg-green-100 rounded-full">
-                Saúde Animal
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-green-800 bg-green-100 rounded-full">
+                <FaHeartbeat  className="mr-1.5"/>{" "}Saúde Animal
               </span>
-              <span className="px-4 py-1 text-sm font-bold text-purple-800 bg-purple-100 rounded-full">
-                Curitiba
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-purple-800 bg-purple-100 rounded-full">
+               <FaCity  className="mr-1.5"/>{" "} Curitiba
               </span>
             </div>
 
