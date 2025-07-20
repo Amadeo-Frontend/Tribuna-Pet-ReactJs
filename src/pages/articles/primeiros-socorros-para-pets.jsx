@@ -15,7 +15,6 @@ import {
   faIdCard,
   faMapMarkedAlt,
   faAmbulance,
-  faPaw,
   faHeartbeat,
   faExclamationTriangle,
   faFirstAid,
@@ -28,9 +27,7 @@ import {
   faCalendar,
   faClock,
   faEye,
-  faCopy,
 } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import ShareButton from "../../components/ui/ShareButton";
 
 // Componentes animados
@@ -56,20 +53,6 @@ const ScaleIn = ({ children, delay = 0 }) => (
 
 export default function PrimeirosSocorrosParaPets() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const compartilharPagina = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Primeiros Socorros para Cães e Gatos – Tribuna do Pet",
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
 
   return (
     <>

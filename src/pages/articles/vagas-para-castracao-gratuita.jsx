@@ -17,8 +17,7 @@ import {
   FaShareAlt,
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faCopy } from "@fortawesome/free-regular-svg-icons";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 import ShareButton from "../../components/ui/ShareButton";
 
 // Componentes animados
@@ -44,20 +43,6 @@ const ScaleIn = ({ children, delay = 0 }) => (
 
 export default function VagasCastracao() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const compartilharPagina = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Vagas para Castração Gratuita - Tribuna do Pet",
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {

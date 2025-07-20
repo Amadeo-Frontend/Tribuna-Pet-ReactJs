@@ -51,20 +51,6 @@ const ScaleIn = ({ children, delay = 0 }) => (
 
 export default function AlimentacaoInteligente() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const compartilharPagina = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Alimentação Saudável e Inteligente - Tribuna do Pet",
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
 
   useEffect(() => {
     // Simular carregamento
@@ -499,7 +485,7 @@ export default function AlimentacaoInteligente() {
             </FadeIn>
 
             {/* Compartilhamento */}
-            <ShareButton/>
+            <ShareButton />
           </div>
         </article>
 
