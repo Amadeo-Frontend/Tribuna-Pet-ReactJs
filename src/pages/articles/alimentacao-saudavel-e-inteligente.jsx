@@ -20,7 +20,10 @@ import {
   FaStore,
   FaShoppingCart,
   FaTruck,
+  FaCity,
+  FaAngleDoubleDown,
 } from "react-icons/fa";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
 import { HiBuildingStorefront } from "react-icons/hi2";
 import { SiShopee } from "react-icons/si";
@@ -132,13 +135,16 @@ export default function AlimentacaoInteligente() {
           {/* Tags */}
           <FadeIn delay={0.2}>
             <div className="flex flex-wrap gap-3 p-6 md:p-8">
-              <span className="px-4 py-2 text-sm font-bold text-blue-800 rounded-full bg-gradient-to-r from-blue-100 to-blue-200">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-blue-800 rounded-full bg-gradient-to-r from-blue-100 to-blue-200">
+                <FaBowlFood  className="mr-1.5"/>{" "}
                 Alimentação
               </span>
-              <span className="px-4 py-2 text-sm font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-blue-800">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-white rounded-full bg-gradient-to-r from-blue-600 to-blue-800">
+                <MdOutlineWorkspacePremium  className="mr-1.5"/>{" "}
                 Premium
               </span>
-              <span className="px-4 py-2 text-sm font-bold text-white rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-white rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600">
+                <FaCity  className="mr-1.5"/>{" "}
                 Curitiba
               </span>
             </div>

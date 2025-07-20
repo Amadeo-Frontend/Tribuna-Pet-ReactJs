@@ -19,6 +19,8 @@ import {
   FaStore,
   FaShoppingCart,
   FaTruck,
+  FaHeartbeat,
+  FaCity,
 } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { HiBuildingStorefront } from "react-icons/hi2";
@@ -130,13 +132,16 @@ export default function AlimentacaoNatural() {
           {/* Tags */}
           <FadeIn delay={0.2}>
             <div className="flex flex-wrap gap-3 p-6 md:p-8">
-              <span className="px-4 py-2 text-sm font-bold text-blue-800 rounded-full bg-gradient-to-r from-blue-100 to-blue-200">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-blue-800 rounded-full bg-gradient-to-r from-blue-100 to-blue-200">
+                <FaBowlFood  className="mr-1.5"/>{" "}
                 Alimentação
               </span>
-              <span className="px-4 py-2 text-sm font-bold text-white rounded-full bg-gradient-to-r from-green-500 to-green-600">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-white rounded-full bg-gradient-to-r from-green-500 to-green-600">
+                <FaHeartbeat  className="mr-1.5"/>{" "}
                 Cuidados
               </span>
-              <span className="px-4 py-2 text-sm font-bold text-white rounded-full bg-gradient-to-r from-purple-500 to-purple-600">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-white rounded-full bg-gradient-to-r from-purple-500 to-purple-600">
+                <FaCity  className="mr-1.5"/>{" "}
                 Utilidade
               </span>
             </div>

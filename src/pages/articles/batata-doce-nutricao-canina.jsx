@@ -14,6 +14,8 @@ import {
   FaWeight,
   FaExclamationTriangle,
   FaBan,
+  FaFirstAid,
+  FaCity,
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -119,18 +121,29 @@ export default function BatataDoceNutricaoCanina() {
       {/* Conteúdo principal */}
       <main className="container max-w-5xl px-4 py-10 mx-auto">
         <article className="overflow-hidden bg-white shadow-xl rounded-2xl">
-          {/* Imagem Principal */}
-          <ScaleIn delay={0.2}>
-            <div className="w-full">
-              <img
-                src="https://www.tribunadopet.com.br/cachorro-pode-comer-batata-doce.jpg"
-                alt="Cachorro comendo batata doce"
-                className="object-cover w-full"
-              />
-            </div>
-          </ScaleIn>
-
           <div className="p-6 md:p-8">
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-blue-800 bg-blue-100 rounded-full">
+                <FaFirstAid className="mr-1.5" /> Hospital Veterinário
+              </span>
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-green-800 bg-green-100 rounded-full">
+                <FaHeartbeat className="mr-1.5" /> Saúde Animal
+              </span>
+              <span className="flex items-center px-3 py-1.5 text-xs font-medium text-purple-800 bg-purple-100 rounded-full">
+                <FaCity className="mr-1.5" /> Curitiba
+              </span>
+            </div>
+            {/* Imagem Principal */}
+            <ScaleIn delay={0.2}>
+              <div className="w-full">
+                <img
+                  src="https://www.tribunadopet.com.br/cachorro-pode-comer-batata-doce.jpg"
+                  alt="Cachorro comendo batata doce"
+                  className="object-cover w-full"
+                />
+              </div>
+            </ScaleIn>
+
             {/* Introdução */}
             <FadeIn delay={0.3}>
               <section className="mb-10">

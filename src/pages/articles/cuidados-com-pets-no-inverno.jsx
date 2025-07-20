@@ -9,6 +9,7 @@ import Seo from "../../components/Seo";
 import ShareButton from "../../components/ui/ShareButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { FaCaretUp, FaCompressArrowsAlt, FaCross, FaCrosshairs, FaFirstAid, FaHeartbeat, FaPaw, FaSnowflake } from "react-icons/fa";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -112,13 +113,13 @@ export default function CuidadosComPetsNoInverno() {
           <FadeIn delay={0.2}>
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-full flex items-center">
-                <i className="fas fa-paw mr-1.5"></i> Cuidados
+                <FaFirstAid  className="mr-1.5"/>{" "} Cuidados
               </span>
               <span className="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 rounded-full flex items-center">
-                <i className="fas fa-heartbeat mr-1.5"></i> Saúde
+                <i className="fas fa-heartbeat mr-1.5"></i> <FaHeartbeat  className="mr-1.5"/>{" "}Saúde
               </span>
               <span className="px-3 py-1.5 text-xs font-medium text-white bg-gray-800 rounded-full flex items-center">
-                <i className="fas fa-snowflake mr-1.5"></i> Inverno
+                <FaSnowflake  className="mr-1.5"/>{" "} Inverno
               </span>
             </div>
           </FadeIn>
