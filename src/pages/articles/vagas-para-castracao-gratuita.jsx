@@ -14,10 +14,12 @@ import {
   FaCheckCircle,
   FaTimesCircle,
   FaCalendarCheck,
-  FaShareAlt,
+  FaShareAlt
+  
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar ,faCopy} from "@fortawesome/free-regular-svg-icons";
+import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -439,10 +441,10 @@ export default function VagasCastracao() {
             </FadeIn>
 
             {/* Compartilhamento */}
-            <FadeIn delay={0.9}>
-              <div className="py-8 my-10 text-center border-t border-b border-gray-200">
-                <h3 className="mb-6 text-xl font-bold text-gray-900">
-                  Compartilhe esta informação:
+            <FadeIn delay={1.8}>
+              <div className="py-8 my-10 text-center border-gray-200 border-y">
+                <h3 className="mb-5 text-xl font-bold text-gray-900">
+                  Este conteúdo pode salvar vidas! Compartilhe:
                 </h3>
                 <div className="flex flex-wrap justify-center gap-4">
                   <motion.button
@@ -451,7 +453,7 @@ export default function VagasCastracao() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-blue-600 to-blue-800"
                   >
-                    <i className="fab fa-facebook-f"></i> Compartilhar
+                    <FontAwesomeIcon icon={faFacebookF} /> Compartilhar
                   </motion.button>
 
                   <motion.button
@@ -460,7 +462,7 @@ export default function VagasCastracao() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-cyan-500 to-blue-500"
                   >
-                    <i className="fab fa-twitter"></i> Tweetar
+                    <FontAwesomeIcon icon={faTwitter} /> Tweetar
                   </motion.button>
 
                   <motion.button
@@ -469,7 +471,7 @@ export default function VagasCastracao() {
                     onClick={compartilharPagina}
                     className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
                   >
-                    <FaShareAlt className="mr-1" />{" "}
+                    <FontAwesomeIcon icon={faCopy} />{" "}
                     {copied ? "Copiado!" : "Copiar link"}
                   </motion.button>
                 </div>

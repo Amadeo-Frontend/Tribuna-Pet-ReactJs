@@ -319,7 +319,7 @@ export default function PrimeirosSocorrosParaPets() {
                   <ScaleIn delay={0.9}>
                     <figure className="my-5">
                       <img
-                        src="https://www.tribunadopet.com.br/cachorro-engasgado.jpg"
+                        src="https://www.tribunadopet.com.br/ajudando-cachorro.jpg"
                         alt="Manobra de Heimlich em cachorro"
                         className="w-full shadow-md rounded-xl"
                       />
