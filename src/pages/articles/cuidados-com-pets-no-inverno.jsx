@@ -6,9 +6,9 @@ import Header from "../../components/Header";
 import MobileMenu from "../../components/MobileMenu";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
+import ShareButton from "../../components/ui/ShareButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faCopy } from "@fortawesome/free-regular-svg-icons";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -33,21 +33,7 @@ const ScaleIn = ({ children, delay = 0 }) => (
 
 export default function CuidadosComPetsNoInverno() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const compartilharPagina = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Cuidados com pets no inverno – Tribuna do Pet",
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
+  
   return (
     <>
       <Seo
@@ -432,44 +418,8 @@ export default function CuidadosComPetsNoInverno() {
                 </div>
               </FadeIn>
             </div>
-
             {/* Compartilhamento */}
-            <FadeIn delay={1.8}>
-              <div className="py-8 my-10 text-center border-gray-200 border-y">
-                <h3 className="mb-5 text-xl font-bold text-gray-900">
-                  Este conteúdo pode salvar vidas! Compartilhe:
-                </h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-blue-600 to-blue-800"
-                  >
-                    <FontAwesomeIcon icon={faFacebookF} /> Compartilhar
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-cyan-500 to-blue-500"
-                  >
-                    <FontAwesomeIcon icon={faTwitter} /> Tweetar
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
-                  >
-                    <FontAwesomeIcon icon={faCopy} />{" "}
-                    {copied ? "Copiado!" : "Copiar link"}
-                  </motion.button>
-                </div>
-              </div>
-            </FadeIn>
+            <ShareButton/>
           </div>
         </article>
 

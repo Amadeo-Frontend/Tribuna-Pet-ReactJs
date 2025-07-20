@@ -31,6 +31,7 @@ import {
   faCopy,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import ShareButton from "../../components/ui/ShareButton";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -701,42 +702,7 @@ export default function PrimeirosSocorrosParaPets() {
             </FadeIn>
 
             {/* Compartilhamento */}
-            <FadeIn delay={1.8}>
-              <div className="py-8 my-10 text-center border-gray-200 border-y">
-                <h3 className="mb-5 text-xl font-bold text-gray-900">
-                  Este conteúdo pode salvar vidas! Compartilhe:
-                </h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-blue-600 to-blue-800"
-                  >
-                    <FontAwesomeIcon icon={faFacebookF} /> Compartilhar
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white rounded-lg shadow-md bg-gradient-to-r from-cyan-500 to-blue-500"
-                  >
-                    <FontAwesomeIcon icon={faTwitter} /> Tweetar
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={compartilharPagina}
-                    className="flex items-center gap-3 px-6 py-3 text-white bg-gray-800 rounded-lg shadow-md"
-                  >
-                    <FontAwesomeIcon icon={faCopy} />{" "}
-                    {copied ? "Copiado!" : "Copiar link"}
-                  </motion.button>
-                </div>
-              </div>
-            </FadeIn>
+            <ShareButton />
           </div>
         </article>
 
