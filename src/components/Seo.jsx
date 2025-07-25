@@ -3,7 +3,7 @@ import { Helmet } from "@slorber/react-helmet-async";
 export default function Seo({
   title = "Tribuna do Pet",
   description = "Tudo sobre alimentação saudável, cuidados diários e utilidade pública para Pets.",
-  image = "/og-image.jpg",
+  image = "/381336.png",
   canonical = "https://www.tribunadopet.com.br/",
   published, modified,
 }) {
@@ -42,7 +42,7 @@ export default function Seo({
               name: "Tribuna do Pet",
               logo: {
                 "@type": "ImageObject",
-                url: "https://www.tribunadopet.com.br/logo.png",
+                url: "https://www.tribunadopet.com.br/favicon.svg",
               },
             },
           })}
