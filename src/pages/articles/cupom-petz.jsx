@@ -85,7 +85,7 @@ export default function CupomDescontoPetz() {
             </Link>
             <span className="text-gray-300">/</span>
             <Link to="/cupom-petz" className="hover:underline">
-              Cupom e Ofertas
+              Cupons e Promoções
             </Link>
             <span className="text-gray-400">/</span>
             <span className="font-medium text-gray-300">
