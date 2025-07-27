@@ -184,7 +184,7 @@ export default function CupomDescontoPetz() {
 
         <FadeIn delay={0.5}>
           <h2 className="mb-4 text-xl font-bold text-blue-700">
-            Comprei na maior rede de varejo Pet do Brasil e ainda ganhei
+            Compre na maior rede de varejo Pet do Brasil e ainda ganhe
             descontos imperdíveis!
           </h2>
           <ul className="pl-5 mb-6 text-gray-700 list-disc">
