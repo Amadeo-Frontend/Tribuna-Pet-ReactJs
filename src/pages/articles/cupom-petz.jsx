@@ -158,7 +158,7 @@ export default function CupomDescontoPetz() {
 
         <FadeIn delay={0.3}>
           <h2 className="flex gap-2 mb-4 text-2xl font-semibold text-gray-800">
-            <FaTags className="text-5xl text-blue-500 sm:invisible" /> Compre Golden,
+            <FaTags className="hidden text-5xl text-blue-500 md:block" /> Compre Golden,
             Premier, Royal Canin, Hills, Gran Plus, Guabi Natural, Bionatural,
             areias, tapetes, medicamentos, acessórios e mais 20.000 produtos
             para pets com desconto aqui
