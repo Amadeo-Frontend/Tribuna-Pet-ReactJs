@@ -14,9 +14,12 @@ import {
   faBowlFood,
   faHomeAlt,
   faKitMedical,
+  faTags,
+  faTicket,
   faTreeCity
 } from "@fortawesome/free-solid-svg-icons";
 import { MdPrivacyTip } from "react-icons/md";
+import { FaTags } from "react-icons/fa";
 
 /* variantes */
 const overlayV = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
@@ -48,7 +51,7 @@ function Accordion({ label, icon, links, onClose }) {
         onClick={() => setOpen(!open)}
       >
         <span className="flex items-center gap-3">
-          <FontAwesomeIcon icon={icon} /> {label}
+          <FontAwesomeIcon icon={icon} className="text-primary"/> {label}
         </span>
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
@@ -183,6 +186,14 @@ export default function MobileMenu({ open, onClose }) {
                     "/novo-hospital-veterinario-curitiba",
                     "Novo Hosp. Vet. Curitiba",
                   ],
+                ]}
+              />
+              <Accordion
+                label="Cupons e Promoções"
+                icon={faTags}
+                onClose={onClose}
+                links={[
+                  ["/cupom-petz", "Cupom de descontos Petz"],
                 ]}
               />
             </motion.nav>
