@@ -158,7 +158,7 @@ export default function CupomDescontoPetz() {
 
         <FadeIn delay={0.3}>
           <h2 className="flex gap-2 mb-4 text-2xl font-semibold text-gray-800">
-            <FaTags className="text-5xl text-blue-500" /> Compre Golden,
+            <FaTags className="text-5xl text-blue-500 sm:invisible" /> Compre Golden,
             Premier, Royal Canin, Hills, Gran Plus, Guabi Natural, Bionatural,
             areias, tapetes, medicamentos, acessórios e mais 20.000 produtos
             para pets com desconto aqui
@@ -169,14 +169,14 @@ export default function CupomDescontoPetz() {
           <p className="mb-6 text-gray-700">
             Além do desconto direto via cupom, você ainda pode{" "}
             <strong>economizar mais</strong> se optar por{" "}
-            <span className="inline-flex items-center gap-1 font-semibold">
-              <FaStore className="text-green-600" /> retirada em loja física
+            <span className="flex items-center gap-1 font-semibold">
+              <FaStore className="text-sm text-green-600" /> retirada em loja física
             </span>{" "}
             ou{" "}
-            <span className="inline-flex items-center gap-1 font-semibold">
-              <FaMoneyBillWave className="text-green-600" /> pagamento via PIX
+            <span className="flex items-center gap-1 font-semibold">
+              <FaMoneyBillWave className="text-sm text-green-600" /> pagamento via PIX.
             </span>
-            . São várias maneiras de garantir <em>os melhores preços</em> nos
+             São várias maneiras de garantir <em>os melhores preços</em> nos
             produtos que você já costuma comprar — ou aproveitar para testar
             novas marcas premium.
           </p>
@@ -190,7 +190,7 @@ export default function CupomDescontoPetz() {
           <ul className="pl-5 mb-6 text-gray-700 list-disc">
             <li className="flex items-center gap-2">
               <FaCheckCircle className="text-green-500" /> Desconto de 10% com o
-              cupom <strong>CASADASRACOES</strong>
+              cupom
             </li>
             <li className="flex items-center gap-2">
               <FaCheckCircle className="text-green-500" /> Mais desconto ao
