@@ -63,7 +63,7 @@ export default function CupomDescontoPetz() {
         title="Cupom de Desconto Petz 10% | Tribuna do Pet"
         description="Aproveite 10% OFF com o cupom CASADASRACOES na Petz. Descontos extras para pagamento no PIX e retirada na loja!"
         canonical="https://www.tribunadopet.com.br/cupom-petz"
-        image="https://www.tribunadopet.com.br/banner-cupom-petz.jpg"
+        image="https://www.tribunadopet.com.br/promo-og.png"
         published="2025-07-26"
       />
 
