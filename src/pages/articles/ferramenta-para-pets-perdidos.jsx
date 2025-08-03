@@ -402,7 +402,7 @@ export default function PetsPerdidos() {
                         <FaMapMarkerAlt className="mt-1 mr-2 text-green-600" />
                         <span>
                           <strong>Ferramenta RPC:</strong>{" "}
-                          <a href="https://interatividade.vocenarpc.com.br/install/">CLIQUE AQUI PARA BAIXAR O APLICATIVO VOCÊ NA RPC</a>
+                          <a href="https://interatividade.vocenarpc.com.br/install/">CLIQUE AQUI PARA BAIXAR O APP VOCÊ NA RPC</a>
                         </span>
                       </li>
                       <li className="flex items-start">
@@ -454,7 +454,7 @@ export default function PetsPerdidos() {
                       href="https://interatividade.vocenarpc.com.br/install/"
                       className="text-primary hover:underline"
                     >
-                      CLIQUE AQUI PARA BAIXAR O APLICATIVO VOCÊ NA RPC
+                      CLIQUE AQUI PARA BAIXAR O APP VOCÊ NA RPC
                     </a>
                   </li>
                   <li>
