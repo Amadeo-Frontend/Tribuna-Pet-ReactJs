@@ -59,7 +59,7 @@ export default function PetsPerdidos() {
   return (
     <>
       <Seo
-        title="Ferramenta para Encontrar Pets Perdidos | Tribuna do Pet"
+        title="Ferramenta para Encontre seu Pet | Tribuna do Pet"
         description="RPC lança app interativo para ajudar tutores a localizar animais desaparecidos. Entenda como funciona e sua importância para o bem-estar animal."
         canonical="https://www.tribunadopet.com.br/ferramenta-pets-perdidos"
         image="https://www.tribunadopet.com.br/rastreamento-de-pets-og-image.jpg"
@@ -97,7 +97,7 @@ export default function PetsPerdidos() {
             </Link>
             <span className="text-gray-400">/</span>
             <span className="font-medium text-gray-300">
-              Ferramenta para Pets Perdidos
+              Ferramenta encontre seu pet
             </span>
           </nav>
 
