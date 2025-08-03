@@ -60,7 +60,7 @@ export default function PetsPerdidos() {
     <>
       <Seo
         title="Ferramenta para Encontrar Pets Perdidos | Tribuna do Pet"
-        description="RPC lança mapa interativo para ajudar tutores a localizar animais desaparecidos. Entenda como funciona e sua importância para o bem-estar animal."
+        description="RPC lança app interativo para ajudar tutores a localizar animais desaparecidos. Entenda como funciona e sua importância para o bem-estar animal."
         canonical="https://www.tribunadopet.com.br/ferramenta-pets-perdidos"
         image="https://www.tribunadopet.com.br/rastreamento-de-pets-og-image.jpg"
         published="2025-08-04"
@@ -139,7 +139,7 @@ export default function PetsPerdidos() {
               <section className="mb-8">
                 <p className="p-4 mb-6 text-xl font-medium text-gray-700 border-l-4 rounded-lg bg-gray-50 border-primary">
                   A RPC lançou uma ferramenta revolucionária que está
-                  transformando a busca por pets perdidos no Paraná. O mapa
+                  transformando a busca por pets perdidos no Paraná. O app
                   interativo permite que tutores registrem animais desaparecidos
                   e cidadãos reportem pets encontrados, aumentando
                   significativamente as chances de reencontro.
@@ -230,7 +230,7 @@ export default function PetsPerdidos() {
                   </h3>
                   <ol className="pl-6 space-y-4 list-decimal">
                     <li>
-                      <strong>Acesso ao mapa:</strong> O tutor acessa o mapa
+                      <strong>Acesso ao mapa:</strong> O tutor acessa o app
                       interativo no site da RPC
                     </li>
                     <li>
@@ -402,7 +402,7 @@ export default function PetsPerdidos() {
                         <FaMapMarkerAlt className="mt-1 mr-2 text-green-600" />
                         <span>
                           <strong>Ferramenta RPC:</strong>{" "}
-                          mapa.rpc.com.br/petsperdidos
+                          <a href="https://interatividade.vocenarpc.com.br/install/">App VocÊ na RPC</a>
                         </span>
                       </li>
                       <li className="flex items-start">
@@ -451,7 +451,7 @@ export default function PetsPerdidos() {
                   <li>
                     Ferramenta de busca:{" "}
                     <a
-                      href="https://mapa.rpc.com.br/petsperdidos"
+                      href="https://interatividade.vocenarpc.com.br/install/"
                       className="text-primary hover:underline"
                     >
                       mapa.rpc.com.br/petsperdidos
