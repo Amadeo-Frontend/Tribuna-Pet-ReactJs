@@ -186,7 +186,7 @@ export default function MobileMenu({ open, onClose }) {
                     "/novo-hospital-veterinario-curitiba",
                     "Novo Hosp. Vet. Curitiba",
                   ],
-                  ["/rastreamento-de-pets", "Ferramenta para Pets Perdidos"],
+                  ["/ferramenta-para-pets-perdidos", "Ferramenta para Pets Perdidos"],
                 ]}
               />
               <Accordion
