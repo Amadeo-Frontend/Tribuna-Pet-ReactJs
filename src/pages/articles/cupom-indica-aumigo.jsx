@@ -100,11 +100,12 @@ export default function CupomIndicaAumigo() {
 
           <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-300">
             <span className="flex items-center">
-              <i className="mr-2 far fa-calendar text-primary"></i> 26 de Agosto,
-              2025
+              <i className="mr-2 far fa-calendar text-primary"></i> 26 de
+              Agosto, 2025
             </span>
             <span className="flex items-center">
-              <i className="mr-2 far fa-clock text-primary"></i> 4 min de leitura
+              <i className="mr-2 far fa-clock text-primary"></i> 4 min de
+              leitura
             </span>
           </div>
         </div>
@@ -125,13 +126,16 @@ export default function CupomIndicaAumigo() {
 
         {/* imagem principal */}
         <ScaleIn delay={0.2}>
-          <div className="w-full my-2">
-            <img
-              src="/indica-og.png"
-              alt="Indique AUmigo e ganhe 10% OFF"
-              className="object-cover w-full rounded-lg"
-            />
-          </div>
+          <a href="https://www.racaopets.com.br/cupom-indica-aumigo" target="_blank"
+              rel="noopener noreferrer">
+            <div className="w-full my-2">
+              <img
+                src="/indica-og.png"
+                alt="Indique AUmigo e ganhe 10% OFF"
+                className="object-cover w-full rounded-lg"
+              />
+            </div>
+          </a>
         </ScaleIn>
 
         <FadeIn delay={0.2}>
@@ -183,8 +187,8 @@ export default function CupomIndicaAumigo() {
               próxima compra
             </li>
             <li className="flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" /> Seu amigo também ganha
-              um cupom de boas-vindas
+              <FaCheckCircle className="text-green-500" /> Seu amigo também
+              ganha um cupom de boas-vindas
             </li>
             <li className="flex items-center gap-2">
               <FaCheckCircle className="text-green-500" /> Sem valor mínimo de
