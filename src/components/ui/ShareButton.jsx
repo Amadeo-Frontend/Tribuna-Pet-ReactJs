@@ -28,7 +28,7 @@ const ShareButton = () => {
 
   const compartilharWhatsApp = () => {
     // Nova função para WhatsApp
-    const message = `Confira este conteúdo sobre primeiros socorros para pets: ${window.location.href}`;
+    const message = `Confira este artigo nesse link: ${window.location.href}`;
     window.open(
       `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`,
       "_blank"
