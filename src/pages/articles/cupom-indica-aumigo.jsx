@@ -164,12 +164,12 @@ export default function CupomIndicaAumigo() {
             Pets. Assim que a compra for confirmada, você envia o número do
             pedido para nosso WhatsApp oficial{" "}
             <a
-              href="https://wa.me/5541988564198"
+              href="https://wa.me/5541987808852"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-700 underline"
             >
-              (41) 98856-4198
+              (41) 98780-8852
             </a>{" "}
             e em poucos minutos receberá seu cupom de 10% OFF. O melhor é que a
             promoção não tem valor mínimo: qualquer compra já garante a
