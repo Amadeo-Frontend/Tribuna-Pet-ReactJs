@@ -195,7 +195,6 @@ export default function MobileMenu({ open, onClose }) {
                 onClose={onClose}
                 links={[
                   ["/cupom-petz", "Cupom de descontos Petz"],
-                  ["/cupom-indica-aumigo", "Cupom indica um AUmigo"],
                 ]}
               />
             </motion.nav>
