@@ -1,3 +1,4 @@
+/*
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -75,7 +76,7 @@ export default function CupomIndicaAumigo() {
       )}
       <Header onToggleMenu={() => setMenuOpen(true)} />
 
-      {/* breadcrumb + titulo */}
+     
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
@@ -124,7 +125,7 @@ export default function CupomIndicaAumigo() {
           </span>
         </div>
 
-        {/* imagem principal */}
+        
         <ScaleIn delay={0.2}>
           <a href="https://www.racaopets.com.br/cupom-indica-aumigo" target="_blank"
               rel="noopener noreferrer">
@@ -212,7 +213,7 @@ export default function CupomIndicaAumigo() {
 
         <ShareButton />
 
-        {/* anuncio estilo google ads */}
+        
         <FadeIn delay={1.6}>
           <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
             <div className="flex items-start justify-between p-3 bg-gray-100">
@@ -275,4 +276,4 @@ export default function CupomIndicaAumigo() {
       <Footer />
     </>
   );
-}
+}*/
