@@ -58,7 +58,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
     <>
       <Seo
         title="Ração Premium para Filhotes em Curitiba (Guia 2025) | Tribuna do Pet"
-        description="Guia simples para escolher ração premium para filhotes: o que olhar, como servir, transição em 7 dias e onde comprar em Curitiba/RMC com envio nacional."
+        description="Guia simples para escolher ração premium para filhotes: o que olhar, como servir, e onde comprar em Curitiba/RMC com envio nacional."
         canonical="https://www.tribunadopet.com.br/melhor-racao-para-filhotes"
         image="https://www.tribunadopet.com.br/banner-blog.png"
         published="2025-11-01"
