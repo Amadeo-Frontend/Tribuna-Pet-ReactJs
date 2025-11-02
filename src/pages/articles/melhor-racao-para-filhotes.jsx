@@ -58,7 +58,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
     <>
       <Seo
         title="Ração Premium para Filhotes em Curitiba (Guia 2025) | Tribuna do Pet"
-        description="Como escolher ração premium para filhotes: o que olhar no rótulo, porções por peso/idade, transição em 7 dias e onde comprar em Curitiba/RMC com envio nacional."
+        description="Guia simples para escolher ração premium para filhotes: o que olhar, como servir, transição em 7 dias e onde comprar em Curitiba/RMC com envio nacional."
         canonical="https://www.tribunadopet.com.br/guia-racao-premium-filhotes-curitiba"
         image="https://www.tribunadopet.com.br/og-default.jpg"
         published="2025-11-01"
@@ -92,8 +92,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-3xl font-bold text-gray-100 md:text-4xl">
-              Ração Premium para Filhotes: guia prático para começar certo
-              em Curitiba e Região Metropolitana
+              Melhor Ração para Filhotes: Como Escolher
             </h1>
           </FadeIn>
 
@@ -103,7 +102,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               Novembro, 2025
             </span>
             <span className="flex items-center">
-              <i className="mr-2 far fa-clock text-primary"></i> 8–10 min de
+              <i className="mr-2 far fa-clock text-primary"></i> 6–8 min de
               leitura
             </span>
             <span className="items-center hidden sm:flex">
@@ -138,200 +137,100 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
           </div>
         </ScaleIn>
 
-        {/* Introdução */}
+        {/* Introdução sem técnica */}
         <FadeIn delay={0.2}>
           <div className="p-6 mb-6 border-l-4 border-blue-500 bg-blue-50 rounded-xl">
             <p className="text-lg text-gray-800">
-              O primeiro ano do seu cão é um sprint de crescimento — ossos,
-              músculos, cérebro e imunidade se desenvolvem em ritmo acelerado.
-              A <strong>ração premium para filhotes</strong> garante energia
-              adequada, nutrientes equilibrados e suporte cognitivo. A seguir,
-              veja como escolher bem, ajustar as porções e fazer a transição sem
-              estresse — com dicas focadas em{" "}
-              <strong>Curitiba e Região Metropolitana</strong>.
+              Ter um filhote em casa é alegria pura — e também responsabilidade.
+              A alimentação certa ajuda no crescimento, na energia para brincar,
+              na pelagem bonita e até no cocô firme (sinal de que está digerindo
+              bem). Abaixo, um passo a passo sem complicação para escolher
+              <strong> ração premium</strong>, montar a rotina e evitar os
+              erros mais comuns.
             </p>
           </div>
         </FadeIn>
 
-        {/* O que observar no rótulo */}
+        {/* O que olhar sem tecnicês */}
         <FadeIn delay={0.3}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            O que observar no rótulo (e por que isso importa)
+            O que uma boa ração premium tem?
           </h2>
           <ul className="pl-5 mb-6 text-gray-700 list-disc">
             <li className="flex items-start gap-2">
               <FaCheckCircle className="mt-1 text-green-600" />
               <span>
-                <strong>Garantia nutricional para crescimento:</strong>{" "}
-                procure rótulos que declarem “atende aos perfis para{" "}
-                <em>crescimento/filhotes</em>”. Padrões internacionais
-                indicam proteína e energia superiores às de adultos —
-                referência prática usada por fabricantes: ≈{" "}
-                <strong>56 g de proteína por 1.000 kcal</strong> para filhotes.
+                <strong>Feita para filhotes:</strong> a embalagem precisa dizer
+                que é para “crescimento” ou “filhotes”. É isso que garante os
+                nutrientes certos para essa fase acelerada.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <FaLeaf className="mt-1 text-green-600" />
               <span>
-                <strong>Ômega-3 de cadeia longa (DHA/EPA):</strong> apoio para
-                visão e desenvolvimento neurológico; verifique a presença de
-                fontes marinhas/declaração de DHA para fase de crescimento.
+                <strong>Cuida da pele e do pelo:</strong> receitas com fontes de
+                gordurinhas boas ajudam a pelagem ficar brilhante e sem
+                coceiras.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <FaShieldAlt className="mt-1 text-amber-600" />
               <span>
-                <strong>Cálcio/Fósforo e fase:</strong> confirme a indicação
-                para “cães filhotes” e uma relação <strong>Ca:P</strong>{" "}
-                apropriada ao crescimento — essencial sobretudo para raças
-                grandes (veja abaixo).
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <FaShieldAlt className="mt-1 text-amber-600" />
-              <span>
-                <strong>Qualidade do fabricante:</strong> valorize marcas com
-                equipe de nutrição, controle de qualidade robusto, rastreio de
-                lotes e, idealmente, alimentos validados em{" "}
-                <em>feeding trials</em> além de formulação teórica.
+                <strong>Equilibrada e confiável:</strong> marcas sérias mostram
+                claramente os ingredientes, têm controle de qualidade e deixam
+                o rótulo fácil de entender.
               </span>
             </li>
           </ul>
         </FadeIn>
 
-        {/* Porções genéricas */}
+        {/* Como servir sem números/tabela */}
         <FadeIn delay={0.35}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Porções diárias sugeridas (divida em 3–4 refeições)
+            Como montar a rotina de comedero
           </h2>
-          <div className="mb-2 text-sm text-gray-500">
-            Ajuste com seu médico-veterinário e de acordo com a marca escolhida.
-            Referência prática: filhotes, em geral, demandam proteína/energia
-            por 1.000 kcal superiores às de cães adultos — por isso comem com
-            mais frequência.
-          </div>
-          <div className="mb-6 overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-200">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-4 py-3 font-semibold text-left text-gray-700">
-                    Peso do filhote
-                  </th>
-                  <th className="px-4 py-3 font-semibold text-left text-gray-700">
-                    2–3 meses
-                  </th>
-                  <th className="px-4 py-3 font-semibold text-left text-gray-700">
-                    4–6 meses
-                  </th>
-                  <th className="px-4 py-3 font-semibold text-left text-gray-700">
-                    7–12 meses
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { faixa: "1–3 kg", a: "30–60 g", b: "40–70 g", c: "40–60 g" },
-                  { faixa: "4–6 kg", a: "60–95 g", b: "70–120 g", c: "60–100 g" },
-                  { faixa: "7–10 kg", a: "95–140 g", b: "120–170 g", c: "100–150 g" },
-                  { faixa: "11–15 kg", a: "140–190 g", b: "170–230 g", c: "150–200 g" },
-                ].map((row) => (
-                  <tr key={row.faixa} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 border-b">{row.faixa}</td>
-                    <td className="px-4 py-3 font-medium border-b">{row.a}</td>
-                    <td className="px-4 py-3 font-medium border-b">{row.b}</td>
-                    <td className="px-4 py-3 font-medium border-b">{row.c}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </FadeIn>
-
-        {/* Transição em 7 dias */}
-        <FadeIn delay={0.4}>
-          <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Transição alimentar em 7 dias (sem surpresas)
-          </h2>
-          <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2">
-            <div className="p-6 border-l-4 border-blue-500 rounded-lg bg-blue-50">
-              <h3 className="flex items-center mb-2 text-lg font-bold text-blue-800">
-                <FaUtensils className="mr-2" /> Passo a passo
-              </h3>
-              <ol className="pl-5 space-y-1 text-gray-700 list-decimal">
-                <li>Dias 1–2: 75% antiga + 25% nova</li>
-                <li>Dias 3–4: 50% antiga + 50% nova</li>
-                <li>Dias 5–6: 25% antiga + 75% nova</li>
-                <li>Dia 7: 100% ração premium</li>
-              </ol>
-              <p className="mt-3 text-sm text-gray-600">
-                Dica: umedeça com água morna nas primeiras semanas.
-              </p>
-            </div>
-            <div className="p-6 border-l-4 border-green-500 rounded-lg bg-green-50">
-              <h3 className="mb-2 text-lg font-bold text-green-800">
-                Atenção rápida
-              </h3>
-              <ul className="pl-5 space-y-2 text-gray-700 list-disc">
-                <li>Água fresca sempre disponível.</li>
-                <li>Evite leite, temperos e petiscos em excesso.</li>
-                <li>Se vomitar/diarreia persistirem, procure o veterinário.</li>
-              </ul>
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* Raças grandes */}
-        <FadeIn delay={0.42}>
-          <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Raças grandes: cálcio, energia e ossos saudáveis
-          </h2>
-          <div className="p-6 mb-6 border-l-4 border-purple-500 rounded-lg bg-purple-50">
-            <ul className="pl-5 space-y-2 text-gray-700 list-disc">
-              <li>
-                <strong>Controle de cálcio:</strong> excesso está associado a
-                distúrbios ortopédicos de desenvolvimento (DOD). Prefira
-                rações específicas <em>“filhote raças grandes”</em>.
-              </li>
-              <li>
-                <strong>Relação Ca:P adequada:</strong> manter em torno de{" "}
-                <strong>1,1:1 a 1,3:1</strong> é prática segura adotada por
-                fabricantes de dietas <em>large breed puppy</em>.
-              </li>
-              <li>
-                <strong>Energia sob controle:</strong> evitar superalimentação
-                reduz ganho de peso muito rápido e sobrecarga articular.
-              </li>
-            </ul>
-            <p className="mt-3 text-sm text-gray-600">
-              Se o adulto projetado do seu cão for &gt; 25–30 kg, use dieta
-              específica para raças grandes e siga as porções do fabricante.
+          <div className="space-y-3 text-gray-700">
+            <p>
+              <strong>Divida em pequenas refeições ao longo do dia.</strong>{" "}
+              Filhotes comem menos por vez, mas com mais frequência. Assim eles
+              aproveitam melhor e não passam mal.
+            </p>
+            <p>
+              <strong>Use o copinho medidor da própria marca</strong> como
+              referência e ajuste pela aparência do seu cão: se está ganhando
+              muito peso, reduza um pouco; se está magrinho, aumente um pouco.
+            </p>
+            <p>
+              <strong>Água fresca sempre por perto.</strong> Troque durante o
+              dia.
             </p>
           </div>
         </FadeIn>
 
-        {/* Erros comuns */}
+        {/* Erros comuns bem leigos */}
         <FadeIn delay={0.45}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            5 erros comuns ao alimentar filhotes
+            Erros comuns que atrapalham
           </h2>
-        <ul className="pl-5 mb-6 text-gray-700 list-disc">
-            <li>Pular a fase “junior” muito cedo (respeite até 12 meses/porte).</li>
-            <li>Trocar de ração sem transição gradual.</li>
-            <li>Servir “no olho” sem considerar peso e idade.</li>
-            <li>Exagerar nos petiscos e “comida de gente”.</li>
-            <li>Não acompanhar escore corporal e aspecto das fezes.</li>
+          <ul className="pl-5 mb-6 text-gray-700 list-disc">
+            <li>Trocar de ração de um dia para o outro.</li>
+            <li>Oferecer muito petisco e “comida de gente”.</li>
+            <li>Encher o pote sem medir e sem observar o corpo do cão.</li>
+            <li>Esquecer a água fresca.</li>
+            <li>Ignorar sinais como vômito e diarreia persistentes.</li>
           </ul>
         </FadeIn>
 
-        {/* Onde comprar (links discretos – apenas linkam o seu produto) */}
+        {/* Onde comprar (links discretos – só linkam seu produto) */}
         <FadeIn delay={0.5}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
             Onde comprar em Curitiba/RMC (envio nacional disponível)
           </h2>
           <p className="mb-4 text-gray-700">
-            Para tutores de <strong>Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e região</strong>,
-            o link abaixo da <em>Ração Pets</em> facilita entrega rápida local. Para outras cidades do Brasil,
-            use o link da Shopee com envio nacional.
+            Para quem está em{" "}
+            <strong>Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária</strong>{" "}
+            e região, o link abaixo da <em>Ração Pets</em> facilita entrega
+            rápida local. Para o restante do Brasil, use a Shopee.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -358,10 +257,10 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
           </p>
         </FadeIn>
 
-        {/* FAQ */}
+        {/* FAQ curtinha e leiga */}
         <FadeIn delay={0.55}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Perguntas frequentes
+            Perguntas rápidas
           </h2>
           <div className="space-y-4">
             <details className="p-4 border rounded-lg bg-gray-50">
@@ -369,23 +268,24 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
                 <FaQuestionCircle className="mr-2" /> Quando começo a ração de filhote?
               </summary>
               <p className="mt-2 text-gray-700">
-                A partir do desmame (6–8 semanas). Nas primeiras semanas, umedecer ajuda na aceitação.
+                Logo após o desmame (por volta de 6–8 semanas). Se precisar,
+                umedeça nos primeiros dias.
               </p>
             </details>
             <details className="p-4 border rounded-lg bg-gray-50">
               <summary className="flex items-center font-semibold text-gray-800 cursor-pointer">
-                <FaQuestionCircle className="mr-2" /> Quantas refeições por dia?
+                <FaQuestionCircle className="mr-2" /> Quantas vezes por dia?
               </summary>
               <p className="mt-2 text-gray-700">
-                Em geral, 3–4 até 6 meses; depois, 2–3, conforme orientação do veterinário.
+                Várias pequenas refeições. No começo, 3–4 por dia funciona bem.
               </p>
             </details>
             <details className="p-4 border rounded-lg bg-gray-50">
               <summary className="flex items-center font-semibold text-gray-800 cursor-pointer">
-                <FaQuestionCircle className="mr-2" /> Posso alternar com úmido?
+                <FaQuestionCircle className="mr-2" /> Posso misturar com alimento úmido?
               </summary>
               <p className="mt-2 text-gray-700">
-                Pode, mantendo a completude nutricional do dia. Introduza gradualmente e monitore fezes/apetite.
+                Pode. Vá aos poucos e observe o cocô e o apetite.
               </p>
             </details>
           </div>
@@ -393,7 +293,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
 
         <ShareButton />
 
-        {/* Anúncio estilo Google Ads (mesma estrutura da sua página que funciona) */}
+        {/* Anúncio estilo Google Ads (mesma estrutura) */}
         <FadeIn delay={1.6}>
           <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
             <div className="flex items-start justify-between p-3 bg-gray-100">
