@@ -160,6 +160,10 @@ export default function MobileMenu({ open, onClose }) {
                     "/batata-doce-nutricao-canina",
                     "Batata-doce na Nutrição Canina",
                   ],
+                  [
+                    "/melhor-racao-para-filhotes",
+                    "Melhor Ração para Filhotes: Como Escolher",
+                  ],
                 ]}
               />
 
