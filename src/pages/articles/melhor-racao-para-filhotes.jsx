@@ -279,11 +279,6 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               <span>Ver na Shopee (envio nacional)</span>
             </a>
           </div>
-
-          <p className="mt-2 text-xs text-gray-500">
-            *Links parceiros: podem gerar benefícios ao portal sem custo extra
-            para você.
-          </p>
         </FadeIn>
 
         {/* FAQ curtinha e leiga */}
