@@ -233,7 +233,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
             <p className="mb-3 text-gray-800">
               Nossa indicação para quem está em{" "}
               <strong>
-                Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária
+                Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Almirante Tamandaré
               </strong>{" "}
               e região é a <em>Ração Pets</em>: loja local, checkout seguro e
               suporte que resolve.
