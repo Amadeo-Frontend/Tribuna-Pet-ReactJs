@@ -141,12 +141,12 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
         <FadeIn delay={0.2}>
           <div className="p-6 mb-6 border-l-4 border-blue-500 bg-blue-50 rounded-xl">
             <p className="text-lg text-gray-800">
-              Ter um filhote em casa é alegria pura — e também responsabilidade.
-              A alimentação certa ajuda no crescimento, na energia para brincar,
+              Ter um filhote em casa é alegria pura e também responsabilidade. A
+              alimentação certa ajuda no crescimento, na energia para brincar,
               na pelagem bonita e até no cocô firme (sinal de que está digerindo
               bem). Abaixo, um passo a passo sem complicação para escolher
-              <strong> ração premium</strong>, montar a rotina e evitar os
-              erros mais comuns.
+              <strong> ração premium</strong>, montar a rotina e evitar os erros
+              mais comuns.
             </p>
           </div>
         </FadeIn>
@@ -161,15 +161,15 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               <FaCheckCircle className="mt-1 text-green-600" />
               <span>
                 <strong>Feita para filhotes:</strong> a embalagem precisa dizer
-                que é para “crescimento” ou “filhotes”. É isso que garante os
-                nutrientes certos para essa fase acelerada.
+                que é para “filhotes”. É isso que garante os nutrientes certos
+                para essa fase acelerada.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <FaLeaf className="mt-1 text-green-600" />
               <span>
-                <strong>Cuida da pele e do pelo:</strong> receitas com fontes de
-                gordurinhas boas ajudam a pelagem ficar brilhante e sem
+                <strong>Cuidado da pele e do pelo:</strong> receitas com fontes
+                de vitamínas e minerais ajudam a pelagem ficar brilhante e sem
                 coceiras.
               </span>
             </li>
@@ -177,8 +177,8 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               <FaShieldAlt className="mt-1 text-amber-600" />
               <span>
                 <strong>Equilibrada e confiável:</strong> marcas sérias mostram
-                claramente os ingredientes, têm controle de qualidade e deixam
-                o rótulo fácil de entender.
+                claramente os ingredientes, têm controle de qualidade e deixam o
+                rótulo fácil de entender.
               </span>
             </li>
           </ul>
@@ -187,7 +187,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
         {/* Como servir sem números/tabela */}
         <FadeIn delay={0.35}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Como montar a rotina de comedero
+            Como organizar a rotina do seu filhote
           </h2>
           <div className="space-y-3 text-gray-700">
             <p>
@@ -196,15 +196,19 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               aproveitam melhor e não passam mal.
             </p>
             <p>
-              <strong>Use o copinho medidor da própria marca</strong> como
-              referência e ajuste pela aparência do seu cão: se está ganhando
-              muito peso, reduza um pouco; se está magrinho, aumente um pouco.
+              <strong>
+                Siga as recomendações da quantidade correta que consta na
+                embalagem
+              </strong>
+              :se está ganhando muito peso, reduza um pouco, e se está magrinho
+              aumente um pouco.
             </p>
             <p>
               <strong>Água fresca sempre por perto.</strong> Troque durante o
               dia.
             </p>
           </div>
+          <br />
         </FadeIn>
 
         {/* Erros comuns bem leigos */}
@@ -213,47 +217,72 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
             Erros comuns que atrapalham
           </h2>
           <ul className="pl-5 mb-6 text-gray-700 list-disc">
-            <li>Trocar de ração de um dia para o outro.</li>
-            <li>Oferecer muito petisco e “comida de gente”.</li>
+            <li>Oferecer muito petisco e “comida de humano”.</li>
             <li>Encher o pote sem medir e sem observar o corpo do cão.</li>
             <li>Esquecer a água fresca.</li>
-            <li>Ignorar sinais como vômito e diarreia persistentes.</li>
           </ul>
         </FadeIn>
 
-        {/* Onde comprar (links discretos – só linkam seu produto) */}
+        {/* Onde comprar (priorizando Ração Pets) */}
         <FadeIn delay={0.5}>
           <h2 className="mb-4 text-2xl font-semibold text-gray-800">
-            Onde comprar em Curitiba/RMC (envio nacional disponível)
+            Compre com entrega rápida em Curitiba/RMC
           </h2>
-          <p className="mb-4 text-gray-700">
-            Para quem está em{" "}
-            <strong>Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária</strong>{" "}
-            e região, o link abaixo da <em>Ração Pets</em> facilita entrega
-            rápida local. Para o restante do Brasil, use a Shopee.
-          </p>
+
+          <div className="p-5 mb-4 border border-green-200 rounded-xl bg-green-50">
+            <p className="mb-3 text-gray-800">
+              Nossa indicação para quem está em{" "}
+              <strong>
+                Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária
+              </strong>{" "}
+              e região é a <em>Ração Pets</em>: loja local, checkout seguro e
+              suporte que resolve.
+            </p>
+            <ul className="pl-5 space-y-1 text-gray-700 list-disc">
+              <li>
+                <FaCheckCircle className="inline mr-1 text-green-600" /> Entrega
+                rápida na região metropolitana
+              </li>
+              <li>
+                <FaCheckCircle className="inline mr-1 text-green-600" />{" "}
+                Pagamento facilitado (PIX, cartão)
+              </li>
+              <li>
+                <FaCheckCircle className="inline mr-1 text-green-600" />{" "}
+                Atendimento próximo e confiável
+              </li>
+            </ul>
+          </div>
+
           <div className="flex flex-wrap gap-3">
+            {/* CTA principal — Ração Pets */}
             <a
               onClick={handleCtaToast}
               href="https://www.racaopets.com.br/cachorro/racao-seca/premium/racao-lunch-dog-premium-filhotes-natural-28-proteina-5kg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-green-600 rounded-md hover:bg-green-700"
+              className="inline-flex items-center px-5 py-3 text-sm font-semibold text-white bg-green-600 rounded-md shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
             >
-              <FaStore className="mr-2" /> Lunch Dog Premium Filhotes — Ração Pets (Curitiba/RMC)
+              <FaStore className="mr-2" />
+              <span>Comprar na Ração Pets (recomendado)</span>
             </a>
+
+            {/* Opção secundária — Shopee (mais discreta) */}
             <a
               onClick={handleCtaToast}
               href="https://shopee.com.br/product/1394219389/23393611236/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-2 text-sm font-semibold text-white bg-orange-500 rounded-md hover:bg-orange-600"
+              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-300"
             >
-              <FaStore className="mr-2" /> Lunch Dog Premium Filhotes — Shopee (Brasil)
+              <FaStore className="mr-2" />
+              <span>Ver na Shopee (envio nacional)</span>
             </a>
           </div>
+
           <p className="mt-2 text-xs text-gray-500">
-            *Links parceiros: podem gerar benefícios ao portal sem custo para você.
+            *Links parceiros: podem gerar benefícios ao portal sem custo extra
+            para você.
           </p>
         </FadeIn>
 
@@ -265,7 +294,8 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
           <div className="space-y-4">
             <details className="p-4 border rounded-lg bg-gray-50">
               <summary className="flex items-center font-semibold text-gray-800 cursor-pointer">
-                <FaQuestionCircle className="mr-2" /> Quando começo a ração de filhote?
+                <FaQuestionCircle className="mr-2" /> Quando começo a ração de
+                filhote?
               </summary>
               <p className="mt-2 text-gray-700">
                 Logo após o desmame (por volta de 6–8 semanas). Se precisar,
@@ -282,10 +312,11 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
             </details>
             <details className="p-4 border rounded-lg bg-gray-50">
               <summary className="flex items-center font-semibold text-gray-800 cursor-pointer">
-                <FaQuestionCircle className="mr-2" /> Posso misturar com alimento úmido?
+                <FaQuestionCircle className="mr-2" /> Posso misturar com
+                frutas?
               </summary>
               <p className="mt-2 text-gray-700">
-                Pode. Vá aos poucos e observe o cocô e o apetite.
+                Pode. Menos uva, abacate, carambola, cereja, ameixa e figo .
               </p>
             </details>
           </div>
@@ -340,7 +371,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/hospital-veterinario-municipal-de-curitiba.jpg"
+                      src="https://www.tribunadopet.com.br/racao-pets-filhotes.png"
                       alt="Ração premium para filhotes"
                       className="object-contain w-32 h-24"
                     />
