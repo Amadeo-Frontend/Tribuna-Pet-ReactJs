@@ -279,6 +279,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               <span>Ver na Shopee (envio nacional)</span>
             </a>
           </div>
+          <br/>
         </FadeIn>
 
         {/* FAQ curtinha e leiga */}
