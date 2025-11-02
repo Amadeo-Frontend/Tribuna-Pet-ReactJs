@@ -241,7 +241,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
             <ul className="pl-5 space-y-1 text-gray-700 list-disc">
               <li>
                 <FaCheckCircle className="inline mr-1 text-green-600" /> Entrega
-                rápida na região metropolitana
+                rápida em Curitiba e RMC
               </li>
               <li>
                 <FaCheckCircle className="inline mr-1 text-green-600" />{" "}
@@ -249,7 +249,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               </li>
               <li>
                 <FaCheckCircle className="inline mr-1 text-green-600" />{" "}
-                Atendimento próximo e confiável
+                Atendimento de qualidade e confiável
               </li>
             </ul>
           </div>
@@ -303,15 +303,6 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               </summary>
               <p className="mt-2 text-gray-700">
                 Várias pequenas refeições. No começo, 3–4 por dia funciona bem.
-              </p>
-            </details>
-            <details className="p-4 border rounded-lg bg-gray-50">
-              <summary className="flex items-center font-semibold text-gray-800 cursor-pointer">
-                <FaQuestionCircle className="mr-2" /> Posso misturar com
-                frutas?
-              </summary>
-              <p className="mt-2 text-gray-700">
-                Pode. Menos uva, abacate, carambola, cereja, ameixa e figo .
               </p>
             </details>
           </div>
