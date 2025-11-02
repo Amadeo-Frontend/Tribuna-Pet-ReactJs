@@ -64,6 +64,14 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
         published="2025-11-01"
       />
 
+      {/* Top bar */}
+      <div className="hidden py-2 text-white bg-gradient-to-r bg-primary sm:block">
+        <div className="container flex items-center justify-between px-4 mx-auto text-sm">
+          <span>Seu portal de informações para seu melhor amigo</span>
+          <LiveClock />
+        </div>
+      </div>
+
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       {menuOpen && (
         <div
@@ -106,7 +114,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               leitura
             </span>
             <span className="items-center hidden sm:flex">
-              <LiveClock />
+              4.5k visualizações
             </span>
           </div>
         </div>
@@ -233,7 +241,8 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
             <p className="mb-3 text-gray-800">
               Nossa indicação para quem está em{" "}
               <strong>
-                Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Almirante Tamandaré
+                Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária,
+                Almirante Tamandaré
               </strong>{" "}
               e região é a <em>Ração Pets</em>: loja local, checkout seguro e
               suporte que resolve.
@@ -279,7 +288,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
               <span>Ver na Shopee (envio nacional)</span>
             </a>
           </div>
-          <br/>
+          <br />
         </FadeIn>
 
         {/* FAQ curtinha e leiga */}
