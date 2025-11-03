@@ -4,7 +4,7 @@ import { Helmet } from "@slorber/react-helmet-async";
 export default function Seo({
   title = "Tribuna do Pet",
   description = "Tudo sobre alimentação saudável, cuidados diários e utilidade pública para Pets.",
-  image = "/381336.png", // pode ser relativa
+  image = "/banner-blog.png", // pode ser relativa
   canonical = "https://www.tribunadopet.com.br/", // base do site
   published,
   modified,
