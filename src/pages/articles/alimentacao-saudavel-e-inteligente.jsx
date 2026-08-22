@@ -412,7 +412,7 @@ export default function AlimentacaoInteligente() {
                   <p className="mb-3 text-gray-700">
                     A distribuição é feita pela{" "}
                     <a
-                      href="https://www.distribuidorasulpet.com.br"
+                      href="https://www.sulpetracoes.com.br/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-bold text-blue-600 hover:underline"
