@@ -12,6 +12,15 @@ export default defineConfig({
     },
   },
   build: {
-    commonJsOptions: { transformMixedEsModules: true }
+    commonJsOptions: { transformMixedEsModules: true },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          icons: ["react-icons", "@fortawesome/react-fontawesome"],
+        },
+      },
+    },
   },
 })
