@@ -213,7 +213,7 @@ export default function MelhorRacaoPitbull() {
             {/* Seção 1 */}
             <FadeIn delay={0.6}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaTrophy className="text-yellow-500" />
+                <FaTrophy className="text-3xl md:text-4xl text-yellow-500 flex-shrink-0" />
                 Qual é a melhor ração para Pitbull em 2026?
               </h2>
               <p className="mb-6 text-gray-700">
@@ -262,7 +262,7 @@ export default function MelhorRacaoPitbull() {
             {/* Seção 2 */}
             <FadeIn delay={0.7}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <MdOutlineWorkspacePremium className="text-blue-500" />
+                <MdOutlineWorkspacePremium className="text-3xl md:text-4xl text-blue-600 flex-shrink-0" />
                 X-PRO Training: a segunda colocada que muda a discussão sobre a Melhor Compra
               </h2>
               <p className="mb-6 text-gray-700">
@@ -375,7 +375,7 @@ export default function MelhorRacaoPitbull() {
             {/* Seção 3 & Tabela */}
             <FadeIn delay={0.9}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaMedal className="text-yellow-500" />
+                <FaMedal className="text-3xl md:text-4xl text-yellow-500 flex-shrink-0" />
                 Ultra Power completa um Top 3 bastante forte
               </h2>
               <p className="mb-6 text-gray-700">
@@ -386,7 +386,7 @@ export default function MelhorRacaoPitbull() {
               </p>
 
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaBrain className="text-blue-500" />
+                <FaBrain className="text-3xl md:text-4xl text-blue-500 flex-shrink-0" />
                 Ranking das 13 rações analisadas
               </h2>
               <p className="mb-4 text-gray-700">A classificação final ficou assim:</p>
@@ -489,7 +489,7 @@ export default function MelhorRacaoPitbull() {
             {/* O que foi levado em conta */}
             <FadeIn delay={1.0}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaInfoCircle className="text-blue-500" />
+                <FaInfoCircle className="text-3xl md:text-4xl text-blue-500 flex-shrink-0" />
                 O que foi levado em conta no ranking?
               </h2>
               <p className="mb-4 text-gray-700">
@@ -554,7 +554,7 @@ export default function MelhorRacaoPitbull() {
             {/* Perguntas Frequentes */}
             <FadeIn delay={1.2}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaQuestionCircle className="text-blue-500" />
+                <FaQuestionCircle className="text-3xl md:text-4xl text-blue-500 flex-shrink-0" />
                 Perguntas Frequentes
               </h2>
               <div className="space-y-4 mb-8">
@@ -600,7 +600,7 @@ export default function MelhorRacaoPitbull() {
             {/* Fabricantes e Sites Oficiais */}
             <FadeIn delay={1.5}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <i className="text-blue-500 fas fa-globe"></i>
+                <i className="text-3xl md:text-4xl text-blue-500 fas fa-globe flex-shrink-0"></i>
                 Fabricantes e Sites Oficiais das Rações Analisadas
               </h2>
               <p className="mb-6 text-gray-700">
