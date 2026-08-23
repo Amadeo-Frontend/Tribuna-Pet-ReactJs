@@ -395,31 +395,6 @@ export default function MelhorRacaoPitbull() {
               </h2>
               <p className="mb-4 text-gray-700">A classificação final ficou assim:</p>
 
-              {/* Tabela gráfica em Imagem + Botão de Download */}
-              <div className="my-6 p-4 border border-gray-200 bg-gray-50 rounded-xl">
-                <div className="overflow-hidden shadow-md rounded-lg bg-white">
-                  <img
-                    src="/tabela-ranking-melhores-racoes-de-pitbull.png"
-                    alt="Tabela ranking comparativa das 13 melhores rações de Pitbull"
-                    className="w-full h-auto"
-                  />
-                </div>
-                
-                {/* Botão de Download da Imagem da Tabela */}
-                <div className="flex justify-center mt-4">
-                  <a
-                    href="/tabela-ranking-melhores-racoes-de-pitbull.png"
-                    download="tabela-ranking-melhores-racoes-de-pitbull.png"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white transition-all rounded-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-900"
-                  >
-                    <FaDownload className="text-sm" />
-                    Baixar Tabela Comparativa em Alta Resolução
-                  </a>
-                </div>
-              </div>
-
               {/* Tabela HTML Responsiva */}
               <div className="overflow-x-auto my-8 border border-gray-200 rounded-xl shadow-sm">
                 <table className="w-full text-left text-sm text-gray-700">
@@ -498,6 +473,28 @@ export default function MelhorRacaoPitbull() {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+
+              {/* Imagem da Tabela + Botão de Download logo em baixo */}
+              <div className="my-8 p-4 border border-gray-200 bg-gray-50 rounded-2xl shadow-sm text-center">
+                <div className="overflow-hidden shadow-md rounded-xl bg-white mb-4">
+                  <img
+                    src="/tabela-ranking-melhores-racoes-de-pitbull.png"
+                    alt="Tabela ranking comparativa das 13 melhores rações de Pitbull"
+                    className="w-full h-auto"
+                  />
+                </div>
+
+                <a
+                  href="/tabela-ranking-melhores-racoes-de-pitbull.png"
+                  download="tabela-ranking-melhores-racoes-de-pitbull.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3 text-sm font-bold text-white transition-all rounded-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-xl hover:from-blue-700 hover:to-blue-900 active:scale-95"
+                >
+                  <FaDownload className="text-base" />
+                  Baixar Imagem da Tabela Comparativa em Alta Resolução
+                </a>
               </div>
             </FadeIn>
 
