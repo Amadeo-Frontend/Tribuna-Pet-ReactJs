@@ -1,36 +1,26 @@
-import { useState, useEffect } from "react";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import MobileMenu from "../../components/MobileMenu";
-import Footer from "../../components/Footer";
-import Seo from "../../components/Seo";
-import LiveClock from "../../components/LiveClock";
-import { LinkPreview } from "../../components/ui/link-preview";
+import { useEffect, useState } from "react";
 import {
-  FaRegStar,
-  FaFlask,
-  FaHandHoldingHeart,
   FaBrain,
   FaCheckCircle,
-  FaBone,
-  FaPaw,
-  FaStore,
-  FaShoppingCart,
-  FaTruck,
-  FaDumbbell,
-  FaMedal,
-  FaTrophy,
-  FaQuestionCircle,
-  FaInfoCircle,
   FaDownload,
+  FaDumbbell,
+  FaInfoCircle,
+  FaMedal,
+  FaQuestionCircle,
+  FaTrophy
 } from "react-icons/fa";
-import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
-import { HiBuildingStorefront } from "react-icons/hi2";
-import { SiShopee } from "react-icons/si";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import LiveClock from "../../components/LiveClock";
+import MobileMenu from "../../components/MobileMenu";
+import Seo from "../../components/Seo";
+import { LinkPreview } from "../../components/ui/link-preview";
 import ShareButton from "../../components/ui/ShareButton";
 
 const FadeIn = ({ children, delay = 0 }) => (
@@ -249,7 +239,7 @@ export default function MelhorRacaoPitbull() {
                 Outro ponto que contou na nossa metodologia é a composição declarada pela marca: o glúten de milho usado na fórmula aparece como <strong>não transgênico</strong>.
               </p>
               <p className="mb-6 text-gray-700">
-                A PremieR também utiliza <strong>ovo em pó</strong>. Esse detalhe merece ser registrado porque, quando se fala em ração de alta performance, não basta saber quanto de proteína existe; as fontes proteicas ajudam a entender melhor a construção da fórmula.
+                A PremieR também utiliza <strong>ovo em pó</strong>. Esse detalhe merece ser registrado porque, quando se fala em ração de alta performance, não basta saber quanto de proteína existe, as fontes proteicas ajudam a entender melhor a construção da fórmula.
               </p>
               <p className="mb-6 text-gray-700">
                 Nesse aspecto, a campeã combina diferentes ingredientes de origem animal, Whey Protein e ovo em pó em uma dieta criada especificamente para o Pit Bull adulto.
@@ -272,7 +262,7 @@ export default function MelhorRacaoPitbull() {
                 A <strong>Lunch Dog X-PRO Training</strong>, produzida pela Nutriponta Pet Food, não venceu a PremieR na soma dos atributos técnicos.
               </p>
               <p className="mb-6 text-gray-700">
-                Ainda assim, entregou um conjunto suficientemente forte para terminar em segundo lugar geral — e isso muda de significado quando entra na conta o <strong>preço de venda</strong>.
+                Ainda assim, entregou um conjunto suficientemente forte para terminar em segundo lugar geral e isso muda de significado quando entra na conta o <strong>preço de venda</strong>.
               </p>
               <p className="mb-6 text-gray-700">
                 A X-PRO é apresentada oficialmente como uma ração Super Premium destinada a <strong>cães adultos de médio e grande porte com rotina ativa</strong>. A proposta é fornecer suporte à energia, força e desempenho diário.
@@ -351,7 +341,7 @@ export default function MelhorRacaoPitbull() {
 
               <h3 className="mb-3 text-xl font-semibold text-gray-800">A X-PRO quer estar perto de quem cria e trabalha com cães</h3>
               <p className="mb-6 text-gray-700">
-                O posicionamento da marca também ajuda a entender para onde a Nutriponta quer levar a linha. Em agosto de 2026, a empresa participou do <strong>Mega Encontro de Criadores – Origens</strong>, realizado em Itu, São Paulo, como Patrocinadora Master.
+                O posicionamento da marca também ajuda a entender para onde a Nutriponta quer levar a linha. Em agosto de 2026, a empresa participou do <strong>Mega Encontro de Criadores Origens</strong>, realizado em Itu, São Paulo, como Patrocinadora Master.
               </p>
               <p className="mb-8 text-gray-700">
                 A Nutriponta também levou suas linhas ao ambiente profissional do setor pet em eventos como a <strong>Amigos Pet Brasil 2026</strong>, reforçando uma estratégia de aproximação com lojistas, distribuidores e profissionais do mercado.
@@ -382,7 +372,7 @@ export default function MelhorRacaoPitbull() {
                 Em terceiro lugar ficou a <strong>Ultra Power – Cães Atletas – Adultos</strong>. Nesse caso, a proposta esportiva está no próprio nome.
               </p>
               <p className="mb-8 text-gray-700">
-                A composição oficial lista Whey Protein, ovo em pó, leucina, isoleucina e valina — os três BCAAs —, farinha de batata-doce, condroitina, glicosamina, taurina, extrato de Yucca e hexametafosfato de sódio.
+                A composição oficial lista Whey Protein, ovo em pó, leucina, isoleucina e valina — os três BCAAs, farinha de batata-doce, condroitina, glicosamina, taurina, extrato de Yucca e hexametafosfato de sódio.
               </p>
 
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
@@ -894,7 +884,7 @@ export default function MelhorRacaoPitbull() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
-                    Encontre PremieR, Lunch Dog X-PRO e as melhores marcas de rações para o seu cão ativo com preços especiais e entrega rápida.
+                    Encontre a Lunch Dog X-PRO e as melhores marcas de rações para o seu cão ativo com preços especiais e entrega rápida.
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
