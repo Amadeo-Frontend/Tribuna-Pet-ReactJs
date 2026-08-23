@@ -122,32 +122,38 @@ export default function Home() {
         {/* HERO destaque fixo */}
         <Link
           to="/melhor-racao-para-pitbull-e-caes-ativos"
-          className="relative block mb-12 overflow-hidden rounded-xl shadow-2xl"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('/blog-hero-ranking-desktop.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: 500,
-          }}
+          className="relative block mb-12 overflow-hidden bg-black rounded-2xl shadow-2xl group transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
         >
-          <span className="absolute px-3 py-1 text-sm font-medium text-white rounded-full top-4 left-4 bg-secondary">
-            Destaque Especial
-          </span>
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-            <h2 className="max-w-3xl mb-4 text-3xl font-bold md:text-4xl leading-tight">
-              Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
-            </h2>
-            <p className="max-w-2xl mb-4 text-lg text-gray-200">
-              PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
-            </p>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-              <span>
-                <i className="mr-1 far fa-calendar" /> 23 de Agosto, 2026
+          <picture className="block w-full">
+            <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
+            <img
+              src="/blog-hero-ranking-mobile.png"
+              alt="Melhor Ração para Pitbull e Cães Ativos em 2026"
+              className="w-full h-auto object-cover md:object-contain object-center max-h-[550px] transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+          </picture>
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-between p-6 md:p-10">
+            <div className="flex items-center justify-between">
+              <span className="px-3.5 py-1 text-xs font-semibold tracking-wide text-white rounded-full bg-secondary shadow-md uppercase">
+                Destaque Especial
               </span>
-              <span>
-                <i className="mr-1 far fa-clock" /> 10 min de leitura
-              </span>
+            </div>
+            <div className="max-w-3xl">
+              <h2 className="mb-3 text-2xl font-bold text-white md:text-4xl lg:text-5xl leading-tight group-hover:text-amber-400 transition-colors">
+                Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
+              </h2>
+              <p className="hidden sm:block max-w-2xl mb-4 text-sm md:text-base text-gray-200 line-clamp-2 leading-relaxed">
+                PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-300 font-medium">
+                <span className="flex items-center">
+                  <i className="mr-1.5 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
+                </span>
+                <span className="flex items-center">
+                  <i className="mr-1.5 far fa-clock text-amber-400" /> 10 min de leitura
+                </span>
+              </div>
             </div>
           </div>
         </Link>
