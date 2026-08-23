@@ -108,7 +108,7 @@ export default function Home() {
       {/* Top bar */}
       <div className="hidden py-2 text-white bg-primary sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
-          <span>Seu portal de informações para seu pet!</span>
+          <span className="font-medium">Seu portal de informações para seu pet!</span>
           <LiveClock />
         </div>
       </div>
@@ -118,40 +118,40 @@ export default function Home() {
       <Header onToggleMenu={() => setMenuOpen(true)} />
 
       {/* Conteúdo principal */}
-      <main className="container px-4 py-8 mx-auto">
-        {/* HERO destaque fixo */}
+      <main className="container px-4 py-8 mx-auto max-w-7xl">
+        {/* HERO destaque principal */}
         <Link
           to="/melhor-racao-para-pitbull-e-caes-ativos"
-          className="relative block mb-12 overflow-hidden bg-black rounded-2xl shadow-2xl group transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+          className="relative block mb-14 overflow-hidden bg-black rounded-3xl shadow-2xl group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-4 focus:ring-amber-400"
         >
           <picture className="block w-full">
             <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
             <img
               src="/blog-hero-ranking-mobile.png"
-              alt="Melhor Ração para Pitbull e Cães Ativos em 2026"
-              className="w-full h-auto object-cover md:object-contain object-center max-h-[550px] transition-transform duration-700 group-hover:scale-[1.02]"
+              alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
+              className="w-full h-auto object-cover md:object-contain object-center max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
             />
           </picture>
           
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-between p-6 md:p-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-between p-6 md:p-10 lg:p-12">
             <div className="flex items-center justify-between">
-              <span className="px-3.5 py-1 text-xs font-semibold tracking-wide text-white rounded-full bg-secondary shadow-md uppercase">
-                Destaque Especial
+              <span className="px-4 py-1.5 text-xs font-bold tracking-wider text-white rounded-full bg-secondary shadow-lg uppercase backdrop-blur-md">
+                ⭐ Destaque Principal
               </span>
             </div>
             <div className="max-w-3xl">
-              <h2 className="mb-3 text-2xl font-bold text-white md:text-4xl lg:text-5xl leading-tight group-hover:text-amber-400 transition-colors">
+              <h2 className="mb-3 text-2xl font-extrabold text-white md:text-4xl lg:text-5xl leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
                 Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
               </h2>
               <p className="hidden sm:block max-w-2xl mb-4 text-sm md:text-base text-gray-200 line-clamp-2 leading-relaxed">
                 PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-300 font-medium">
+              <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-gray-300 font-medium">
                 <span className="flex items-center">
-                  <i className="mr-1.5 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
+                  <i className="mr-2 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
                 </span>
                 <span className="flex items-center">
-                  <i className="mr-1.5 far fa-clock text-amber-400" /> 10 min de leitura
+                  <i className="mr-2 far fa-clock text-amber-400" /> 10 min de leitura
                 </span>
               </div>
             </div>
@@ -160,8 +160,12 @@ export default function Home() {
 
         {/* Top 3 cartões */}
         <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold">Destaques</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex items-center justify-between mb-8 pb-3 border-b border-gray-200">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
+              🔥 Destaques da Semana
+            </h2>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {topCards.map((c) => (
               <Card key={c.slug} {...c} />
             ))}
@@ -170,13 +174,13 @@ export default function Home() {
 
         {/* Newsletter */}
         <section className="mb-16">
-          <div className="p-8 text-center text-white bg-gradient-to-r from-primary to-secondary rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+          <div className="p-8 md:p-12 text-center text-white bg-gradient-to-br from-primary via-primary to-secondary rounded-3xl shadow-xl">
+            <h2 className="mb-3 text-2xl font-extrabold md:text-4xl tracking-tight">
               Receba dicas exclusivas para seu pet
             </h2>
-            <p className="mb-6">
+            <p className="max-w-2xl mx-auto mb-8 text-base md:text-lg text-blue-100 leading-relaxed">
               Inscreva‑se em nossa newsletter e receba conteúdos especiais sobre
-              cuidados, alimentação e saúde animal.
+              cuidados, alimentação e saúde animal diretamente no seu e-mail.
             </p>
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
@@ -186,8 +190,12 @@ export default function Home() {
 
         {/* Em Alta (cresce dinamicamente) */}
         <section className="mb-20">
-          <h2 className="mb-6 text-2xl font-bold">Em Alta</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex items-center justify-between mb-8 pb-3 border-b border-gray-200">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
+              📈 Em Alta
+            </h2>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {bottomCards.map((c) => (
               <Card key={c.slug} {...c} />
             ))}
@@ -195,16 +203,16 @@ export default function Home() {
         </section>
 
         {/* Anúncio estilo Google Ads */}
-        <FadeIn delay={1.6}>
-          <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
-            <div className="flex items-start justify-between p-3 bg-gray-100">
+        <FadeIn delay={0.4}>
+          <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-start justify-between px-4 py-2.5 bg-gray-50 border-b border-gray-100">
               <div className="flex items-center">
-                <span className="px-2 py-1 text-xs text-white bg-blue-500 rounded">
+                <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white bg-blue-600 rounded">
                   Anúncio
                 </span>
-                <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
+                <span className="ml-2 text-xs text-gray-500 font-medium">Patrocinado</span>
               </div>
-              <button className="text-gray-400 hover:text-gray-600">
+              <button aria-label="Fechar anúncio" className="text-gray-400 hover:text-gray-600 transition-colors">
                 <i className="fas fa-times"></i>
               </button>
             </div>
@@ -213,38 +221,34 @@ export default function Home() {
               href="https://www.racaopets.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 transition-colors hover:bg-gray-50"
+              className="block p-5 transition-colors hover:bg-gray-50/80 group"
             >
-              <div className="flex flex-col items-start md:flex-row">
+              <div className="flex flex-col items-start md:flex-row md:items-center">
                 <div className="flex-1">
-                  <h4 className="font-medium text-blue-600 hover:underline">
+                  <h4 className="font-bold text-lg text-blue-600 group-hover:underline">
                     Ração Pets - Nutrição premium para cães e gatos
                   </h4>
                   <div className="flex items-center mt-1">
-                    <span className="text-sm text-green-700">
+                    <span className="text-sm font-semibold text-green-700">
                       www.racaopets.com.br
                     </span>
                     <span className="mx-2 text-gray-300">•</span>
-                    <span className="text-sm text-yellow-500">
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <FontAwesomeIcon icon={faStar} />
-                      4.9
+                    <span className="text-sm text-yellow-500 font-medium">
+                      <i className="fas fa-star mr-1"></i>
+                      4.9 (Avaliações verificadas)
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-gray-600">
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                     Rações premium e super premium sem conservantes ou corantes.
                     Garanta nutrição completa a preços acessíveis.
                   </p>
                 </div>
-                <div className="mt-4 md:mt-0 md:ml-4">
-                  <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
+                <div className="mt-4 md:mt-0 md:ml-6 flex-shrink-0">
+                  <div className="flex items-center justify-center w-36 h-28 bg-gray-50 border border-gray-200 rounded-xl overflow-hidden p-2">
                     <img
                       src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
-                      alt="Ração Lunch dog essencial"
-                      className="object-contain w-32 h-24"
+                      alt="Ração Lunch Dog Essencial"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </div>
@@ -260,28 +264,43 @@ export default function Home() {
 }
 
 /* ------------------------------------------------------------
-   Card Component (reutilizável) — Mantém o JSX enxuto
+   Card Component (Design de Alta Performance & A11y)
 ------------------------------------------------------------ */
 function Card({ slug, tag, color, title, desc, img }) {
   return (
-    <article className="overflow-hidden transition-shadow bg-white shadow-md rounded-xl hover:shadow-lg">
-      <div
-        className="h-48 bg-center bg-cover"
-        style={{ backgroundImage: `url('${img}')` }}
-      />
-      <div className="p-6">
+    <article className="flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+      <Link to={`/${slug}`} className="relative block h-52 overflow-hidden bg-gray-100">
+        <img
+          src={img}
+          alt={title}
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
         <span
-          className={`${color} text-white px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block`}
+          className={`absolute top-4 left-4 ${color} text-white px-3.5 py-1 rounded-full text-xs font-bold tracking-wide shadow-md uppercase`}
         >
           {tag}
         </span>
-        <h3 className="mb-3 text-xl font-bold">{title}</h3>
-        <p className="mb-4 text-gray-600">{desc}</p>
+      </Link>
+
+      <div className="flex flex-col justify-between flex-1 p-6">
+        <div>
+          <h3 className="mb-3 text-xl font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+            <Link to={`/${slug}`}>
+              {title}
+            </Link>
+          </h3>
+          <p className="mb-5 text-sm text-gray-600 leading-relaxed line-clamp-2">
+            {desc}
+          </p>
+        </div>
+
         <Link
           to={`/${slug}`}
-          className="font-medium text-primary hover:underline"
+          className="inline-flex items-center font-bold text-sm text-primary hover:text-secondary group/link transition-colors mt-auto"
         >
-          Ver artigos
+          Ler matéria completa 
+          <span className="ml-1 transition-transform group-hover/link:translate-x-1">→</span>
         </Link>
       </div>
     </article>
