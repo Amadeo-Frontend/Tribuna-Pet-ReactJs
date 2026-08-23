@@ -15,13 +15,14 @@ import {
   FaCheckCircle,
   FaBone,
   FaPaw,
-  FaMapMarkedAlt,
   FaStore,
   FaShoppingCart,
   FaTruck,
-  FaCity,
   FaDumbbell,
   FaMedal,
+  FaTrophy,
+  FaQuestionCircle,
+  FaInfoCircle,
 } from "react-icons/fa";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
@@ -67,8 +68,8 @@ export default function MelhorRacaoPitbull() {
   return (
     <>
       <Seo
-        title="Melhor Ração para Pitbull e Cães Ativos em 2026 | Tribuna do Pet"
-        description="Ranking das melhores rações para Pitbull e cães ativos em 2026. Análise de proteínas, massa muscular, saúde articular e custo-benefício."
+        title="Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício | Tribuna do Pet"
+        description="PremieR Pit Bull fica em primeiro lugar na avaliação técnica. Lunch Dog X-PRO Training chega logo atrás e chama atenção pelo melhor custo-benefício."
         canonical="https://www.tribunadopet.com.br/melhor-racao-para-pitbull-e-caes-ativos"
         image="https://www.tribunadopet.com.br/blog-hero-ranking-desktop.png"
         published="2026-08-23"
@@ -110,9 +111,12 @@ export default function MelhorRacaoPitbull() {
           </nav>
 
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl font-bold text-gray-100 md:text-4xl">
-              Melhor Ração para Pitbull e Cães Ativos em 2026: Guia Nutricional Completo
+            <h1 className="text-3xl font-bold text-gray-100 md:text-4xl leading-tight">
+              Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
             </h1>
+            <p className="mt-2 text-sm text-gray-300 font-semibold uppercase tracking-wider">
+              TRIBUNA DO PET | Especial Nutrição
+            </p>
           </FadeIn>
 
           <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-gray-300">
@@ -120,7 +124,7 @@ export default function MelhorRacaoPitbull() {
               <i className="mr-2 far fa-calendar text-primary"></i> 23 de Agosto, 2026
             </span>
             <span className="flex items-center">
-              <i className="mr-2 far fa-clock text-primary"></i> 8 min de leitura
+              <i className="mr-2 far fa-clock text-primary"></i> 10 min de leitura
             </span>
           </div>
         </div>
@@ -151,7 +155,7 @@ export default function MelhorRacaoPitbull() {
                 <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
                 <img
                   src="/blog-hero-ranking-mobile.png"
-                  alt="Ranking das melhores rações para Pitbull e cães ativos em 2026"
+                  alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
                   className="w-full h-auto shadow-lg rounded-xl"
                 />
               </picture>
@@ -160,77 +164,191 @@ export default function MelhorRacaoPitbull() {
 
           {/* Lead */}
           <FadeIn delay={0.4}>
-            <div className="p-5 mx-6 my-6 border-l-4 border-blue-500 md:mx-8 bg-blue-50 rounded-xl">
-              <p className="text-lg font-medium leading-relaxed text-gray-800">
-                Cães de forte porte físico e alta energia como os Pitbulls, American Bully, Rottweiler e Boxer exigem uma nutrição rica em proteínas de alto valor biológico, protetores articulares e ingredientes de alta digestibilidade. Confira o ranking atualizado das melhores rações para manter a musculatura e vitalidade do seu atleta em 2026.
+            <div className="p-5 mx-6 my-6 border-l-4 border-blue-600 md:mx-8 bg-blue-50 rounded-xl">
+              <p className="text-lg font-semibold leading-relaxed text-gray-900 mb-2">
+                PremieR Pit Bull fica em primeiro lugar na avaliação técnica. Lunch Dog X-PRO Training chega logo atrás e chama atenção pela combinação de proteína animal, ovo em pó, Whey Protein, BCAA, energia, suporte articular e preço de venda competitivo.
               </p>
             </div>
           </FadeIn>
 
-          {/* Conteúdo do artigo */}
-          <div className="p-6 md:p-8">
+          {/* Conteúdo do Artigo extraído integralmente do PDF */}
+          <div className="p-6 md:p-8 space-y-6 text-gray-800 leading-relaxed">
             <FadeIn delay={0.5}>
-              <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaDumbbell className="text-blue-500" />
-                O que um Cão Ativo e Forte Precisa na Ração?
+              <p className="text-gray-700">
+                Quem procura pela <strong>melhor ração para Pitbull</strong>, para um cão de trabalho ou simplesmente para um animal muito ativo encontra hoje um mercado bem diferente daquele de alguns anos atrás.
+              </p>
+              <p className="mt-4 text-gray-700">
+                Proteína continua sendo importante, mas deixou de ser suficiente para explicar a qualidade de uma fórmula.
+              </p>
+              <p className="mt-4 text-gray-700">
+                Nas linhas voltadas a cães ativos aparecem cada vez mais ingredientes como <strong>BCAA, Whey Protein, ovo em pó, L-carnitina, condroitina, glicosamina, batata-doce</strong> e fontes de energia mais concentradas.
+              </p>
+              <p className="mt-4 text-gray-700">
+                Foi a partir dessa mudança que a <strong>Tribuna do Pet</strong> decidiu comparar 13 rações comercializadas no Brasil e que, por proposta nutricional ou posicionamento, podem entrar na busca de tutores por alimentos para cães adultos ativos, de trabalho, atletas ou de raças conhecidas pela estrutura muscular.
+              </p>
+              <p className="mt-4 text-gray-700">
+                A análise utilizou informações disponíveis nos fabricantes e fichas técnicas, além de uma pesquisa de preço de venda no varejo. O preço entrou no ranking, mas recebeu o menor peso: a intenção não era premiar a ração mais barata, e sim descobrir <strong>quanto cada produto entrega pelo que custa</strong>.
+              </p>
+              <p className="mt-4 text-gray-700">
+                O resultado trouxe uma campeã técnica clara e uma segunda colocada que merece atenção.
+              </p>
+              <ul className="mt-4 space-y-2 font-medium">
+                <li className="flex items-center text-blue-900">
+                  <FaTrophy className="mr-2 text-yellow-500" /> A <strong>PremieR Raças Específicas Adultos Pit Bull</strong> terminou em primeiro lugar.
+                </li>
+                <li className="flex items-center text-blue-900">
+                  <FaMedal className="mr-2 text-gray-400" /> Logo atrás veio a <strong>Lunch Dog X-PRO Training</strong>, da Nutriponta, que se destacou como o <strong>melhor custo-benefício da avaliação</strong>.
+                </li>
+              </ul>
+            </FadeIn>
+
+            {/* Seção 1: Qual é a melhor ração para Pitbull em 2026? */}
+            <FadeIn delay={0.6}>
+              <h2 className="text-2xl font-bold text-gray-900 pt-6 border-t border-gray-200 flex items-center gap-2">
+                <FaTrophy className="text-yellow-500" /> Qual é a melhor ração para Pitbull em 2026?
               </h2>
-              <p className="mb-6 text-gray-700 leading-relaxed">
-                Pitbulls e raças atleticamente ativas possuem uma taxa metabólica elevada e grande densidade muscular. Oferecer uma ração comum ou de baixa proteína pode levar à perda de massa magra, problemas nas articulações e falta de disposição. Na hora de escolher o alimento ideal em 2026, observe os seguintes requisitos nutricionais:
+              <p className="mt-4">
+                Dentro dos critérios usados neste levantamento, a resposta é a <strong>PremieR Raças Específicas Adultos Frango Pit Bull</strong>.
+              </p>
+              <p className="mt-3">
+                A ração foi desenvolvida especificamente para cães adultos da raça e apresenta um conjunto nutricional difícil de superar entre os produtos analisados.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+                <div className="p-4 bg-gray-50 border border-gray-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-700">31%</span>
+                  <span className="text-xs text-gray-600 font-semibold">Proteína Bruta</span>
+                </div>
+                <div className="p-4 bg-gray-50 border border-gray-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-700">16%</span>
+                  <span className="text-xs text-gray-600 font-semibold">Extrato Etéreo</span>
+                </div>
+                <div className="p-4 bg-gray-50 border border-gray-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-700">4,1%</span>
+                  <span className="text-xs text-gray-600 font-semibold">BCAA</span>
+                </div>
+                <div className="p-4 bg-gray-50 border border-gray-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-700">4.012</span>
+                  <span className="text-xs text-gray-600 font-semibold">kcal/kg Energia</span>
+                </div>
+              </div>
+              <p>
+                A composição também inclui Whey Protein, ovo em pó, L-carnitina, condroitina, glicosamina, extrato de Yucca e hexametafosfato de sódio. A fabricante relaciona os BCAAs da fórmula ao suporte à síntese proteica muscular depois do exercício e destaca o conjunto de nutracêuticos voltado às articulações.
+              </p>
+              <p className="mt-3">
+                Outro ponto que contou na nossa metodologia é a composição declarada pela marca: o glúten de milho usado na fórmula aparece como <strong>não transgênico</strong>.
+              </p>
+              <p className="mt-3">
+                A PremieR também utiliza <strong>ovo em pó</strong>. Esse detalhe merece ser registrado porque, quando se fala em ração de alta performance, não basta saber quanto de proteína existe; as fontes proteicas ajudam a entender melhor a construção da fórmula.
+              </p>
+              <p className="mt-3">
+                Nesse aspecto, a campeã combina diferentes ingredientes de origem animal, Whey Protein e ovo em pó em uma dieta criada especificamente para o Pit Bull adulto.
+              </p>
+              <p className="mt-3 font-semibold text-gray-900">
+                Por isso, para quem tem um Pit Bull adulto e procura a fórmula com maior desempenho técnico dentro dos critérios desta reportagem, a PremieR terminou na frente.
               </p>
             </FadeIn>
 
-            <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
-              <FadeIn delay={0.6}>
-                <div className="p-6 border border-blue-100 shadow-sm bg-gradient-to-br from-blue-50 to-white rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 mr-3 bg-red-100 rounded-full">
-                      <FaDumbbell className="text-red-500" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-800">
-                      Proteína Bruta (23%+ a 30%)
-                    </h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                    Essencial para preservação e ganho de massa muscular magra e reparação de tecidos após atividades intensas.
-                  </p>
-                </div>
-              </FadeIn>
+            {/* Seção 2: X-PRO Training */}
+            <FadeIn delay={0.7}>
+              <h2 className="text-2xl font-bold text-gray-900 pt-6 border-t border-gray-200 flex items-center gap-2">
+                <FaMedal className="text-blue-600" /> X-PRO Training: a segunda colocada que muda a discussão sobre custo-benefício
+              </h2>
+              <p className="mt-4">
+                A diferença entre “melhor ração” e “melhor compra” aparece com força quando chegamos à segunda posição.
+              </p>
+              <p className="mt-3">
+                A <strong>Lunch Dog X-PRO Training</strong>, produzida pela Nutriponta Pet Food, não venceu a PremieR na soma dos atributos técnicos.
+              </p>
+              <p className="mt-3">
+                Ainda assim, entregou um conjunto suficientemente forte para terminar em segundo lugar geral — e isso muda de significado quando entra na conta o <strong>preço de venda</strong>.
+              </p>
+              <p className="mt-3">
+                A X-PRO é apresentada oficialmente como uma ração Super Premium destinada a <strong>cães adultos de médio e grande porte com rotina ativa</strong>. A proposta é fornecer suporte à energia, força e desempenho diário.
+              </p>
 
-              <FadeIn delay={0.7}>
-                <div className="p-6 border border-blue-100 shadow-sm bg-gradient-to-br from-blue-50 to-white rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 mr-3 bg-green-100 rounded-full">
-                      <FaFlask className="text-green-500" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-800">
-                      Condroitina & Glicosamina
-                    </h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                    Fundamentais para proteger as articulações e cartilagens contra o desgaste causado pelo alto impacto das corridas e saltos.
-                  </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-800">28%</span>
+                  <span className="text-xs text-gray-700 font-semibold">Proteína Bruta</span>
                 </div>
-              </FadeIn>
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-800">15%</span>
+                  <span className="text-xs text-gray-700 font-semibold">Extrato Etéreo</span>
+                </div>
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-800">3,8%</span>
+                  <span className="text-xs text-gray-700 font-semibold">BCAA</span>
+                </div>
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl text-center">
+                  <span className="block text-2xl font-bold text-blue-800">3.950</span>
+                  <span className="text-xs text-gray-700 font-semibold">kcal/kg Energia</span>
+                </div>
+              </div>
 
-              <FadeIn delay={0.8}>
-                <div className="p-6 border border-blue-100 shadow-sm bg-gradient-to-br from-blue-50 to-white rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 mr-3 bg-yellow-100 rounded-full">
-                      <FaRegStar className="text-yellow-500" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-800">
-                      Omega 3 & 6 e Extrato de Yucca
-                    </h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                    Pelagem brilhante, pele forte e fezes firmes com odor reduzido graças à alta digestibilidade dos ingredientes.
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
+              <h3 className="text-xl font-bold text-gray-900 mt-6">Frango + ovo em pó é um dos pilares da X-PRO</h3>
+              <p className="mt-3">
+                Na apresentação oficial da fórmula, a Nutriponta destaca a combinação <strong>“Proteína Animal: Frango + Ovo”</strong>.
+              </p>
+              <p className="mt-3">
+                A empresa informa que utiliza proteína de frango associada a <strong>ovo em pó</strong>, formando uma base proteica que depois é complementada por Whey Protein e BCAA.
+              </p>
+              <p className="mt-3">
+                Vale fazer uma distinção importante: ovo em pó não é exclusividade da X-PRO. A PremieR Pit Bull também possui o ingrediente.
+              </p>
+              <p className="mt-3">
+                A diferença está na forma como a X-PRO constrói sua proposta. Frango e ovo aparecem como um dos eixos da fórmula, ao lado de <strong>Whey Protein + BCAA, batata-doce</strong> e ingredientes voltados a suporte articular e recuperação.
+              </p>
+              <p className="mt-3">
+                Além deles, a composição e a comunicação oficial da linha destacam <strong>condroitina, glicosamina, taurina, L-carnitina e hexametafosfato de sódio</strong>. É essa combinação, e não um ingrediente isolado, que explica a posição da X-PRO.
+              </p>
+
+              <h3 className="text-xl font-bold text-gray-900 mt-6">PremieR e X-PRO possuem Whey Protein</h3>
+              <p className="mt-3">
+                As duas primeiras colocadas têm Whey Protein. Na PremieR, o ingrediente participa de uma fórmula específica para Pit Bull, juntamente com alto teor proteico, BCAA, ovo em pó, L-carnitina e suporte articular.
+              </p>
+              <p className="mt-3">
+                Na X-PRO, <strong>Whey Protein + BCAA</strong> aparecem como um dos principais diferenciais apresentados pela própria Nutriponta.
+              </p>
+              <p className="mt-3">
+                Não faz sentido, portanto, transformar o Whey em uma disputa do tipo “uma tem e a outra não”. As duas têm.
+              </p>
+              <p className="mt-3">
+                A comparação mais útil é entender o conjunto em que esse ingrediente aparece e quanto o consumidor paga por esse conjunto. É nesse segundo ponto que a X-PRO ganha força.
+              </p>
+
+              <h3 className="text-xl font-bold text-gray-900 mt-6">Por que a X-PRO foi considerada o melhor custo-benefício?</h3>
+              <p className="mt-3">
+                Preço baixo, sozinho, não define custo-benefício. Uma ração pode custar menos simplesmente porque oferece menos. Por isso o preço de venda recebeu apenas o último peso na metodologia da Tribuna do Pet.
+              </p>
+              <p className="mt-3">
+                Primeiro vieram composição e características nutricionais. Só depois foi analisado quanto o consumidor precisa desembolsar.
+              </p>
+              <p className="mt-3">
+                A X-PRO ficou em <strong>segundo lugar no ranking técnico</strong>, mas apareceu na pesquisa de varejo com preço de venda inferior ao de produtos que ficaram próximos dela na classificação.
+              </p>
+              <p className="mt-3">
+                Há ainda uma diferença prática de embalagem: a PremieR Pit Bull é oferecida pela fabricante em saco de 12 kg, enquanto a X-PRO utilizada nesta comparação é comercializada em 15 kg.
+              </p>
+              <p className="mt-3 bg-yellow-50 p-4 rounded-xl border border-yellow-200 font-semibold text-gray-900">
+                Por isso, a conclusão da Tribuna do Pet é simples: PremieR Pit Bull foi a campeã técnica. X-PRO Training foi a melhor relação entre qualidade e preço de venda.
+              </p>
+
+              <h3 className="text-xl font-bold text-gray-900 mt-6">Livre de transgênicos também pesa a favor da X-PRO</h3>
+              <p className="mt-3">
+                A Nutriponta declara a X-PRO como <strong>livre de transgênicos, corantes e aromatizantes artificiais</strong>. Esse foi um dos critérios considerados no ranking.
+              </p>
+
+              <h3 className="text-xl font-bold text-gray-900 mt-6">A X-PRO quer estar perto de quem cria e trabalha com cães</h3>
+              <p className="mt-3">
+                O posicionamento da marca também ajuda a entender para onde a Nutriponta quer levar a linha. Em agosto de 2026, a empresa participou do <strong>Mega Encontro de Criadores – Origens</strong>, realizado em Itu, São Paulo, como Patrocinadora Master.
+              </p>
+              <p className="mt-3">
+                A Nutriponta também levou suas linhas ao ambiente profissional do setor pet em eventos como a <strong>Amigos Pet Brasil 2026</strong>, reforçando uma estratégia de aproximação com lojistas, distribuidores e profissionais do mercado.
+              </p>
+            </FadeIn>
 
             {/* Imagem de meio de reportagem (Desktop/Mobile) */}
-            <FadeIn delay={0.9}>
+            <FadeIn delay={0.8}>
               <div className="my-8">
                 <h3 className="mb-4 text-xl font-bold text-gray-800">
                   Desempenho & Nutrição no Dia a Dia dos Pitbulls
@@ -246,59 +364,188 @@ export default function MelhorRacaoPitbull() {
               </div>
             </FadeIn>
 
-            {/* Tabela Comparativa de Rações */}
+            {/* Seção 3: Ultra Power e Tabela Comparativa */}
+            <FadeIn delay={0.9}>
+              <h2 className="text-2xl font-bold text-gray-900 pt-6 border-t border-gray-200 flex items-center gap-2">
+                <FaMedal className="text-amber-700" /> Ultra Power completa um Top 3 bastante forte
+              </h2>
+              <p className="mt-4">
+                Em terceiro lugar ficou a <strong>Ultra Power – Cães Atletas – Adultos</strong>. Nesse caso, a proposta esportiva está no próprio nome.
+              </p>
+              <p className="mt-3">
+                A composição oficial lista Whey Protein, ovo em pó, leucina, isoleucina e valina — os três BCAAs —, farinha de batata-doce, condroitina, glicosamina, taurina, extrato de Yucca e hexametafosfato de sódio.
+              </p>
+
+              <h2 className="text-2xl font-bold text-gray-900 pt-8 mt-6 border-t border-gray-200">
+                Ranking das 13 rações analisadas
+              </h2>
+              <p className="mt-2 text-gray-700">A classificação final ficou assim:</p>
+
+              {/* Tabela de Ranking em Imagem */}
+              <div className="my-6 overflow-hidden shadow-lg rounded-xl">
+                <img
+                  src="/tabela-ranking-melhores-racoes-de-pitbull.png"
+                  alt="Tabela ranking comparativa das 13 melhores rações de Pitbull"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Tabela HTML responsiva do Ranking de 13 Rações constante no PDF */}
+              <div className="overflow-x-auto my-6 border border-gray-200 rounded-xl shadow-sm">
+                <table className="w-full text-left text-sm text-gray-700">
+                  <thead className="bg-primary text-white font-bold">
+                    <tr>
+                      <th className="p-3">Posição</th>
+                      <th className="p-3">Ração</th>
+                      <th className="p-3 text-right">Pontuação</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr className="bg-yellow-50 font-bold">
+                      <td className="p-3">🥇 1º</td>
+                      <td className="p-3">PremieR Raças Específicas Adultos Pit Bull</td>
+                      <td className="p-3 text-right">93,55</td>
+                    </tr>
+                    <tr className="bg-blue-50 font-bold">
+                      <td className="p-3">🥈 2º</td>
+                      <td className="p-3">Lunch Dog X-PRO Training</td>
+                      <td className="p-3 text-right">85,17</td>
+                    </tr>
+                    <tr className="bg-orange-50 font-bold">
+                      <td className="p-3">🥉 3º</td>
+                      <td className="p-3">Ultra Power – Cães Atletas Adultos</td>
+                      <td className="p-3 text-right">84,89</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold">4º</td>
+                      <td className="p-3">Gran Nature Xtreme Performance</td>
+                      <td className="p-3 text-right">64,26</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="p-3 font-semibold">5º</td>
+                      <td className="p-3">Origens Premium Especial Energy</td>
+                      <td className="p-3 text-right">63,16</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold">6º</td>
+                      <td className="p-3">Finotrato Life Active</td>
+                      <td className="p-3 text-right">63,09</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="p-3 font-semibold">7º</td>
+                      <td className="p-3">Dogmil Prime Power Training</td>
+                      <td className="p-3 text-right">59,80</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold">8º</td>
+                      <td className="p-3">Quatree Select Power</td>
+                      <td className="p-3 text-right">59,50</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="p-3 font-semibold">9º</td>
+                      <td className="p-3">Nutrive Power</td>
+                      <td className="p-3 text-right">55,17</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold">10º</td>
+                      <td className="p-3">Special Dog Ultralife Performance</td>
+                      <td className="p-3 text-right">53,59</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="p-3 font-semibold">11º</td>
+                      <td className="p-3">GoldeN Formula Power Training</td>
+                      <td className="p-3 text-right">51,74</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold">12º</td>
+                      <td className="p-3">Origens Raças Específicas Pit Bull e Rottweiler</td>
+                      <td className="p-3 text-right">46,30</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="p-3 font-semibold">13º</td>
+                      <td className="p-3">Dog Power Adultos Médio e Grande Porte</td>
+                      <td className="p-3 text-right">35,46</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
+
+            {/* O que foi levado em conta */}
             <FadeIn delay={1.0}>
-              <div className="my-10">
-                <h2 className="flex items-center gap-3 pb-2 mb-4 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                  <FaMedal className="text-yellow-500" />
-                  Tabela Comparativa: Melhores Rações para Pitbull 2026
-                </h2>
-                <p className="mb-4 text-gray-700">
-                  Confira a comparação completa das marcas mais recomendadas por veterinários e especialistas em nutrição canina:
-                </p>
-                <div className="overflow-hidden shadow-lg rounded-xl">
-                  <img
-                    src="/tabela-ranking-melhores-racoes-de-pitbull.png"
-                    alt="Tabela ranking comparativa das melhores rações de Pitbull"
-                    className="w-full h-auto"
-                  />
+              <h2 className="text-2xl font-bold text-gray-900 pt-6 border-t border-gray-200 flex items-center gap-2">
+                <FaInfoCircle className="text-blue-600" /> O que foi levado em conta no ranking?
+              </h2>
+              <p className="mt-3">
+                Para evitar que um único número decidisse tudo, a Tribuna do Pet aplicou pesos diferentes aos atributos. A ordem foi:
+              </p>
+              <ol className="list-decimal list-inside space-y-1 my-4 font-medium text-gray-700 bg-gray-50 p-4 rounded-xl border border-gray-200">
+                <li>Ausência de transgênicos</li>
+                <li>Proteína bruta</li>
+                <li>Extrato etéreo</li>
+                <li>BCAA</li>
+                <li>Energia metabolizável</li>
+                <li>Condroitina</li>
+                <li>Glicosamina</li>
+                <li>Extrato de Yucca</li>
+                <li>Hexametafosfato de sódio</li>
+                <li>Presença de Whey Protein</li>
+                <li>Batata-doce</li>
+                <li>L-carnitina</li>
+                <li>Preço de venda</li>
+              </ol>
+            </FadeIn>
+
+            {/* Perguntas Frequentes (FAQ do PDF) */}
+            <FadeIn delay={1.2}>
+              <h2 className="text-2xl font-bold text-gray-900 pt-6 border-t border-gray-200 flex items-center gap-2">
+                <FaQuestionCircle className="text-blue-600" /> Perguntas Frequentes
+              </h2>
+              <div className="space-y-4 mt-4">
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-bold text-gray-900">Qual é a melhor ração para Pitbull adulto?</h4>
+                  <p className="text-sm text-gray-700 mt-1">No ranking da Tribuna do Pet, a <strong>PremieR Raças Específicas Adultos Pit Bull</strong> ficou em primeiro lugar.</p>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-bold text-gray-900">Qual é a melhor ração custo-benefício para Pitbull e cães ativos?</h4>
+                  <p className="text-sm text-gray-700 mt-1">A <strong>Lunch Dog X-PRO Training</strong> foi o principal destaque de custo-benefício da análise.</p>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-bold text-gray-900">X-PRO é Super Premium?</h4>
+                  <p className="text-sm text-gray-700 mt-1">Sim. A Nutriponta classifica oficialmente a X-PRO Training como uma ração Super Premium.</p>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-bold text-gray-900">X-PRO tem ovo em pó e Whey Protein?</h4>
+                  <p className="text-sm text-gray-700 mt-1">Sim. A fabricante apresenta frango + ovo como parte central de sua base proteica e informa o uso de ovo em pó e Whey Protein.</p>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-bold text-gray-900">X-PRO é livre de transgênicos?</h4>
+                  <p className="text-sm text-gray-700 mt-1">A Nutriponta declara oficialmente a fórmula como livre de transgênicos.</p>
                 </div>
               </div>
             </FadeIn>
 
-            <FadeIn delay={1.1}>
-              <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaBrain className="text-blue-500" />
-                Por que a Ração Snack Dog Premium Especial se destaca?
-              </h2>
-              <p className="mb-4 text-gray-700 leading-relaxed">
-                Entre as opções analisadas no ranking de 2026, a <strong>Snack Dog Premium Especial (23% de proteína com sabor Frango, Batata Doce, Aveia & Cereais)</strong> se tornou a grande campeã no quesito <em>Custo x Benefício e Digestibilidade</em> para Pitbulls e cães ativos.
-              </p>
-              <ul className="grid grid-cols-1 gap-3 mb-8 md:grid-cols-2">
-                <li className="flex items-start">
-                  <FaCheckCircle className="mt-1 mr-2 text-green-500" />
-                  <span><strong>23% de Proteína de Alta Qualidade:</strong> Garante suporte muscular constante sem sobrecarregar os rins.</span>
-                </li>
-                <li className="flex items-start">
-                  <FaCheckCircle className="mt-1 mr-2 text-green-500" />
-                  <span><strong>Batata Doce & Aveia:</strong> Carboidratos complexos de baixo índice glicêmico para energia prolongada.</span>
-                </li>
-                <li className="flex items-start">
-                  <FaCheckCircle className="mt-1 mr-2 text-green-500" />
-                  <span><strong>Sem Corantes Artificiais:</strong> Reduz drasticamente alergias de pele comuns na raça Pitbull.</span>
-                </li>
-                <li className="flex items-start">
-                  <FaCheckCircle className="mt-1 mr-2 text-green-500" />
-                  <span><strong>Formulação Enriquecida:</strong> Vitaminas A, D3, E, Zinco e minerais quelatados.</span>
-                </li>
-              </ul>
+            {/* Conclusão do PDF */}
+            <FadeIn delay={1.4}>
+              <div className="p-6 my-8 border-l-4 border-green-600 bg-green-50 rounded-xl">
+                <h3 className="text-xl font-bold text-green-900 mb-2">Conclusão da Reportagem</h3>
+                <p className="text-gray-800">
+                  <strong>PremieR Pit Bull</strong> é a melhor colocada tecnicamente.
+                </p>
+                <p className="text-gray-800 mt-2">
+                  <strong>Lunch Dog X-PRO Training</strong> é o melhor custo-benefício da comparação.
+                </p>
+                <p className="text-gray-700 text-sm mt-3">
+                  E essa talvez seja a informação mais útil para o consumidor: qual fórmula faz mais sentido para o cão, para a rotina dele e para o orçamento de quem compra.
+                </p>
+              </div>
             </FadeIn>
 
             {/* Onde Comprar */}
-            <FadeIn delay={1.4}>
+            <FadeIn delay={1.5}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
                 <FaStore className="mr-2" />
-                Onde Encontrar as Melhores Rações com Entrega Rápida
+                Onde Encontrar as Rações do Ranking
               </h2>
             </FadeIn>
 
@@ -310,7 +557,7 @@ export default function MelhorRacaoPitbull() {
                     Distribuição Local & Lojas
                   </h3>
                   <p className="mb-3 text-gray-700">
-                    Distribuído pela{" "}
+                    A linha Lunch Dog é distribuída pela{" "}
                     <a
                       href="https://www.sulpetracoes.com.br/"
                       target="_blank"
@@ -319,10 +566,7 @@ export default function MelhorRacaoPitbull() {
                     >
                       SulPet Distribuidora
                     </a>
-                    , garantindo que o alimento esteja sempre fresco nos pet shops de Curitiba e Região.
-                  </p>
-                  <p className="text-gray-700 text-sm">
-                    Disponível nas principais agropecuárias e pet shops especializados.
+                    , garantindo presença nas principais agropecuárias e pet shops da região.
                   </p>
                 </div>
               </FadeIn>
@@ -334,7 +578,7 @@ export default function MelhorRacaoPitbull() {
                     Comprar Online
                   </h3>
                   <p className="mb-3 text-gray-700">
-                    Receba em casa com segurança através das lojas parceiras:
+                    Encontre as rações do ranking nas lojas oficiais:
                   </p>
                   <ul className="mt-3 space-y-2">
                     <li>
@@ -345,7 +589,7 @@ export default function MelhorRacaoPitbull() {
                         className="flex items-center text-blue-600 hover:underline font-semibold"
                       >
                         <HiBuildingStorefront className="mx-1 text-xl" />
-                        Ração Pets - Loja Oficial
+                        Ração Pets - Loja Online
                       </a>
                     </li>
                     <li>
@@ -356,24 +600,13 @@ export default function MelhorRacaoPitbull() {
                         className="flex items-center text-blue-600 hover:underline font-semibold"
                       >
                         <SiShopee className="mx-1 text-xl text-orange-500" />
-                        Loja Ração Pets na Shopee
+                        Ração Pets na Shopee
                       </a>
                     </li>
                   </ul>
                 </div>
               </FadeIn>
             </div>
-
-            <FadeIn delay={1.8}>
-              <div className="p-8 my-10 text-center shadow-xl bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl">
-                <h2 className="mb-4 text-2xl font-bold text-white">
-                  Quer ver seu cão com mais força, saúde e pelos brilhantes?
-                </h2>
-                <p className="mb-6 text-xl text-white">
-                  Invista na alimentação correta para cães ativos e sinta a diferença no pique e na qualidade de vida do seu amigo!
-                </p>
-              </div>
-            </FadeIn>
 
             {/* Compartilhamento */}
             <ShareButton />
@@ -396,8 +629,8 @@ export default function MelhorRacaoPitbull() {
             </div>
 
             <LinkPreview
-              url="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
-              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
+              url="https://www.racaopets.com.br"
+              href="https://www.racaopets.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 transition-colors hover:bg-gray-50"
@@ -405,7 +638,7 @@ export default function MelhorRacaoPitbull() {
               <div className="flex flex-col items-start md:flex-row">
                 <div className="flex-1">
                   <h4 className="font-medium text-blue-600 hover:underline">
-                    Ração Snack Dog Premium Especial 12kg - Para Cães Ativos
+                    Ração Pets - Rações Super Premium para Cães Ativos e de Alta Performance
                   </h4>
                   <div className="flex items-center mt-1">
                     <span className="text-sm text-green-700">
@@ -422,14 +655,14 @@ export default function MelhorRacaoPitbull() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
-                    23% de proteína, sabor frango, batata doce e aveia. Nutrição de alta performance sem corantes artificiais.
+                    Encontre PremieR, Lunch Dog X-PRO e as melhores marcas de rações para o seu cão ativo com preços especiais e entrega rápida.
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="/racao-batata-doce.jpg"
-                      alt="Ração Snack Dog Premium Especial"
+                      src="/blog-hero-ranking-mobile.png"
+                      alt="Ração Pets"
                       className="object-contain w-32 h-24"
                     />
                   </div>
