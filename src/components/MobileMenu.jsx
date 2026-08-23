@@ -153,6 +153,10 @@ export default function MobileMenu({ open, onClose }) {
                     "Guia Completo: Alimentação Saudável",
                   ],
                   [
+                    "/melhor-racao-para-pitbull-e-caes-ativos",
+                    "Melhor Ração para Pitbull 2026",
+                  ],
+                  [
                     "/alimentacao-saudavel-e-inteligente",
                     "Alimentação Saudável e Inteligente",
                   ],
