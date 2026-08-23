@@ -475,16 +475,8 @@ export default function MelhorRacaoPitbull() {
                 </table>
               </div>
 
-              {/* Imagem da Tabela + Botão de Download logo em baixo */}
-              <div className="my-8 p-4 border border-gray-200 bg-gray-50 rounded-2xl shadow-sm text-center">
-                <div className="overflow-hidden shadow-md rounded-xl bg-white mb-4">
-                  <img
-                    src="/tabela-ranking-melhores-racoes-de-pitbull.png"
-                    alt="Tabela ranking comparativa das 13 melhores rações de Pitbull"
-                    className="w-full h-auto"
-                  />
-                </div>
-
+              {/* Botão de Download da Imagem da Tabela em Alta Resolução */}
+              <div className="flex justify-center my-6">
                 <a
                   href="/tabela-ranking-melhores-racoes-de-pitbull.png"
                   download="tabela-ranking-melhores-racoes-de-pitbull.png"
@@ -493,7 +485,7 @@ export default function MelhorRacaoPitbull() {
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-3 text-sm font-bold text-white transition-all rounded-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-md hover:shadow-xl hover:from-blue-700 hover:to-blue-900 active:scale-95"
                 >
                   <FaDownload className="text-base" />
-                  Baixar Imagem da Tabela Comparativa em Alta Resolução
+                  Baixar Tabela Comparativa em Alta Resolução
                 </a>
               </div>
             </FadeIn>
