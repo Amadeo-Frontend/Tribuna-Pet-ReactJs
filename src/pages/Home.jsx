@@ -122,36 +122,45 @@ export default function Home() {
         {/* HERO destaque principal */}
         <Link
           to="/melhor-racao-para-pitbull-e-caes-ativos"
-          className="relative block mb-14 overflow-hidden bg-black rounded-3xl shadow-2xl group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-4 focus:ring-amber-400"
+          className="relative block mb-12 md:mb-16 overflow-hidden bg-black rounded-2xl md:rounded-3xl shadow-2xl group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-4 focus:ring-amber-400"
         >
-          <picture className="block w-full">
-            <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
-            <img
-              src="/blog-hero-ranking-mobile.png"
-              alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
-              className="w-full h-auto object-cover md:object-contain object-center max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
-            />
-          </picture>
-          
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-between p-6 md:p-10 lg:p-12">
-            <div className="flex items-center justify-between">
-              <span className="px-4 py-1.5 text-xs font-bold tracking-wider text-white rounded-full bg-secondary shadow-lg uppercase backdrop-blur-md">
+          {/* Imagem responsiva */}
+          <div className="relative w-full overflow-hidden bg-gray-950">
+            <picture className="block w-full">
+              <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
+              <img
+                src="/blog-hero-ranking-mobile.png"
+                alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
+                className="w-full h-auto object-cover md:object-contain object-top md:object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </picture>
+            
+            {/* Tag Badge sobre a imagem no mobile e desktop */}
+            <div className="absolute top-4 left-4 z-10">
+              <span className="px-3.5 py-1.5 text-[11px] md:text-xs font-extrabold tracking-wider text-white rounded-full bg-secondary shadow-lg uppercase backdrop-blur-md">
                 ⭐ Destaque Principal
               </span>
             </div>
+
+            {/* Gradiente escuro adaptativo */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent md:to-black/20" />
+          </div>
+          
+          {/* Conteúdo textual */}
+          <div className="relative md:absolute md:inset-0 flex flex-col justify-end p-5 sm:p-8 md:p-10 lg:p-12 -mt-16 md:mt-0 bg-gradient-to-t from-black via-black/90 to-transparent md:bg-none z-10">
             <div className="max-w-3xl">
-              <h2 className="mb-3 text-2xl font-extrabold text-white md:text-4xl lg:text-5xl leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
+              <h2 className="mb-2.5 text-xl sm:text-2xl font-extrabold text-white md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
                 Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
               </h2>
-              <p className="hidden sm:block max-w-2xl mb-4 text-sm md:text-base text-gray-200 line-clamp-2 leading-relaxed">
+              <p className="hidden sm:block max-w-2xl mb-4 text-xs sm:text-sm md:text-base text-gray-200 line-clamp-2 leading-relaxed">
                 PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
               </p>
-              <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-gray-300 font-medium">
+              <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-300 font-medium pt-1">
                 <span className="flex items-center">
-                  <i className="mr-2 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
+                  <i className="mr-1.5 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
                 </span>
                 <span className="flex items-center">
-                  <i className="mr-2 far fa-clock text-amber-400" /> 10 min de leitura
+                  <i className="mr-1.5 far fa-clock text-amber-400" /> 10 min de leitura
                 </span>
               </div>
             </div>
