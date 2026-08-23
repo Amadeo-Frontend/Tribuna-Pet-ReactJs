@@ -68,8 +68,8 @@ export default function MelhorRacaoPitbull() {
   return (
     <>
       <Seo
-        title="Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício | Tribuna do Pet"
-        description="PremieR Pit Bull fica em primeiro lugar na avaliação técnica. Lunch Dog X-PRO Training chega logo atrás e chama atenção pelo melhor custo-benefício."
+        title="Melhor Ração para Pitbull 2026: PremieR é 1º Lugar e X-PRO Training vence em Custo-Benefício | Tribuna do Pet"
+        description="Ranking das melhores rações para Pitbull e cães ativos em 2026: PremieR fica em 1º lugar técnico e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da avaliação com Whey Protein, BCAA e ovo em pó."
         canonical="https://www.tribunadopet.com.br/melhor-racao-para-pitbull-e-caes-ativos"
         image="https://www.tribunadopet.com.br/blog-hero-ranking-desktop.png"
         published="2026-08-23"
