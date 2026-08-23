@@ -607,11 +607,137 @@ export default function MelhorRacaoPitbull() {
                 <i className="text-blue-500 fas fa-globe"></i>
                 Fabricantes e Sites Oficiais das Rações Analisadas
               </h2>
-              <p className="mb-4 text-gray-700">
+              <p className="mb-6 text-gray-700">
                 Confira a lista dos fabricantes oficiais das marcas que integraram a nossa análise técnica e comparativa:
               </p>
 
-              <div className="overflow-x-auto my-6 border border-gray-200 rounded-xl shadow-sm">
+              {/* VERSÃO MOBILE: Cards profissionais e elegantes em Grid (sem scroll horizontal) */}
+              <div className="grid grid-cols-1 gap-4 md:hidden my-6">
+                {[
+                  {
+                    fabricante: "PremieRpet",
+                    produto: "PremieR Pit Bull / GoldeN Power Training",
+                    site: "https://premierpet.com.br/",
+                    siteLabel: "premierpet.com.br",
+                    highlight: "bg-blue-50/70 border-blue-200",
+                    badge: "🥇 1º Lugar Técnico",
+                    badgeColor: "bg-blue-600 text-white",
+                  },
+                  {
+                    fabricante: "Nutriponta Pet Food",
+                    produto: "Lunch Dog X-PRO Training",
+                    site: "https://xpro.nutriponta.com.br/",
+                    siteLabel: "xpro.nutriponta.com.br",
+                    highlight: "bg-amber-50/80 border-amber-300 ring-2 ring-amber-400/30",
+                    badge: "⭐ Melhor Custo-Benefício",
+                    badgeColor: "bg-amber-500 text-white",
+                  },
+                  {
+                    fabricante: "Ultra Prime Pet",
+                    produto: "Ultra Power",
+                    site: "https://www.ultraprimepet.com.br/",
+                    siteLabel: "ultraprimepet.com.br",
+                    highlight: "bg-white border-gray-200",
+                    badge: "🥉 3º Lugar",
+                    badgeColor: "bg-amber-700 text-white",
+                  },
+                  {
+                    fabricante: "Elleve Nutrição Animal",
+                    produto: "Gran Nature Xtreme Performance",
+                    site: "https://ellevepet.com.br/",
+                    siteLabel: "ellevepet.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Adimax",
+                    produto: "Origens Energy / Origens Pit Bull e Rottweiler",
+                    site: "https://adimax.com.br/",
+                    siteLabel: "adimax.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "VB Alimentos",
+                    produto: "Finotrato Life Active",
+                    site: "https://www.vbalimentos.com.br/",
+                    siteLabel: "vbalimentos.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Imbramil",
+                    produto: "Dogmil Prime Power Training",
+                    site: "https://imbramil.com.br/",
+                    siteLabel: "imbramil.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Granvita",
+                    produto: "Quatree Select Power",
+                    site: "https://www.quatreepet.com.br/",
+                    siteLabel: "quatreepet.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Solito Alimentos",
+                    produto: "Nutrive Power",
+                    site: "https://nutrivepet.com.br/",
+                    siteLabel: "nutrivepet.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Special Dog Company",
+                    produto: "Special Dog Ultralife Performance",
+                    site: "https://www.specialdog.com.br/",
+                    siteLabel: "specialdog.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                  {
+                    fabricante: "Proline",
+                    produto: "Dog Power",
+                    site: "https://prolinepet.com.br/",
+                    siteLabel: "prolinepet.com.br",
+                    highlight: "bg-white border-gray-200",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-5 rounded-2xl border shadow-sm flex flex-col justify-between transition-all ${item.highlight}`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                          Fabricante
+                        </span>
+                        {item.badge && (
+                          <span
+                            className={`px-2.5 py-0.5 text-[10px] font-extrabold rounded-full ${item.badgeColor}`}
+                          >
+                            {item.badge}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        {item.fabricante}
+                      </h3>
+                      <p className="text-sm text-gray-700 font-medium mb-3">
+                        <span className="text-gray-500">Produto:</span> {item.produto}
+                      </p>
+                    </div>
+
+                    <a
+                      href={item.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-between w-full px-4 py-2.5 text-xs font-bold text-blue-700 bg-blue-50/80 hover:bg-blue-100 rounded-xl transition-colors mt-2"
+                    >
+                      <span>Visitar Site Oficial</span>
+                      <span className="font-mono text-blue-600">{item.siteLabel} ↗</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+
+              {/* VERSÃO DESKTOP: Tabela Tradicional Limpa (md+) */}
+              <div className="hidden md:block overflow-x-auto my-6 border border-gray-200 rounded-xl shadow-sm">
                 <table className="w-full text-left text-sm text-gray-700">
                   <thead className="bg-primary text-white font-bold">
                     <tr>
