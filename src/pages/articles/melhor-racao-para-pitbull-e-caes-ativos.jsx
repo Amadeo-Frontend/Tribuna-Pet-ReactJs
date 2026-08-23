@@ -13,7 +13,6 @@ import {
   FaTrophy
 } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
-import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -160,8 +159,8 @@ export default function MelhorRacaoPitbull() {
             <div className="p-5 mx-6 my-6 border-l-4 border-blue-500 md:mx-8 bg-blue-50 rounded-xl">
               <p className="text-lg font-medium leading-relaxed text-gray-800">
                 PremieR Pit Bull fica em primeiro lugar na avaliação técnica.
-                Lunch Dog X-PRO Training chega logo atrás e chama atenção pela
-                combinação de proteína animal, ovo em pó, Whey Protein, BCAA,
+                Lunch Dog X-PRO Training alcançou a segunda colocação e é o grande destaque que
+                combina proteína animal, ovo em pó, Whey Protein, BCAA,
                 energia, suporte articular e preço de venda competitivo.
               </p>
             </div>
@@ -195,7 +194,7 @@ export default function MelhorRacaoPitbull() {
                 </li>
                 <li className="flex items-center text-gray-800">
                   <FaCheckCircle className="mt-1 mr-2 text-green-500 flex-shrink-0" />
-                  <span>Logo atrás veio a <strong>Lunch Dog X-PRO Training</strong>, da Nutriponta, que se destacou como a <strong>Melhor Compra da avaliação</strong>.</span>
+                  <span>Na segunda colocação veio a <strong>Lunch Dog X-PRO Training</strong>, da Nutriponta, que se destacou como a <strong>Melhor Compra da avaliação</strong>.</span>
                 </li>
               </ul>
             </FadeIn>
@@ -252,7 +251,7 @@ export default function MelhorRacaoPitbull() {
             {/* Seção 2 */}
             <FadeIn delay={0.7}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <MdOutlineWorkspacePremium className="text-3xl md:text-4xl text-blue-600 flex-shrink-0" />
+                <FaTrophy className="text-3xl md:text-4xl text-slate-400 flex-shrink-0" />
                 X-PRO Training: a segunda colocada que muda a discussão sobre a Melhor Compra
               </h2>
               <p className="mb-6 text-gray-700">
@@ -341,7 +340,7 @@ export default function MelhorRacaoPitbull() {
 
               <h3 className="mb-3 text-xl font-semibold text-gray-800">A X-PRO quer estar perto de quem cria e trabalha com cães</h3>
               <p className="mb-6 text-gray-700">
-                O posicionamento da marca também ajuda a entender para onde a Nutriponta quer levar a linha. Em agosto de 2026, a empresa participou do <strong>Mega Encontro de Criadores Origens</strong>, realizado em Itu, São Paulo, como Patrocinadora Master.
+                O posicionamento da marca também ajuda a entender para onde a Nutriponta quer levar a linha. Em agosto de 2026, a empresa participou do <a href="https://www.instagram.com/megaencontro_/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">Mega Encontro de Criadores Origens</a>, realizado em Itu, São Paulo, como Patrocinador Oficial.
               </p>
               <p className="mb-8 text-gray-700">
                 A Nutriponta também levou suas linhas ao ambiente profissional do setor pet em eventos como a <strong>Amigos Pet Brasil 2026</strong>, reforçando uma estratégia de aproximação com lojistas, distribuidores e profissionais do mercado.
