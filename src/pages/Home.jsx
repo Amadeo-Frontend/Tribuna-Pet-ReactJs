@@ -47,6 +47,14 @@ const topCards = [
 //    Sinta‑se livre para continuar adicionando novos itens no final.
 const bottomCards = [
   {
+    slug: "melhor-racao-para-pitbull-e-caes-ativos",
+    tag: "Nutrição & Ranking",
+    color: "bg-red-600",
+    title: "Melhor Ração para Pitbull e Cães Ativos em 2026",
+    desc: "Ranking completo e análise nutricional das melhores rações...",
+    img: "/blog-hero-ranking-desktop.png",
+  },
+  {
     slug: "alimentacao-saudavel-e-inteligente",
     tag: "Alimentação",
     color: "bg-rose-600",
