@@ -601,76 +601,129 @@ export default function MelhorRacaoPitbull() {
               </div>
             </FadeIn>
 
-            {/* Onde Comprar */}
+            {/* Fabricantes e Sites Oficiais */}
             <FadeIn delay={1.5}>
               <h2 className="flex items-center gap-3 pb-2 mb-6 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                <FaStore className="mr-2" />
-                Onde Encontrar as Rações do Ranking
+                <i className="text-blue-500 fas fa-globe"></i>
+                Fabricantes e Sites Oficiais das Rações Analisadas
               </h2>
+              <p className="mb-4 text-gray-700">
+                Confira a lista dos fabricantes oficiais das marcas que integraram a nossa análise técnica e comparativa:
+              </p>
+
+              <div className="overflow-x-auto my-6 border border-gray-200 rounded-xl shadow-sm">
+                <table className="w-full text-left text-sm text-gray-700">
+                  <thead className="bg-primary text-white font-bold">
+                    <tr>
+                      <th className="p-3">Fabricante</th>
+                      <th className="p-3">Marca / Produto na Análise</th>
+                      <th className="p-3">Site Oficial</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr className="bg-blue-50/50">
+                      <td className="p-3 font-bold text-gray-900">PremieRpet</td>
+                      <td className="p-3">PremieR Pit Bull / GoldeN Power Training</td>
+                      <td className="p-3">
+                        <a href="https://premierpet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          premierpet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="bg-yellow-50/60 font-bold">
+                      <td className="p-3 text-gray-900">Nutriponta Pet Food</td>
+                      <td className="p-3">Lunch Dog X-PRO Training</td>
+                      <td className="p-3">
+                        <a href="https://xpro.nutriponta.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          xpro.nutriponta.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-gray-900">Ultra Prime Pet</td>
+                      <td className="p-3">Ultra Power</td>
+                      <td className="p-3">
+                        <a href="https://www.ultraprimepet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          ultraprimepet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="p-3 font-bold text-gray-900">Elleve Nutrição Animal</td>
+                      <td className="p-3">Gran Nature Xtreme Performance</td>
+                      <td className="p-3">
+                        <a href="https://ellevepet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          ellevepet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-gray-900">Adimax</td>
+                      <td className="p-3">Origens Energy / Origens Pit Bull e Rottweiler</td>
+                      <td className="p-3">
+                        <a href="https://adimax.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          adimax.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="p-3 font-bold text-gray-900">VB Alimentos</td>
+                      <td className="p-3">Finotrato Life Active</td>
+                      <td className="p-3">
+                        <a href="https://www.vbalimentos.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          vbalimentos.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-gray-900">Imbramil</td>
+                      <td className="p-3">Dogmil Prime Power Training</td>
+                      <td className="p-3">
+                        <a href="https://imbramil.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          imbramil.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="p-3 font-bold text-gray-900">Granvita</td>
+                      <td className="p-3">Quatree Select Power</td>
+                      <td className="p-3">
+                        <a href="https://www.quatreepet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          quatreepet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-gray-900">Solito Alimentos</td>
+                      <td className="p-3">Nutrive Power</td>
+                      <td className="p-3">
+                        <a href="https://nutrivepet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          nutrivepet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="p-3 font-bold text-gray-900">Special Dog Company</td>
+                      <td className="p-3">Special Dog Ultralife Performance</td>
+                      <td className="p-3">
+                        <a href="https://www.specialdog.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          specialdog.com.br
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-gray-900">Proline</td>
+                      <td className="p-3">Dog Power</td>
+                      <td className="p-3">
+                        <a href="https://prolinepet.com.br/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:underline">
+                          prolinepet.com.br
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </FadeIn>
-
-            <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
-              <FadeIn delay={1.6}>
-                <div className="p-6 border border-gray-200 shadow-sm bg-gradient-to-br from-gray-50 to-white rounded-xl">
-                  <h3 className="flex items-center gap-2 mb-4 text-lg font-bold text-gray-800">
-                    <FaTruck className="mr-2" />
-                    Distribuição Local & Lojas
-                  </h3>
-                  <p className="mb-3 text-gray-700">
-                    A linha Lunch Dog é distribuída pela{" "}
-                    <a
-                      href="https://www.sulpetracoes.com.br/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-blue-600 hover:underline"
-                    >
-                      SulPet Distribuidora
-                    </a>
-                    , garantindo presença nas principais agropecuárias e pet shops da região.
-                  </p>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={1.7}>
-                <div className="p-6 border border-gray-200 shadow-sm bg-gradient-to-br from-gray-50 to-white rounded-xl">
-                  <h3 className="flex items-center gap-2 mb-4 text-lg font-bold text-gray-800">
-                    <FaShoppingCart />
-                    Comprar Online
-                  </h3>
-                  <p className="mb-3 text-gray-700">
-                    Encontre as rações do ranking nas lojas oficiais:
-                  </p>
-                  <ul className="mt-3 space-y-2">
-                    <li>
-                      <a
-                        href="https://www.racaopets.com.br"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:underline"
-                      >
-                        <span className="flex items-center">
-                          <HiBuildingStorefront className="mx-1 text-xl" />
-                          Ração Pets - Loja Online
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://shopee.com.br/racaopets"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:underline"
-                      >
-                        <span className="flex items-center">
-                          <SiShopee className="mx-1 text-xl text-orange-500" />
-                          Ração Pets na Shopee
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </FadeIn>
-            </div>
 
             {/* Compartilhamento */}
             <ShareButton />
