@@ -150,10 +150,10 @@ export default function Home() {
           <div className="relative md:absolute md:inset-0 flex flex-col justify-end p-5 sm:p-8 md:p-10 lg:p-12 -mt-16 md:mt-0 bg-gradient-to-t from-black via-black/90 to-transparent md:bg-none z-10">
             <div className="max-w-3xl">
               <h2 className="mb-2.5 text-xl sm:text-2xl font-extrabold text-white md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
-                Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
+                Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e a Melhor Compra
               </h2>
               <p className="hidden sm:block max-w-2xl mb-4 text-xs sm:text-sm md:text-base text-gray-200 line-clamp-2 leading-relaxed">
-                PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
+                PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como a Melhor Compra da comparação de 13 rações.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-300 font-medium pt-1">
                 <span className="flex items-center">
