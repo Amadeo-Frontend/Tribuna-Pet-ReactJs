@@ -121,33 +121,32 @@ export default function Home() {
       <main className="container px-4 py-8 mx-auto">
         {/* HERO destaque fixo */}
         <Link
-          to="/alimentacao-saudavel"
-          className="relative block mb-12 overflow-hidden rounded-xl"
+          to="/melhor-racao-para-pitbull-e-caes-ativos"
+          className="relative block mb-12 overflow-hidden rounded-xl shadow-2xl"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=1200&q=80')",
+              "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('/blog-hero-ranking-desktop.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             height: 500,
           }}
         >
           <span className="absolute px-3 py-1 text-sm font-medium text-white rounded-full top-4 left-4 bg-secondary">
-            Destaque
+            Destaque Especial
           </span>
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
-            <h2 className="max-w-3xl mb-4 text-3xl font-bold md:text-4xl">
-              Guia Completo para uma Alimentação Saudável para seu Pet
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+            <h2 className="max-w-3xl mb-4 text-3xl font-bold md:text-4xl leading-tight">
+              Melhor Ração para Pitbull e Cães Ativos em 2026: ranking revela a campeã técnica e o melhor custo-benefício
             </h2>
-            <p className="max-w-2xl mb-4 text-lg">
-              Descubra como escolher a melhor ração, preparar alimentos naturais
-              e evitar erros comuns na nutrição do seu animal de estimação.
+            <p className="max-w-2xl mb-4 text-lg text-gray-200">
+              PremieR Pit Bull vence a avaliação técnica e a Lunch Dog X-PRO Training se destaca como o melhor custo-benefício da comparação de 13 rações.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span>
-                <i className="mr-1 far fa-calendar" /> 11 de Junho, 2025
+                <i className="mr-1 far fa-calendar" /> 23 de Agosto, 2026
               </span>
               <span>
-                <i className="mr-1 far fa-clock" /> 5 min de leitura
+                <i className="mr-1 far fa-clock" /> 10 min de leitura
               </span>
             </div>
           </div>
