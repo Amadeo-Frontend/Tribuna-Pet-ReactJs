@@ -205,35 +205,38 @@ export default function Home() {
               href="https://www.racaopets.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-5 transition-colors hover:bg-gray-50/80 group"
+              className="block p-4 sm:p-5 transition-all duration-300 hover:bg-gray-50/80 group"
             >
-              <div className="flex flex-col items-start md:flex-row md:items-center">
-                <div className="flex-1">
-                  <h4 className="font-bold text-lg text-blue-600 group-hover:underline">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                {/* Imagem do Produto no topo em telas menores / à esquerda em telas maiores */}
+                <div className="w-full sm:w-36 h-36 sm:h-28 flex-shrink-0 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-xl overflow-hidden p-3 shadow-inner group-hover:border-blue-200 transition-colors">
+                  <img
+                    src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
+                    alt="Ração Lunch Dog Essencial"
+                    className="object-contain w-full h-full max-h-32 transition-transform duration-300 group-hover:scale-105"
+                    suppressHydrationWarning
+                  />
+                </div>
+
+                {/* Conteúdo textual responsivo */}
+                <div className="flex-1 text-center sm:text-left">
+                  <h4 className="font-extrabold text-base sm:text-lg text-blue-600 group-hover:text-blue-700 leading-snug group-hover:underline transition-colors">
                     Ração Pets - Nutrição premium para cães e gatos
                   </h4>
-                  <div className="flex items-center mt-1">
-                    <span className="text-sm font-semibold text-green-700">
+                  
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-1.5 text-xs sm:text-sm">
+                    <span className="font-semibold text-green-700">
                       www.racaopets.com.br
                     </span>
-                    <span className="mx-2 text-gray-300">•</span>
-                    <span className="text-sm text-yellow-500 font-medium">
-                      4.9 (Avaliações verificadas)
+                    <span className="text-gray-300 font-bold">•</span>
+                    <span className="text-amber-500 font-bold flex items-center">
+                      ⭐ 4.9 <span className="ml-1 text-gray-500 font-normal">(Verificadas)</span>
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                    Rações premium e super premium sem conservantes ou corantes.
-                    Garanta nutrição completa a preços acessíveis.
+
+                  <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+                    Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa com o melhor custo-benefício!
                   </p>
-                </div>
-                <div className="mt-4 md:mt-0 md:ml-6 flex-shrink-0">
-                  <div className="flex items-center justify-center w-36 h-28 bg-gray-50 border border-gray-200 rounded-xl overflow-hidden p-2">
-                    <img
-                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
-                      alt="Ração Lunch Dog Essencial"
-                      className="object-contain w-full h-full"
-                    />
-                  </div>
                 </div>
               </div>
             </a>
