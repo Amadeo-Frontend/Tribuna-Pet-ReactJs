@@ -118,53 +118,67 @@ export default function About() {
           {/* Pilares editoriais */}
           <FadeIn delay={0.3}>
             <section className="p-6 pt-0 md:p-10 md:pt-0">
-              <h2 className="pb-2 mb-6 text-2xl font-bold text-gray-800 border-b">O que você encontra no Tribuna do Pet</h2>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="p-6 bg-white border shadow-sm rounded-xl">
-                  <div className="flex items-start mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 mr-4 text-white rounded-full bg-primary">
-                      <FaUtensils />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-lg font-bold text-gray-800">Nutrição Animal</h3>
-                      <p className="text-gray-700">Artigos sobre alimentação balanceada e dietas especiais.</p>
-                    </div>
+              <h2 className="pb-3 mb-8 text-2xl md:text-3xl font-extrabold text-gray-900 border-b border-gray-100 tracking-tight">
+                O que você encontra no Tribuna do Pet
+              </h2>
+              <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
+                {/* Nutrição Animal */}
+                <div className="flex items-start p-5 md:p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
+                  <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 mr-4 text-xl md:text-2xl text-blue-600 bg-blue-50 rounded-2xl flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <FaUtensils />
+                  </div>
+                  <div>
+                    <h3 className="mb-1.5 text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      Nutrição Animal
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Artigos sobre alimentação balanceada e dietas especiais.
+                    </p>
                   </div>
                 </div>
 
-                <div className="p-6 bg-white border shadow-sm rounded-xl">
-                  <div className="flex items-start mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 mr-4 text-white rounded-full bg-secondary">
-                      <FaHandHoldingHeart />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-lg font-bold text-gray-800">Cuidados Diários</h3>
-                      <p className="text-gray-700">Dicas essenciais para manter seu pet saudável e feliz.</p>
-                    </div>
+                {/* Cuidados Diários */}
+                <div className="flex items-start p-5 md:p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-red-100 transition-all duration-300 group">
+                  <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 mr-4 text-xl md:text-2xl text-red-500 bg-red-50 rounded-2xl flex-shrink-0 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <FaHandHoldingHeart />
+                  </div>
+                  <div>
+                    <h3 className="mb-1.5 text-lg font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+                      Cuidados Diários
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Dicas essenciais para manter seu pet saudável e feliz.
+                    </p>
                   </div>
                 </div>
 
-                <div className="p-6 bg-white border shadow-sm rounded-xl">
-                  <div className="flex items-start mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 mr-4 text-white bg-green-600 rounded-full">
-                      <FaStethoscope />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-lg font-bold text-gray-800">Saúde Pet</h3>
-                      <p className="text-gray-700">Informações sobre prevenção de doenças e cuidados veterinários.</p>
-                    </div>
+                {/* Saúde Pet */}
+                <div className="flex items-start p-5 md:p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-100 transition-all duration-300 group">
+                  <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 mr-4 text-xl md:text-2xl text-emerald-600 bg-emerald-50 rounded-2xl flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <FaStethoscope />
+                  </div>
+                  <div>
+                    <h3 className="mb-1.5 text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                      Saúde Pet
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Informações sobre prevenção de doenças e cuidados veterinários.
+                    </p>
                   </div>
                 </div>
 
-                <div className="p-6 bg-white border shadow-sm rounded-xl">
-                  <div className="flex items-start mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 mr-4 text-white bg-yellow-500 rounded-full">
-                      <FaBrain />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-lg font-bold text-gray-800">Comportamento</h3>
-                      <p className="text-gray-700">Guias para entender e educar seu animal de estimação.</p>
-                    </div>
+                {/* Comportamento */}
+                <div className="flex items-start p-5 md:p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-amber-100 transition-all duration-300 group">
+                  <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 mr-4 text-xl md:text-2xl text-amber-500 bg-amber-50 rounded-2xl flex-shrink-0 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <FaBrain />
+                  </div>
+                  <div>
+                    <h3 className="mb-1.5 text-lg font-bold text-gray-900 group-hover:text-amber-500 transition-colors">
+                      Comportamento
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Guias para entender e educar seu animal de estimação.
+                    </p>
                   </div>
                 </div>
               </div>
