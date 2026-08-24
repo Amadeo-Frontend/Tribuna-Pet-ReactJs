@@ -13,9 +13,9 @@ export async function POST(request) {
       );
     }
 
-    // Envia o e-mail de confirmação/notificação via Resend
+    // Envia o e-mail de confirmação/notificação via Resend usando o domínio verificado
     const data = await resend.emails.send({
-      from: "Tribuna do Pet <onboarding@resend.dev>",
+      from: "Tribuna do Pet <contato@tribunadopet.com.br>",
       to: ["amadeuferreira2016.1@gmail.com"], // Receba o aviso do novo inscrito
       subject: "Novo Inscrito na Newsletter - Tribuna do Pet 🐾",
       html: `
