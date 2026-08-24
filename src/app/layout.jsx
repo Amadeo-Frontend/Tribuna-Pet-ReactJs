@@ -1,5 +1,6 @@
 import "../index.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import ScrollToTop from "../components/ScrollToTop";
 
 export const metadata = {
   metadataBase: new URL("https://www.tribunadopet.com.br"),
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
+        <ScrollToTop />
         <div id="root">{children}</div>
         <GoogleTagManager gtmId="GTM-XXXXXXX" />
       </body>

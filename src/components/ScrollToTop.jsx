@@ -1,17 +1,16 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+"use client";
 
-/**
- * Sempre que o pathname mudar, rola a página para o topo.
- * Coloque este componente em algum lugar acima do <Routes/>.
- */
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Se preferir, use behavior: "smooth"
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
-  return null; // Não renderiza nada na UI
+  return null;
 }
