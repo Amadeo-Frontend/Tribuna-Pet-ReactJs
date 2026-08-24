@@ -248,39 +248,43 @@ export default function Home() {
 
 function Card({ slug, tag, color, title, desc, img }) {
   return (
-    <article className="flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-      <Link href={`/${slug}`} className="relative block h-52 overflow-hidden bg-gray-100">
+    <article className="flex flex-col overflow-hidden bg-white border border-gray-200/80 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-2xl hover:border-gray-300 transition-all duration-500 hover:-translate-y-1.5 group">
+      <Link href={`/${slug}`} className="relative block h-56 md:h-60 overflow-hidden bg-gray-900">
         <img
           src={img}
           alt={title}
-          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
           loading="lazy"
         />
-        <span
-          className={`absolute top-4 left-4 ${color} text-white px-3.5 py-1 rounded-full text-xs font-bold tracking-wide shadow-md uppercase`}
-        >
-          {tag}
-        </span>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
+        
+        <div className="absolute top-4 left-4 z-10 flex items-center">
+          <span
+            className={`px-3.5 py-1.5 ${color} text-white text-[11px] font-extrabold tracking-wider shadow-lg rounded-full uppercase backdrop-blur-md border border-white/20`}
+          >
+            {tag}
+          </span>
+        </div>
       </Link>
 
-      <div className="flex flex-col justify-between flex-1 p-6">
+      <div className="flex flex-col justify-between flex-1 p-6 md:p-7 bg-gradient-to-b from-white to-gray-50/50">
         <div>
-          <h3 className="mb-3 text-xl font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+          <h3 className="mb-3 text-xl font-extrabold text-gray-900 leading-snug tracking-tight group-hover:text-primary transition-colors duration-300">
             <Link href={`/${slug}`}>
               {title}
             </Link>
           </h3>
-          <p className="mb-5 text-sm text-gray-600 leading-relaxed line-clamp-2">
+          <p className="mb-6 text-sm text-gray-600 leading-relaxed line-clamp-2 font-normal">
             {desc}
           </p>
         </div>
 
         <Link
           href={`/${slug}`}
-          className="inline-flex items-center font-bold text-sm text-primary hover:text-secondary group/link transition-colors mt-auto"
+          className="inline-flex items-center font-extrabold text-xs uppercase tracking-wider text-primary hover:text-secondary group/link transition-colors mt-auto pt-2 border-t border-gray-100"
         >
-          Ler matéria completa 
-          <span className="ml-1 transition-transform group-hover/link:translate-x-1">→</span>
+          <span>Ler matéria completa</span>
+          <span className="ml-1.5 transition-transform duration-300 group-hover/link:translate-x-1">→</span>
         </Link>
       </div>
     </article>
