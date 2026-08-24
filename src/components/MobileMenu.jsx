@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -73,7 +75,7 @@ function Accordion({ label, icon, links, onClose }) {
           >
             {links.map(([href, text]) => (
               <li key={href} className="py-1 rounded-md hover:bg-slate-100 hover:shadow-inner hover:text-primary hover:mx-1">
-                <Link to={href} onClick={onClose}>
+                <Link href={href} onClick={onClose}>
                   {text}
                 </Link>
               </li>
@@ -135,7 +137,7 @@ export default function MobileMenu({ open, onClose }) {
             >
               <motion.li variants={itemV} className="mb-4 list-none">
                 <Link
-                  to="/"
+                  href="/"
                   onClick={onClose}
                   className="flex items-center gap-3 font-medium text-gray-800 hover:text-primary"
                 >

@@ -1,5 +1,5 @@
 import NewsletterForm from "./Newsletter/NewsletterForm";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,17 +26,17 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Categorias</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/alimentacao-saudavel" className="text-gray-400 hover:text-white">
+                <Link href="/alimentacao-saudavel" className="text-gray-400 hover:text-white">
                   Alimentação Saudável
                 </Link>
               </li>
               <li>
-                <Link to="/cuidados-com-pets-no-inverno" className="text-gray-400 hover:text-white">
+                <Link href="/cuidados-com-pets-no-inverno" className="text-gray-400 hover:text-white">
                   Cuidados Diários
                 </Link>
               </li>
               <li>
-                <Link to="/vagas-para-castracao-gratuita" className="text-gray-400 hover:text-white">
+                <Link href="/vagas-para-castracao-gratuita" className="text-gray-400 hover:text-white">
                   Utilidade Pública
                 </Link>
               </li>
@@ -48,12 +48,12 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Links Úteis</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link to="/sobre-nos" className="hover:text-white">
+                <Link href="/sobre-nos" className="hover:text-white">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link to="/politica-de-privacidade" className="hover:text-white">
+                <Link href="/politica-de-privacidade" className="hover:text-white">
                   Política de Privacidade
                 </Link>
               </li>

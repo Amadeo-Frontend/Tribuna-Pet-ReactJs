@@ -1,12 +1,14 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import LiveClock from "../../components/LiveClock";
-import Header from "../../components/Header";
-import MobileMenu from "../../components/MobileMenu";
-import Footer from "../../components/Footer";
-import Seo from "../../components/Seo";
-import ShareButton from "../../components/ui/ShareButton";
+import LiveClock from "../components/LiveClock";
+import Header from "../components/Header";
+import MobileMenu from "../components/MobileMenu";
+import Footer from "../components/Footer";
+import Seo from "../components/Seo";
+import ShareButton from "../components/ui/ShareButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FaCaretUp, FaCompressArrowsAlt, FaCross, FaCrosshairs, FaFirstAid, FaHeartbeat, FaPaw, FaSnowflake } from "react-icons/fa";
@@ -67,12 +69,12 @@ export default function CuidadosComPetsNoInverno() {
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
-            <Link to="/" className="flex items-center hover:underline">
+            <Link href="/" className="flex items-center hover:underline">
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
             <Link
-              to="/cuidados-com-pets-no-inverno"
+              href="/cuidados-com-pets-no-inverno"
               className="hover:underline"
             >
               Cuidados Diários

@@ -1,22 +1,19 @@
-import { useState, useEffect } from "react";
+"use client";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import MobileMenu from "../components/MobileMenu";
-import Footer from "../components/Footer";
-import Seo from "../components/Seo";
-import LiveClock from "../components/LiveClock";
+import Link from "next/link";
+import Header from "../../components/Header";
+import MobileMenu from "../../components/MobileMenu";
+import Footer from "../../components/Footer";
+import LiveClock from "../../components/LiveClock";
 import {
-  FaBullseye,
-  FaEye,
-  FaHeart,
   FaUtensils,
   FaHandHoldingHeart,
   FaStethoscope,
   FaBrain
 } from "react-icons/fa";
 
-// util fade-in animation
 const FadeIn = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -30,22 +27,8 @@ const FadeIn = ({ children, delay = 0 }) => (
 export default function About() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const loader = document.getElementById("global-loader");
-      if (loader) loader.style.display = "none";
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
-      <Seo
-        title="Sobre Nós | Tribuna do Pet"
-        description="História, missão e pilares editoriais do Tribuna do Pet – o maior portal para tutores de cães e gatos no Brasil."
-        canonical="https://www.tribunadopet.com.br/sobre-nos"
-      />
-
       {/* Top bar */}
       <div className="hidden py-2 text-white bg-gradient-to-r bg-primary sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
@@ -63,8 +46,8 @@ export default function About() {
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
-            <Link to="/" className="flex items-center hover:underline">
-              <i className="mr-1 text-sm fas fa-home" /> Home
+            <Link href="/" className="flex items-center hover:underline">
+              Home
             </Link>
             <span className="text-gray-300">/</span>
             <span className="font-medium text-gray-300">Sobre Nós</span>
@@ -108,7 +91,7 @@ export default function About() {
               </p>
               <p className="mb-6 text-gray-700">
                 Nessa tradicional casa curitibana, o atendimento era próximo, quase familiar. Nomes dos pets eram
-                lembrados com carinho e as dicas surgiam naturalmente, entre um atendimento e outro no balcão.
+                lembrados com carinho e as dicas surgiam naturally, entre um atendimento e outro no balcão.
               </p>
               <p className="text-gray-700">Essa relação de confiança motivou a criação do Tribuna do Pet.</p>
             </section>
@@ -137,7 +120,6 @@ export default function About() {
             <section className="p-6 pt-0 md:p-10 md:pt-0">
               <h2 className="pb-2 mb-6 text-2xl font-bold text-gray-800 border-b">O que você encontra no Tribuna do Pet</h2>
               <div className="grid gap-6 md:grid-cols-2">
-                {/* Nutrição Animal */}
                 <div className="p-6 bg-white border shadow-sm rounded-xl">
                   <div className="flex items-start mb-4">
                     <div className="flex items-center justify-center w-12 h-12 mr-4 text-white rounded-full bg-primary">
@@ -150,7 +132,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* Cuidados Diários */}
                 <div className="p-6 bg-white border shadow-sm rounded-xl">
                   <div className="flex items-start mb-4">
                     <div className="flex items-center justify-center w-12 h-12 mr-4 text-white rounded-full bg-secondary">
@@ -163,7 +144,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* Saúde Pet */}
                 <div className="p-6 bg-white border shadow-sm rounded-xl">
                   <div className="flex items-start mb-4">
                     <div className="flex items-center justify-center w-12 h-12 mr-4 text-white bg-green-600 rounded-full">
@@ -176,7 +156,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* Comportamento */}
                 <div className="p-6 bg-white border shadow-sm rounded-xl">
                   <div className="flex items-start mb-4">
                     <div className="flex items-center justify-center w-12 h-12 mr-4 text-white bg-yellow-500 rounded-full">

@@ -1,11 +1,13 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import LiveClock from "../../components/LiveClock";
-import Header from "../../components/Header";
-import MobileMenu from "../../components/MobileMenu";
-import Footer from "../../components/Footer";
-import Seo from "../../components/Seo";
+import LiveClock from "../components/LiveClock";
+import Header from "../components/Header";
+import MobileMenu from "../components/MobileMenu";
+import Footer from "../components/Footer";
+import Seo from "../components/Seo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 // Importações corrigidas dos ícones
@@ -28,7 +30,7 @@ import {
   faClock,
   faEye,
 } from "@fortawesome/free-solid-svg-icons";
-import ShareButton from "../../components/ui/ShareButton";
+import ShareButton from "../components/ui/ShareButton";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -86,11 +88,11 @@ export default function PrimeirosSocorrosParaPets() {
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
-            <Link to="/" className="flex items-center hover:underline">
+            <Link href="/" className="flex items-center hover:underline">
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
-            <Link to="/saude-pet" className="hover:underline">
+            <Link href="/saude-pet" className="hover:underline">
               Saúde do Pet
             </Link>
             <span className="text-gray-400">/</span>

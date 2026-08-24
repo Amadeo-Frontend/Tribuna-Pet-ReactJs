@@ -1,3 +1,5 @@
+"use client";
+
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -13,14 +15,13 @@ import {
   FaTrophy
 } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import LiveClock from "../../components/LiveClock";
-import MobileMenu from "../../components/MobileMenu";
-import Seo from "../../components/Seo";
-import { LinkPreview } from "../../components/ui/link-preview";
-import ShareButton from "../../components/ui/ShareButton";
+import Link from "next/link";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import LiveClock from "../components/LiveClock";
+import MobileMenu from "../components/MobileMenu";
+import Seo from "../components/Seo";
+import ShareButton from "../components/ui/ShareButton";
 
 const FadeIn = ({ children, delay = 0 }) => (
   <motion.div
@@ -47,7 +48,7 @@ export default function MelhorRacaoPitbull() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const loader = document.getElementById("global-loader");
+      const loader = typeof window !== "undefined" ? document.getElementById("global-loader") : null;
       if (loader) loader.style.display = "none";
     }, 1500);
 
@@ -86,11 +87,11 @@ export default function MelhorRacaoPitbull() {
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
-            <Link to="/" className="flex items-center hover:underline">
+            <Link href="/" className="flex items-center hover:underline">
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
-            <Link to="/alimentacao-saudavel" className="hover:underline">
+            <Link href="/alimentacao-saudavel" className="hover:underline">
               Alimentação Saudável
             </Link>
             <span className="text-gray-400">/</span>
@@ -856,9 +857,8 @@ export default function MelhorRacaoPitbull() {
               </button>
             </div>
 
-            <LinkPreview
-              url="https://www.racaopets.com.br"
-              href="https://www.racaopets.com.br"
+            <a
+              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 transition-colors hover:bg-gray-50"
@@ -866,7 +866,7 @@ export default function MelhorRacaoPitbull() {
               <div className="flex flex-col items-start md:flex-row">
                 <div className="flex-1">
                   <h4 className="font-medium text-blue-600 hover:underline">
-                    Ração Pets - Rações Super Premium para Cães Ativos e de Alta Performance
+                    Ração Pets - Nutrição premium para cães e gatos
                   </h4>
                   <div className="flex items-center mt-1">
                     <span className="text-sm text-green-700">
@@ -883,20 +883,21 @@ export default function MelhorRacaoPitbull() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
-                    Encontre a Lunch Dog X-PRO e as melhores marcas de rações para o seu cão ativo com preços especiais e entrega rápida.
+                    Rações premium e super premium sem conservantes ou corantes.
+                    Garanta nutrição completa a preços acessíveis.
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="/blog-hero-ranking-mobile.png"
-                      alt="Ração Pets"
+                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
+                      alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />
                   </div>
                 </div>
               </div>
-            </LinkPreview>
+            </a>
           </aside>
         </FadeIn>
       </main>

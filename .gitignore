@@ -1,4 +1,4 @@
-# Logs
+# logs
 logs
 *.log
 npm-debug.log*
@@ -8,17 +8,23 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.DS_Store
 dist
 dist-ssr
 *.local
+
+# Next.js
+.next/
+out/
+next-env.d.ts
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
+.solid
 *.suo
-*.ntvs*
+*.ntvs
 *.njsproj
 *.sln
 *.sw?

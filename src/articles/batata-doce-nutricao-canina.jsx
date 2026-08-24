@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import MobileMenu from "../../components/MobileMenu";
-import Footer from "../../components/Footer";
-import Seo from "../../components/Seo";
-import LiveClock from "../../components/LiveClock";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Header from "../components/Header";
+import MobileMenu from "../components/MobileMenu";
+import Footer from "../components/Footer";
+import Seo from "../components/Seo";
+import LiveClock from "../components/LiveClock";
 import {
   FaRegStar,
   FaHeartbeat,
@@ -19,7 +22,7 @@ import {
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
-import ShareButton from "../../components/ui/ShareButton";
+import ShareButton from "../components/ui/ShareButton";
 
 // Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
@@ -48,7 +51,7 @@ export default function BatataDoceNutricaoCanina() {
   useEffect(() => {
     // Simular carregamento
     const timer = setTimeout(() => {
-      document.getElementById("global-loader").style.display = "none";
+      if (typeof window !== "undefined") { const el = typeof window !== "undefined" ? document.getElementById("global-loader") : null; if (el) el.style.display = "none"; }
     }, 1500);
 
     return () => clearTimeout(timer);
@@ -86,11 +89,11 @@ export default function BatataDoceNutricaoCanina() {
       <div className="py-6 border-b bg-gradient-to-b from-primary to-primary">
         <div className="container px-4 mx-auto">
           <nav className="flex flex-wrap gap-2 mb-3 text-sm text-gray-200">
-            <Link to="/" className="flex items-center hover:underline">
+            <Link href="/" className="flex items-center hover:underline">
               <i className="mr-1 text-sm fas fa-home"></i> Home
             </Link>
             <span className="text-gray-300">/</span>
-            <Link to="/alimentacao-saudavel" className="hover:underline">
+            <Link href="/alimentacao-saudavel" className="hover:underline">
               Alimentação Saudável
             </Link>
             <span className="text-gray-400">/</span>

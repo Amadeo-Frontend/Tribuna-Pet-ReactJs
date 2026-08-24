@@ -1,21 +1,15 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import Seo from "../components/Seo";
 import LiveClock from "../components/LiveClock";
 import Header from "../components/Header";
 import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import PageTransition from "../components/PageTransition";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
 
-/* ------------------------------------------------------------------
-   1. LISTAS DE CARDS
-   ------------------------------------------------------------------ */
-
-// ➤ 3 cartões fixos que aparecem ANTES do bloco de newsletter
 const topCards = [
   {
     slug: "alimentacao-saudavel",
@@ -43,8 +37,6 @@ const topCards = [
   },
 ];
 
-// ➤ Cards que aparecem DEPOIS do bloco de newsletter.
-//    Sinta‑se livre para continuar adicionando novos itens no final.
 const bottomCards = [
   {
     slug: "melhor-racao-para-pitbull-e-caes-ativos",
@@ -78,10 +70,8 @@ const bottomCards = [
     desc: "A batata-doce emergiu como um superalimento...",
     img: "https://www.tribunadopet.com.br/fresh-vegetable.webp",
   },
-  // ➕ novos cards ficam aqui embaixo 👇
 ];
 
-// Componentes animados
 const FadeIn = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -92,19 +82,11 @@ const FadeIn = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <PageTransition>
-      <Seo
-        title="Tribuna do Pet • Dicas de Alimentação, Cuidados e Utilidade Pública"
-        description="Portal com as melhores dicas para tutores de cães e gatos: alimentação natural, saúde, cuidados diários e serviços gratuitos."
-        canonical="https://www.tribunadopet.com.br/"
-        image="https://www.tribunadopet.com.br/og-image.jpg"
-      />
-
       {/* Top bar */}
       <div className="hidden py-2 text-white bg-primary sm:block">
         <div className="container flex items-center justify-between px-4 mx-auto text-sm">
@@ -121,10 +103,9 @@ export default function Home() {
       <main className="container px-4 py-8 mx-auto max-w-7xl">
         {/* HERO destaque principal */}
         <Link
-          to="/melhor-racao-para-pitbull-e-caes-ativos"
+          href="/melhor-racao-para-pitbull-e-caes-ativos"
           className="relative block mb-12 md:mb-16 overflow-hidden bg-black rounded-2xl md:rounded-3xl shadow-2xl group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-4 focus:ring-amber-400"
         >
-          {/* Imagem responsiva */}
           <div className="relative w-full overflow-hidden bg-gray-950">
             <picture className="block w-full">
               <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
@@ -135,18 +116,15 @@ export default function Home() {
               />
             </picture>
             
-            {/* Tag Badge sobre a imagem no mobile e desktop */}
             <div className="absolute top-4 left-4 z-10">
               <span className="px-3.5 py-1.5 text-[11px] md:text-xs font-extrabold tracking-wider text-white rounded-full bg-secondary shadow-lg uppercase backdrop-blur-md">
                 ⭐ Destaque Principal
               </span>
             </div>
 
-            {/* Gradiente escuro adaptativo */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent md:to-black/20" />
           </div>
           
-          {/* Conteúdo textual */}
           <div className="relative md:absolute md:inset-0 flex flex-col justify-end p-5 sm:p-8 md:p-10 lg:p-12 -mt-16 md:mt-0 bg-gradient-to-t from-black via-black/90 to-transparent md:bg-none z-10">
             <div className="max-w-3xl">
               <h2 className="mb-2.5 text-xl sm:text-2xl font-extrabold text-white md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
@@ -157,10 +135,10 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-gray-300 font-medium pt-1">
                 <span className="flex items-center">
-                  <i className="mr-1.5 far fa-calendar text-amber-400" /> 23 de Agosto, 2026
+                  23 de Agosto, 2026
                 </span>
                 <span className="flex items-center">
-                  <i className="mr-1.5 far fa-clock text-amber-400" /> 10 min de leitura
+                  10 min de leitura
                 </span>
               </div>
             </div>
@@ -197,7 +175,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Em Alta (cresce dinamicamente) */}
+        {/* Em Alta */}
         <section className="mb-20">
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-gray-200">
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -221,9 +199,6 @@ export default function Home() {
                 </span>
                 <span className="ml-2 text-xs text-gray-500 font-medium">Patrocinado</span>
               </div>
-              <button aria-label="Fechar anúncio" className="text-gray-400 hover:text-gray-600 transition-colors">
-                <i className="fas fa-times"></i>
-              </button>
             </div>
 
             <a
@@ -243,7 +218,6 @@ export default function Home() {
                     </span>
                     <span className="mx-2 text-gray-300">•</span>
                     <span className="text-sm text-yellow-500 font-medium">
-                      <i className="fas fa-star mr-1"></i>
                       4.9 (Avaliações verificadas)
                     </span>
                   </div>
@@ -272,13 +246,10 @@ export default function Home() {
   );
 }
 
-/* ------------------------------------------------------------
-   Card Component (Design de Alta Performance & A11y)
------------------------------------------------------------- */
 function Card({ slug, tag, color, title, desc, img }) {
   return (
     <article className="flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-      <Link to={`/${slug}`} className="relative block h-52 overflow-hidden bg-gray-100">
+      <Link href={`/${slug}`} className="relative block h-52 overflow-hidden bg-gray-100">
         <img
           src={img}
           alt={title}
@@ -295,7 +266,7 @@ function Card({ slug, tag, color, title, desc, img }) {
       <div className="flex flex-col justify-between flex-1 p-6">
         <div>
           <h3 className="mb-3 text-xl font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
-            <Link to={`/${slug}`}>
+            <Link href={`/${slug}`}>
               {title}
             </Link>
           </h3>
@@ -305,7 +276,7 @@ function Card({ slug, tag, color, title, desc, img }) {
         </div>
 
         <Link
-          to={`/${slug}`}
+          href={`/${slug}`}
           className="inline-flex items-center font-bold text-sm text-primary hover:text-secondary group/link transition-colors mt-auto"
         >
           Ler matéria completa 
