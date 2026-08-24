@@ -858,7 +858,7 @@ export default function MelhorRacaoPitbull() {
             </div>
 
             <a
-              href="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
+              href="https://www.racaopets.com.br/cachorro/racao-seca/super-premium/racao-super-premium-x-pro-training-para-caes-adultos-lunch-dog-sabor-frango-batata-doce-e-linhaca-com-whey-protein-28-proteinas-15-kg"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 transition-colors hover:bg-gray-50"
@@ -866,7 +866,7 @@ export default function MelhorRacaoPitbull() {
               <div className="flex flex-col items-start md:flex-row">
                 <div className="flex-1">
                   <h4 className="font-medium text-blue-600 hover:underline">
-                    Ração Pets - Nutrição premium para cães e gatos
+                    Ração Lunch Dog X-PRO Training Super Premium (15kg) - Ração Pets
                   </h4>
                   <div className="flex items-center mt-1">
                     <span className="text-sm text-green-700">
@@ -883,15 +883,14 @@ export default function MelhorRacaoPitbull() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
-                    Rações premium e super premium sem conservantes ou corantes.
-                    Garanta nutrição completa a preços acessíveis.
+                    Com Whey Protein, BCAA, Ovo em Pó, Frango e Batata Doce (28% Proteínas). Nutrição de alta performance para cães ativos.
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
-                  <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
+                  <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl overflow-hidden">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
-                      alt="Ração Lunch dog essencial"
+                      src="/lunch-dog-super-premium-x-pro-training.png"
+                      alt="Ração Lunch Dog X-PRO Training Super Premium"
                       className="object-contain w-32 h-24"
                     />
                   </div>
