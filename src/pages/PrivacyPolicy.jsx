@@ -204,10 +204,10 @@ export default function PrivacyPolicy() {
       O uso continuado de nosso site será considerado aceitação desta Política.
       Se permanecer com dúvidas, entre em contato:
       <a
-        href="mailto:tribunadopet@gmail.com"
+        href="mailto:contato@tribunadopet.com.br"
         className="ml-1 font-medium text-primary hover:underline"
       >
-        tribunadopet@gmail.com
+        contato@tribunadopet.com.br
       </a>
       .
     </p>

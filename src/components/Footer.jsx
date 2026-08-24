@@ -58,8 +58,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:tribunadopet@gmail.com" className="hover:text-white">
-                  tribunadopet@gmail.com
+                <a href="mailto:contato@tribunadopet.com.br" className="hover:text-white">
+                  contato@tribunadopet.com.br
                 </a>
               </li>
             </ul>
