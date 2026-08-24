@@ -1,5 +1,6 @@
+"use client";
+
 import { useState, useEffect } from "react";
-// (opcional) se estiver usando o pacote oficial:
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 
@@ -10,23 +11,20 @@ export default function LiveClock({
   locale = "pt-BR",
   timeZone = "America/Sao_Paulo",
 }) {
-  const [time, setTime] = useState(
-    new Date().toLocaleTimeString(locale, { timeZone })
-  );
+  const [time, setTime] = useState("");
 
   useEffect(() => {
+    setTime(new Date().toLocaleTimeString(locale, { timeZone }));
     const id = setInterval(() => {
       setTime(new Date().toLocaleTimeString(locale, { timeZone }));
     }, 1000);
-    return () => clearInterval(id); // limpa se o componente sumir
+    return () => clearInterval(id);
   }, [locale, timeZone]);
 
   return (
-    <span className="flex items-center gap-1 font-mono">
-      {/* ← escolha UMA das duas linhas abaixo */}
-      <FontAwesomeIcon icon={faClock} />         {/* usando kit CDN já embutido */}
-      {/* <FontAwesomeIcon icon={faClock} /> */} {/* se usa @fortawesome/react-fontawesome */}
-      {time}
+    <span className="flex items-center gap-1 font-mono min-w-[85px] inline-block" suppressHydrationWarning>
+      <FontAwesomeIcon icon={faClock} />
+      {time || "--:--:--"}
     </span>
   );
 }
