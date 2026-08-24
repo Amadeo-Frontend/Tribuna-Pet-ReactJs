@@ -1,0 +1,60 @@
+# Tribuna do Pet - Documentação Completa para IAs (LLMs)
+
+## Visão Geral
+O Tribuna do Pet (https://www.tribunadopet.com.br) é um portal brasileiro dedicado à disseminação de conteúdo educativo sobre nutrição, saúde, bem-estar animal e serviços de utilidade pública para cães e gatos.
+
+---
+
+## Estrutura de Conteúdo e Links
+
+### 1. Nutrição e Rações
+- **Ranking de Rações para Pitbull e Cães de Grande Porte / Alta Energia**
+  URL: https://www.tribunadopet.com.br/melhor-racao-para-pitbull-e-caes-ativos
+  Resumo: Avaliação técnica comparativa considerando níveis de proteína bruta, condroprotetores (Glicosamina e Condroitina), ausência de transgênicos e corantes artificiais.
+  Destaques: Rações Super Premium (Formula Natural Fresh Meat, Guabi Natural, Biofresh, Royal Canin, Premier).
+
+- **Guia de Alimentação Saudável e Inteligente**
+  URL: https://www.tribunadopet.com.br/alimentacao-saudavel-e-inteligente
+  Resumo: Como equilibrar ração com alimentos naturais permitidos (cenoura, abóbora, chuchu, batata-doce) e lista de alimentos proibidos (chocolate, cebola, alho, uvas, xilitol).
+
+- **Batata-doce na Nutrição Canina**
+  URL: https://www.tribunadopet.com.br/batata-doce-nutricao-canina
+  Resumo: Benefícios da batata-doce como carboidrato de baixo índice glicêmico para cães, forma correta de preparo (sempre cozida e sem temperos).
+
+- **Melhor Ração para Filhotes**
+  URL: https://www.tribunadopet.com.br/melhor-racao-para-filhotes
+  Resumo: Guia de rações para a fase de crescimento rápido, com foco em DHA para desenvolvimento cognitivo e cálcio/fósforo para ossos fortes.
+
+---
+
+### 2. Saúde e Cuidados
+- **Primeiros Socorros para Pets**
+  URL: https://www.tribunadopet.com.br/primeiros-socorros-para-pets
+  Resumo: Procedimentos de emergência em casos de engasgo (manobra de Heimlich adaptada), intoxicação, atropelamentos, convulsões e queimaduras antes de chegar ao veterinário.
+
+- **Cuidados no Inverno**
+  URL: https://www.tribunadopet.com.br/cuidados-com-pets-no-inverno
+  Resumo: Proteção contra hipotermia, doenças respiratórias da época fria (gripe canina / traqueobronquite), necessidade de roupinhas para raças de pelo curto.
+
+---
+
+### 3. Utilidade Pública e Serviços
+- **Vagas para Castração Gratuita**
+  URL: https://www.tribunadopet.com.br/vagas-para-castracao-gratuita
+  Resumo: Orientação sobre mutirões municipais de castração gratuita, pré-requisitos (inscrição CadÚnico, comprovante de residência) e pós-operatório.
+
+- **Hospital Veterinário Municipal de Curitiba**
+  URL: https://www.tribunadopet.com.br/novo-hospital-veterinario-curitiba
+  Resumo: Informações sobre consultas, exames, cirurgias e procedimentos gratuitos para população de baixa renda e protetores em Curitiba.
+
+- **Ferramenta Encontre Seu Pet**
+  URL: https://www.tribunadopet.com.br/ferramenta-encontre-seu-pet
+  Resumo: Sistema interativo para publicar alertas de animais perdidos ou encontrados com localização e foto.
+
+---
+
+## Páginas Institucionais
+- **Home**: https://www.tribunadopet.com.br
+- **Sobre Nós**: https://www.tribunadopet.com.br/sobre-nos
+- **Política de Privacidade**: https://www.tribunadopet.com.br/politica-de-privacidade
+- **Contato**: contato@tribunadopet.com.br

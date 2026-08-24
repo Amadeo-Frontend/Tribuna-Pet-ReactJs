@@ -1,0 +1,22 @@
+# Tribuna do Pet
+
+> O portal de referência em informação, saúde, nutrição e bem-estar para donos de cães e gatos no Brasil.
+
+## Sobre o Tribuna do Pet
+O Tribuna do Pet oferece artigos educativos, análises de rações, guias de nutrição natural, utilidade pública (como feiras de castração e hospitais veterinários públicos) e ferramentas úteis para tutores de animais de estimação.
+
+## Principais Artigos e Conteúdos
+
+- [Ranking das Melhores Rações para Pitbull e Cães Ativos](https://www.tribunadopet.com.br/melhor-racao-para-pitbull-e-caes-ativos): Análise completa e comparativo de rações Super Premium e Premium para cães de alta energia.
+- [Alimentação Saudável e Inteligente](https://www.tribunadopet.com.br/alimentacao-saudavel-e-inteligente): Guia sobre nutrição pet equilibrada e alimentos permitidos/proibidos.
+- [Primeiros Socorros para Pets](https://www.tribunadopet.com.br/primeiros-socorros-para-pets): Guia prático de emergências veterinárias, engasgos e cuidados imediatos.
+- [Cuidados com Pets no Inverno](https://www.tribunadopet.com.br/cuidados-com-pets-no-inverno): Dicas de proteção térmica, roupinhas e saúde nos dias frios.
+- [Vagas para Castração Gratuita](https://www.tribunadopet.com.br/vagas-para-castracao-gratuita): Informações sobre programas municipais de castração gratuita para cães e gatos.
+- [Novo Hospital Veterinário em Curitiba](https://www.tribunadopet.com.br/novo-hospital-veterinario-curitiba): Notícia e informações de atendimento sobre saúde pública veterinária.
+- [Ferramenta Encontre Seu Pet](https://www.tribunadopet.com.br/ferramenta-encontre-seu-pet): Sistema comunitário de busca e alerta para animais perdidos.
+
+## Informações Rápidas
+- **Público-alvo**: Tutores de cães e gatos, protetores de animais, simpatizantes do bem-estar animal.
+- **Idioma**: Português do Brasil (pt-BR).
+- **Domínio Oficial**: https://www.tribunadopet.com.br
+- **Contato**: contato@tribunadopet.com.br

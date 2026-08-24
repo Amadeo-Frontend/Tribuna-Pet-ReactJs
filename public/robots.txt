@@ -4,25 +4,22 @@ Disallow: /src/
 Disallow: /node_modules/
 Disallow: /dist/
 Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /wp-admin/
-Disallow: /private/
-Disallow: /includes/
-Disallow: /config/
-Crawl-delay: 2
 
-# REGRAS ESPECÍFICAS DO GOOGLE (OPCIONAL - JÁ COBERTO PELAS REGRAS GERAIS)
-User-agent: Googlebot
-Disallow: /src/
-Disallow: /node_modules/
-Disallow: /dist/
-Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /wp-admin/
-Disallow: /private/
-Disallow: /includes/
-Disallow: /config/
+# PERMITIR BOTS DE IA / LLMS (GEO INDEXING)
+User-agent: GPTBot
+Allow: /
 
-# SITEMAPS
-Sitemap: https://www.tribunadopet.com.br/sitemap.xml
-Sitemap: https://www.tribunadopet.com.br/sitemap-pt.xml
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# SITEMAP & LLMS
+Sitemap: https://www.tribunadopet.com.br/sitemap.xml
