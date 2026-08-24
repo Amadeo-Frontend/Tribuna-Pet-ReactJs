@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <div id="root">{children}</div>
         <GoogleTagManager gtmId="GTM-XXXXXXX" />
       </body>
