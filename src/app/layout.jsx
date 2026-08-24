@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <ScrollToTop />
         <div id="root">{children}</div>
-        <GoogleTagManager gtmId="GTM-XXXXXXX" />
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-W97C3TZ5"} />
       </body>
     </html>
   );
