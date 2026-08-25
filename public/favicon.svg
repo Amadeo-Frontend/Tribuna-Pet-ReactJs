@@ -1,40 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <!-- Gradiente premium para a marca Tribuna do Pet -->
-    <linearGradient id="tribunaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e3a8a" />
-      <stop offset="50%" stop-color="#2563eb" />
-      <stop offset="100%" stop-color="#3b82f6" />
+    <!-- Gradiente azul vibrante igual ao botão da marca Tribuna do Pet -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
     </linearGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#d97706" />
-    </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
-    </filter>
   </defs>
 
-  <!-- Fundo do Favicon com cantos suaves e sombra elegante -->
-  <rect width="512" height="512" rx="112" fill="url(#tribunaGrad)" />
+  <!-- Fundo azul arredondado -->
+  <rect width="512" height="512" rx="140" fill="url(#blueGrad)" />
 
-  <!-- Desenho do monograma "T" + Pata de Pet Integrados em Ouro e Branco -->
-  <g transform="translate(0, 8)" filter="url(#shadow)">
-    <!-- As 4 Almofadinhas Superiores (Dedinhos da pata) formando a parte de cima e coroa -->
+  <!-- Patinha Branca no centro exatamente como no botão do logo -->
+  <g fill="#ffffff" transform="translate(0, 10)">
     <!-- Dedinho 1 (Esquerda) -->
-    <ellipse cx="140" cy="115" rx="30" ry="42" fill="#ffffff" transform="rotate(-25 140 115)" />
+    <ellipse cx="145" cy="175" rx="34" ry="50" transform="rotate(-28 145 175)" />
     <!-- Dedinho 2 (Centro Esquerda) -->
-    <ellipse cx="215" cy="85" rx="32" ry="46" fill="#ffffff" transform="rotate(-8 215 85)" />
+    <ellipse cx="218" cy="130" rx="36" ry="54" transform="rotate(-10 218 130)" />
     <!-- Dedinho 3 (Centro Direita) -->
-    <ellipse cx="297" cy="85" rx="32" ry="46" fill="#ffffff" transform="rotate(8 297 85)" />
+    <ellipse cx="294" cy="130" rx="36" ry="54" transform="rotate(10 294 130)" />
     <!-- Dedinho 4 (Direita) -->
-    <ellipse cx="372" cy="115" rx="30" ry="42" fill="#ffffff" transform="rotate(25 372 115)" />
+    <ellipse cx="367" cy="175" rx="34" ry="50" transform="rotate(28 367 175)" />
 
-    <!-- A Pata Principal Fundida com o Monograma "T" -->
-    <!-- Barra Horizontal do "T" com curvatura anatômica de pata na parte de baixo -->
-    <path d="M 110 160 L 402 160 C 420 160, 430 175, 420 195 L 400 225 C 385 245, 360 250, 320 240 L 320 380 C 320 420, 295 440, 256 440 C 217 440, 192 420, 192 380 L 192 240 C 152 250, 127 245, 112 225 L 92 195 C 82 175, 92 160, 110 160 Z" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" />
-
-    <!-- Coxim Central (Almofada principal estilizada no topo da haste do T) -->
-    <path d="M 205 190 Q 256 165 307 190 Q 330 235 256 250 Q 182 235 205 190 Z" fill="#ffffff" opacity="0.95" />
+    <!-- Coxim central (Almofada da pata) -->
+    <path d="M 256 240 Q 345 235 375 305 Q 395 365 345 405 Q 256 425 167 405 Q 117 365 137 305 Q 167 235 256 240 Z" />
   </g>
 </svg>
