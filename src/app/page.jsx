@@ -166,17 +166,33 @@ export default function Home() {
 
         {/* Newsletter */}
         <section className="mb-16">
-          <div className="p-8 md:p-12 text-center text-white bg-gradient-to-br from-primary via-primary to-secondary rounded-3xl shadow-xl">
-            <h2 className="mb-3 text-2xl font-extrabold md:text-4xl tracking-tight">
+          <div className="relative overflow-hidden p-8 md:p-12 text-center text-white bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl group">
+            {/* Decorações sutis de fundo */}
+            <div className="absolute -top-12 -left-12 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Ícone de carta com patinha animada */}
+            <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-white rounded-2xl bg-gradient-to-tr from-blue-600 to-sky-400 shadow-lg shadow-sky-500/20 group-hover:scale-110 transition-transform duration-500">
+              <span className="text-3xl">🐾</span>
+            </div>
+
+            <h2 className="mb-3 text-2xl font-extrabold md:text-4xl tracking-tight text-white">
               Receba dicas exclusivas para seu pet
             </h2>
-            <p className="max-w-2xl mx-auto mb-8 text-base md:text-lg text-blue-100 leading-relaxed">
+            
+            <p className="max-w-2xl mx-auto mb-8 text-sm md:text-base text-slate-300 leading-relaxed font-normal">
               Inscreva‑se em nossa newsletter e receba conteúdos especiais sobre
-              cuidados, alimentação e saúde animal diretamente no seu e-mail.
+              cuidados, alimentação saudável e guias veterinários diretamente no seu e-mail.
             </p>
+
             <div className="max-w-xl mx-auto">
               <NewsletterForm />
             </div>
+
+            <p className="mt-4 text-[11px] text-slate-400 font-medium flex items-center justify-center gap-1.5">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              Sem spam. Cancele a inscrição a qualquer momento com apenas 1 clique.
+            </p>
           </div>
         </section>
 
