@@ -166,15 +166,15 @@ export default function Home() {
 
         {/* Newsletter Destaque Otimizada */}
         <section className="mb-16">
-          <div className="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl transition-all duration-500 hover:border-slate-700">
+          <div className="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl md:rounded-3xl shadow-2xl transition-all duration-500 hover:border-slate-700">
             {/* Animador de patinhas de cão dando voltas em toda a borda retangular */}
             <BorderPawTrail />
 
-            <div className="p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="p-5 sm:p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center">
                 {/* Lado Esquerdo: Ilustração de Pet em destaque */}
                 <div className="md:col-span-5 flex justify-center relative">
-                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden border-2 border-sky-400/30 shadow-2xl shadow-sky-500/20 group-hover:scale-105 transition-transform duration-500">
+                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-56 md:h-56 rounded-2xl md:rounded-3xl overflow-hidden border-2 border-sky-400/30 shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-transform duration-500">
                     <img
                       src="/filhote2.webp"
                       alt="Cão e gato felizes com nutrição saudável"
@@ -183,32 +183,32 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                     
-                    <span className="absolute bottom-3 left-3 right-3 text-center px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white bg-blue-600/90 rounded-full backdrop-blur-md border border-white/20">
+                    <span className="absolute bottom-1.5 left-2 right-2 text-center px-2 py-0.5 text-[9px] md:text-[11px] font-extrabold uppercase tracking-wider text-white bg-blue-600/90 rounded-full backdrop-blur-md border border-white/20">
                       🐾 Comunidade Pet
                     </span>
                   </div>
                 </div>
 
                 {/* Lado Direito: Chamada & Formulário */}
-                <div className="md:col-span-7 text-center md:text-left space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20 uppercase">
+                <div className="md:col-span-7 text-center md:text-left space-y-2.5 sm:space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 text-[10px] sm:text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20 uppercase">
                     ⭐ Dicas Gratuitas
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight">
+                  <h2 className="text-lg sm:text-xl md:text-4xl font-extrabold text-white leading-snug md:leading-tight tracking-tight">
                     Quer receber dicas de saúde e nutrição para seu amigo?
                   </h2>
 
-                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                     Junte-se a milhares de tutores! Enviamos guias sobre rações, primeiros socorros e utilidade pública direto no seu e-mail.
                   </p>
 
-                  <div className="pt-2 max-w-lg">
+                  <div className="pt-1 max-w-lg">
                     <NewsletterForm />
                   </div>
 
-                  <p className="text-xs text-slate-400 font-medium flex items-center justify-center md:justify-start gap-1.5 pt-1">
-                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <p className="text-[10px] sm:text-xs text-slate-400 font-medium flex items-center justify-center md:justify-start gap-1.5 pt-0.5">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     100% Gratuito. Sem spam. Cancele a qualquer momento.
                   </p>
                 </div>
