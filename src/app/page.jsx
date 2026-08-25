@@ -17,7 +17,7 @@ const topCards = [
     color: "bg-accent",
     title: "Guia Completo para uma Alimentação Saudável",
     desc: "Desmistifique a alimentação natural e ...",
-    img: "https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.jpg",
+    img: "https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.webp",
   },
   {
     slug: "cuidados-com-pets-no-inverno",
@@ -25,7 +25,7 @@ const topCards = [
     color: "bg-blue-600",
     title: "Cuidados Diários com Cães e Gatos",
     desc: "Saiba como proteger seu pet em temperaturas baixas...",
-    img: "https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.jpg",
+    img: "https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.webp",
   },
   {
     slug: "vagas-para-castracao-gratuita",
@@ -33,7 +33,7 @@ const topCards = [
     color: "bg-purple-600",
     title: "Utilidade Pública Pet",
     desc: "Prefeitura abriu vagas para castração gratuita...",
-    img: "https://www.tribunadopet.com.br/castracao-de-animais-2.jpg",
+    img: "https://www.tribunadopet.com.br/castracao-de-animais-2.webp",
   },
 ];
 
@@ -44,7 +44,7 @@ const bottomCards = [
     color: "bg-red-600",
     title: "Melhor Ração para Pitbull e Cães Ativos em 2026",
     desc: "Ranking completo e análise nutricional das melhores rações...",
-    img: "/blog-hero-ranking-desktop.png",
+    img: "/blog-hero-ranking-desktop.webp",
   },
   {
     slug: "alimentacao-saudavel-e-inteligente",
@@ -52,7 +52,7 @@ const bottomCards = [
     color: "bg-rose-600",
     title: "Guia de Alimentação Responsável",
     desc: "Passo a passo para dar um alimento seguro e saboroso...",
-    img: "https://www.tribunadopet.com.br/cachorro-caramelo-olhando-para-camera.jpg",
+    img: "https://www.tribunadopet.com.br/cachorro-caramelo-olhando-para-camera.webp",
   },
   {
     slug: "novo-hospital-veterinario-curitiba",
@@ -108,9 +108,9 @@ export default function Home() {
         >
           <div className="relative w-full overflow-hidden bg-gray-950">
             <picture className="block w-full">
-              <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.png" />
+              <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.webp" />
               <img
-                src="/blog-hero-ranking-mobile.png"
+                src="/blog-hero-ranking-mobile.webp"
                 alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
                 className="w-full h-auto object-cover md:object-contain object-top md:object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
                 fetchPriority="high"
@@ -213,7 +213,7 @@ export default function Home() {
                 {/* Imagem do Produto no topo em telas menores / à esquerda em telas maiores */}
                 <div className="w-full sm:w-36 h-36 sm:h-28 flex-shrink-0 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-xl overflow-hidden p-3 shadow-inner group-hover:border-blue-200 transition-colors">
                   <img
-                    src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
+                    src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.webp"
                     alt="Ração Lunch Dog Essencial"
                     className="object-contain w-full h-full max-h-32 transition-transform duration-300 group-hover:scale-105"
                     suppressHydrationWarning

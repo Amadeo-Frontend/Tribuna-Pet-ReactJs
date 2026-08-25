@@ -65,7 +65,7 @@ export default function PetsPerdidos() {
         title="Ferramenta para Encontre seu Pet | Tribuna do Pet"
         description="RPC lança app interativo para ajudar tutores a localizar animais desaparecidos. Entenda como funciona e sua importância para o bem-estar animal."
         canonical="https://www.tribunadopet.com.br/ferramenta-pets-perdidos"
-        image="https://www.tribunadopet.com.br/ferramenta-para-pets-perdidos-capa.jpg"
+        image="https://www.tribunadopet.com.br/ferramenta-para-pets-perdidos-capa.webp"
         published="2025-08-04"
       />
 
@@ -154,7 +154,7 @@ export default function PetsPerdidos() {
             <ScaleIn delay={0.3}>
               <div className="w-full mb-8">
                 <img
-                  src="/rastreamento-de-pets-og-image.jpg"
+                  src="/rastreamento-de-pets-og-image.webp"
                   alt="Mulher abraçando seu cão que foi encontrado após estar perdido"
                   className="object-cover w-full rounded-lg"
                 />
@@ -528,7 +528,7 @@ export default function PetsPerdidos() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
+                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />

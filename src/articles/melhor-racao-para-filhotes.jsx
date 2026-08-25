@@ -63,7 +63,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
         title="Ração Premium para Filhotes em Curitiba (Guia 2025) | Tribuna do Pet"
         description="Guia simples para escolher ração premium para filhotes: o que olhar, como servir, e onde comprar em Curitiba/RMC com envio nacional."
         canonical="https://www.tribunadopet.com.br/melhor-racao-para-filhotes"
-        image="https://www.tribunadopet.com.br/banner-blog.png"
+        image="https://www.tribunadopet.com.br/banner-blog.webp"
         published="2025-11-01"
       />
 
@@ -141,7 +141,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
         <ScaleIn delay={0.2}>
           <div className="w-full my-2">
             <img
-              src="https://www.tribunadopet.com.br/filhote1.jpg"
+              src="https://www.tribunadopet.com.br/filhote1.webp"
               alt="Filhote saudável com ração premium"
               className="object-cover w-full rounded-lg"
             />
@@ -370,7 +370,7 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-pets-filhotes.png"
+                      src="https://www.tribunadopet.com.br/racao-pets-filhotes.webp"
                       alt="Ração premium para filhotes"
                       className="object-contain w-32 h-24"
                     />

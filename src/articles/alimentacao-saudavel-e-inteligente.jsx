@@ -72,7 +72,7 @@ export default function AlimentacaoInteligente() {
         title="Alimentação Saudável e Inteligente | Tribuna do Pet"
         description="Conheça as rações Lunch Dog e Lunch Cat que conquistaram o paladar dos pets curitibanos"
         canonical="https://www.tribunadopet.com.br/alimentacao-saudavel-e-inteligente"
-        image="https://www.tribunadopet.com.br/381336.png"
+        image="https://www.tribunadopet.com.br/381336.webp"
         published="2025-06-16"
       />
 
@@ -156,7 +156,7 @@ export default function AlimentacaoInteligente() {
           <ScaleIn delay={0.3}>
             <div className="px-6 md:px-8">
               <img
-                src="https://www.tribunadopet.com.br/nutripontaarticle.jpg"
+                src="https://www.tribunadopet.com.br/nutripontaarticle.webp"
                 alt="Cachorro e gato comendo ração saudável"
                 className="w-full h-auto shadow-lg rounded-xl"
               />
@@ -545,7 +545,7 @@ export default function AlimentacaoInteligente() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
+                      src="https://www.tribunadopet.com.br/racao-batata-doce.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />

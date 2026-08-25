@@ -66,7 +66,7 @@ export default function CupomDescontoPetz() {
         title="Cupom de Desconto Petz 10% | Tribuna do Pet"
         description="Aproveite 10% OFF com o cupom CASADASRACOES na Petz. Descontos extras para pagamento no PIX e retirada na loja!"
         canonical="https://www.tribunadopet.com.br/cupom-petz"
-        image="https://www.tribunadopet.com.br/promo-og.png"
+        image="https://www.tribunadopet.com.br/promo-og.webp"
         published="2025-07-26"
       />
 
@@ -132,7 +132,7 @@ export default function CupomDescontoPetz() {
           <div className="w-full my-2 ">
             <a href="https://casadasracoes.parceiropetz.com.br/" target="_blank">
               <img
-                src="/promo-og.png"
+                src="/promo-og.webp"
                 alt="Desconto de 10% com o cupom"
                 className="object-cover w-full rounded-lg"
               />
@@ -269,7 +269,7 @@ export default function CupomDescontoPetz() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
+                      src="https://www.tribunadopet.com.br/racao-batata-doce.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />

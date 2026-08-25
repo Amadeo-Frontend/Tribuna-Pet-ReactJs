@@ -62,7 +62,7 @@ export default function PrimeirosSocorrosParaPets() {
         title="Primeiros Socorros para Cães e Gatos | Tribuna do Pet"
         description="Guia essencial de primeiros socorros para emergências com pets: engasgo, intoxicação, ferimentos, queimaduras e mais. Saiba como agir antes de chegar ao veterinário."
         canonical="https://www.tribunadopet.com.br/primeiros-socorros-para-pets"
-        image="https://www.tribunadopet.com.br/primeiros-socorros-pets.jpg"
+        image="https://www.tribunadopet.com.br/primeiros-socorros-pets.webp"
         published="2025-07-20"
       />
 
@@ -155,7 +155,7 @@ export default function PrimeirosSocorrosParaPets() {
           <ScaleIn delay={0.3}>
             <figure className="mb-8 overflow-hidden shadow-lg rounded-2xl">
               <img
-                src="https://www.tribunadopet.com.br/primeiros-socorros-pets.jpg"
+                src="https://www.tribunadopet.com.br/primeiros-socorros-pets.webp"
                 alt="Mulher realizando primeiros socorros em cachorro"
                 className="object-cover w-full aspect-video"
               />
@@ -305,7 +305,7 @@ export default function PrimeirosSocorrosParaPets() {
                   <ScaleIn delay={0.9}>
                     <figure className="my-5">
                       <img
-                        src="https://www.tribunadopet.com.br/ajudando-cachorro.jpg"
+                        src="https://www.tribunadopet.com.br/ajudando-cachorro.webp"
                         alt="Manobra de Heimlich em cachorro"
                         className="w-full shadow-md rounded-xl"
                       />
@@ -739,7 +739,7 @@ export default function PrimeirosSocorrosParaPets() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
+                      src="https://www.tribunadopet.com.br/racao-batata-doce.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />

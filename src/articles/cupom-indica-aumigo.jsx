@@ -57,7 +57,7 @@ export default function CupomIndicaAumigo() {
         title="Indique AUmigo e Ganhe 10% OFF | Tribuna do Pet"
         description="Participe da promoção Indique AUmigo da Ração Pets: indique um amigo e ganhe 10% de desconto na sua próxima compra!"
         canonical="https://www.tribunadopet.com.br/cupom-indica-aumigo"
-        image="https://www.tribunadopet.com.br/indica-og.png"
+        image="https://www.tribunadopet.com.br/indica-og.webp"
         published="2025-08-26"
       />
 
@@ -123,7 +123,7 @@ export default function CupomIndicaAumigo() {
               rel="noopener noreferrer">
             <div className="w-full my-2">
               <img
-                src="/indica-og.png"
+                src="/indica-og.webp"
                 alt="Indique AUmigo e ganhe 10% OFF"
                 className="object-cover w-full rounded-lg"
               />
@@ -252,7 +252,7 @@ export default function CupomIndicaAumigo() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
+                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.webp"
                       alt="Ração Lunch Dog Essencial"
                       className="object-contain w-32 h-24"
                     />

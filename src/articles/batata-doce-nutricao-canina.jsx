@@ -63,7 +63,7 @@ export default function BatataDoceNutricaoCanina() {
         title="Batata Doce e Vegetais na Nutrição Canina | Tribuna do Pet"
         description="Descubra os benefícios da batata doce e outros vegetais na alimentação canina"
         canonical="https://www.tribunadopet.com.br/batata-doce-nutricao-canina"
-        image="https://www.tribunadopet.com.br/cachorro-pode-comer-verdura-fruta.jpg"
+        image="https://www.tribunadopet.com.br/cachorro-pode-comer-verdura-fruta.webp"
         published="2025-07-13"
       />
 
@@ -140,7 +140,7 @@ export default function BatataDoceNutricaoCanina() {
             <ScaleIn delay={0.2}>
               <div className="w-full">
                 <img
-                  src="https://www.tribunadopet.com.br/cachorro-pode-comer-batata-doce.jpg"
+                  src="https://www.tribunadopet.com.br/cachorro-pode-comer-batata-doce.webp"
                   alt="Cachorro comendo batata doce"
                   className="object-cover w-full"
                 />
@@ -496,7 +496,7 @@ export default function BatataDoceNutricaoCanina() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/racao-batata-doce.jpg"
+                      src="https://www.tribunadopet.com.br/racao-batata-doce.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />

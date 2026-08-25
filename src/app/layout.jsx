@@ -59,7 +59,7 @@ export const metadata = {
     siteName: "Tribuna do Pet",
     images: [
       {
-        url: "https://www.tribunadopet.com.br/repotagem-ranking-pitbull-desktop.png",
+        url: "https://www.tribunadopet.com.br/repotagem-ranking-pitbull-desktop.webp",
         width: 1200,
         height: 630,
         alt: "Tribuna do Pet - Portal Animal",
@@ -70,7 +70,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Tribuna do Pet | Informações para quem ama animais",
     description: "Guias de nutrição, saúde e bem-estar para cães e gatos.",
-    images: ["https://www.tribunadopet.com.br/repotagem-ranking-pitbull-desktop.png"],
+    images: ["https://www.tribunadopet.com.br/repotagem-ranking-pitbull-desktop.webp"],
   },
 };
 

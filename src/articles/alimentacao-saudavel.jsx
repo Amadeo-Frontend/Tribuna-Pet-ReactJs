@@ -70,7 +70,7 @@ export default function AlimentacaoNatural() {
         title="Guia Completo de Alimentação Natural para Cães | Tribuna do Pet"
         description="Benefícios, riscos e receitas para implementar uma dieta natural segura para seu cão"
         canonical="https://www.tribunadopet.com.br/alimentacao-saudavel"
-        image="https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.jpg"
+        image="https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.webp"
         published="2025-06-15"
       />
 
@@ -154,7 +154,7 @@ export default function AlimentacaoNatural() {
           <ScaleIn delay={0.3}>
             <div className="px-6 md:px-8">
               <img
-                src="https://www.tribunadopet.com.br/alimentacao-natural-vs-racao-artigo-blog.png"
+                src="https://www.tribunadopet.com.br/alimentacao-natural-vs-racao-artigo-blog.webp"
                 alt="Cachorro comendo"
                 className="w-full h-auto shadow-lg rounded-xl"
               />
@@ -373,7 +373,7 @@ export default function AlimentacaoNatural() {
               <div className="flex items-start p-6 mt-10 border border-gray-200 bg-gray-50 rounded-xl">
                 <div className="flex-shrink-0 w-16 h-16 mr-5 overflow-hidden bg-gray-300 rounded-full">
                   <img
-                    src="https://randomuser.me/api/portraits/women/43.jpg"
+                    src="https://randomuser.me/api/portraits/women/43.webp"
                     alt="Dra. Carla Mendes"
                     className="object-cover w-full h-full"
                   />
@@ -444,7 +444,7 @@ export default function AlimentacaoNatural() {
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
                     <img
-                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.png"
+                      src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.webp"
                       alt="Ração Lunch dog essencial"
                       className="object-contain w-32 h-24"
                     />
