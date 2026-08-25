@@ -108,15 +108,18 @@ export default function Home() {
           className="relative block mb-12 md:mb-16 overflow-hidden bg-black rounded-2xl md:rounded-3xl shadow-2xl group transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-4 focus:ring-amber-400"
         >
           <div className="relative w-full overflow-hidden bg-gray-950">
-            <img
-              src="/blog-hero-ranking-mobile-v2.webp"
-              alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
-              width="480"
-              height="320"
-              className="w-full h-auto object-cover object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
-              fetchPriority="high"
-              loading="eager"
-            />
+            <picture className="block w-full">
+              <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.webp" />
+              <img
+                src="/blog-hero-ranking-mobile-v2.webp"
+                alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
+                width="480"
+                height="320"
+                className="w-full h-auto object-cover object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
+                fetchPriority="high"
+                loading="eager"
+              />
+            </picture>
             
             <div className="absolute top-4 left-4 z-10">
               <span className="px-3.5 py-1.5 text-[11px] md:text-xs font-extrabold tracking-wider text-white rounded-full bg-secondary shadow-lg uppercase backdrop-blur-md">
