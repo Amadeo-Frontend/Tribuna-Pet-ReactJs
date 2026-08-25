@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import LiveClock from "../components/LiveClock";
 import ShareButton from "../components/ui/ShareButton";
+import AdBanner from "../components/AdBanner";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -323,62 +324,9 @@ export default function GuiaRacaoPremiumFilhotesCuritiba() {
 
         <ShareButton />
 
-        {/* Anúncio estilo Google Ads (mesma estrutura) */}
+        {/* Anúncio estilo Google Ads */}
         <FadeIn delay={1.6}>
-          <aside className="max-w-4xl mx-auto mt-12 mb-8 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-sm">
-            <div className="flex items-start justify-between p-3 bg-gray-100">
-              <div className="flex items-center">
-                <span className="px-2 py-1 text-xs text-white bg-blue-500 rounded">
-                  Anúncio
-                </span>
-                <span className="ml-2 text-xs text-gray-500">Patrocinado</span>
-              </div>
-              <button className="text-gray-400 hover:text-gray-600">
-                <i className="fas fa-times"></i>
-              </button>
-            </div>
-
-            <a
-              href="https://www.racaopets.com.br/cachorro/racao-seca/premium/racao-lunch-dog-premium-filhotes-natural-28-proteina-5kg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-4 transition-colors hover:bg-gray-50"
-            >
-              <div className="flex flex-col items-start md:flex-row">
-                <div className="flex-1">
-                  <h4 className="font-medium text-blue-600 hover:underline">
-                    Ração Pets - Nutrição premium para cães e gatos
-                  </h4>
-                  <div className="flex items-center mt-1">
-                    <span className="text-sm text-green-700">
-                      www.racaopets.com.br
-                    </span>
-                    <span className="mx-2 text-gray-300">•</span>
-                    <span className="text-sm text-yellow-500">
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <FontAwesomeIcon icon={faStar} /> 4.9
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-gray-600">
-                    Rações premium e super premium sem conservantes ou corantes.
-                    Garanta nutrição completa a preços acessíveis.
-                  </p>
-                </div>
-                <div className="mt-4 md:mt-0 md:ml-4">
-                  <div className="flex items-center justify-center w-32 h-24 text-gray-500 bg-gray-200 border-2 border-dashed rounded-xl">
-                    <img
-                      src="https://www.tribunadopet.com.br/racao-pets-filhotes.webp"
-                      alt="Ração premium para filhotes"
-                      className="object-contain w-32 h-24"
-                    />
-                  </div>
-                </div>
-              </div>
-            </a>
-          </aside>
+          <AdBanner />
         </FadeIn>
       </main>
 
