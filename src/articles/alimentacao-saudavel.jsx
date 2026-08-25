@@ -372,9 +372,9 @@ export default function AlimentacaoNatural() {
 
             <FadeIn delay={1.5}>
               <div className="flex items-start p-6 mt-10 border border-gray-200 bg-gray-50 rounded-xl">
-                <div className="flex-shrink-0 w-16 h-16 mr-5 overflow-hidden bg-gray-300 rounded-full">
+                <div className="flex-shrink-0 w-16 h-16 mr-5 overflow-hidden bg-gray-200 rounded-full">
                   <img
-                    src="https://randomuser.me/api/portraits/women/43.webp"
+                    src="/images/dra-carla-mendes.webp"
                     alt="Dra. Carla Mendes"
                     className="object-cover w-full h-full"
                   />
