@@ -4,62 +4,58 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-/* ícones regular */
 import {
-  faCircleXmark,
-  faCircleDown,
-} from "@fortawesome/free-regular-svg-icons";
-
-/* ícones solid (não existem em regular) */
-import {
+  faTimes,
+  faChevronDown,
+  faHome,
   faBowlFood,
-  faHomeAlt,
   faKitMedical,
-  faTags,
-  faTicket,
-  faTreeCity
+  faHeartPulse,
+  faTag,
+  faPaw
 } from "@fortawesome/free-solid-svg-icons";
-import { MdPrivacyTip } from "react-icons/md";
-import { FaTags } from "react-icons/fa";
 
-/* variantes */
+/* Variantes da gaveta */
 const overlayV = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
 const panelV = {
   hidden: { x: "-100%" },
-  visible: { x: 0, transition: { type: "tween", duration: 0.4 } },
-  exit: { x: "-100%", transition: { type: "tween", duration: 0.3 } },
+  visible: { x: 0, transition: { type: "spring", damping: 28, stiffness: 280 } },
+  exit: { x: "-100%", transition: { duration: 0.25 } },
 };
 const listV = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
 };
 const itemV = {
-  hidden: { x: -20, opacity: 0 },
+  hidden: { x: -16, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 350, damping: 30 },
+    transition: { type: "spring", stiffness: 350, damping: 25 },
   },
 };
 
-/* Accordion item */
-function Accordion({ label, icon, links, onClose }) {
+/* Accordion item refinado */
+function Accordion({ label, icon, badgeColor, links, onClose }) {
   const [open, setOpen] = useState(false);
   return (
-    <motion.li variants={itemV} className="border-t first:border-none">
+    <motion.li variants={itemV} className="border-b border-slate-800/80 last:border-none">
       <button
-        className="flex items-center justify-between w-full py-4 font-medium text-gray-800 hover:text-primary"
+        className="flex items-center justify-between w-full py-3.5 px-3 text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-200 group"
         onClick={() => setOpen(!open)}
       >
-        <span className="flex items-center gap-3">
-          <FontAwesomeIcon icon={icon} className="text-primary"/> {label}
+        <span className="flex items-center gap-3 font-semibold text-sm">
+          <div className={`flex items-center justify-center w-8 h-8 rounded-lg ${badgeColor} text-white shadow-sm group-hover:scale-105 transition-transform`}>
+            <FontAwesomeIcon icon={icon} className="text-xs" />
+          </div>
+          {label}
         </span>
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.2 }}
+          className="text-slate-400 text-xs"
         >
-          <FontAwesomeIcon icon={faCircleDown} />
+          <FontAwesomeIcon icon={faChevronDown} />
         </motion.span>
       </button>
 
@@ -70,12 +66,16 @@ function Accordion({ label, icon, links, onClose }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="ml-6 space-y-3 overflow-hidden text-sm list-disc"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="ml-5 pl-4 border-l border-sky-500/30 my-1 space-y-1 overflow-hidden"
           >
             {links.map(([href, text]) => (
-              <li key={href} className="py-1 rounded-md hover:bg-slate-100 hover:shadow-inner hover:text-primary hover:mx-1">
-                <Link href={href} onClick={onClose}>
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={onClose}
+                  className="block py-2 px-2.5 text-xs text-slate-400 hover:text-sky-400 hover:bg-slate-800/40 rounded-lg transition-colors font-medium"
+                >
                   {text}
                 </Link>
               </li>
@@ -97,120 +97,127 @@ export default function MobileMenu({ open, onClose }) {
     <AnimatePresence>
       {open && (
         <>
+          {/* Fundo de desfoque escuro */}
           <motion.div
             variants={overlayV}
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-md"
             onClick={onClose}
           />
 
+          {/* Painel lateral do Menu */}
           <motion.aside
             variants={panelV}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed top-0 left-0 z-50 flex flex-col w-4/5 h-full max-w-xs bg-white shadow-2xl rounded-tr-2xl rounded-br-2xl"
+            className="fixed top-0 left-0 z-50 flex flex-col w-[85%] max-w-xs h-full bg-slate-900 text-white shadow-2xl border-r border-slate-800"
           >
-            {/* Header do menu */}
-            <motion.div
-              variants={itemV}
-              className="flex items-center justify-between p-4 border-b bg-primary"
-            >
-              <h2 className="text-lg font-bold text-gray-200">Menu</h2>
+            {/* Header do menu no mesmo estilo do logo */}
+            <div className="flex items-center justify-between p-5 border-b border-slate-800 bg-slate-950/80">
+              <div className="flex items-center">
+                <div className="flex items-center justify-center w-9 h-9 mr-2.5 text-white rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 shadow-md shadow-blue-500/20">
+                  <FontAwesomeIcon icon={faPaw} className="text-sm" />
+                </div>
+                <div>
+                  <h2 className="text-base font-extrabold tracking-tight text-white">Tribuna do Pet</h2>
+                  <span className="text-[9px] uppercase tracking-wider text-sky-400 font-bold block">Navegação</span>
+                </div>
+              </div>
               <button
                 onClick={onClose}
                 aria-label="Fechar menu"
-                className="text-2xl text-gray-700 transition-colors hover:text-primary"
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
               >
-                <FontAwesomeIcon icon={faCircleXmark}  className="text-gray-400 hover:text-gray-500"/>
+                <FontAwesomeIcon icon={faTimes} className="text-base" />
               </button>
-            </motion.div>
+            </div>
 
-            {/* Links */}
+            {/* Links e Categorias */}
             <motion.nav
               variants={listV}
               initial="hidden"
               animate="visible"
-              className="flex-1 p-4 mb-2 overflow-y-auto"
+              className="flex-1 p-4 overflow-y-auto space-y-1"
             >
-              <motion.li variants={itemV} className="mb-4 list-none">
+              <motion.div variants={itemV} className="mb-2">
                 <Link
                   href="/"
                   onClick={onClose}
-                  className="flex items-center gap-3 font-medium text-gray-800 hover:text-primary"
+                  className="flex items-center gap-3 py-3 px-3 font-semibold text-sm text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all"
                 >
-                  <FontAwesomeIcon icon={faHomeAlt} /> Home
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400">
+                    <FontAwesomeIcon icon={faHome} className="text-xs" />
+                  </div>
+                  Página Inicial
                 </Link>
-              </motion.li>
+              </motion.div>
 
               <Accordion
                 label="Alimentação Saudável"
                 icon={faBowlFood}
+                badgeColor="bg-emerald-500/20 text-emerald-400"
                 onClose={onClose}
                 links={[
-                  [
-                    "/alimentacao-saudavel",
-                    "Guia Completo: Alimentação Saudável",
-                  ],
-                  [
-                    "/melhor-racao-para-pitbull-e-caes-ativos",
-                    "Melhor Ração para Pitbull 2026",
-                  ],
-                  [
-                    "/alimentacao-saudavel-e-inteligente",
-                    "Alimentação Saudável e Inteligente",
-                  ],
-                  [
-                    "/batata-doce-nutricao-canina",
-                    "Batata-doce na Nutrição Canina",
-                  ],
-                  [
-                    "/melhor-racao-para-filhotes",
-                    "Melhor Ração para Filhotes: Como Escolher",
-                  ],
+                  ["/alimentacao-saudavel", "Guia Completo: Alimentação Saudável"],
+                  ["/melhor-racao-para-pitbull-e-caes-ativos", "Melhor Ração para Pitbull 2026"],
+                  ["/alimentacao-saudavel-e-inteligente", "Alimentação Saudável e Inteligente"],
+                  ["/batata-doce-nutricao-canina", "Batata-doce na Nutrição Canina"],
+                  ["/melhor-racao-para-filhotes", "Melhor Ração para Filhotes"],
                 ]}
               />
 
               <Accordion
                 label="Cuidados Diários"
                 icon={faKitMedical}
+                badgeColor="bg-blue-500/20 text-blue-400"
                 onClose={onClose}
                 links={[
-                  [
-                    "/cuidados-com-pets-no-inverno",
-                    "Inverno: cuidados essenciais",
-                  ],
+                  ["/cuidados-com-pets-no-inverno", "Inverno: cuidados essenciais"],
                   ["/primeiros-socorros-para-pets", "Primeiros socorros para pets"],
                 ]}
               />
 
               <Accordion
                 label="Utilidade Pública"
-                icon={faTreeCity}
+                icon={faHeartPulse}
+                badgeColor="bg-purple-500/20 text-purple-400"
                 onClose={onClose}
                 links={[
-                  ["/vagas-para-castracao-gratuita", "Castração Gratuita 2025"],
-                  [
-                    "/novo-hospital-veterinario-curitiba",
-                    "Novo Hosp. Vet. Curitiba",
-                  ],
+                  ["/vagas-para-castracao-gratuita", "Castração Gratuita 2026"],
+                  ["/novo-hospital-veterinario-curitiba", "Novo Hosp. Vet. Curitiba"],
                   ["/ferramenta-encontre-seu-pet", "Ferramenta encontre seu pet"],
                 ]}
               />
+
               <Accordion
                 label="Cupons e Promoções"
-                icon={faTags}
+                icon={faTag}
+                badgeColor="bg-amber-500/20 text-amber-400"
                 onClose={onClose}
                 links={[
-                  ["/cupom-petz", "Cupom de descontos Petz"],
+                  ["/cupom-petz", "Cupom de Desconto Petz"],
+                  ["/cupom-indica-aumigo", "Cupom Indica Aumigo"],
                 ]}
               />
             </motion.nav>
+
+            {/* Rodapé do Menu com atalho para Sobre Nós */}
+            <div className="p-4 border-t border-slate-800 bg-slate-950/50">
+              <Link
+                href="/sobre-nos"
+                onClick={onClose}
+                className="block text-center py-2.5 px-4 text-xs font-bold text-sky-400 bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/20 rounded-xl transition-all"
+              >
+                Conheça a História do Tribuna do Pet 🐾
+              </Link>
+            </div>
           </motion.aside>
         </>
       )}
     </AnimatePresence>
   );
 }
+
