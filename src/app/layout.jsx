@@ -1,6 +1,21 @@
 import "../index.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import ScrollToTop from "../components/ScrollToTop";
+import { Roboto, Open_Sans } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-roboto",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://www.tribunadopet.com.br"),
@@ -93,14 +108,8 @@ const jsonLdOrganization = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${roboto.variable} ${openSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
@@ -110,7 +119,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
         />
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="font-sans antialiased">
         <ScrollToTop />
         <div id="root">{children}</div>
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-W97C3TZ5"} />

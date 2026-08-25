@@ -113,6 +113,8 @@ export default function Home() {
                 src="/blog-hero-ranking-mobile.png"
                 alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
                 className="w-full h-auto object-cover md:object-contain object-top md:object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
+                fetchpriority="high"
+                loading="eager"
               />
             </picture>
             
