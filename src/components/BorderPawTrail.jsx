@@ -42,21 +42,21 @@ export default function BorderPawTrail() {
         let baseRotation = 0;
 
         if (step < 30) {
-          // Borda Superior (caminhando para a direita)
-          positionStyle = { top: "6px", left: `${(step / 30) * 100}%` };
-          baseRotation = 90;
+          // Borda Superior (caminhando de lado para a direita)
+          positionStyle = { top: "8px", left: `${(step / 30) * 100}%` };
+          baseRotation = 90; // Virada de lado para a direita
         } else if (step < 50) {
-          // Borda Direita (caminhando para baixo)
-          positionStyle = { right: "6px", top: `${((step - 30) / 20) * 100}%` };
-          baseRotation = 180;
+          // Borda Direita (caminhando de lado para baixo)
+          positionStyle = { right: "8px", top: `${((step - 30) / 20) * 100}%` };
+          baseRotation = 180; // Virada de lado para baixo
         } else if (step < 80) {
-          // Borda Inferior (caminhando para a esquerda)
-          positionStyle = { bottom: "6px", right: `${((step - 50) / 30) * 100}%` };
-          baseRotation = 270;
+          // Borda Inferior (caminhando de lado para a esquerda)
+          positionStyle = { bottom: "8px", right: `${((step - 50) / 30) * 100}%` };
+          baseRotation = 270; // Virada de lado para a esquerda
         } else {
-          // Borda Esquerda (caminhando para cima)
-          positionStyle = { left: "6px", bottom: `${((step - 80) / 20) * 100}%` };
-          baseRotation = 0;
+          // Borda Esquerda (caminhando de lado para cima)
+          positionStyle = { left: "8px", bottom: `${((step - 80) / 20) * 100}%` };
+          baseRotation = 0; // Virada de lado para cima
         }
 
         const footOffset = paw.isRight ? 15 : -15;
