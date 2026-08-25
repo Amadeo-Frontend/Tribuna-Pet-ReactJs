@@ -14,6 +14,7 @@ import {
   faTag,
   faPaw
 } from "@fortawesome/free-solid-svg-icons";
+import SmartSearchBar from "./SmartSearchBar";
 
 /* Variantes da gaveta */
 const overlayV = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
@@ -142,6 +143,11 @@ export default function MobileMenu({ open, onClose }) {
               animate="visible"
               className="flex-1 p-4 overflow-y-auto space-y-1"
             >
+              {/* Barra de Pesquisa Inteligente */}
+              <motion.div variants={itemV}>
+                <SmartSearchBar onCloseMenu={onClose} />
+              </motion.div>
+
               <motion.div variants={itemV} className="mb-2">
                 <Link
                   href="/"
