@@ -110,8 +110,10 @@ export default function Home() {
             <picture className="block w-full">
               <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.webp" />
               <img
-                src="/blog-hero-ranking-mobile.webp"
+                src="/blog-hero-ranking-mobile-v2.webp"
                 alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
+                width="480"
+                height="320"
                 className="w-full h-auto object-cover md:object-contain object-top md:object-center max-h-[480px] md:max-h-[560px] transition-transform duration-700 group-hover:scale-[1.02]"
                 fetchPriority="high"
                 loading="eager"
