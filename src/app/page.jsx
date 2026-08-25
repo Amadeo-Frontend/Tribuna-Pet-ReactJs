@@ -1,16 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import LiveClock from "../components/LiveClock";
-import Header from "../components/Header";
-import MobileMenu from "../components/MobileMenu";
-import Footer from "../components/Footer";
-import NewsletterForm from "../components/Newsletter/NewsletterForm";
-import PageTransition from "../components/PageTransition";
-import PawPrintTrail from "../components/PawPrintTrail";
+import Link from "next/link";
+import { useState } from "react";
 import BorderPawTrail from "../components/BorderPawTrail";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import LiveClock from "../components/LiveClock";
+import MobileMenu from "../components/MobileMenu";
+import NewsletterForm from "../components/Newsletter/NewsletterForm";
 
 const topCards = [
   {
@@ -194,7 +192,7 @@ export default function Home() {
                 {/* Lado Direito: Chamada & Formulário */}
                 <div className="md:col-span-7 text-center md:text-left space-y-4">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20 uppercase">
-                    ⭐ Dicas Semanais Gratuitas
+                    ⭐ Dicas Gratuitas
                   </div>
 
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight">
