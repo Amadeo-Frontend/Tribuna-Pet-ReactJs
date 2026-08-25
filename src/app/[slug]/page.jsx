@@ -6,7 +6,6 @@ const articlesMap = {
   "alimentacao-saudavel": dynamic(() => import("../../articles/alimentacao-saudavel")),
   "batata-doce-nutricao-canina": dynamic(() => import("../../articles/batata-doce-nutricao-canina")),
   "cuidados-com-pets-no-inverno": dynamic(() => import("../../articles/cuidados-com-pets-no-inverno")),
-  "cupom-indica-aumigo": dynamic(() => import("../../articles/cupom-indica-aumigo")),
   "cupom-petz": dynamic(() => import("../../articles/cupom-petz")),
   "ferramenta-encontre-seu-pet": dynamic(() => import("../../articles/ferramenta-encontre-seu-pet")),
   "melhor-racao-para-filhotes": dynamic(() => import("../../articles/melhor-racao-para-filhotes")),
