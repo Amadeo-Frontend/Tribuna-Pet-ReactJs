@@ -258,6 +258,9 @@ function Card({ slug, tag, color, title, desc, img }) {
         <img
           src={img}
           alt={title}
+          width="400"
+          height="240"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
           loading="lazy"
         />
