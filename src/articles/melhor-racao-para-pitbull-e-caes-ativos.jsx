@@ -62,7 +62,7 @@ export default function MelhorRacaoPitbull() {
         title="Melhor Ração para Pitbull 2026: PremieR é 1º Lugar e X-PRO Training vence como Melhor Compra | Tribuna do Pet"
         description="Ranking das melhores rações para Pitbull e cães ativos em 2026: PremieR fica em 1º lugar técnico e a Lunch Dog X-PRO Training se destaca como a Melhor Compra da avaliação com Whey Protein, BCAA e ovo em pó."
         canonical="https://www.tribunadopet.com.br/melhor-racao-para-pitbull-e-caes-ativos"
-        image="https://www.tribunadopet.com.br/blog-hero-ranking-desktop.webp"
+        image="https://www.tribunadopet.com.br/images/blog-hero-ranking-desktop.webp"
         published="2026-08-23"
       />
 
@@ -146,9 +146,9 @@ export default function MelhorRacaoPitbull() {
           <ScaleIn delay={0.3}>
             <div className="px-6 md:px-8">
               <picture>
-                <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.webp" />
+                <source media="(min-width: 768px)" srcSet="/images/blog-hero-ranking-desktop.webp" />
                 <img
-                  src="/blog-hero-ranking-mobile.webp"
+                  src="/images/blog-hero-ranking-mobile.webp"
                   alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
                   className="w-full h-auto shadow-lg rounded-xl"
                 />
@@ -353,9 +353,9 @@ export default function MelhorRacaoPitbull() {
             <FadeIn delay={0.8}>
               <div className="my-8">
                 <picture>
-                  <source media="(min-width: 768px)" srcSet="/repotagem-ranking-pitbull-desktop.webp" />
+                  <source media="(min-width: 768px)" srcSet="/images/repotagem-ranking-pitbull-desktop.webp" />
                   <img
-                    src="/repotagem-ranking-pitbull-mobile.webp"
+                    src="/images/repotagem-ranking-pitbull-mobile.webp"
                     alt="Reportagem e análise nutricional de rações para Pitbull"
                     className="w-full h-auto shadow-md rounded-xl"
                   />
@@ -465,7 +465,7 @@ export default function MelhorRacaoPitbull() {
               {/* Botão de Download da Imagem da Tabela em Alta Resolução */}
               <div className="flex justify-center my-6">
                 <a
-                  href="/tabela-ranking-melhores-racoes-de-pitbull.webp"
+                  href="/images/tabela-ranking-melhores-racoes-de-pitbull.webp"
                   download="tabela-ranking-melhores-racoes-de-pitbull.webp"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -845,7 +845,13 @@ export default function MelhorRacaoPitbull() {
 
         {/* Anúncio Patrocinado Ração Pets */}
         <FadeIn delay={1.6}>
-          <AdBanner />
+          <AdBanner
+            title="Ração Lunch Dog X-PRO Training Super Premium (15kg) - Ração Pets"
+            desc="Com Whey Protein, BCAA, Ovo em Pó, Frango e Batata Doce (28% Proteínas). Nutrição de alta performance para cães ativos."
+            img="/images/lunch-dog-super-premium-x-pro-training.webp"
+            link="https://www.racaopets.com.br/cachorro/racao-seca/super-premium/racao-super-premium-x-pro-training-para-caes-adultos-lunch-dog-sabor-frango-batata-doce-e-linhaca-com-whey-protein-28-proteinas-15-kg"
+            alt="Ração Lunch Dog X-PRO Training Super Premium"
+          />
         </FadeIn>
       </main>
 

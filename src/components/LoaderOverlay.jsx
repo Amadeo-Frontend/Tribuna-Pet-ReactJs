@@ -15,7 +15,7 @@ export default function LoaderOverlay() {
           className="fixed inset-0 z-[9999] flex items-center justify-center
                      bg-blue-900/90 backdrop-blur-sm"
         >
-          <img src="/catloader2.gif" alt="Carregando…" className="w-40 h-40" />
+          <img src="/images/catloader2.gif" alt="Carregando…" className="w-40 h-40" />
         </motion.div>
       )}
     </AnimatePresence>

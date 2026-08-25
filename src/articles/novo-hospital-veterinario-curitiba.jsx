@@ -67,7 +67,7 @@ export default function HospitalVeterinarioCuritiba() {
         title="Hospital Veterinário Municipal de Curitiba | Tribuna do Pet"
         description="Mais de 10 mil atendimentos em 5 meses: conheça o Hospital Veterinário Municipal de Curitiba"
         canonical="https://www.tribunadopet.com.br/novo-hospital-veterinario-curitiba"
-        image="https://www.tribunadopet.com.br/hospital-veterinario-municipal-de-curitiba.webp"
+        image="https://www.tribunadopet.com.br/images/hospital-veterinario-municipal-de-curitiba.webp"
         published="2025-06-29"
       />
 
@@ -160,7 +160,7 @@ export default function HospitalVeterinarioCuritiba() {
             <ScaleIn delay={0.3}>
               <div className="w-full mb-8">
                 <img
-                  src="https://www.tribunadopet.com.br/hospital-veterinario-municipal-de-curitiba.webp"
+                  src="https://www.tribunadopet.com.br/images/hospital-veterinario-municipal-de-curitiba.webp"
                   alt="Hospital Veterinário Municipal de Curitiba"
                   className="object-cover w-full rounded-lg"
                 />

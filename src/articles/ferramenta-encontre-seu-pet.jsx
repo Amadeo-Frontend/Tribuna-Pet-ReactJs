@@ -66,7 +66,7 @@ export default function PetsPerdidos() {
         title="Ferramenta para Encontre seu Pet | Tribuna do Pet"
         description="RPC lança app interativo para ajudar tutores a localizar animais desaparecidos. Entenda como funciona e sua importância para o bem-estar animal."
         canonical="https://www.tribunadopet.com.br/ferramenta-pets-perdidos"
-        image="https://www.tribunadopet.com.br/ferramenta-para-pets-perdidos-capa.webp"
+        image="https://www.tribunadopet.com.br/images/ferramenta-para-pets-perdidos-capa.webp"
         published="2025-08-04"
       />
 
@@ -155,7 +155,7 @@ export default function PetsPerdidos() {
             <ScaleIn delay={0.3}>
               <div className="w-full mb-8">
                 <img
-                  src="/rastreamento-de-pets-og-image.webp"
+                  src="/images/rastreamento-de-pets-og-image.webp"
                   alt="Mulher abraçando seu cão que foi encontrado após estar perdido"
                   className="object-cover w-full rounded-lg"
                 />

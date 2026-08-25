@@ -18,7 +18,7 @@ const topCards = [
     color: "bg-accent",
     title: "Guia Completo para uma Alimentação Saudável",
     desc: "Desmistifique a alimentação natural e ...",
-    img: "https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.webp",
+    img: "https://www.tribunadopet.com.br/images/cachorro-pode-comer-comida-1.webp",
   },
   {
     slug: "cuidados-com-pets-no-inverno",
@@ -26,7 +26,7 @@ const topCards = [
     color: "bg-blue-600",
     title: "Cuidados Diários com Cães e Gatos",
     desc: "Saiba como proteger seu pet em temperaturas baixas...",
-    img: "https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.webp",
+    img: "https://www.tribunadopet.com.br/images/Roupa-de-frio-para-cachorro.webp",
   },
   {
     slug: "vagas-para-castracao-gratuita",
@@ -34,7 +34,7 @@ const topCards = [
     color: "bg-purple-600",
     title: "Utilidade Pública Pet",
     desc: "Prefeitura abriu vagas para castração gratuita...",
-    img: "https://www.tribunadopet.com.br/castracao-de-animais-2.webp",
+    img: "https://www.tribunadopet.com.br/images/castracao-de-animais-2.webp",
   },
 ];
 
@@ -45,7 +45,7 @@ const bottomCards = [
     color: "bg-red-600",
     title: "Melhor Ração para Pitbull e Cães Ativos em 2026",
     desc: "Ranking completo e análise nutricional das melhores rações...",
-    img: "/blog-hero-ranking-desktop.webp",
+    img: "/images/blog-hero-ranking-desktop.webp",
   },
   {
     slug: "alimentacao-saudavel-e-inteligente",
@@ -53,7 +53,7 @@ const bottomCards = [
     color: "bg-rose-600",
     title: "Guia de Alimentação Responsável",
     desc: "Passo a passo para dar um alimento seguro e saboroso...",
-    img: "https://www.tribunadopet.com.br/cachorro-caramelo-olhando-para-camera.webp",
+    img: "https://www.tribunadopet.com.br/images/cachorro-caramelo-olhando-para-camera.webp",
   },
   {
     slug: "novo-hospital-veterinario-curitiba",
@@ -61,7 +61,7 @@ const bottomCards = [
     color: "bg-yellow-500",
     title: "Novo hospital veterinário em Curitiba.",
     desc: "Já realizou mais de 10 mil consultas gratuitas...",
-    img: "https://www.tribunadopet.com.br/main_agenda-cachorros.webp",
+    img: "https://www.tribunadopet.com.br/images/main_agenda-cachorros.webp",
   },
   {
     slug: "batata-doce-nutricao-canina",
@@ -69,7 +69,7 @@ const bottomCards = [
     color: "bg-green-600",
     title: "Batata Doce e Vegetais na Nutrição Canina",
     desc: "A batata-doce emergiu como um superalimento...",
-    img: "https://www.tribunadopet.com.br/fresh-vegetable.webp",
+    img: "https://www.tribunadopet.com.br/images/fresh-vegetable.webp",
   },
 ];
 
@@ -110,9 +110,9 @@ export default function Home() {
         >
           <div className="relative w-full overflow-hidden bg-gray-950">
             <picture className="block w-full">
-              <source media="(min-width: 768px)" srcSet="/blog-hero-ranking-desktop.webp" />
+              <source media="(min-width: 768px)" srcSet="/images/blog-hero-ranking-desktop.webp" />
               <img
-                src="/blog-hero-ranking-mobile-v2.webp"
+                src="/images/blog-hero-ranking-mobile-v2.webp"
                 alt="Melhor Ração para Pitbull e Cães Ativos em 2026 - Ranking de Rações"
                 width="480"
                 height="320"
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="md:col-span-5 flex justify-center relative">
                   <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-56 md:h-56 rounded-2xl md:rounded-3xl overflow-hidden border-2 border-sky-400/30 shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-transform duration-500">
                     <img
-                      src="/filhote2.webp"
+                      src="/images/filhote2.webp"
                       alt="Cão e gato felizes com nutrição saudável"
                       className="w-full h-full object-cover object-center"
                       loading="lazy"

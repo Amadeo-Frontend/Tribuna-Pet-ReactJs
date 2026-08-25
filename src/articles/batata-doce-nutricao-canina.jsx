@@ -64,7 +64,7 @@ export default function BatataDoceNutricaoCanina() {
         title="Batata Doce e Vegetais na Nutrição Canina | Tribuna do Pet"
         description="Descubra os benefícios da batata doce e outros vegetais na alimentação canina"
         canonical="https://www.tribunadopet.com.br/batata-doce-nutricao-canina"
-        image="https://www.tribunadopet.com.br/cachorro-pode-comer-verdura-fruta.webp"
+        image="https://www.tribunadopet.com.br/images/cachorro-pode-comer-verdura-fruta.webp"
         published="2025-07-13"
       />
 
@@ -141,7 +141,7 @@ export default function BatataDoceNutricaoCanina() {
             <ScaleIn delay={0.2}>
               <div className="w-full">
                 <img
-                  src="https://www.tribunadopet.com.br/cachorro-pode-comer-batata-doce.webp"
+                  src="https://www.tribunadopet.com.br/images/cachorro-pode-comer-batata-doce.webp"
                   alt="Cachorro comendo batata doce"
                   className="object-cover w-full"
                 />
@@ -446,7 +446,13 @@ export default function BatataDoceNutricaoCanina() {
 
             {/* Compartilhamento */}
             <ShareButton />
-            <AdBanner />
+          <AdBanner
+            title="Ração Pets - Nutrição premium para cães e gatos"
+            desc="Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa a preços acessíveis."
+            img="https://www.tribunadopet.com.br/images/racao-batata-doce.webp"
+            link="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
+            alt="Ração Snack Dog Batata Doce"
+          />
           </div>
         </article>
       </main>

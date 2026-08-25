@@ -1,6 +1,12 @@
 "use client";
 
-export default function AdBanner() {
+export default function AdBanner({
+  title = "Ração Pets - Nutrição premium para cães e gatos",
+  desc = "Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa com o melhor custo-benefício!",
+  img = "https://www.tribunadopet.com.br/images/LUNCH15SEGUNDA.webp",
+  link = "https://www.racaopets.com.br/",
+  alt = "Ração Pets"
+}) {
   return (
     <aside className="max-w-4xl mx-auto my-8 overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-start justify-between px-4 py-2.5 bg-gray-50 border-b border-gray-100">
@@ -13,17 +19,17 @@ export default function AdBanner() {
       </div>
 
       <a
-        href="https://www.racaopets.com.br/"
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
         className="block p-4 sm:p-5 transition-all duration-300 hover:bg-gray-50/80 group"
       >
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          {/* Imagem do Produto no topo em telas menores / à esquerda em telas maiores */}
+          {/* Imagem do Produto no topo no mobile / à esquerda no desktop */}
           <div className="w-full sm:w-36 h-36 sm:h-28 flex-shrink-0 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-xl overflow-hidden p-3 shadow-inner group-hover:border-blue-200 transition-colors">
             <img
-              src="https://www.tribunadopet.com.br/LUNCH15SEGUNDA.webp"
-              alt="Ração Lunch Dog Essencial"
+              src={img}
+              alt={alt}
               className="object-contain w-full h-full max-h-32 transition-transform duration-300 group-hover:scale-105"
               suppressHydrationWarning
             />
@@ -32,7 +38,7 @@ export default function AdBanner() {
           {/* Conteúdo textual responsivo */}
           <div className="flex-1 text-center sm:text-left">
             <h4 className="font-extrabold text-base sm:text-lg text-blue-600 group-hover:text-blue-700 leading-snug group-hover:underline transition-colors">
-              Ração Pets - Nutrição premium para cães e gatos
+              {title}
             </h4>
             
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-1.5 text-xs sm:text-sm">
@@ -46,7 +52,7 @@ export default function AdBanner() {
             </div>
 
             <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa com o melhor custo-benefício!
+              {desc}
             </p>
           </div>
         </div>

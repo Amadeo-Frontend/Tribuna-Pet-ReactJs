@@ -71,7 +71,7 @@ export default function AlimentacaoNatural() {
         title="Guia Completo de Alimentação Natural para Cães | Tribuna do Pet"
         description="Benefícios, riscos e receitas para implementar uma dieta natural segura para seu cão"
         canonical="https://www.tribunadopet.com.br/alimentacao-saudavel"
-        image="https://www.tribunadopet.com.br/cachorro-pode-comer-comida-1.webp"
+        image="https://www.tribunadopet.com.br/images/cachorro-pode-comer-comida-1.webp"
         published="2025-06-15"
       />
 
@@ -155,7 +155,7 @@ export default function AlimentacaoNatural() {
           <ScaleIn delay={0.3}>
             <div className="px-6 md:px-8">
               <img
-                src="https://www.tribunadopet.com.br/alimentacao-natural-vs-racao-artigo-blog.webp"
+                src="https://www.tribunadopet.com.br/images/alimentacao-natural-vs-racao-artigo-blog.webp"
                 alt="Cachorro comendo"
                 className="w-full h-auto shadow-lg rounded-xl"
               />

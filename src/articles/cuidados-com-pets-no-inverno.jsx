@@ -44,7 +44,7 @@ export default function CuidadosComPetsNoInverno() {
         title="Cuidados com pets no inverno | Tribuna do Pet"
         description="Guia essencial para proteger cães e gatos das baixas temperaturas – sinais de hipotermia, roupinhas, ambiente aquecido e mais."
         canonical="https://www.tribunadopet.com.br/cuidados-com-pets-no-inverno"
-        image="https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.webp"
+        image="https://www.tribunadopet.com.br/images/Roupa-de-frio-para-cachorro.webp"
         published="2025-06-13"
       />
 
@@ -131,7 +131,7 @@ export default function CuidadosComPetsNoInverno() {
           <ScaleIn delay={0.3}>
             <figure className="mb-8 overflow-hidden shadow-lg rounded-2xl">
               <img
-                src="https://www.tribunadopet.com.br/Roupa-de-frio-para-cachorro.webp"
+                src="https://www.tribunadopet.com.br/images/Roupa-de-frio-para-cachorro.webp"
                 alt="Cachorro usando roupinha no inverno"
                 className="object-cover w-full aspect-video"
               />
@@ -230,7 +230,7 @@ export default function CuidadosComPetsNoInverno() {
                   <ScaleIn delay={0.9}>
                     <figure className="my-5">
                       <img
-                        src="https://www.tribunadopet.com.br/dogs-under-blanket-together.webp"
+                        src="https://www.tribunadopet.com.br/images/dogs-under-blanket-together.webp"
                         alt="Cama aquecida para gato"
                         className="w-full shadow-md rounded-xl"
                       />

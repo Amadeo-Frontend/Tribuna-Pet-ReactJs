@@ -63,7 +63,7 @@ export default function PrimeirosSocorrosParaPets() {
         title="Primeiros Socorros para Cães e Gatos | Tribuna do Pet"
         description="Guia essencial de primeiros socorros para emergências com pets: engasgo, intoxicação, ferimentos, queimaduras e mais. Saiba como agir antes de chegar ao veterinário."
         canonical="https://www.tribunadopet.com.br/primeiros-socorros-para-pets"
-        image="https://www.tribunadopet.com.br/primeiros-socorros-pets.webp"
+        image="https://www.tribunadopet.com.br/images/primeiros-socorros-pets.webp"
         published="2025-07-20"
       />
 
@@ -156,7 +156,7 @@ export default function PrimeirosSocorrosParaPets() {
           <ScaleIn delay={0.3}>
             <figure className="mb-8 overflow-hidden shadow-lg rounded-2xl">
               <img
-                src="https://www.tribunadopet.com.br/primeiros-socorros-pets.webp"
+                src="https://www.tribunadopet.com.br/images/primeiros-socorros-pets.webp"
                 alt="Mulher realizando primeiros socorros em cachorro"
                 className="object-cover w-full aspect-video"
               />
@@ -306,7 +306,7 @@ export default function PrimeirosSocorrosParaPets() {
                   <ScaleIn delay={0.9}>
                     <figure className="my-5">
                       <img
-                        src="https://www.tribunadopet.com.br/ajudando-cachorro.webp"
+                        src="https://www.tribunadopet.com.br/images/ajudando-cachorro.webp"
                         alt="Manobra de Heimlich em cachorro"
                         className="w-full shadow-md rounded-xl"
                       />
@@ -694,7 +694,13 @@ export default function PrimeirosSocorrosParaPets() {
 
         {/* Anúncio estilo Google Ads */}
         <FadeIn delay={1.6}>
-          <AdBanner />
+          <AdBanner
+            title="Ração Pets - Nutrição premium para cães e gatos"
+            desc="Rações premium e super premium sem conservantes ou corantes. Garanta nutrição completa a preços acessíveis."
+            img="https://www.tribunadopet.com.br/images/racao-batata-doce.webp"
+            link="https://www.racaopets.com.br/cachorro/racao-seca/premium-especial/racao-snack-dog-premium-especial-para-caes-adultos-sabor-frango-batata-doce-aveia-amp-cereais-23-proteinas-12kg"
+            alt="Ração Snack Dog Batata Doce"
+          />
         </FadeIn>
       </main>
 
