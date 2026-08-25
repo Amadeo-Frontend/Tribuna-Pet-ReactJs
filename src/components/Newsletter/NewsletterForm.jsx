@@ -75,13 +75,16 @@ export default function NewsletterForm() {
       </form>
 
       {statusMsg.text && (
-        <p
-          className={`mt-3 text-sm font-medium ${
-            statusMsg.type === "success" ? "text-green-300" : "text-red-300"
+        <div
+          className={`mt-3 p-3 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all ${
+            statusMsg.type === "success"
+              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+              : "bg-rose-500/20 text-rose-300 border border-rose-500/30"
           }`}
         >
-          {statusMsg.text}
-        </p>
+          <span>{statusMsg.type === "success" ? "✓" : "⚠️"}</span>
+          <span>{statusMsg.text}</span>
+        </div>
       )}
     </div>
   );
