@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import PageTransition from "../components/PageTransition";
 import PawPrintTrail from "../components/PawPrintTrail";
+import BorderPawTrail from "../components/BorderPawTrail";
 
 const topCards = [
   {
@@ -168,10 +169,8 @@ export default function Home() {
         {/* Newsletter Destaque Otimizada */}
         <section className="mb-16">
           <div className="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl transition-all duration-500 hover:border-slate-700">
-            {/* Faixa decorativa com patinhas animadas na borda superior do card */}
-            <div className="w-full bg-slate-950/90 border-b border-slate-800/80 py-1.5 opacity-80">
-              <PawPrintTrail />
-            </div>
+            {/* Animador de patinhas de cão dando voltas em toda a borda retangular */}
+            <BorderPawTrail />
 
             <div className="p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
