@@ -9,6 +9,7 @@ import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import PageTransition from "../components/PageTransition";
+import PawPrintTrail from "../components/PawPrintTrail";
 
 const topCards = [
   {
@@ -164,35 +165,58 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Newsletter */}
+        {/* Newsletter Destaque Otimizada */}
         <section className="mb-16">
-          <div className="relative overflow-hidden p-8 md:p-12 text-center text-white bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl group">
-            {/* Decorações sutis de fundo */}
-            <div className="absolute -top-12 -left-12 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
-            {/* Ícone de carta com patinha animada */}
-            <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-white rounded-2xl bg-gradient-to-tr from-blue-600 to-sky-400 shadow-lg shadow-sky-500/20 group-hover:scale-110 transition-transform duration-500">
-              <span className="text-3xl">🐾</span>
+          <div className="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl transition-all duration-500 hover:border-slate-700">
+            {/* Faixa decorativa com patinhas animadas na borda superior do card */}
+            <div className="w-full bg-slate-950/90 border-b border-slate-800/80 py-1.5 opacity-80">
+              <PawPrintTrail />
             </div>
 
-            <h2 className="mb-3 text-2xl font-extrabold md:text-4xl tracking-tight text-white">
-              Receba dicas exclusivas para seu pet
-            </h2>
-            
-            <p className="max-w-2xl mx-auto mb-8 text-sm md:text-base text-slate-300 leading-relaxed font-normal">
-              Inscreva‑se em nossa newsletter e receba conteúdos especiais sobre
-              cuidados, alimentação saudável e guias veterinários diretamente no seu e-mail.
-            </p>
+            <div className="p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                {/* Lado Esquerdo: Ilustração de Pet em destaque */}
+                <div className="md:col-span-5 flex justify-center relative">
+                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden border-2 border-sky-400/30 shadow-2xl shadow-sky-500/20 group-hover:scale-105 transition-transform duration-500">
+                    <img
+                      src="/filhote2.webp"
+                      alt="Cão e gato felizes com nutrição saudável"
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    
+                    <span className="absolute bottom-3 left-3 right-3 text-center px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white bg-blue-600/90 rounded-full backdrop-blur-md border border-white/20">
+                      🐾 Comunidade Pet
+                    </span>
+                  </div>
+                </div>
 
-            <div className="max-w-xl mx-auto">
-              <NewsletterForm />
+                {/* Lado Direito: Chamada & Formulário */}
+                <div className="md:col-span-7 text-center md:text-left space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20 uppercase">
+                    ⭐ Dicas Semanais Gratuitas
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight">
+                    Quer receber dicas de saúde e nutrição para seu amigo?
+                  </h2>
+
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
+                    Junte-se a milhares de tutores! Enviamos guias sobre rações, primeiros socorros e utilidade pública direto no seu e-mail.
+                  </p>
+
+                  <div className="pt-2 max-w-lg">
+                    <NewsletterForm />
+                  </div>
+
+                  <p className="text-xs text-slate-400 font-medium flex items-center justify-center md:justify-start gap-1.5 pt-1">
+                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    100% Gratuito. Sem spam. Cancele a qualquer momento.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <p className="mt-4 text-[11px] text-slate-400 font-medium flex items-center justify-center gap-1.5">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              Sem spam. Cancele a inscrição a qualquer momento com apenas 1 clique.
-            </p>
           </div>
         </section>
 
