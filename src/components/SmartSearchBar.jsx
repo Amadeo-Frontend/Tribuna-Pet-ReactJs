@@ -6,11 +6,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes, faArrowRight, faTag } from "@fortawesome/free-solid-svg-icons";
 import { articlesSearchIndex } from "../lib/searchData";
 
-export default function SmartSearchBar({ onCloseMenu }) {
+export default function SmartSearchBar({ onCloseMenu, isHeader = false }) {
   const [query, setQuery] = useState("");
   const [isPending, startTransition] = useTransition();
   const [results, setResults] = useState([]);
   const inputRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setResults([]);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (!query.trim()) {
@@ -37,8 +48,14 @@ export default function SmartSearchBar({ onCloseMenu }) {
     inputRef.current?.focus();
   };
 
+  const handleSelectResult = () => {
+    setQuery("");
+    setResults([]);
+    if (onCloseMenu) onCloseMenu();
+  };
+
   return (
-    <div className="w-full my-3 px-1">
+    <div ref={containerRef} className={`relative w-full ${isHeader ? "max-w-md" : "my-3 px-1"}`}>
       {/* Input de Busca Estilo Shadcn UI */}
       <div className="relative flex items-center">
         <div className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center justify-center">
@@ -51,7 +68,11 @@ export default function SmartSearchBar({ onCloseMenu }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar artigos, rações, saúde..."
-          className="w-full pl-9 pr-9 py-2.5 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800/90 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-xl border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-inner"
+          className={`w-full pl-9 pr-9 py-2 text-xs sm:text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-inner ${
+            isHeader
+              ? "bg-slate-100 text-slate-900 placeholder-slate-400 border-slate-200"
+              : "bg-slate-100 dark:bg-slate-800/90 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 border-slate-200 dark:border-slate-700/80"
+          }`}
         />
 
         {query && (
@@ -67,7 +88,7 @@ export default function SmartSearchBar({ onCloseMenu }) {
 
       {/* Dropdown de Resultados Inteligentes em Tempo Real */}
       {query.trim() !== "" && (
-        <div className="mt-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xl overflow-hidden max-h-64 overflow-y-auto">
+        <div className={`mt-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden max-h-80 overflow-y-auto ${isHeader ? "absolute left-0 right-0 top-full z-50 mt-1.5" : ""}`}>
           {isPending ? (
             <div className="p-4 text-center text-xs text-slate-500 dark:text-slate-400 animate-pulse">
               Procurando...
@@ -78,7 +99,7 @@ export default function SmartSearchBar({ onCloseMenu }) {
                 <li key={item.slug}>
                   <Link
                     href={`/${item.slug}`}
-                    onClick={onCloseMenu}
+                    onClick={handleSelectResult}
                     className="block p-3 hover:bg-blue-50/80 dark:hover:bg-slate-700/60 transition-colors group"
                   >
                     <div className="flex items-center justify-between gap-2">

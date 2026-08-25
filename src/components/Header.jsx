@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faBars } from '@fortawesome/free-solid-svg-icons';
+import SmartSearchBar from "./SmartSearchBar";
 
 export default function Header({ onToggleMenu }) {
   return (
@@ -10,7 +11,7 @@ export default function Header({ onToggleMenu }) {
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between py-4">
           {/* logo */}
-          <a href="/" className="flex items-center group shrink">
+          <a href="/" className="flex items-center group shrink-0">
             <div className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 mr-2 sm:mr-3 text-white rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
               <FontAwesomeIcon icon={faPaw} className="text-base sm:text-xl" />
             </div>
@@ -23,6 +24,11 @@ export default function Header({ onToggleMenu }) {
               </span>
             </div>
           </a>
+
+          {/* Barra de Pesquisa Inteligente exclusiva para Desktop (lg+) posicionada à direita perto do menu */}
+          <div className="hidden lg:flex items-center justify-end flex-1 max-w-sm ml-auto mr-4">
+            <SmartSearchBar isHeader={true} />
+          </div>
 
           {/* Botão de Menu Estilizado Responsivo */}
           <button
