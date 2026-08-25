@@ -39,9 +39,9 @@ const itemV = {
 function Accordion({ label, icon, badgeColor, links, onClose }) {
   const [open, setOpen] = useState(false);
   return (
-    <motion.li variants={itemV} className="border-b border-slate-800/80 last:border-none">
+    <motion.li variants={itemV} className="border-b border-gray-100 dark:border-slate-800/80 last:border-none">
       <button
-        className="flex items-center justify-between w-full py-3.5 px-3 text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-200 group"
+        className="flex items-center justify-between w-full py-3.5 px-3 text-gray-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 group"
         onClick={() => setOpen(!open)}
       >
         <span className="flex items-center gap-3 font-semibold text-sm">
@@ -74,7 +74,7 @@ function Accordion({ label, icon, badgeColor, links, onClose }) {
                 <Link
                   href={href}
                   onClick={onClose}
-                  className="block py-2 px-2.5 text-xs text-slate-400 hover:text-sky-400 hover:bg-slate-800/40 rounded-lg transition-colors font-medium"
+                  className="block py-2 px-2.5 text-xs text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-sky-400 hover:bg-blue-50/60 dark:hover:bg-slate-800/40 rounded-lg transition-colors font-medium"
                 >
                   {text}
                 </Link>
@@ -113,23 +113,23 @@ export default function MobileMenu({ open, onClose }) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed top-0 left-0 z-50 flex flex-col w-[85%] max-w-xs h-full bg-slate-900 text-white shadow-2xl border-r border-slate-800"
+            className="fixed top-0 left-0 z-50 flex flex-col w-[85%] max-w-xs h-full bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-2xl border-r border-gray-100 dark:border-slate-800"
           >
             {/* Header do menu no mesmo estilo do logo */}
-            <div className="flex items-center justify-between p-5 border-b border-slate-800 bg-slate-950/80">
+            <div className="flex items-center justify-between p-5 border-b border-gray-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/80">
               <div className="flex items-center">
                 <div className="flex items-center justify-center w-9 h-9 mr-2.5 text-white rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 shadow-md shadow-blue-500/20">
                   <FontAwesomeIcon icon={faPaw} className="text-sm" />
                 </div>
                 <div>
-                  <h2 className="text-base font-extrabold tracking-tight text-white">Tribuna do Pet</h2>
-                  <span className="text-[9px] uppercase tracking-wider text-sky-400 font-bold block">Navegação</span>
+                  <h2 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-white">Tribuna do Pet</h2>
+                  <span className="text-[9px] uppercase tracking-wider text-blue-600 dark:text-sky-400 font-bold block">Navegação</span>
                 </div>
               </div>
               <button
                 onClick={onClose}
                 aria-label="Fechar menu"
-                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/60 dark:hover:bg-slate-800 transition-colors"
               >
                 <FontAwesomeIcon icon={faTimes} className="text-base" />
               </button>
@@ -146,9 +146,9 @@ export default function MobileMenu({ open, onClose }) {
                 <Link
                   href="/"
                   onClick={onClose}
-                  className="flex items-center gap-3 py-3 px-3 font-semibold text-sm text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all"
+                  className="flex items-center gap-3 py-3 px-3 font-semibold text-sm text-gray-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-xl transition-all"
                 >
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-50 dark:bg-sky-500/20 text-blue-600 dark:text-sky-400">
                     <FontAwesomeIcon icon={faHome} className="text-xs" />
                   </div>
                   Página Inicial
@@ -158,7 +158,7 @@ export default function MobileMenu({ open, onClose }) {
               <Accordion
                 label="Alimentação Saudável"
                 icon={faBowlFood}
-                badgeColor="bg-emerald-500/20 text-emerald-400"
+                badgeColor="bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400"
                 onClose={onClose}
                 links={[
                   ["/alimentacao-saudavel", "Guia Completo: Alimentação Saudável"],
@@ -172,7 +172,7 @@ export default function MobileMenu({ open, onClose }) {
               <Accordion
                 label="Cuidados Diários"
                 icon={faKitMedical}
-                badgeColor="bg-blue-500/20 text-blue-400"
+                badgeColor="bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400"
                 onClose={onClose}
                 links={[
                   ["/cuidados-com-pets-no-inverno", "Inverno: cuidados essenciais"],
@@ -183,7 +183,7 @@ export default function MobileMenu({ open, onClose }) {
               <Accordion
                 label="Utilidade Pública"
                 icon={faHeartPulse}
-                badgeColor="bg-purple-500/20 text-purple-400"
+                badgeColor="bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-400"
                 onClose={onClose}
                 links={[
                   ["/vagas-para-castracao-gratuita", "Castração Gratuita 2026"],
@@ -195,7 +195,7 @@ export default function MobileMenu({ open, onClose }) {
               <Accordion
                 label="Cupons e Promoções"
                 icon={faTag}
-                badgeColor="bg-amber-500/20 text-amber-400"
+                badgeColor="bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400"
                 onClose={onClose}
                 links={[
                   ["/cupom-petz", "Cupom de Desconto Petz"],
@@ -204,11 +204,11 @@ export default function MobileMenu({ open, onClose }) {
             </motion.nav>
 
             {/* Rodapé do Menu com atalho para Sobre Nós */}
-            <div className="p-4 border-t border-slate-800 bg-slate-950/50">
+            <div className="p-4 border-t border-gray-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/50">
               <Link
                 href="/sobre-nos"
                 onClick={onClose}
-                className="block text-center py-2.5 px-4 text-xs font-bold text-sky-400 bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/20 rounded-xl transition-all"
+                className="block text-center py-2.5 px-4 text-xs font-bold text-blue-600 dark:text-sky-400 bg-blue-50 dark:bg-sky-500/10 hover:bg-blue-100 dark:hover:bg-sky-500/20 border border-blue-200 dark:border-sky-500/20 rounded-xl transition-all"
               >
                 Conheça a História do Tribuna do Pet 🐾
               </Link>
