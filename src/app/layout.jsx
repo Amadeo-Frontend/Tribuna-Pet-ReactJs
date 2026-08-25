@@ -1,19 +1,19 @@
 import "../index.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import ScrollToTop from "../components/ScrollToTop";
-import { Roboto, Open_Sans } from "next/font/google";
+import { Nunito, Inter } from "next/font/google";
 
-const roboto = Roboto({
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  variable: "--font-roboto",
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-open-sans",
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -108,7 +108,7 @@ const jsonLdOrganization = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={`${roboto.variable} ${openSans.variable}`}>
+    <html lang="pt-BR" className={`${nunito.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
