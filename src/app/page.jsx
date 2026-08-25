@@ -157,8 +157,8 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {topCards.map((c) => (
-              <Card key={c.slug} {...c} />
+            {topCards.map((c, idx) => (
+              <Card key={c.slug} {...c} isPriority={idx === 0} />
             ))}
           </div>
         </section>
@@ -253,7 +253,7 @@ export default function Home() {
   );
 }
 
-function Card({ slug, tag, color, title, desc, img }) {
+function Card({ slug, tag, color, title, desc, img, isPriority = false }) {
   return (
     <article className="flex flex-col overflow-hidden bg-white border border-gray-200/80 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-2xl hover:border-gray-300 transition-all duration-500 hover:-translate-y-1.5 group">
       <Link href={`/${slug}`} className="relative block h-56 md:h-60 overflow-hidden bg-gray-900">
@@ -264,7 +264,9 @@ function Card({ slug, tag, color, title, desc, img }) {
           height="240"
           decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
-          loading="lazy"
+          {...(isPriority
+            ? { fetchPriority: "high", loading: "eager" }
+            : { loading: "lazy" })}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
         
