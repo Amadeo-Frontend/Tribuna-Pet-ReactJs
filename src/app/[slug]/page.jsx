@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 
 const articlesMap = {
+  "alerta-raiva-vacinacao-pets": dynamic(() => import("../../articles/alerta-raiva-vacinacao-pets")),
   "alimentacao-saudavel-e-inteligente": dynamic(() => import("../../articles/alimentacao-saudavel-e-inteligente")),
   "alimentacao-saudavel": dynamic(() => import("../../articles/alimentacao-saudavel")),
   "batata-doce-nutricao-canina": dynamic(() => import("../../articles/batata-doce-nutricao-canina")),

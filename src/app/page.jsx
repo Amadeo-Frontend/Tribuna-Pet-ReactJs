@@ -21,12 +21,12 @@ const topCards = [
     img: "https://www.tribunadopet.com.br/images/cachorro-pode-comer-comida-1.webp",
   },
   {
-    slug: "cuidados-com-pets-no-inverno",
-    tag: "Cuidados",
-    color: "bg-blue-600",
-    title: "Cuidados Diários com Cães e Gatos",
-    desc: "Saiba como proteger seu pet em temperaturas baixas...",
-    img: "https://www.tribunadopet.com.br/images/Roupa-de-frio-para-cachorro.webp",
+    slug: "alerta-raiva-vacinacao-pets",
+    tag: "Saúde Animal",
+    color: "bg-red-600",
+    title: "Casos de Raiva em Pets: Alerta sobre Vacinação",
+    desc: "Novos casos acendem alerta urgente de prevenção e condutas veterinárias...",
+    img: "/images/materia-raiva-em-animais.jpg",
   },
   {
     slug: "vagas-para-castracao-gratuita",

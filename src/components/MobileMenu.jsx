@@ -183,6 +183,7 @@ export default function MobileMenu({ open, onClose }) {
                 links={[
                   ["/cuidados-com-pets-no-inverno", "Inverno: cuidados essenciais"],
                   ["/primeiros-socorros-para-pets", "Primeiros socorros para pets"],
+                  ["/alerta-raiva-vacinacao-pets", "Alerta: Casos de Raiva em Pets"],
                 ]}
               />
 

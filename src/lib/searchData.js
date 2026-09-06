@@ -76,4 +76,11 @@ export const articlesSearchIndex = [
     description: "Aproveite 10% de desconto com o cupom exclusivo em mais de 20.000 produtos.",
     keywords: ["cupom", "desconto", "petz", "promoção", "oferta", "comprar ração"],
   },
+  {
+    slug: "alerta-raiva-vacinacao-pets",
+    title: "Casos de Raiva em Pets: Alerta sobre Vacinação e Conduta",
+    category: "Saúde Animal",
+    description: "Novos casos de raiva em animais domésticos reacendem o alerta sobre prevenção. Conheça as condutas veterinárias corretas.",
+    keywords: ["raiva", "vacinação", "vacina de raiva", "mordida", "morcego", "zoonose", "saúde animal", "conduta veterinária"],
+  },
 ];
