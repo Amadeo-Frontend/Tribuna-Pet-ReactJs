@@ -40,6 +40,15 @@ const topCards = [
 
 const bottomCards = [
   {
+    slug: "alerta-raiva-vacinacao-pets",
+    tag: "Saúde & Alerta",
+    color: "bg-red-600",
+    title: "Casos de Raiva em Pets: Alerta sobre Vacinação",
+    desc: "Novos casos acendem alerta urgente de prevenção e condutas veterinárias imediatas...",
+    img: "/images/materia-raiva-em-animais.jpg",
+    isFeatured: true,
+  },
+  {
     slug: "melhor-racao-para-pitbull-e-caes-ativos",
     tag: "Nutrição & Ranking",
     color: "bg-red-600",
@@ -70,6 +79,14 @@ const bottomCards = [
     title: "Batata Doce e Vegetais na Nutrição Canina",
     desc: "A batata-doce emergiu como um superalimento...",
     img: "https://www.tribunadopet.com.br/images/fresh-vegetable.webp",
+  },
+  {
+    slug: "primeiros-socorros-para-pets",
+    tag: "Cuidados & Emergência",
+    color: "bg-blue-600",
+    title: "Primeiros Socorros para Cães e Gatos",
+    desc: "Saiba como agir em casos de engasgo, intoxicação, acidentes e queimaduras...",
+    img: "/images/primeiros-socorros-pets.webp",
   },
 ];
 
@@ -241,9 +258,15 @@ export default function Home() {
   );
 }
 
-function Card({ slug, tag, color, title, desc, img, isPriority = false }) {
+function Card({ slug, tag, color, title, desc, img, isPriority = false, isFeatured = false }) {
   return (
-    <article className="flex flex-col overflow-hidden bg-white border border-gray-200/80 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-2xl hover:border-gray-300 transition-all duration-500 hover:-translate-y-1.5 group">
+    <article
+      className={`flex flex-col overflow-hidden bg-white rounded-2xl md:rounded-3xl transition-all duration-500 hover:-translate-y-1.5 group ${
+        isFeatured
+          ? "border-2 border-red-500 shadow-lg shadow-red-500/10 ring-4 ring-red-500/10 hover:border-red-600 hover:shadow-2xl"
+          : "border border-gray-200/80 shadow-sm hover:shadow-2xl hover:border-gray-300"
+      }`}
+    >
       <Link href={`/${slug}`} className="relative block h-56 md:h-60 overflow-hidden bg-gray-900">
         <img
           src={img}
@@ -265,10 +288,25 @@ function Card({ slug, tag, color, title, desc, img, isPriority = false }) {
             {tag}
           </span>
         </div>
+
+        {isFeatured && (
+          <div className="absolute top-4 right-4 z-10 flex items-center">
+            <span className="px-3 py-1 bg-amber-400 text-slate-950 text-[10px] sm:text-[11px] font-black tracking-wider shadow-lg rounded-full uppercase flex items-center gap-1 animate-pulse border border-amber-300">
+              🔥 Destaque
+            </span>
+          </div>
+        )}
       </Link>
 
       <div className="flex flex-col justify-between flex-1 p-6 md:p-7 bg-gradient-to-b from-white to-gray-50/50">
         <div>
+          {isFeatured && (
+            <div className="mb-2">
+              <span className="inline-flex items-center text-[11px] font-extrabold text-red-600 uppercase tracking-wider">
+                🚨 Matéria Urgente
+              </span>
+            </div>
+          )}
           <h3 className="mb-3 text-xl font-extrabold text-gray-900 leading-snug tracking-tight group-hover:text-primary transition-colors duration-300">
             <Link href={`/${slug}`}>
               {title}
