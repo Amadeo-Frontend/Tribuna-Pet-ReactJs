@@ -9,6 +9,7 @@ updated: 2026-07-12
 ## Git Workflow
 - Always create a new dedicated branch for major code changes.
 - Branch name format should follow: `feature/[task-slug]` or `fix/[bug-slug]`.
+- **Git Identity**: Always commit as `Amadeo Bon <amadeosph@outlook.com>` via SSH (`git@github.com:Amadeo-Frontend/Tribuna-Pet-ReactJs.git`). NEVER commit or push as `nutriponta` / `nutripontapetfood-dev`.
 
 ## Supported AI platforms (AG Kit)
 - AG Kit **only supports Gemini CLI and Google Antigravity**.
