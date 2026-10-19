@@ -40,13 +40,21 @@ const topCards = [
 
 const bottomCards = [
   {
+    slug: "veterinario-gratuito-vet-movel-parana",
+    tag: "Utilidade Pública & Saúde",
+    color: "bg-emerald-600",
+    title: "Veterinário Gratuito para Pets Chega a 14 Cidades do Paraná (Vet-Móvel)",
+    desc: "Vacinas polivalente e antirrábica, consultas clínicas, vermifugação e antiparasitários 100% gratuitos. Confira o passo a passo para agendar...",
+    img: "/images/vet-movel-parana.jpg",
+    isFeatured: true,
+  },
+  {
     slug: "alerta-raiva-vacinacao-pets",
     tag: "Saúde & Alerta",
     color: "bg-red-600",
     title: "Casos de Raiva em Pets: Alerta sobre Vacinação",
     desc: "Novos casos acendem alerta urgente de prevenção e condutas veterinárias imediatas...",
     img: "/images/materia-raiva-em-animais.jpg",
-    isFeatured: true,
   },
   {
     slug: "melhor-racao-para-pitbull-e-caes-ativos",

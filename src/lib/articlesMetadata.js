@@ -83,4 +83,11 @@ export const articlesMetadata = {
     image: "https://www.tribunadopet.com.br/images/Castracao-animais.webp",
     published: "2025-06-15",
   },
+  "veterinario-gratuito-vet-movel-parana": {
+    title: "Veterinário Gratuito Chega a 14 Cidades do Paraná: Agendamento no Vet-Móvel | Tribuna do Pet",
+    description: "O programa estadual Vet-Móvel Paraná oferece consultas, vacinas polivalente e antirrábica, vermifugação e controle de parasitas gratuitos para cães e gatos em 14 cidades. Saiba como agendar.",
+    canonical: "https://www.tribunadopet.com.br/veterinario-gratuito-vet-movel-parana",
+    image: "https://www.tribunadopet.com.br/images/vet-movel-parana.jpg",
+    published: "2026-10-19",
+  },
 };

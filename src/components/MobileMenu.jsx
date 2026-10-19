@@ -193,6 +193,7 @@ export default function MobileMenu({ open, onClose }) {
                 badgeColor="bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-400"
                 onClose={onClose}
                 links={[
+                  ["/veterinario-gratuito-vet-movel-parana", "Vet-Móvel Paraná Gratuito"],
                   ["/vagas-para-castracao-gratuita", "Castração Gratuita 2026"],
                   ["/novo-hospital-veterinario-curitiba", "Novo Hosp. Vet. Curitiba"],
                   ["/ferramenta-encontre-seu-pet", "Ferramenta encontre seu pet"],

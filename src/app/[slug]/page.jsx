@@ -15,6 +15,7 @@ const articlesMap = {
   "novo-hospital-veterinario-curitiba": dynamic(() => import("../../articles/novo-hospital-veterinario-curitiba")),
   "primeiros-socorros-para-pets": dynamic(() => import("../../articles/primeiros-socorros-para-pets")),
   "vagas-para-castracao-gratuita": dynamic(() => import("../../articles/vagas-para-castracao-gratuita")),
+  "veterinario-gratuito-vet-movel-parana": dynamic(() => import("../../articles/veterinario-gratuito-vet-movel-parana")),
 };
 
 export async function generateStaticParams() {

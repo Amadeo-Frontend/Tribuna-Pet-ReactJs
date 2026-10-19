@@ -83,4 +83,11 @@ export const articlesSearchIndex = [
     description: "Novos casos de raiva em animais domésticos reacendem o alerta sobre prevenção. Conheça as condutas veterinárias corretas.",
     keywords: ["raiva", "vacinação", "vacina de raiva", "mordida", "morcego", "zoonose", "saúde animal", "conduta veterinária"],
   },
+  {
+    slug: "veterinario-gratuito-vet-movel-parana",
+    title: "Veterinário Gratuito para Pets Chega a 14 Cidades do Paraná (Vet-Móvel)",
+    category: "Utilidade Pública",
+    description: "Consultas, vacinas polivalente e antirrábica, vermifugação e antiparasitários gratuitos em 14 municípios da RMC e Litoral.",
+    keywords: ["veterinário gratuito", "vet móvel", "vet-móvel", "paraná", "vacina gratuita", "rmc", "litoral", "iat", "sedest", "agendamento"],
+  },
 ];
