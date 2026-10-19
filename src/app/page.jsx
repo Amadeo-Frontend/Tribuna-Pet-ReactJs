@@ -10,6 +10,7 @@ import LiveClock from "../components/LiveClock";
 import MobileMenu from "../components/MobileMenu";
 import NewsletterForm from "../components/Newsletter/NewsletterForm";
 import AdBanner from "../components/AdBanner";
+import dynamicPostsData from "../data/posts.json";
 
 const topCards = [
   {
@@ -110,6 +111,18 @@ const FadeIn = ({ children, delay = 0 }) => (
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const dynamicCards = (dynamicPostsData || []).map((p) => ({
+    slug: p.slug,
+    tag: p.tag || p.category || "Novidade",
+    color: "bg-blue-600",
+    title: p.title,
+    desc: p.subtitle || p.title,
+    img: p.image || "/images/banner-blog.webp",
+    isFeatured: Boolean(p.featured),
+  }));
+
+  const allBottomCards = [...dynamicCards, ...bottomCards];
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -251,7 +264,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {bottomCards.map((c) => (
+            {allBottomCards.map((c) => (
               <Card key={c.slug} {...c} />
             ))}
           </div>

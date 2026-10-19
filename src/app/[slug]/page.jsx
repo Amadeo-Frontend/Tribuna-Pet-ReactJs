@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 import { articlesMetadata } from "../../lib/articlesMetadata";
+import { getDynamicPosts, findDynamicPostBySlug } from "../../lib/postsStore";
+import DynamicPostTemplate from "../../components/DynamicPostTemplate";
 
 const articlesMap = {
   "alerta-raiva-vacinacao-pets": dynamic(() => import("../../articles/alerta-raiva-vacinacao-pets")),
@@ -19,20 +21,39 @@ const articlesMap = {
 };
 
 export async function generateStaticParams() {
-  return Object.keys(articlesMap).map((slug) => ({
+  const legacySlugs = Object.keys(articlesMap);
+  const dynamicPosts = await getDynamicPosts();
+  const dynamicSlugs = dynamicPosts.map((p) => p.slug);
+
+  const allSlugs = Array.from(new Set([...legacySlugs, ...dynamicSlugs]));
+
+  return allSlugs.map((slug) => ({
     slug,
   }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const meta = articlesMetadata[slug];
+  let meta = articlesMetadata[slug];
+
+  if (!meta) {
+    const dynamicPost = await findDynamicPostBySlug(slug);
+    if (dynamicPost) {
+      meta = {
+        title: `${dynamicPost.title} | Tribuna do Pet`,
+        description: dynamicPost.subtitle || dynamicPost.title,
+        image: dynamicPost.image,
+        published: dynamicPost.published,
+        canonical: `https://www.tribunadopet.com.br/${dynamicPost.slug}`,
+      };
+    }
+  }
 
   if (!meta) {
     return {};
   }
 
-  const rawImage = meta.image || "/images/repotagem-ranking-pitbull-desktop.webp";
+  const rawImage = meta.image || "/images/banner-blog.webp";
   const imageUrl = rawImage.startsWith("http")
     ? rawImage
     : `https://www.tribunadopet.com.br${rawImage.startsWith("/") ? "" : "/"}${rawImage}`;
@@ -73,11 +94,19 @@ export async function generateMetadata({ params }) {
 
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
-  const Component = articlesMap[slug];
 
-  if (!Component) {
-    notFound();
+  // 1. Check legacy JSX component
+  const LegacyComponent = articlesMap[slug];
+  if (LegacyComponent) {
+    return <LegacyComponent />;
   }
 
-  return <Component />;
+  // 2. Check dynamic post from posts.json
+  const dynamicPost = await findDynamicPostBySlug(slug);
+  if (dynamicPost) {
+    return <DynamicPostTemplate post={dynamicPost} />;
+  }
+
+  // 3. Not found
+  notFound();
 }
