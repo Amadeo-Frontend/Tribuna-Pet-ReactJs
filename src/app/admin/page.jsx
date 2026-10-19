@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import AdminSidebar from "../../components/admin/AdminSidebar";
+import AndroidBottomNav from "../../components/admin/AndroidBottomNav";
 import {
   FaPaw,
   FaSignOutAlt,
@@ -349,7 +351,7 @@ export default function AdminDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex font-sans">
       {/* Toast Notification */}
       <AnimatePresence>
         {toastMessage && (
@@ -365,104 +367,66 @@ export default function AdminDashboardPage() {
         )}
       </AnimatePresence>
 
-      {/* Admin Navbar */}
-      <header className="sticky top-0 z-30 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-            <FaPaw className="text-lg" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white">
-                Tribuna do Pet
-              </span>
-              <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-md">
-                Admin
+      {/* Desktop Shadcn Sidebar */}
+      <AdminSidebar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        openNewPost={openNewPost}
+        articlesCount={articles.length}
+        imagesCount={imagesStats.totalCount}
+        username={user?.username || "admin"}
+        onLogout={handleLogout}
+        onTriggerUpload={() => fileInputRef.current?.click()}
+      />
+
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Top Header / Breadcrumbs */}
+        <header className="sticky top-0 z-20 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            {/* Mobile Branding */}
+            <div className="flex items-center gap-2 md:hidden">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-sky-400 flex items-center justify-center text-white shadow-sm">
+                <FaPaw className="text-sm" />
+              </div>
+              <span className="font-extrabold text-sm text-white">Tribuna Pet</span>
+            </div>
+
+            {/* Desktop Breadcrumbs */}
+            <div className="hidden md:flex items-center gap-2 text-xs font-semibold text-slate-400">
+              <span className="text-slate-500">Console</span>
+              <span className="text-slate-600">/</span>
+              <span className="text-white font-bold">
+                {activeTab === "overview" && "Visão Geral"}
+                {activeTab === "posts" && "Gestão de Matérias"}
+                {activeTab === "editor" && (isEditing ? "Editar Matéria" : "Nova Matéria")}
+                {activeTab === "gallery" && "Mídia & Otimizador WebP"}
               </span>
             </div>
-            <span className="text-[11px] text-slate-400 hidden sm:block">
-              Gestão de Conteúdo & Otimização WebP
-            </span>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2 sm:gap-4">
-          <Link
-            href="/"
-            target="_blank"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700"
-          >
-            <span>Ver Blog</span>
-            <FaExternalLinkAlt className="text-[10px]" />
-          </Link>
-
-          <div className="h-6 w-px bg-slate-800 hidden sm:block" />
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400 hidden md:inline">
-              Logado como <strong className="text-white">{user?.username}</strong>
-            </span>
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 rounded-lg transition-colors cursor-pointer"
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              href="/"
+              target="_blank"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 rounded-lg transition-colors border border-slate-700"
             >
-              <FaSignOutAlt />
-              <span className="hidden xs:inline">Sair</span>
+              <span>Ver Blog</span>
+              <FaExternalLinkAlt className="text-[10px]" />
+            </Link>
+
+            <button
+              onClick={openNewPost}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 text-white rounded-lg text-xs font-bold shadow-md shadow-emerald-600/20 active:scale-95 transition-all cursor-pointer"
+            >
+              <FaPlus className="text-[10px]" />
+              <span className="hidden xs:inline">Nova Matéria</span>
             </button>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* Main Container */}
-      <div className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 md:p-8 space-y-6">
-        {/* Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-800">
-          <nav className="flex items-center gap-1.5 sm:gap-2">
-            <button
-              onClick={() => setActiveTab("overview")}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeTab === "overview"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-              }`}
-            >
-              <FaChartBar />
-              <span>Visão Geral</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("posts")}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeTab === "posts"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-              }`}
-            >
-              <FaFileAlt />
-              <span>Matérias ({articles.length})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("gallery")}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeTab === "gallery"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-              }`}
-            >
-              <FaImage />
-              <span>Mídia & WebP ({imagesStats.totalCount})</span>
-            </button>
-          </nav>
-
-          <button
-            onClick={openNewPost}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/20 active:scale-95 transition-all cursor-pointer"
-          >
-            <FaPlus />
-            <span>Nova Matéria</span>
-          </button>
-        </div>
+        {/* Main Container */}
+        <div className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 md:p-8 pb-28 md:pb-8 space-y-6">
 
         {/* TAB 1: OVERVIEW */}
         {activeTab === "overview" && (
@@ -1256,7 +1220,17 @@ export default function AdminDashboardPage() {
             </div>
           </motion.div>
         )}
+        </div>
       </div>
+
+      {/* Mobile Android Bottom Navigation */}
+      <AndroidBottomNav
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        openNewPost={openNewPost}
+        onLogout={handleLogout}
+        articlesCount={articles.length}
+      />
     </div>
   );
 }
