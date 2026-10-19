@@ -49,24 +49,24 @@ const ScaleIn = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-const citiesRMC = [
-  "Araucária",
-  "Campo Largo",
-  "Campo Magro",
-  "Fazenda Rio Grande",
-  "Lapa",
-  "Pinhais",
-  "Rio Negro",
-  "São José dos Pinhais",
+const scheduleRMC = [
+  { city: "Campo Largo", dates: "17, 18 e 20 de outubro" },
+  { city: "Pinhais", dates: "de 21 a 24 de outubro" },
+  { city: "Araucária", dates: "de 21 a 24 de outubro" },
+  { city: "Fazenda Rio Grande", dates: "de 27 a 30 de outubro" },
+  { city: "São José dos Pinhais", dates: "31 de outubro e 1º, 3 e 4 de novembro" },
+  { city: "Rio Negro", dates: "3 de novembro" },
+  { city: "Campo Magro", dates: "7 e 8 de novembro" },
+  { city: "Lapa", dates: "7 e 8 de novembro" },
 ];
 
-const citiesLitoral = [
-  "Antonina",
-  "Guaratuba",
-  "Matinhos",
-  "Morretes",
-  "Paranaguá",
-  "Pontal do Paraná",
+const scheduleLitoral = [
+  { city: "Guaratuba", dates: "17 e 18 de outubro" },
+  { city: "Paranaguá", dates: "20 e 21 de outubro" },
+  { city: "Matinhos", dates: "22 de outubro" },
+  { city: "Antonina", dates: "23 de outubro" },
+  { city: "Pontal do Paraná", dates: "24 e 27 de outubro" },
+  { city: "Morretes", dates: "28 de outubro" },
 ];
 
 export default function VeterinarioGratuitoVetMovel() {
@@ -287,27 +287,36 @@ export default function VeterinarioGratuitoVetMovel() {
             <FadeIn delay={0.6}>
               <section className="mb-10">
                 <h2 className="pb-2 mb-4 text-2xl font-bold text-gray-900 border-b border-gray-200">
-                  Confira as 14 cidades paranaenses atendidas nesta etapa
+                  Confira as datas do Vet-Móvel Paraná por localidade
                 </h2>
                 <p className="mb-6 text-gray-700">
-                  Os atendimentos itinerantes serão divididos entre os municípios da Região Metropolitana
-                  de Curitiba (RMC) e do Litoral paranaense:
+                  Os atendimentos itinerantes serão realizados em 14 municípios da Região Metropolitana
+                  de Curitiba (RMC) e do Litoral. Confira as datas de atendimento em cada cidade:
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Região Metropolitana de Curitiba */}
                   <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl">
-                    <div className="flex items-center mb-4">
+                    <div className="flex items-center mb-4 pb-2 border-b border-slate-200">
                       <FaCity className="text-xl text-primary mr-2" />
                       <h3 className="text-lg font-bold text-gray-900">
                         Região Metropolitana de Curitiba (8 cidades)
                       </h3>
                     </div>
-                    <ul className="space-y-2">
-                      {citiesRMC.map((city, idx) => (
-                        <li key={idx} className="flex items-center text-gray-700 text-sm">
-                          <FaCheckCircle className="text-emerald-500 mr-2 shrink-0" />
-                          <span className="font-semibold">{city}</span>
+                    <ul className="space-y-2.5">
+                      {scheduleRMC.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 p-3 rounded-lg bg-white border border-slate-200/80 shadow-xs hover:border-emerald-300 transition-colors"
+                        >
+                          <span className="flex items-center font-bold text-gray-900 text-sm">
+                            <FaCheckCircle className="text-emerald-500 mr-2 shrink-0 text-xs" />
+                            {item.city}
+                          </span>
+                          <span className="inline-flex items-center self-start sm:self-auto px-2.5 py-1 text-xs font-semibold rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200/70">
+                            <FaCalendarAlt className="mr-1.5 text-[11px] text-emerald-600 shrink-0" />
+                            {item.dates}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -315,17 +324,26 @@ export default function VeterinarioGratuitoVetMovel() {
 
                   {/* Litoral Paranaense */}
                   <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl">
-                    <div className="flex items-center mb-4">
+                    <div className="flex items-center mb-4 pb-2 border-b border-slate-200">
                       <FaMapMarkerAlt className="text-xl text-sky-600 mr-2" />
                       <h3 className="text-lg font-bold text-gray-900">
                         Litoral do Paraná (6 cidades)
                       </h3>
                     </div>
-                    <ul className="space-y-2">
-                      {citiesLitoral.map((city, idx) => (
-                        <li key={idx} className="flex items-center text-gray-700 text-sm">
-                          <FaCheckCircle className="text-sky-500 mr-2 shrink-0" />
-                          <span className="font-semibold">{city}</span>
+                    <ul className="space-y-2.5">
+                      {scheduleLitoral.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 p-3 rounded-lg bg-white border border-slate-200/80 shadow-xs hover:border-sky-300 transition-colors"
+                        >
+                          <span className="flex items-center font-bold text-gray-900 text-sm">
+                            <FaCheckCircle className="text-sky-500 mr-2 shrink-0 text-xs" />
+                            {item.city}
+                          </span>
+                          <span className="inline-flex items-center self-start sm:self-auto px-2.5 py-1 text-xs font-semibold rounded-md bg-sky-50 text-sky-800 border border-sky-200/70">
+                            <FaCalendarAlt className="mr-1.5 text-[11px] text-sky-600 shrink-0" />
+                            {item.dates}
+                          </span>
                         </li>
                       ))}
                     </ul>
