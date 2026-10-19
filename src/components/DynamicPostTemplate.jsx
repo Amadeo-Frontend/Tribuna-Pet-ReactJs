@@ -159,6 +159,11 @@ export default function DynamicPostTemplate({ post }) {
     ? post.image
     : `https://www.tribunadopet.com.br${post.image?.startsWith("/") ? "" : "/"}${post.image}`;
 
+  const imageFileName = post.image ? post.image.split("/").pop().split("?")[0] : null;
+  const contentHasCoverImage = Boolean(
+    imageFileName && post.content && post.content.includes(imageFileName)
+  );
+
   return (
     <>
       <Seo
@@ -247,8 +252,8 @@ export default function DynamicPostTemplate({ post }) {
               </FadeIn>
             )}
 
-            {/* Imagem de Capa */}
-            {post.image && (
+            {/* Imagem de Capa (apenas se não estiver presente no corpo do conteúdo) */}
+            {post.image && !contentHasCoverImage && (
               <ScaleIn delay={0.2}>
                 <div className="w-full mb-8">
                   <img

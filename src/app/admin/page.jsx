@@ -1211,8 +1211,8 @@ export default function AdminDashboardPage() {
                       )}
                     </div>
 
-                    {/* Cover image preview */}
-                    {postForm.image && (
+                    {/* Cover image preview (apenas se não estiver no conteúdo) */}
+                    {postForm.image && !(postForm.content && postForm.content.includes(postForm.image.split("/").pop().split("?")[0])) && (
                       <figure className="mb-6">
                         <img
                           src={postForm.image}
@@ -1501,8 +1501,8 @@ export default function AdminDashboardPage() {
                 )}
               </div>
 
-              {/* Cover Image */}
-              {previewModalPost.image && (
+              {/* Cover Image (apenas se não estiver no conteúdo) */}
+              {previewModalPost.image && !(previewModalPost.content && previewModalPost.content.includes(previewModalPost.image.split("/").pop().split("?")[0])) && (
                 <figure>
                   <img
                     src={previewModalPost.image}
