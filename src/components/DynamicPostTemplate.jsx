@@ -265,10 +265,25 @@ export default function DynamicPostTemplate({ post }) {
               </ScaleIn>
             )}
 
+            {/* CSS Customizado da Matéria */}
+            {post.customCss && (
+              <style
+                id={`post-custom-style-${post.slug || "view"}`}
+                dangerouslySetInnerHTML={{ __html: post.customCss }}
+              />
+            )}
+
             {/* Corpo do Artigo */}
             <FadeIn delay={0.3}>
-              <div className="mt-6 mb-10">
-                <MarkdownRenderer content={post.content} />
+              <div className="mt-6 mb-10 tribuna-article-content">
+                {post.content && (post.content.includes("<") || post.content.includes("</")) ? (
+                  <div
+                    className="prose prose-slate max-w-none text-gray-800 leading-relaxed text-base md:text-lg article-body"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                  />
+                ) : (
+                  <MarkdownRenderer content={post.content} />
+                )}
               </div>
             </FadeIn>
 

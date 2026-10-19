@@ -66,11 +66,13 @@ export default function AdminDashboardPage() {
     image: "",
     imageCaption: "",
     content: "",
+    customCss: "",
     featured: false,
     readingTime: "4 min de leitura",
   });
-  const [editorTab, setEditorTab] = useState("write"); // write | preview | split
+  const [editorTab, setEditorTab] = useState("html"); // html | css | split | preview
   const [savingPost, setSavingPost] = useState(false);
+  const [previewModalPost, setPreviewModalPost] = useState(null);
 
   // Upload State
   const [uploading, setUploading] = useState(false);
@@ -236,37 +238,86 @@ export default function AdminDashboardPage() {
       image: "",
       imageCaption: "",
       content: "",
+      customCss: "",
       featured: false,
       readingTime: "4 min de leitura",
     });
+    setEditorTab("html");
     setActiveTab("editor");
   }
 
-  function editPost(post) {
-    if (post.type === "legacy") {
-      alert("Este é um artigo legado em JSX. Você pode visualizá-lo, mas edições são permitidas apenas nas matérias do novo formato.");
-      return;
-    }
+  function handleEditPost(post) {
     setIsEditing(true);
     setEditingPostId(post.id);
     setPostForm({
-      title: post.title,
+      title: post.title || "",
       subtitle: post.subtitle || "",
-      slug: post.slug,
+      slug: post.slug || "",
       category: post.category || "Geral",
       tag: post.tag || "",
       author: post.author || "Redação Tribuna do Pet",
       image: post.image || "",
       imageCaption: post.imageCaption || "",
       content: post.content || "",
+      customCss: post.customCss || "",
       featured: Boolean(post.featured),
       readingTime: post.readingTime || "4 min de leitura",
     });
+    setEditorTab("html");
     setActiveTab("editor");
   }
 
+  const insertHtmlSnippet = (snippetHtml, snippetCss = "") => {
+    setPostForm((prev) => ({
+      ...prev,
+      content: (prev.content ? prev.content + "\n\n" : "") + snippetHtml,
+      customCss:
+        snippetCss && !prev.customCss.includes(snippetCss.slice(0, 18))
+          ? (prev.customCss ? prev.customCss + "\n\n" : "") + snippetCss
+          : prev.customCss,
+    }));
+    showToast("Bloco HTML e estilo CSS inseridos!");
+  };
+
+  const insertSnippet = (type) => {
+    switch (type) {
+      case "alert":
+        insertHtmlSnippet(
+          `<div class="alerta-box">\n  <h4 class="font-bold text-lg mb-1">Atenção Tutor!</h4>\n  <p>Insira aqui o aviso ou recomendação importante para os tutores...</p>\n</div>`,
+          `.alerta-box {\n  background: #eff6ff;\n  border-left: 4px solid #2563eb;\n  padding: 1.25rem;\n  border-radius: 0.75rem;\n  margin: 1.5rem 0;\n  color: #1e293b;\n}`
+        );
+        break;
+      case "table":
+        insertHtmlSnippet(
+          `<div class="tabela-container">\n  <table class="tabela-custom">\n    <thead>\n      <tr>\n        <th>Cidade / Localidade</th>\n        <th>Datas Oficiais</th>\n        <th>Serviço</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>Curitiba / RMC</td>\n        <td>17 a 24 de Outubro</td>\n        <td><span class="badge-verde">Gratuito</span></td>\n      </tr>\n      <tr>\n        <td>Litoral do Paraná</td>\n        <td>20 a 28 de Outubro</td>\n        <td><span class="badge-azul">Agendamento</span></td>\n      </tr>\n    </tbody>\n  </table>\n</div>`,
+          `.tabela-container { overflow-x: auto; margin: 1.5rem 0; }\n.tabela-custom {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 0.95rem;\n}\n.tabela-custom th, .tabela-custom td {\n  padding: 0.85rem 1rem;\n  border: 1px solid #e2e8f0;\n  text-align: left;\n}\n.tabela-custom th {\n  background-color: #f1f5f9;\n  font-weight: 700;\n  color: #0f172a;\n}\n.badge-verde {\n  background: #dcfce7;\n  color: #15803d;\n  padding: 0.25rem 0.6rem;\n  border-radius: 9999px;\n  font-weight: 700;\n  font-size: 0.8rem;\n}\n.badge-azul {\n  background: #dbeafe;\n  color: #1d4ed8;\n  padding: 0.25rem 0.6rem;\n  border-radius: 9999px;\n  font-weight: 700;\n  font-size: 0.8rem;\n}`
+        );
+        break;
+      case "button":
+        insertHtmlSnippet(
+          `<div class="text-center my-6">\n  <a href="https://exemplo.com.br" target="_blank" rel="noopener noreferrer" class="btn-custom">\n    Acessar Página Oficial do Agendamento →\n  </a>\n</div>`,
+          `.btn-custom {\n  display: inline-block;\n  background: linear-gradient(135deg, #0284c7, #0369a1);\n  color: #ffffff !important;\n  padding: 0.85rem 1.75rem;\n  border-radius: 0.75rem;\n  font-weight: 700;\n  text-decoration: none;\n  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.btn-custom:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);\n}`
+        );
+        break;
+      case "grid":
+        insertHtmlSnippet(
+          `<div class="grid-cards">\n  <div class="card-item">\n    <h4 class="font-bold text-base text-gray-900 mb-2">Ponto de Atenção 1</h4>\n    <p class="text-sm text-gray-600">Descrição e orientação para cães e gatos.</p>\n  </div>\n  <div class="card-item">\n    <h4 class="font-bold text-base text-gray-900 mb-2">Ponto de Atenção 2</h4>\n    <p class="text-sm text-gray-600">Descrição e orientação preventiva.</p>\n  </div>\n</div>`,
+          `.grid-cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 1.25rem;\n  margin: 1.5rem 0;\n}\n.card-item {\n  background: #f8fafc;\n  border: 1px solid #e2e8f0;\n  padding: 1.25rem;\n  border-radius: 0.75rem;\n}`
+        );
+        break;
+      case "figure":
+        insertHtmlSnippet(
+          `<figure class="figura-custom">\n  <img src="/images/banner-blog.webp" alt="Descrição da imagem" class="w-full rounded-xl" />\n  <figcaption class="text-center text-xs text-gray-500 mt-2 italic">Legenda informativa / Reprodução</figcaption>\n</figure>`,
+          `.figura-custom {\n  margin: 1.75rem 0;\n}\n.figura-custom img {\n  max-height: 480px;\n  object-fit: cover;\n  box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n}`
+        );
+        break;
+      default:
+        break;
+    }
+  };
+
   async function handleSavePost(e) {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     if (!postForm.title.trim()) {
       showToast("O título da matéria é obrigatório.");
       return;
@@ -296,7 +347,7 @@ export default function AdminDashboardPage() {
         return;
       }
 
-      showToast(isEditing ? "Matéria atualizada!" : "Matéria publicada com sucesso!");
+      showToast(isEditing ? "Matéria atualizada com sucesso!" : "Matéria publicada com sucesso!");
       await loadArticles();
       setActiveTab("posts");
     } catch (err) {
@@ -307,17 +358,13 @@ export default function AdminDashboardPage() {
   }
 
   async function handleDeletePost(post) {
-    if (post.type === "legacy") {
-      alert("Artigos legados em JSX não podem ser deletados pelo painel.");
-      return;
-    }
-    if (!confirm(`Tem certeza que deseja excluir a matéria "${post.title}"?`)) return;
+    if (!confirm(`Tem certeza que deseja excluir a matéria "${post.title}"? Esta ação removerá a publicação do site.`)) return;
 
     try {
       const res = await fetch(`/api/admin/posts?id=${post.id}`, { method: "DELETE" });
       const data = await res.json();
       if (data.success) {
-        showToast("Matéria excluída.");
+        showToast("Matéria excluída com sucesso.");
         await loadArticles();
       } else {
         showToast(data.message || "Erro ao excluir.");
@@ -537,7 +584,15 @@ export default function AdminDashboardPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2 shrink-0">
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <button
+                          type="button"
+                          onClick={() => setPreviewModalPost(article)}
+                          className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
+                          title="Pré-visualizar matéria"
+                        >
+                          <FaEye className="text-xs" />
+                        </button>
                         <Link
                           href={`/${article.slug}`}
                           target="_blank"
@@ -546,15 +601,14 @@ export default function AdminDashboardPage() {
                         >
                           <FaExternalLinkAlt className="text-xs" />
                         </Link>
-                        {article.type === "dynamic" && (
-                          <button
-                            onClick={() => editPost(article)}
-                            className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
-                            title="Editar"
-                          >
-                            <FaEdit className="text-xs" />
-                          </button>
-                        )}
+                        <button
+                          type="button"
+                          onClick={() => handleEditPost(article)}
+                          className="p-2 text-blue-400 hover:text-white bg-blue-500/10 hover:bg-blue-600 rounded-lg transition-colors cursor-pointer"
+                          title="Editar matéria"
+                        >
+                          <FaEdit className="text-xs" />
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -687,40 +741,38 @@ export default function AdminDashboardPage() {
                         </td>
                         <td className="py-3.5 px-4 text-right">
                           <div className="inline-flex items-center gap-1.5">
+                            <button
+                              type="button"
+                              onClick={() => setPreviewModalPost(article)}
+                              className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
+                              title="Pré-visualização rápida"
+                            >
+                              <FaEye className="text-xs" />
+                            </button>
                             <Link
                               href={`/${article.slug}`}
                               target="_blank"
                               className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
-                              title="Visualizar matéria"
+                              title="Abrir no site"
                             >
                               <FaExternalLinkAlt className="text-xs" />
                             </Link>
-                            {article.type === "dynamic" ? (
-                              <>
-                                <button
-                                  onClick={() => editPost(article)}
-                                  className="p-2 text-blue-400 hover:text-white bg-blue-500/10 hover:bg-blue-600 rounded-lg transition-colors cursor-pointer"
-                                  title="Editar matéria"
-                                >
-                                  <FaEdit className="text-xs" />
-                                </button>
-                                <button
-                                  onClick={() => handleDeletePost(article)}
-                                  className="p-2 text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 rounded-lg transition-colors cursor-pointer"
-                                  title="Excluir matéria"
-                                >
-                                  <FaTrash className="text-xs" />
-                                </button>
-                              </>
-                            ) : (
-                              <button
-                                disabled
-                                className="p-2 text-slate-600 bg-slate-800/40 rounded-lg opacity-40 cursor-not-allowed"
-                                title="Artigo estático JSX"
-                              >
-                                <FaEdit className="text-xs" />
-                              </button>
-                            )}
+                            <button
+                              type="button"
+                              onClick={() => handleEditPost(article)}
+                              className="p-2 text-blue-400 hover:text-white bg-blue-500/10 hover:bg-blue-600 rounded-lg transition-colors cursor-pointer"
+                              title="Editar matéria"
+                            >
+                              <FaEdit className="text-xs" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleDeletePost(article)}
+                              className="p-2 text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 rounded-lg transition-colors cursor-pointer"
+                              title="Excluir matéria"
+                            >
+                              <FaTrash className="text-xs" />
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -934,102 +986,256 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              {/* Editor Tabs: Write vs Preview */}
-              <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+              {/* Editor Tabs: HTML, CSS, Split & Live Preview */}
+              <div className="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
-                  <div className="flex items-center gap-2">
+                  {/* Mode Selector */}
+                  <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-950 rounded-xl border border-slate-800">
                     <button
                       type="button"
-                      onClick={() => setEditorTab("write")}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        editorTab === "write" ? "bg-blue-600 text-white" : "text-slate-400 hover:text-white"
+                      onClick={() => setEditorTab("html")}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        editorTab === "html"
+                          ? "bg-blue-600 text-white shadow-sm"
+                          : "text-slate-400 hover:text-white"
                       }`}
                     >
-                      Escrever Conteúdo
+                      <FaFileAlt className="text-[10px]" />
+                      <span>Código HTML</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditorTab("css")}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        editorTab === "css"
+                          ? "bg-purple-600 text-white shadow-sm"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                    >
+                      <FaTag className="text-[10px]" />
+                      <span>CSS da Matéria</span>
+                      {postForm.customCss && (
+                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      )}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditorTab("split")}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer hidden md:flex items-center gap-1.5 ${
+                        editorTab === "split"
+                          ? "bg-slate-700 text-white shadow-sm"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                    >
+                      <FaLayerGroup className="text-[10px]" />
+                      <span>Dividido (Lado a Lado)</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setEditorTab("preview")}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        editorTab === "preview" ? "bg-blue-600 text-white" : "text-slate-400 hover:text-white"
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        editorTab === "preview"
+                          ? "bg-emerald-600 text-white shadow-sm"
+                          : "text-slate-400 hover:text-white"
                       }`}
                     >
-                      Pré-visualização
+                      <FaEye className="text-[10px]" />
+                      <span>Visualizar ao Vivo</span>
                     </button>
                   </div>
 
-                  {/* Formatting Shortcuts */}
-                  <div className="flex items-center gap-1">
+                  {/* HTML / Markup Snippet Buttons */}
+                  <div className="flex flex-wrap items-center gap-1.5">
                     <button
                       type="button"
-                      onClick={() => setPostForm({ ...postForm, content: postForm.content + "\n\n## Subtítulo" })}
-                      className="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs font-mono text-slate-300"
-                      title="Título H2"
+                      onClick={() => insertSnippet("alert")}
+                      className="px-2.5 py-1 bg-blue-900/40 hover:bg-blue-800/60 border border-blue-700/50 rounded-lg text-xs text-blue-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                      title="Inserir Caixa de Alerta com CSS"
                     >
-                      H2
+                      <span>+ Alerta</span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => setPostForm({ ...postForm, content: postForm.content + "\n\n### Seção" })}
-                      className="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs font-mono text-slate-300"
-                      title="Título H3"
+                      onClick={() => insertSnippet("table")}
+                      className="px-2.5 py-1 bg-emerald-900/40 hover:bg-emerald-800/60 border border-emerald-700/50 rounded-lg text-xs text-emerald-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                      title="Inserir Tabela com CSS"
                     >
-                      H3
+                      <span>+ Tabela</span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => setPostForm({ ...postForm, content: postForm.content + " **texto em negrito** " })}
-                      className="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs font-bold text-slate-300"
-                      title="Negrito"
+                      onClick={() => insertSnippet("button")}
+                      className="px-2.5 py-1 bg-purple-900/40 hover:bg-purple-800/60 border border-purple-700/50 rounded-lg text-xs text-purple-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                      title="Inserir Botão com Link"
                     >
-                      B
+                      <span>+ Botão</span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => setPostForm({ ...postForm, content: postForm.content + "\n\n> Frase de destaque ou citação" })}
-                      className="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs text-slate-300"
-                      title="Citação"
+                      onClick={() => insertSnippet("grid")}
+                      className="px-2.5 py-1 bg-amber-900/40 hover:bg-amber-800/60 border border-amber-700/50 rounded-lg text-xs text-amber-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                      title="Inserir 2 Colunas"
                     >
-                      " "
+                      <span>+ 2 Colunas</span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => setPostForm({ ...postForm, content: postForm.content + "\n- Item de lista 1\n- Item de lista 2" })}
-                      className="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs text-slate-300"
-                      title="Lista com marcadores"
+                      onClick={() => insertSnippet("figure")}
+                      className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs text-slate-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                      title="Inserir Imagem com Legenda"
                     >
-                      • Lista
+                      <span>+ Foto</span>
                     </button>
                   </div>
                 </div>
 
-                {editorTab === "write" ? (
-                  <textarea
-                    rows={18}
-                    required
-                    value={postForm.content}
-                    onChange={(e) => setPostForm({ ...postForm, content: e.target.value })}
-                    placeholder="Escreva a matéria em texto com markdown... Suporta ## Título, ### Subtítulo, **negrito**, listas (- item), citações (> citação) e links [texto](url)."
-                    className="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm leading-relaxed"
-                  />
-                ) : (
-                  <div className="p-6 bg-white text-gray-900 rounded-xl min-h-[400px]">
-                    <h1 className="text-3xl font-extrabold mb-3 text-gray-900">{postForm.title || "Título da matéria"}</h1>
-                    {postForm.subtitle && (
-                      <p className="text-lg text-gray-600 font-medium border-l-4 border-blue-600 pl-3 mb-6">
-                        {postForm.subtitle}
-                      </p>
-                    )}
-                    {postForm.image && (
-                      <img
-                        src={postForm.image}
-                        alt=""
-                        className="w-full max-h-80 object-cover rounded-xl mb-6 shadow-sm"
-                      />
-                    )}
-                    <div className="prose max-w-none text-gray-800 whitespace-pre-line leading-relaxed">
-                      {postForm.content || "Nenhum conteúdo para pré-visualizar."}
+                {/* TAB 1: HTML CODE */}
+                {editorTab === "html" && (
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs text-slate-400">
+                      <span>Insira o código HTML ou texto da matéria:</span>
+                      <span className="font-mono text-[11px] text-slate-500">
+                        {postForm.content.length} caracteres
+                      </span>
                     </div>
+                    <textarea
+                      rows={20}
+                      required
+                      value={postForm.content}
+                      onChange={(e) => setPostForm({ ...postForm, content: e.target.value })}
+                      placeholder="Cole ou escreva o código HTML ou texto da matéria. Exemplo: <div class='alerta-box'>...</div> ou <h2>Título</h2><p>Texto...</p>"
+                      className="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-xs sm:text-sm leading-relaxed"
+                    />
+                  </div>
+                )}
+
+                {/* TAB 2: CUSTOM CSS */}
+                {editorTab === "css" && (
+                  <div className="space-y-3">
+                    <div className="p-3.5 bg-purple-950/40 border border-purple-800/50 rounded-xl text-xs text-purple-200 leading-relaxed flex items-start gap-2.5">
+                      <FaInfoCircle className="text-purple-400 text-sm mt-0.5 shrink-0" />
+                      <div>
+                        <strong className="text-purple-300">CSS Customizado da Matéria:</strong>
+                        <p className="mt-0.5 text-purple-300/80">
+                          As regras digitadas aqui serão injetadas dentro de uma tag <code>&lt;style&gt;</code> na página deste post. Você pode estilizar classes que usou no HTML (ex: <code>.tabela-custom</code>, <code>.alerta-box</code>, <code>.btn-custom</code>).
+                        </p>
+                      </div>
+                    </div>
+
+                    <textarea
+                      rows={18}
+                      value={postForm.customCss}
+                      onChange={(e) => setPostForm({ ...postForm, customCss: e.target.value })}
+                      placeholder={`/* Digite ou cole seu CSS personalizado para esta matéria */\n\n.alerta-box {\n  background: #eff6ff;\n  border-left: 4px solid #2563eb;\n  padding: 1.25rem;\n  border-radius: 0.75rem;\n  color: #1e293b;\n}\n\n.tabela-custom {\n  width: 100%;\n  border-collapse: collapse;\n}`}
+                      className="w-full p-4 bg-slate-950 border border-purple-900/40 rounded-xl text-emerald-300 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-xs sm:text-sm leading-relaxed"
+                    />
+                  </div>
+                )}
+
+                {/* TAB 3: SPLIT VIEW (LADO A LADO) */}
+                {editorTab === "split" && (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    {/* Left: Code editor */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs text-slate-400">
+                        <span className="font-bold text-white">Código HTML</span>
+                        <button
+                          type="button"
+                          onClick={() => setEditorTab("css")}
+                          className="text-[11px] text-purple-400 hover:underline"
+                        >
+                          Ir para CSS →
+                        </button>
+                      </div>
+                      <textarea
+                        rows={22}
+                        value={postForm.content}
+                        onChange={(e) => setPostForm({ ...postForm, content: e.target.value })}
+                        className="w-full p-3 bg-slate-950 border border-slate-800 rounded-xl text-slate-200 font-mono text-xs leading-relaxed"
+                      />
+                    </div>
+
+                    {/* Right: Live preview */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs text-slate-400">
+                        <span className="font-bold text-emerald-400 flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                          Preview em Tempo Real
+                        </span>
+                        <span className="text-[11px] text-slate-500">Com CSS aplicado</span>
+                      </div>
+                      <div className="p-5 bg-white text-gray-900 rounded-xl h-[480px] overflow-y-auto shadow-inner border border-slate-300">
+                        {postForm.customCss && (
+                          <style dangerouslySetInnerHTML={{ __html: postForm.customCss }} />
+                        )}
+                        <div
+                          className="tribuna-article-content prose prose-slate max-w-none text-gray-800 leading-relaxed text-sm"
+                          dangerouslySetInnerHTML={{ __html: postForm.content || "<p class='text-gray-400 italic'>O conteúdo renderizado aparecerá aqui...</p>" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* TAB 4: FULL PREVIEW */}
+                {editorTab === "preview" && (
+                  <div className="p-6 md:p-8 bg-white text-gray-900 rounded-2xl shadow-xl border border-slate-200">
+                    {postForm.customCss && (
+                      <style dangerouslySetInnerHTML={{ __html: postForm.customCss }} />
+                    )}
+
+                    {/* Post Header Simulation */}
+                    <div className="border-b border-gray-200 pb-5 mb-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">
+                          {postForm.category || "Geral"}
+                        </span>
+                        {postForm.tag && (
+                          <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">
+                            {postForm.tag}
+                          </span>
+                        )}
+                        <span className="text-xs text-gray-500 ml-auto">
+                          {postForm.readingTime || "4 min de leitura"}
+                        </span>
+                      </div>
+
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                        {postForm.title || "Título da matéria aparecerá aqui"}
+                      </h1>
+
+                      {postForm.subtitle && (
+                        <p className="mt-3 p-3.5 bg-gray-50 border-l-4 border-blue-600 text-gray-700 text-base italic rounded-r-lg">
+                          {postForm.subtitle}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Cover image preview */}
+                    {postForm.image && (
+                      <figure className="mb-6">
+                        <img
+                          src={postForm.image}
+                          alt=""
+                          className="w-full max-h-96 object-cover rounded-xl shadow-md"
+                        />
+                        {postForm.imageCaption && (
+                          <figcaption className="text-center text-xs text-gray-500 mt-2 italic">
+                            {postForm.imageCaption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    )}
+
+                    {/* Article Body with Custom CSS Applied */}
+                    <div
+                      className="tribuna-article-content prose prose-slate max-w-none text-gray-800 leading-relaxed text-base"
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          postForm.content ||
+                          "<p class='text-gray-400 italic text-center py-10'>Nenhum conteúdo para pré-visualizar.</p>",
+                      }}
+                    />
                   </div>
                 )}
               </div>
@@ -1222,6 +1428,104 @@ export default function AdminDashboardPage() {
         )}
         </div>
       </div>
+
+      {/* Quick Preview Modal */}
+      {previewModalPost && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+          <div className="bg-white text-gray-900 rounded-2xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-slate-700">
+            {/* Modal Top Header */}
+            <div className="px-5 py-3.5 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center shrink-0">
+                  <FaEye className="text-xs" />
+                </div>
+                <div className="min-w-0">
+                  <span className="font-bold text-xs sm:text-sm text-white truncate block">
+                    Pré-visualização: {previewModalPost.title}
+                  </span>
+                  <span className="text-[10px] text-slate-400 block truncate">
+                    /{previewModalPost.slug} • {previewModalPost.published}
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <Link
+                  href={`/${previewModalPost.slug}`}
+                  target="_blank"
+                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Abrir no Site</span>
+                  <FaExternalLinkAlt className="text-[10px]" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setPreviewModalPost(null)}
+                  className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+                  title="Fechar pré-visualização"
+                >
+                  <FaTimes />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Scrollable Body */}
+            <div className="flex-1 overflow-y-auto p-5 sm:p-8 space-y-6">
+              {previewModalPost.customCss && (
+                <style dangerouslySetInnerHTML={{ __html: previewModalPost.customCss }} />
+              )}
+
+              {/* Title & metadata */}
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">
+                    {previewModalPost.category || "Geral"}
+                  </span>
+                  {previewModalPost.tag && (
+                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">
+                      {previewModalPost.tag}
+                    </span>
+                  )}
+                  <span className="text-xs text-gray-500 ml-auto">
+                    {previewModalPost.readingTime || "4 min de leitura"}
+                  </span>
+                </div>
+
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+                  {previewModalPost.title}
+                </h1>
+
+                {previewModalPost.subtitle && (
+                  <p className="mt-3 p-3.5 bg-gray-50 border-l-4 border-blue-600 text-gray-700 text-sm sm:text-base italic rounded-r-lg">
+                    {previewModalPost.subtitle}
+                  </p>
+                )}
+              </div>
+
+              {/* Cover Image */}
+              {previewModalPost.image && (
+                <figure>
+                  <img
+                    src={previewModalPost.image}
+                    alt=""
+                    className="w-full max-h-96 object-cover rounded-xl shadow-md"
+                  />
+                  {previewModalPost.imageCaption && (
+                    <figcaption className="text-center text-xs text-gray-500 mt-2 italic">
+                      {previewModalPost.imageCaption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+
+              {/* HTML Content */}
+              <div
+                className="tribuna-article-content prose prose-slate max-w-none text-gray-800 leading-relaxed text-sm sm:text-base"
+                dangerouslySetInnerHTML={{ __html: previewModalPost.content }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile Android Bottom Navigation */}
       <AndroidBottomNav

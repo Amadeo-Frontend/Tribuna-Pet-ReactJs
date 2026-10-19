@@ -42,28 +42,34 @@ export async function findDynamicPostBySlug(slug) {
 }
 
 /**
- * Returns combined list of both dynamic posts and legacy articles
+ * Returns all active articles from posts.json (all fully editable and deletable)
  */
 export async function getAllArticlesCombined() {
   const dynamicPosts = await getDynamicPosts();
 
-  const legacyPosts = Object.entries(articlesMetadata).map(([slug, meta]) => ({
+  if (dynamicPosts && dynamicPosts.length > 0) {
+    return dynamicPosts.map((p) => ({
+      ...p,
+      type: "dynamic",
+      editable: true,
+    }));
+  }
+
+  // Fallback if posts.json is empty
+  return Object.entries(articlesMetadata).map(([slug, meta]) => ({
     id: `legacy-${slug}`,
     slug,
     title: meta.title.replace(" | Tribuna do Pet", ""),
+    subtitle: meta.description,
     description: meta.description,
     image: meta.image,
     published: meta.published,
-    category: "Artigo Legado (JSX)",
-    type: "legacy",
-    editable: false,
-  }));
-
-  const formattedDynamics = dynamicPosts.map((p) => ({
-    ...p,
+    category: "Geral",
+    tag: "Destaque",
+    author: "Redação Tribuna do Pet",
+    content: "",
+    customCss: "",
     type: "dynamic",
     editable: true,
   }));
-
-  return [...formattedDynamics, ...legacyPosts];
 }

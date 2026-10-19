@@ -53,6 +53,7 @@ export async function POST(request) {
       image,
       imageCaption,
       content,
+      customCss,
       featured,
       readingTime,
     } = body;
@@ -79,14 +80,6 @@ export async function POST(request) {
       );
     }
 
-    // Check slug collision with legacy articles
-    if (articlesMetadata[finalSlug]) {
-      return NextResponse.json(
-        { success: false, message: `Já existe um artigo legado com a rota /${finalSlug}. Escolha outro título ou slug.` },
-        { status: 400 }
-      );
-    }
-
     const currentPosts = await getDynamicPosts();
     if (currentPosts.some((p) => p.slug === finalSlug)) {
       return NextResponse.json(
@@ -106,6 +99,7 @@ export async function POST(request) {
       image: image?.trim() || "/images/banner-blog.webp",
       imageCaption: imageCaption?.trim() || "",
       content: content.trim(),
+      customCss: customCss?.trim() || "",
       featured: Boolean(featured),
       readingTime: readingTime || "4 min de leitura",
       published: new Date().toISOString().split("T")[0],
@@ -160,7 +154,7 @@ export async function PUT(request) {
     // If slug is being changed, verify uniqueness
     if (updates.slug && updates.slug !== currentPosts[index].slug) {
       const cleanSlug = slugify(updates.slug);
-      if (articlesMetadata[cleanSlug] || currentPosts.some((p) => p.slug === cleanSlug && p.id !== id)) {
+      if (currentPosts.some((p) => p.slug === cleanSlug && p.id !== id)) {
         return NextResponse.json(
           { success: false, message: `O slug /${cleanSlug} já está sendo utilizado.` },
           { status: 400 }
