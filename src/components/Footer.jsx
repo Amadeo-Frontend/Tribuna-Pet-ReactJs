@@ -111,7 +111,15 @@ export default function Footer() {
         {/* Rodapé inferior / Direitos autorais */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p className="flex items-center">
-            &copy; 2026 Tribuna do Pet <FontAwesomeIcon icon={faPaw} className="mx-1.5 text-sky-400" /> Todos os direitos reservados.
+            &copy; 2026 Tribuna do Pet{" "}
+            <Link
+              href="/admin"
+              title="Acesso ao Painel Administrativo"
+              className="inline-flex items-center mx-1.5 text-sky-400 hover:text-sky-300 hover:scale-125 transition-all duration-300 focus:outline-none"
+            >
+              <FontAwesomeIcon icon={faPaw} />
+            </Link>{" "}
+            Todos os direitos reservados.
           </p>
           <p className="flex items-center text-slate-400">
             Feito com <FontAwesomeIcon icon={faHeart} className="mx-1 text-red-500 text-xs" /> para donos de pets em todo o Brasil
