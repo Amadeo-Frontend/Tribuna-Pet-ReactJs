@@ -34,19 +34,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const dynamicPost = await findDynamicPostBySlug(slug);
+  let meta = articlesMetadata[slug];
 
-  let meta = null;
-  if (dynamicPost) {
-    meta = {
-      title: `${dynamicPost.title} | Tribuna do Pet`,
-      description: dynamicPost.subtitle || dynamicPost.title,
-      image: dynamicPost.image,
-      published: dynamicPost.published,
-      canonical: `https://www.tribunadopet.com.br/${dynamicPost.slug}`,
-    };
-  } else if (articlesMetadata[slug]) {
-    meta = articlesMetadata[slug];
+  if (!meta) {
+    const dynamicPost = await findDynamicPostBySlug(slug);
+    if (dynamicPost) {
+      meta = {
+        title: `${dynamicPost.title} | Tribuna do Pet`,
+        description: dynamicPost.subtitle || dynamicPost.title,
+        image: dynamicPost.image,
+        published: dynamicPost.published,
+        canonical: `https://www.tribunadopet.com.br/${dynamicPost.slug}`,
+      };
+    }
   }
 
   if (!meta) {
@@ -95,16 +95,16 @@ export async function generateMetadata({ params }) {
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
 
-  // 1. Check dynamic post from posts.json (has full precedence for edits & custom CSS)
-  const dynamicPost = await findDynamicPostBySlug(slug);
-  if (dynamicPost) {
-    return <DynamicPostTemplate post={dynamicPost} />;
-  }
-
-  // 2. Fallback to legacy JSX component if not in posts.json
+  // 1. Check legacy JSX component (curated interactive articles with full component/icon support)
   const LegacyComponent = articlesMap[slug];
   if (LegacyComponent) {
     return <LegacyComponent />;
+  }
+
+  // 2. Check dynamic post from posts.json (admin-created or markdown articles)
+  const dynamicPost = await findDynamicPostBySlug(slug);
+  if (dynamicPost) {
+    return <DynamicPostTemplate post={dynamicPost} />;
   }
 
   // 3. Not found
